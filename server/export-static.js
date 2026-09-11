@@ -23,6 +23,6 @@ fs.writeFileSync(path.join(ROOT, 'public', 'data.json'), JSON.stringify(out));
 console.log('public/data.json обновлён, категорий меню:', state.menu.categories.length);
 
 function strip(s) {
-  const { meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery, updatedAt } = s;
-  return { meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery, updatedAt };
+  const { meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery, wallet, copy, updatedAt } = s;
+  return { meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery, wallet, copy, updatedAt };
 }

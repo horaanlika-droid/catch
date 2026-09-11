@@ -3,16 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-<meta name="theme-color" content="#0d0a08" id="metatheme">
+<meta name="theme-color" content="#0b0a09" id="metatheme">
+<meta name="color-scheme" content="dark">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="CATCH 22 — listening bar & bistro. Актуальное меню, афиша, бронирование, мерч.">
-<title>CATCH 22 — Listening Bar & Bistro</title>
+<meta name="description" content="CATCH 22 — listening bar & bistro. Винил, коктейли, comfort food. Меню, афиша, бронирование, мерч.">
+<title>CATCH 22 — Listening Bar &amp; Bistro</title>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="img/icon.png">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Playfair+Display:ital,wght@1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="config.js"></script>
 <link rel="stylesheet" href="app.css">
@@ -22,8 +25,8 @@
 <!-- ── Предлоадер: плавно растворяется, когда данные загружены ── -->
 <div id="boot">
   <div class="boot-inner">
-    <div class="boot-logo"><span class="brand-mark">CATCH 22</span></div>
-    <div class="boot-sub">LISTENING BAR &amp; BISTRO</div>
+    <img class="boot-logo" src="img/logo.svg" alt="CATCH 22">
+    <div class="boot-sub" id="boot-sub">LISTENING BAR &amp; BISTRO</div>
     <div class="boot-bar"><i></i></div>
     <div class="boot-credit">app by <a href="https://t.me/stonym0ntana" target="_blank" rel="noopener">@stonym0ntana</a></div>
   </div>
@@ -32,13 +35,19 @@
 <div id="app" aria-hidden="true">
   <header id="hdr">
     <div class="hdr-in">
-      <button id="back-btn" class="hdr-btn" aria-label="Назад" hidden>
-        <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <button id="nav-btn" class="hdr-btn" aria-label="Меню">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
       </button>
-      <div class="hdr-title"><span class="brand-mark small">CATCH 22</span><i id="live-dot" title="живые данные" hidden></i></div>
+      <button id="back-btn" class="hdr-btn" aria-label="Назад" hidden>
+        <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="hdr-brand">
+        <span class="hdr-logo"><img src="img/logo.svg" alt="CATCH 22"><i id="live-dot" title="живые данные" hidden></i></span>
+        <div class="tagline" id="hdr-sub">LISTENING BAR &amp; BISTRO</div>
+      </div>
       <div class="hdr-right">
-        <button id="theme-btn" class="hdr-btn" aria-label="Тема">
-          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <button id="tg-btn" class="hdr-btn" aria-label="Telegram">
+          <svg viewBox="0 0 24 24"><path d="M21 4.3 2.9 11.5l6.3 2.1 1.9 6.1 2.5-3.8 4.8 3.6L21 4.3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9.2 13.6 9.3-7.1-6.7 8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
         </button>
       </div>
     </div>
@@ -48,14 +57,15 @@
     <button data-tab="home"><i>house</i><span>Главная</span></button>
     <button data-tab="menu"><i>cutlery</i><span>Меню</span></button>
     <button data-tab="events"><i>cal</i><span>Афиша</span></button>
-    <button data-tab="merch"><i>tee</i><span>Мерч</span></button>
-    <button data-tab="more"><i>dots</i><span>Ещё</span></button>
+    <button data-tab="merch"><i>bag</i><span>Мерч</span></button>
+    <button data-tab="more"><i>grid</i><span>Ещё</span></button>
   </nav>
 </div>
 
 <div id="toasts"></div>
 <div id="sheet-root"></div>
 
+<noscript><div style="padding:24px;font:15px system-ui">Для приложения нужен JavaScript. Меню и афиша — также в <a href="https://t.me" style="color:#c2664a">Telegram-боте бара</a>.</div></noscript>
 <script src="app.js"></script>
 </body>
 </html>

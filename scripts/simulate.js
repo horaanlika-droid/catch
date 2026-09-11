@@ -115,6 +115,54 @@ check(startMsg.kb.inline_keyboard.flat().some((b) => b.url === 'https://example.
 const r2 = store.addRequest({ type: 'message', fields: { 'сообщение': 'хочу стол на 8' }, contact: '@guest' });
 check(r2.status === 'new' && store.newRequestsCount() >= 1, 'заявка-сообщение записана');
 
+/* ── v2: оформление и тексты через бота ── */
+await click('s:meta'); await click('f:hero:text');
+await msg(111, { text: 'Винил, коктейли и comfort food' });
+check(store.state.meta.hero.text === 'Винил, коктейли и comfort food', 'текст героя обновлён из бота');
+await click('s:meta'); await click('f:hero:cta');
+await msg(111, { text: 'Занять стол' });
+check(store.state.meta.hero.cta === 'Занять стол', 'кнопка на главной переименована');
+
+await click('s:copy'); await click('f:copy:titleEvents');
+await msg(111, { text: 'ВЕЧЕРА' });
+check(store.state.copy.titleEvents === 'ВЕЧЕРА', 'заголовок вкладки правится ботом');
+await click('s:copy'); await click('a:copy:reset');
+check(store.state.copy.titleEvents === 'АФИША', 'reset возвращает дефолтные тексты');
+
+await click('s:menu'); await click('menu:c:0'); await click('f:cat:0:note');
+await msg(111, { text: 'Цены за 125 мл' });
+check(store.state.menu.categories[0].note === 'Цены за 125 мл', 'сноска категории обновлена');
+await click('menu:c:0'); await click('p:cat:0');
+await msg(111, { photo: [{ file_id: 'cover1' }] });
+check(/^\/media\/.+\.jpg$/.test(store.state.menu.categories[0].cover), 'обложка категории загружена фото-пайплайном');
+
+await click('s:meta'); await click('p:about');
+await msg(111, { photo: [{ file_id: 'about1' }], caption: 'Зал Catch 22' });
+check(/^\/media\//.test(store.state.meta.aboutImage), 'фото карточки «О нас» обновлено');
+
+await click('s:contacts'); await click('p:c');
+await msg(111, { photo: [{ file_id: 'cont1' }] });
+check(/^\/media\//.test(store.state.contacts.image), 'фото контактов обновлено');
+await click('p:book');
+await msg(111, { photo: [{ file_id: 'book1' }] });
+check(/^\/media\//.test(store.state.booking.image), 'фото брони обновлено');
+
+await click('s:wallet'); await click('a:wal:toggle');
+check(store.state.wallet.enabled === true, 'блок «кошелёк» включается из бота');
+await click('s:wallet'); await click('f:w:text');
+await msg(111, { text: 'Оплата мерча в TON' });
+check(store.state.wallet.text === 'Оплата мерча в TON', 'текст кошелька обновлён');
+await click('s:wallet'); await click('a:wal:toggle');
+check(store.state.wallet.enabled === false, 'блок «кошелёк» выключается обратно');
+
+await click('s:merch'); await click('mr:0'); await click('f:mr:0:ton');
+await msg(111, { text: '0.12 TON' });
+check(store.state.merch[0].ton === '0.12 TON', 'цена в TON у товара обновлена');
+
+/* публичная выборка должна отдавать всё, что читает клиент */
+const pub = store.publicState();
+check(pub.wallet && pub.copy && pub.meta.hero && pub.menu.categories[0].cover, 'publicState отдаёт v2-поля (wallet/copy/hero/cover)');
+
 /* ── сериализация/перезагрузка ── */
 store.save();
 const store2 = new Store(tmp);

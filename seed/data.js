@@ -10,7 +10,16 @@ export const seed = {
       'Винил. Коктейли. Comfort food.\nМузыка, которую хочется слушать.\nБар и фонотека Catch 22.',
     about:
       'Музыкальный бар и бистро с коллекцией винила, коктейлями и comfort food. Открытие года 2026 по версии W2D.',
-    hero: { title: 'CATCH 22', subtitle: 'LISTENING BAR & BISTRO', image: '/img/interior-vinyl.jpg' },
+    hero: {
+      title: 'CATCH 22',
+      subtitle: 'LISTENING BAR & BISTRO',
+      // текст под логотипом на главной — правится ботом (🏷 О заведении)
+      text: 'Музыкальный бар и бистро\nс коллекцией винила, коктейлями\nи comfort food.',
+      image: '/img/interior-vinyl.jpg',
+      cta: 'Забронировать стол',
+    },
+    // фото карточки «О нас» в боковом меню
+    aboutImage: '/img/interior-chair.jpg',
     bot: '',
     awards: [
       { icon: '🍸', title: 'WhereToEat', text: 'Открытие года 2026 (W2D)' },
@@ -32,6 +41,8 @@ export const seed = {
     phoneHref: 'tel:+79315312232',
     email: 'hello@catch-22-bar.ru',
     bookingUrl: 'https://catch-22-bar.ru',
+    note: 'наб. реки Фонтанки, 86 — вход со двора, ищите вывеску 22',
+    image: '/img/interior-vinyl.jpg',
   },
 
   socials: [
@@ -39,7 +50,12 @@ export const seed = {
     { platform: 'Telegram', url: '' },
   ],
 
-  booking: { enabled: true, text: 'Подтверждение бронирования в течение 15 минут' },
+  booking: {
+    enabled: true,
+    title: 'Столик у фонотеки',
+    text: 'Подтверждение бронирования в течение 15 минут',
+    image: '/img/interior-chair.jpg',
+  },
 
   brunch: {
     enabled: true,
@@ -55,6 +71,8 @@ export const seed = {
         id: 'food',
         title: 'Еда',
         icon: '🍽',
+        cover: '/img/brunch.jpg',
+        note: 'Кухню ведёт шеф, который сам подбирает пластинки на вечер',
         sections: [
           {
             title: 'Starts',
@@ -127,6 +145,8 @@ export const seed = {
         id: 'bar',
         title: 'Бар',
         icon: '🍸',
+        cover: '/img/interior-vinyl.jpg',
+        note: 'Коктейли по музыкальным эпохам — от 950 ₽',
         sections: [
           {
             title: 'Signature Cocktails · 950',
@@ -196,6 +216,8 @@ export const seed = {
         id: 'drinks',
         title: 'Крепкое',
         icon: '🥃',
+        cover: '/img/event-sept.jpg',
+        note: '40 мл · налили и объяснили',
         sections: [
           {
             title: 'Whiskey · 40 мл',
@@ -358,6 +380,8 @@ export const seed = {
         id: 'wine',
         title: 'Вино',
         icon: '🍷',
+        cover: '/img/interior-chair.jpg',
+        note: 'Цены указаны за 125 мл / 750 мл',
         sections: [
           {
             title: 'A-SIDE · Игристое · 125/750 мл',
@@ -457,17 +481,36 @@ export const seed = {
   ],
 
   merch: [
-    { name: 'Футболка Catch 22', desc: 'Плотный хлопок, принт по фонотеке', price: 'скоро', tag: 'заглушка', image: '' },
-    { name: 'Кепка Catch 22', desc: 'Вышитый логотип 22', price: 'скоро', tag: 'заглушка', image: '' },
-    { name: 'Шоппер', desc: 'Чёрный канвас, шелкография', price: 'скоро', tag: 'заглушка', image: '' },
-    { name: 'Виниловая пластинка', desc: 'Лимитированный пресс бара', price: 'скоро', tag: 'заглушка', image: '' },
+    { name: 'Футболка Catch 22', desc: 'Плотный хлопок, принт по фонотеке', price: 'скоро', ton: '', tag: 'заглушка', image: '', cta: 'Оставить заявку' },
+    { name: 'Кепка Catch 22', desc: 'Вышитый логотип 22', price: 'скоро', ton: '', tag: 'заглушка', image: '', cta: 'Оставить заявку' },
+    { name: 'Шоппер', desc: 'Чёрный канвас, шелкография', price: 'скоро', ton: '', tag: 'заглушка', image: '', cta: 'Оставить заявку' },
+    { name: 'Виниловая пластинка', desc: 'Лимитированный пресс бара', price: 'скоро', ton: '', tag: 'заглушка', image: '', cta: 'Оставить заявку' },
   ],
 
   merchNote: 'Оплата пока не подключена — оставьте заявку, и мы свяжемся с вами.',
 
+  // Блок «Кошелёк» (как на референсе). enabled: false — оплата не подключена;
+  // бар может включить его из бота, когда появится приём TON.
+  wallet: {
+    enabled: false,
+    title: 'Подключить кошелёк',
+    text: 'Для оплаты Catch 22 merch',
+    note: 'Оплата через TON ещё не подключена — сейчас работает заявка через бота.',
+    link: '',
+    linkText: 'Подключить TON',
+    button: 'Подключить кошелёк',
+    image: '/img/interior-vinyl.jpg',
+  },
+
+  // тексты интерфейса: что не указано — берётся из seed/copy.js
+  copy: {
+    eventsSub: 'Винил, сессии и гости за пультом',
+    merchSub: 'Фирменные вещи Catch 22 в блокчейне TON',
+  },
   jobs: {
     enabled: true,
     title: 'Стань частью CATCH 22',
+    image: '/img/interior-chair.jpg',
     text: 'Мы ищем в команду людей, которые разделяют нашу любовь к музыке, вкусной еде и гостеприимству. Оставьте анкету — мы свяжемся с вами.',
     positions: ['Официант', 'Бармен', 'Кухня', 'Хостес', 'Другое'],
   },
