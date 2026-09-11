@@ -55,8 +55,9 @@ b,strong{font-weight:700}
 .boot-sub{color:#8d7c6a;font-size:11px;letter-spacing:.52em;text-transform:uppercase;margin-top:10px;animation:fadeIn 1s .25s both}
 .boot-bar{width:120px;height:3px;border-radius:3px;background:rgba(255,235,215,.12);margin:26px auto 0;overflow:hidden}
 .boot-bar i{display:block;height:100%;width:40%;border-radius:3px;background:linear-gradient(90deg,#c96f43,#e29365);animation:bootBar 1.15s var(--ease) infinite}
-.boot-credit{margin-top:22px;font-size:12px;color:#6f6152;letter-spacing:.04em;animation:fadeIn 1.2s .5s both}
-.boot-credit a{color:#a98a6f}
+.boot-credit{margin-top:26px;font-size:13px;font-weight:600;letter-spacing:.07em;color:#93826e;animation:fadeIn 1.1s .45s both}
+.boot-credit a{color:#c98a5e;border-bottom:1px solid rgba(201,138,94,.38);padding-bottom:1px;transition:color .25s,border-color .25s}
+.boot-credit a:active{color:#e29365;border-color:#e29365}
 @keyframes bootBar{0%{transform:translateX(-100%)}100%{transform:translateX(320%)}}
 @keyframes bootPop{from{transform:scale(.86);opacity:0}to{transform:scale(1);opacity:1}}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
