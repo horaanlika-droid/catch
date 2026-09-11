@@ -533,7 +533,9 @@ function vHome(d) {
 }
 function brandFoot(d) {
   const upd = d.updatedAt ? ` · обновлено ${fmtRel(d.updatedAt)}` : '';
-  return `<span class="foot-logo"><img src="img/logo.svg" alt="CATCH 22"></span><span>${esc(d.meta.sub || '')}${upd}</span><br><span>app by <a href="https://t.me/stonym0ntana" target="_blank" rel="noopener">@stonym0ntana</a></span>`;
+  return `<span class="foot-logo"><img src="img/logo.svg" alt="CATCH 22"></span>`
+    + `<span class="foot-sub">${esc(d.meta.sub || '')}${upd}</span>`
+    + `<span class="foot-credit">app by <a href="https://t.me/stonym0ntana" target="_blank" rel="noopener">@stonym0ntana</a></span>`;
 }
 function upcoming(d) {
   const today = new Date(new Date().toDateString());
