@@ -1,14 +1,17 @@
 {
   "name": "catch22-app",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "CATCH 22 — Telegram-клиент веб-приложение + админ-бот (zero deps)",
-  "engines": { "node": ">=18" },
+  "description": "CATCH 22 — веб-приложение (тёмный стиль 2.0) + админ-бот, zero deps",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
     "export": "node server/export-static.js",
-    "test": "node scripts/simulate.js"
+    "test": "node scripts/simulate.js",
+    "logo": "node scripts/logo.js"
   }
 }

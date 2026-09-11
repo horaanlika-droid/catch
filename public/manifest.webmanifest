@@ -1,0 +1,15 @@
+{
+  "name": "CATCH 22 — Listening Bar & Bistro",
+  "short_name": "CATCH 22",
+  "description": "Меню, афиша, бронирование и мерч бара CATCH 22. Данные обновляет админ-бот.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0a09",
+  "theme_color": "#0b0a09",
+  "icons": [
+    { "src": "img/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

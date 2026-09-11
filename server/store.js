@@ -3,6 +3,7 @@ import path from 'node:path';
 import { EventEmitter } from 'node:events';
 import { uid, nowIso, writeAtomic, readJsonSafe, ensureDir, log } from './util.js';
 import { seed } from '../seed/data.js';
+import { COPY_DEFAULT } from '../seed/copy.js';
 
 /*
  * Единый стор приложения.
@@ -52,6 +53,41 @@ export function normalizeState(s) {
   s.jobs ||= {};
   s.jobs.positions = Array.isArray(s.jobs.positions) ? s.jobs.positions : [];
   s.gallery = ensureIds(s.gallery || [], 'g');
+
+  /* ── v2: оформление и тексты — всё это правится админ-ботом ── */
+  // герой главной: подпись, текст, кнопка, фон
+  const hero = (s.meta.hero ||= {});
+  hero.text = String(hero.text ?? '');
+  hero.cta = String(hero.cta ?? '');
+  // обложки категорий меню + сноска под категорией
+  for (const c of s.menu.categories) {
+    c.cover = String(c.cover ?? '');
+    c.note = String(c.note ?? '');
+  }
+  // мерч: цена в TON и подпись кнопки
+  for (const m of s.merch) {
+    m.ton = String(m.ton ?? '');
+    m.cta = String(m.cta ?? '');
+  }
+  // фото-подложки разделов
+  s.booking.image = String(s.booking.image ?? '');
+  s.contacts.image = String(s.contacts.image ?? '');
+  s.contacts.note = String(s.contacts.note ?? '');
+  s.jobs.image = String(s.jobs.image ?? '');
+  s.meta.aboutImage = String(s.meta.aboutImage ?? '');
+  // кошелёк (оплата мерча — по умолчанию выключена)
+  const w = (s.wallet ||= {});
+  w.enabled = !!w.enabled;
+  w.title = String(w.title ?? '');
+  w.text = String(w.text ?? '');
+  w.note = String(w.note ?? '');
+  w.link = String(w.link ?? '');
+  w.linkText = String(w.linkText ?? '');
+  w.button = String(w.button ?? '');
+  w.image = String(w.image ?? '');
+  // тексты интерфейса: недостающие ключи добираем из seed/copy.js
+  s.copy = Object.assign({}, COPY_DEFAULT, s.copy || {});
+
   s.updatedAt = nowIso();
   return s;
 }
@@ -102,8 +138,8 @@ export class Store extends EventEmitter {
 
   // Публичная выборка — то, что отдаётся сайту
   publicState() {
-    const { meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery, updatedAt } = this.state;
-    return { rev: this.rev, updatedAt, meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery };
+    const { meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery, wallet, copy, updatedAt } = this.state;
+    return { rev: this.rev, updatedAt, meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery, wallet, copy };
   }
 
   update(label, fn) {

@@ -1,4 +1,5 @@
 import { esc } from '../util.js';
+import { COPY_DEFAULT, COPY_LABELS } from '../../seed/copy.js';
 
 /*
  * Админ-панель CATCH 22 прямо в Telegram.
@@ -65,6 +66,7 @@ export class Panel {
             [btn('🥂 Бранч', 's:brunch'), btn('🧢 Мерч', 's:merch')],
             [btn('🖼 Галерея', 's:gallery'), btn('📞 Контакты', 's:contacts')],
             [btn('💼 Работа', 's:jobs'), btn('🧾 Заявки', 's:requests')],
+            [btn('🅰️ Тексты UI', 's:copy'), btn('💳 Кошелёк', 's:wallet')],
             [btn('⛔ Стоп-лист', 's:stop'), btn('✖️ Сбросить ввод', 'a:cancel')],
           ]),
         };
@@ -102,11 +104,14 @@ export class Panel {
             `<b>🏷 О заведении</b>\n` +
             `Название: <b>${esc(m.name)}</b>\nПодпись: ${esc(m.sub)}\n\n` +
             `Слоган:\n<i>${esc(m.tagline)}</i>\n\nОписание:\n${esc(m.about)}\n\n` +
-            `Фото главной: ${m.hero?.image ? '✅' : '—'} · Наград/фишек: ${m.awards.length}`,
+            `Герой главной: ${m.hero?.image ? '🖼 фото есть' : '— без фото'} · текст: <i>${esc((m.hero?.text || '').replace(/\n/g, ' '))}</i>\n` +
+            `Кнопка: <b>${esc(m.hero?.cta || 'Забронировать стол')}</b> · Наград/фишек: ${m.awards.length}`,
           kb: kb([
             [btn('✏️ Название', 'f:meta:name'), btn('✏️ Подпись', 'f:meta:sub')],
             [btn('✏️ Слоган', 'f:meta:tagline'), btn('✏️ Описание', 'f:meta:about')],
             [btn('🖼 Фото главной', 'p:meta'), btn('🧹 Убрать фото', 'a:meta:herodel')],
+            [btn('✏️ Текст героя', 'f:hero:text'), btn('✏️ Подпись героя', 'f:hero:subtitle')],
+            [btn('✏️ Кнопка на главной', 'f:hero:cta'), btn('🖼 Фото «О нас»', 'p:about')],
             [btn('➕ Награда/блок', 'a:aw:add'), btn('🗑 Последняя', 'a:aw:del')],
             ...aw,
             [NAV('s:home')],
@@ -147,7 +152,8 @@ export class Panel {
             [btn('✏️ Адрес', 'f:c:address'), btn('✏️ Карты', 'f:c:maps')],
             [btn('✏️ Телефон', 'f:c:phone'), btn('✏️ Email', 'f:c:email')],
             [btn('✏️ Ссылка брони', 'f:c:bookingUrl'), btn(st.booking.enabled ? '🟢 Бронь вкл' : '⚪️ Бронь выкл', 'a:book:toggle')],
-            [btn('✏️ Текст про бронь', 'f:booktop:text')],
+            [btn('✏️ Текст про бронь', 'f:booktop:text'), btn('✏️ Плашка контактов', 'f:c:note')],
+            [btn('🖼 Фото контактов', 'p:c'), btn('🖼 Фото брони', 'p:book')],
             ...st.socials.slice(0, 8).map((x, i) => [btn(`🔗 ${esc(x.platform)}`, `soc:${i}`)]),
             [btn('➕ Соцсеть', 'soc:add'), btn('🗑 Последнюю', 'soc:del')],
             [NAV('s:home')],
@@ -184,8 +190,10 @@ export class Panel {
         const rows = c.sections.map((s2, j) => [btn(`📂 ${esc(s2.title)} — ${s2.items.length}`, `menu:s:${screen.i}:${j}`)]);
         rows.push([btn('➕ Раздел', `a:sec:add:${screen.i}`), btn('🗑 Последний раздел', `a:sec:del:${screen.i}`)]);
         rows.push([btn('✏️ Название', `f:cat:${screen.i}:title`), btn('✏️ Иконка', `f:cat:${screen.i}:icon`)]);
+        rows.push([btn('🖼 Обложка категории', `p:cat:${screen.i}`), btn(c.cover ? '🧹 Убрать обложку' : '🧹 Обложки нет', `a:cat:cover:${screen.i}`)]);
+        rows.push([btn('✏️ Сноска снизу', `f:cat:${screen.i}:note`)]);
         rows.push([NAV('s:menu')]);
-        return { text: `<b>${esc(c.icon || '')} ${esc(c.title)}</b>\nРазделов: ${c.sections.length}`, kb: kb(rows) };
+        return { text: `<b>${esc(c.icon || '')} ${esc(c.title)}</b>\nРазделов: ${c.sections.length}\nОбложка: ${c.cover ? '✅' : '—'} · сноска: ${c.note ? '✅' : '—'}`, kb: kb(rows) };
       }
 
       case 'menuSec': {
@@ -281,6 +289,7 @@ export class Panel {
           kb: kb([
             [btn('✏️ Название', `f:mr:${screen.i}:name`), btn('✏️ Цена', `f:mr:${screen.i}:price`)],
             [btn('✏️ Описание', `f:mr:${screen.i}:desc`), btn('✏️ Метка', `f:mr:${screen.i}:tag`)],
+            [btn('💳 Цена в TON', `f:mr:${screen.i}:ton`), btn('✏️ Текст кнопки', `f:mr:${screen.i}:cta`)],
             [btn('🖼 Фото', `p:mr:${screen.i}`), btn('🗑 Удалить', `a:mr:del:${screen.i}`)],
             [btn('🔀 Сдвинуть', `a:mr:move:${screen.i}`), NAV('s:merch')],
           ]),
@@ -309,6 +318,50 @@ export class Panel {
           kb: kb([
             [btn('✏️ Заголовок', 'f:j:title'), btn('✏️ Текст', 'f:j:text')],
             [btn('✏️ Позиции', 'f:j:positions'), btn(j.enabled ? '🙈 Скрыть' : '👁 Показать', 'a:j:toggle')],
+            [btn('🖼 Фото-подложка', 'p:j'), NAV('s:home')],
+          ]),
+        };
+      }
+
+      case 'awItem': {
+        const a = st.meta.awards[screen.i];
+        if (!a) return this.view(chatId, { name: 'meta' });
+        return {
+          text: `<b>${esc(a.icon || '🏆')} ${esc(a.title)}</b>\n${esc(a.text || '')}\n\n<i>Это строка «фишки/награды» — показывается полосой на главной и в профиле.</i>`,
+          kb: kb([
+            [btn('✏️ Название', `f:aw:${screen.i}:title`), btn('✏️ Текст', `f:aw:${screen.i}:text`)],
+            [btn('✏️ Иконка (эмодзи)', `f:aw:${screen.i}:icon`), btn('🔀 Переместить', `a:aw:move:${screen.i}`)],
+            [btn('🗑 Удалить', `a:aw:del:${screen.i}`), NAV('s:meta')],
+          ]),
+        };
+      }
+
+      case 'copy': {
+        const c = st.copy || {};
+        const rows = Object.entries(COPY_LABELS).map(([k, label]) => [btn(`${esc(label)}`, `f:copy:${k}`)]);
+        const shown = rows.slice(0, 10);
+        shown.push([btn('🔄 Вернуть тексты по умолчанию', 'a:copy:reset'), NAV('s:home')]);
+        return {
+          text:
+            `<b>🅰️ Тексты интерфейса</b>\nЗаголовки экранов, подписи вкладок и кнопок. Правится так же, как цены:\n` +
+            Object.entries(COPY_LABELS).slice(0, 8).map(([k, l]) => `· ${esc(l)} — <b>${esc(c[k] || '—')}</b>`).join('\n') +
+            `\n\n<i>Всего полей: ${Object.keys(COPY_LABELS).length}. Нажми любое — пришлю, что сейчас стоит.</i>`,
+          kb: kb(shown),
+        };
+      }
+
+      case 'wallet': {
+        const w = st.wallet || {};
+        return {
+          text:
+            `<b>💳 Кошелёк / оплата мерча</b>\n${w.enabled ? '🟢 Блок «Подключить кошелёк» показан в приложении' : '⚪️ Скрыт — мерч идёт через заявку (как сейчас)'}\n\n` +
+            `Заголовок: <b>${esc(w.title || '—')}</b>\nТекст: ${esc(w.text || '—')}\nПлашка: <i>${esc(w.note || '—')}</i>\n` +
+            `Ссылка: ${w.link ? `<a href="${esc(w.link)}">${esc(w.linkText || w.link)}</a>` : '—'} · фото: ${w.image ? '✅' : '—'}`,
+          kb: kb([
+            [btn(w.enabled ? '🙈 Скрыть блок' : '👁 Показать блок', 'a:wal:toggle'), btn('🖼 Фото', 'p:w')],
+            [btn('✏️ Заголовок', 'f:w:title'), btn('✏️ Текст', 'f:w:text')],
+            [btn('✏️ Плашка', 'f:w:note'), btn('✏️ Кнопка', 'f:w:button')],
+            [btn('✏️ Ссылка', 'f:w:link'), btn('✏️ Подпись ссылки', 'f:w:linkText')],
             [NAV('s:home')],
           ]),
         };
@@ -431,6 +484,9 @@ export class Panel {
       case 'a:aw:del':
         U('aw:del', (s) => s.meta.awards.pop());
         return this.render(chatId, 'meta');
+      case 'a:copy:reset':
+        U('copy:reset', (s) => { s.copy = { ...COPY_DEFAULT }; });
+        return ans('✅'), this.render(chatId, 'copy');
       case 'a:aw:add': {
         const s = this.sess(chatId);
         s.pending = { kind: 'award', stage: 0 };
@@ -582,11 +638,28 @@ export class Panel {
       await ans('🗑');
       return this.render(chatId, 'gallery');
     }
-    if ((m = data.match(/^a:aw:(\w+):(\d+)$/))) {
+    if ((m = data.match(/^a:aw:(del|move):(\d+)$/))) {
       const act = m[1], i = +m[2];
-      U('aw', (s) => { if (act === 'del') s.meta.awards.splice(i, 1); });
+      U('aw:' + act, (s) => {
+        if (act === 'del') s.meta.awards.splice(i, 1);
+        else if (s.meta.awards.length > 1) {
+          const j = (i + 1) % s.meta.awards.length;
+          [s.meta.awards[i], s.meta.awards[j]] = [s.meta.awards[j], s.meta.awards[i]];
+        }
+      });
       await ans('✅');
-      return this.render(chatId, 'meta');
+      return this.render(chatId, act === 'del' ? 'meta' : 'awItem', act === 'del' ? {} : { i });
+    }
+    if ((m = data.match(/^a:cat:cover:(\d+)$/))) {
+      const i = +m[1];
+      U('cat:cover', (s) => { const c = s.menu.categories[i]; if (c) c.cover = ''; });
+      await ans('🧹');
+      return this.render(chatId, 'menuCat', { i });
+    }
+    if ((m = data.match(/^a:wal:(\w+)$/))) {
+      U('wallet', (s) => { s.wallet ||= {}; s.wallet.enabled = !s.wallet.enabled; });
+      await ans(this.store.state.wallet.enabled ? '🟢 включили — приложение обновилось' : '⚪️ скрыли');
+      return this.render(chatId, 'wallet');
     }
     if ((m = data.match(/^a:rq:(\S+):(\w+)$/))) {
       const [, id, act] = m;
@@ -632,6 +705,8 @@ export class Panel {
       bookingUrl: 'ссылка на бронь', text: 'новый текст', title: 'новый заголовок', subtitle: 'новый подзаголовок',
       date: 'дата YYYY-MM-DD', positions: 'позиции через запятую', url: 'ссылка https://', platform: 'название соцсети',
       caption: 'подпись', icon: 'эмодзи-иконка (1 символ)', note: 'текст плашки',
+      cta: 'текст кнопки', ton: 'цена в TON (например 0.12 TON)', link: 'https-ссылка',
+      linkText: 'подпись ссылки', button: 'текст кнопки', about: 'новое описание',
     };
     const label = hints[field] || field;
     await this.bot.answerCallback(q.id, '✏️');
@@ -727,6 +802,8 @@ export class Panel {
           [btn('🏷 На главную', 'fpick:meta'), btn('🖼 Галерея', 'fpick:gal')],
           [btn('🥂 Постер бранча', 'fpick:br'), btn('🍽 Позиция меню…', 'fpick:it')],
           [btn('📅 Событие…', 'fpick:ev'), btn('🧢 Мерч…', 'fpick:mr')],
+          [btn('🖼 Фото «О нас»', 'fpick:about'), btn('📞 Фото контактов', 'fpick:c')],
+          [btn('🎫 Фото брони', 'fpick:book'), btn('💼 Фото «Работа»', 'fpick:j')],
           [btn('✖️ Отмена', 'a:cancel')],
         ]),
       });
@@ -794,6 +871,12 @@ export class Panel {
     let label = '';
     const res = this.store.update('photo', (s) => {
       if (t[0] === 'meta') { s.meta.hero.image = media.url; label = 'фото главной'; }
+      else if (t[0] === 'about') { s.meta.aboutImage = media.url; label = 'фото карточки «О нас»'; }
+      else if (t[0] === 'c') { s.contacts.image = media.url; label = 'фото контактов'; }
+      else if (t[0] === 'book') { s.booking.image = media.url; label = 'фото брони'; }
+      else if (t[0] === 'j') { s.jobs.image = media.url; label = 'фото-подложка «Работа»'; }
+      else if (t[0] === 'w') { s.wallet.image = media.url; label = 'фото блока «Кошелёк»'; }
+      else if (t[0] === 'cat') { const cc = s.menu.categories[+t[1]]; if (!cc) throw new Error('нет такой категории'); cc.cover = media.url; label = `обложка категории · ${cc.title}`; }
       else if (t[0] === 'gal') { s.gallery.unshift({ src: media.url, caption: caption || '' }); label = 'галерея (первым кадром)'; }
       else if (t[0] === 'br') { s.brunch.image = media.url; label = 'постер бранча'; }
       else if (t[0] === 'ev') { const e = s.events[+t[1]]; if (!e) throw new Error('нет такого события'); e.image = media.url; if (caption) e.subtitle = caption; label = `афиша · ${e.title}`; }
@@ -856,6 +939,10 @@ function resolveTarget(state, target) {
     case 'gal': return state.gallery[idxs[0]];
     case 'mr': return state.merch[idxs[0]];
     case 'mrnote': return {}; // merchNote обрабатывается отдельно
+    case 'hero': return state.meta.hero;
+    case 'aw': return state.meta.awards?.[idxs[0]];
+    case 'copy': return state.copy;
+    case 'w': return state.wallet;
     default: return null;
   }
 }
