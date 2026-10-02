@@ -1,4 +1,4 @@
-import { esc } from '../util.js';
+import { esc, sleep } from '../util.js';
 import { COPY_DEFAULT, COPY_LABELS } from '../../seed/copy.js';
 
 /*
@@ -57,17 +57,17 @@ export class Panel {
         return {
           text:
             `<b>🛠 Админ-панель ${esc(st.meta.name)}</b>\n` +
-            `rev <code>${S.rev}</code> · новых заявок: <b>${S.newRequestsCount()}</b>\n\n` +
+            `rev <code>${S.rev}</code> · новых заявок: <b>${S.newRequestsCount()}</b> · подписчиков: <b>${S.subStats().active}</b>\n\n` +
             `<i>Кидайте фото в любой момент — спрошу, куда поставить, и обновлю приложение сразу.</i>`,
           kb: kb([
             [btn('📱 Ссылка на приложение', 's:app'), btn('📊 Статус', 's:status')],
             [btn('🏷 О заведении', 's:meta'), btn('🕐 Часы работы', 's:hours')],
-            [btn(' Меню', 's:menu'), btn('📅 Афиша', 's:events')],
-            [btn('🥂 Бранч', 's:brunch'), btn('🧢 Мерч', 's:merch')],
-            [btn('🖼 Галерея', 's:gallery'), btn('📞 Контакты', 's:contacts')],
-            [btn('💼 Работа', 's:jobs'), btn('🧾 Заявки', 's:requests')],
-            [btn('🅰️ Тексты UI', 's:copy'), btn('💳 Кошелёк', 's:wallet')],
-            [btn('⛔ Стоп-лист', 's:stop'), btn('✖️ Сбросить ввод', 'a:cancel')],
+            [btn('🍽 Меню', 's:menu'), btn('📅 Афиша', 's:events')],
+            [btn('⛔ Стоп-лист позиций', 's:stop'), btn('🥂 Бранч', 's:brunch')],
+            [btn('👥 Команда', 's:team'), btn('🖼 Галерея', 's:gallery')],
+            [btn('📞 Контакты', 's:contacts'), btn('💼 Работа', 's:jobs')],
+            [btn('🧾 Заявки', 's:requests'), btn('📣 Пуши гостям', 's:push')],
+            [btn('🅰️ Тексты UI', 's:copy'), btn('✖️ Сбросить ввод', 'a:cancel')],
           ]),
         };
 
@@ -90,7 +90,8 @@ export class Panel {
             `Режим бота: <b>${esc(b.mode || 'n/a')}</b>\n` +
             `Публичный URL: <code>${esc(b.publicUrl || '—')}</code>\n` +
             `Данные: <code>${esc(S.dataDir)}</code> · медиа: ${S.mediaCount()} файл(ов)\n` +
-            `Заявок: ${S.private.requests.length} (новых ${S.newRequestsCount()}) · в стоп-листе: ${S.private.blocked.length}\n` +
+            `Заявок: ${S.private.requests.length} (новых ${S.newRequestsCount()})\n` +
+            `Позиций в стоп-листе: ${this.stoppedItems().length} · подписчиков бота: ${S.subStats().active}\n` +
             `rev состояния: ${S.rev}`,
           kb: kb([[btn('🔁 Проверить webhook', 'a:rehook'), btn('📤 Пинг-обновление', 'a:ping')], [NAV('s:home')]]),
         };
@@ -145,12 +146,15 @@ export class Panel {
           text:
             `<b>📞 Контакты</b>\n` +
             `Адрес: ${esc(c.address || '—')}\nКарты: ${c.maps ? '📍 ссылка есть' : '—'}\nТелефон: ${esc(c.phone || '—')}\nEmail: ${esc(c.email || '—')}\n` +
+            `Сайт: ${c.site ? `<a href=\"${esc(c.site)}\">${esc(c.site)}</a>` : '—'}\n` +
+            `Instagram: ${c.instagram ? `<a href=\"${esc(c.instagram)}\">${esc(c.instagram)}</a>` : '—'}\n` +
             `Бронь: ${esc(c.bookingUrl || '—')} ${st.booking.enabled ? '🟢' : '⚪️ выкл'}\n` +
             `Плашка: <i>${esc(st.booking.text || '')}</i>\n` +
             `Соцсети: ${st.socials.map((x) => esc(x.platform)).join(', ') || '—'}`,
           kb: kb([
             [btn('✏️ Адрес', 'f:c:address'), btn('✏️ Карты', 'f:c:maps')],
             [btn('✏️ Телефон', 'f:c:phone'), btn('✏️ Email', 'f:c:email')],
+            [btn('🌐 Сайт', 'f:c:site'), btn('📸 Instagram', 'f:c:instagram')],
             [btn('✏️ Ссылка брони', 'f:c:bookingUrl'), btn(st.booking.enabled ? '🟢 Бронь вкл' : '⚪️ Бронь выкл', 'a:book:toggle')],
             [btn('✏️ Текст про бронь', 'f:booktop:text'), btn('✏️ Плашка контактов', 'f:c:note')],
             [btn('🖼 Фото контактов', 'p:c'), btn('🖼 Фото брони', 'p:book')],
@@ -181,7 +185,14 @@ export class Panel {
         });
         rows.push([btn('➕ Категория', 'a:cat:add'), btn('🗑 Последняя', 'a:cat:del')]);
         rows.push([NAV('s:home')]);
-        return { text: `<b>🍽 Меню</b>\nКатегории → разделы → позиции. Цена «890/2790» — две цены (например 40 мл / бутылка).`, kb: kb(rows) };
+        return {
+          text:
+            `<b>🍽 Меню</b>\nКатегории → разделы → позиции. Цена «890/2790» — две цены (например 40 мл / бутылка).\n\n` +
+            `Позиции добавляются и правятся отсюда же: по шагам (название → цена → описание), ` +
+            `списком «📋 Вставить списком» или тапом по готовой позиции.\n` +
+            `Всё, что меняете, сразу улетает в приложение.`,
+          kb: kb(rows),
+        };
       }
 
       case 'menuCat': {
@@ -211,11 +222,13 @@ export class Panel {
         if (Math.ceil(N / per) > 1) {
           rows.push([btn(`◀️ ${page + 1}/${Math.ceil(N / per)}`, `a:secpg:${screen.i}:${screen.j}:${page - 1}`), btn('▶️', `a:secpg:${screen.i}:${screen.j}:${page + 1}`)]);
         }
-        rows.push([btn('➕ Позицию', `a:it:add:${screen.i}:${screen.j}`)]);
+        rows.push([btn('➕ Позицию', `a:it:add:${screen.i}:${screen.j}`), btn('📋 Вставить списком', `a:it:bulk:${screen.i}:${screen.j}`)]);
         rows.push([btn('✏️ Название раздела', `f:sec:${screen.i}:${screen.j}:title`), btn('🗑 Удалить раздел', `a:sec:del:${screen.i}:${screen.j}`)]);
         rows.push([NAV(`menu:c:${screen.i}`)]);
         return {
-          text: `<b>${esc(s2.title)}</b>\nПозиций: ${N}${N && s2.items.every((x) => x.stop) ? ' — всё в стоп-листе 🫡' : s2.items.some((x) => x.stop) ? ' · есть ⛔' : ''}`,
+          text:
+            `<b>${esc(s2.title)}</b>\nПозиций: ${N}${N && s2.items.every((x) => x.stop) ? ' — всё в стоп-листе 🫡' : s2.items.some((x) => x.stop) ? ' · есть ⛔' : ''}\n\n` +
+            `<i>Тап по позиции — название, цена, описание, теги, фото, порядок, удаление и стоп-лист.</i>`,
           kb: kb(rows),
         };
       }
@@ -254,7 +267,7 @@ export class Panel {
             [btn('✏️ Название', `f:ev:${screen.i}:title`), btn('✏️ Подзаголовок', `f:ev:${screen.i}:subtitle`)],
             [btn('✏️ Дата', `f:ev:${screen.i}:date`), btn('✏️ Время', `f:ev:${screen.i}:time`)],
             [btn('🖼 Постер', `p:ev:${screen.i}`), btn('🗑 Удалить', `a:ev:del:${screen.i}`)],
-            [NAV('s:events')],
+            [btn('📣 Разослать анонс гостям', `a:ev:push:${screen.i}`), NAV('s:events')],
           ]),
         };
       }
@@ -271,27 +284,35 @@ export class Panel {
         };
       }
 
-      case 'merch': {
-        const rows = st.merch.map((m, i) => [btn(`🧢 ${esc(m.name)} — ${esc(m.price)}${m.image ? ' 📷' : ''}`.slice(0, 58), `mr:${i}`)]);
-        rows.push([btn('➕ Товар', 'a:mr:add'), btn('✏️ Плашка', 'f:mrnote:text')]);
+      case 'team': {
+        const t = st.team;
+        const rows = t.members.map((m, i) => [btn(`👤 ${esc(m.name || 'без имени')}${m.role ? ' — ' + esc(m.role) : ''}${m.photo ? ' 📷' : ''}`.slice(0, 58), `tm:${i}`)]);
+        rows.push([btn('➕ Участник', 'a:tm:add'), btn(t.enabled ? '🙈 Скрыть блок' : '👁 Показать блок', 'a:team:toggle')]);
+        rows.push([btn('✏️ Заголовок', 'f:team:title'), btn('✏️ Текст', 'f:team:text')]);
+        rows.push([btn('✏️ Плашка', 'f:team:note'), btn('🖼 Фото блока', 'p:team')]);
+        rows.push([btn(t.image ? '🧹 Убрать фото блока' : '🧹 Фото блока нет', 'a:team:cover')]);
         rows.push([NAV('s:home')]);
         return {
-          text: `<b>🧢 Мерч</b>\nОплата в приложении отключена: гость жмёт «Оставить заявку» — она приходит в «Заявки».\n<i>${esc(st.merchNote || '')}</i>`,
+          text:
+            `<b>👥 Команда</b>\n${t.enabled ? '🟢 Блок виден в приложении (вкладка «Команда»)' : '⚪️ Скрыт'}\n\n` +
+            `<b>${esc(t.title || '')}</b>\n${esc(t.text || '')}\nПлашка: <i>${esc(t.note || '')}</i>\n\n` +
+            (t.members.length
+              ? `Участников: ${t.members.length}`
+              : `Участников пока нет — в приложении показывается заглушка.\nДобавьте первого: имя, роль, пара слов и фото.`),
           kb: kb(rows),
         };
       }
 
-      case 'merchItem': {
-        const m = st.merch[screen.i];
-        if (!m) return this.view(chatId, { name: 'merch' });
+      case 'teamMember': {
+        const m = st.team.members[screen.i];
+        if (!m) return this.view(chatId, { name: 'team' });
         return {
-          text: `<b>${esc(m.name)}</b>\n${esc(m.desc || '')}\nЦена: <b>${esc(m.price)}</b> · метка: ${esc(m.tag || '—')}\nФото: ${m.image ? '✅' : '—'}`,
+          text: `<b>👤 ${esc(m.name || '—')}</b>\n${esc(m.role || '— роль не указана —')}\n${esc(m.text || '')}\nФото: ${m.photo ? '✅' : '—'}`,
           kb: kb([
-            [btn('✏️ Название', `f:mr:${screen.i}:name`), btn('✏️ Цена', `f:mr:${screen.i}:price`)],
-            [btn('✏️ Описание', `f:mr:${screen.i}:desc`), btn('✏️ Метка', `f:mr:${screen.i}:tag`)],
-            [btn('💳 Цена в TON', `f:mr:${screen.i}:ton`), btn('✏️ Текст кнопки', `f:mr:${screen.i}:cta`)],
-            [btn('🖼 Фото', `p:mr:${screen.i}`), btn('🗑 Удалить', `a:mr:del:${screen.i}`)],
-            [btn('🔀 Сдвинуть', `a:mr:move:${screen.i}`), NAV('s:merch')],
+            [btn('✏️ Имя', `f:tm:${screen.i}:name`), btn('✏️ Роль', `f:tm:${screen.i}:role`)],
+            [btn('✏️ Пара слов', `f:tm:${screen.i}:text`), btn('🖼 Фото', `p:tm:${screen.i}`)],
+            [btn('⬆️ Выше', `a:tm:move:${screen.i}:-1`), btn('⬇️ Ниже', `a:tm:move:${screen.i}:1`), btn('🗑 Удалить', `a:tm:del:${screen.i}`)],
+            [NAV('s:team')],
           ]),
         };
       }
@@ -350,29 +371,69 @@ export class Panel {
         };
       }
 
-      case 'wallet': {
-        const w = st.wallet || {};
+      case 'push': {
+        const stats = S.subStats();
+        const last = S.private.lastPush;
+        const s = this.sess(chatId);
         return {
           text:
-            `<b>💳 Кошелёк / оплата мерча</b>\n${w.enabled ? '🟢 Блок «Подключить кошелёк» показан в приложении' : '⚪️ Скрыт — мерч идёт через заявку (как сейчас)'}\n\n` +
-            `Заголовок: <b>${esc(w.title || '—')}</b>\nТекст: ${esc(w.text || '—')}\nПлашка: <i>${esc(w.note || '—')}</i>\n` +
-            `Ссылка: ${w.link ? `<a href="${esc(w.link)}">${esc(w.linkText || w.link)}</a>` : '—'} · фото: ${w.image ? '✅' : '—'}`,
+            `<b>📣 Пуши гостям</b>\n` +
+            `Открыли бота (нажали /start): <b>${stats.active}</b>${stats.blocked ? ` · заблокировали бота: ${stats.blocked}` : ''}\n` +
+            `Кнопка «Открыть приложение» в пуше: ${s.pushAppBtn === false ? '⚪️ выкл' : '🟢 вкл'}\n` +
+            (last
+              ? `Последний пуш: <code>${esc(String(last.at || '').slice(0, 16).replace('T', ' '))}</code> — доставлено ${last.ok ?? 0} из ${last.total ?? 0}\n`
+              : 'Пушей ещё не отправляли.\n') +
+            `\n<i>Сообщение уйдёт всем гостям, которые открыли бота. Доступны HTML-теги &lt;b&gt;, &lt;i&gt;, &lt;a href&gt;, &lt;code&gt;.</i>`,
           kb: kb([
-            [btn(w.enabled ? '🙈 Скрыть блок' : '👁 Показать блок', 'a:wal:toggle'), btn('🖼 Фото', 'p:w')],
-            [btn('✏️ Заголовок', 'f:w:title'), btn('✏️ Текст', 'f:w:text')],
-            [btn('✏️ Плашка', 'f:w:note'), btn('✏️ Кнопка', 'f:w:button')],
-            [btn('✏️ Ссылка', 'f:w:link'), btn('✏️ Подпись ссылки', 'f:w:linkText')],
+            [btn('✍️ Написать пуш', 'a:push:new'), btn('📸 Пуш с фото', 'a:push:photo')],
+            [btn(s.pushAppBtn === false ? '🔗 Кнопку приложения: вкл' : '🔗 Кнопку приложения: выкл', 'a:push:appbtn')],
+            [btn('👥 Подписчики', 's:subs'), btn('📅 Анонс из афиши', 'a:push:ev')],
             [NAV('s:home')],
+          ]),
+        };
+      }
+
+      case 'subs': {
+        const stats = S.subStats();
+        const rows = S.private.subs.slice(0, 14).map((x) => [
+          btn(`${x.blockedBot ? '🚫' : '👤'} ${esc(x.name || x.username || String(x.userId))}`.slice(0, 56), `sub:${x.id}`),
+        ]);
+        if (!rows.length)
+          return {
+            text: '<b>👥 Подписчиков пока нет</b>\nКак только гость откроет бота и нажмёт /start — он появится здесь, и ему можно будет отправить пуш.',
+            kb: kb([[NAV('s:push')]]),
+          };
+        rows.push([btn('🧹 Убрать заблокировавших', 'a:subs:clean')]);
+        rows.push([NAV('s:push')]);
+        return {
+          text: `<b>👥 Подписчики бота</b>\nАктивных: ${stats.active} · всего: ${stats.all}${stats.blocked ? ` · 🚫 заблокировали бота: ${stats.blocked}` : ''}\n\n<i>Показаны последние ${Math.min(14, stats.all)}.</i>`,
+          kb: kb(rows),
+        };
+      }
+
+      case 'sub': {
+        const x = S.private.subs.find((y) => y.id === screen.id);
+        if (!x) return this.view(chatId, { name: 'subs' });
+        return {
+          text:
+            `<b>${esc(x.name || 'без имени')}</b>\n` +
+            `${x.username ? `ник: <code>@${esc(x.username)}</code>\n` : ''}id: <code>${x.userId}</code>\n` +
+            `открыл бота: <code>${esc(String(x.addedAt || '').slice(0, 16).replace('T', ' '))}</code>\n` +
+            `последний /start: <code>${esc(String(x.lastSeen || '').slice(0, 16).replace('T', ' '))}</code>\n` +
+            (x.blockedBot ? '🚫 заблокировал бота — пуши не дойдут' : '🟢 пуши доходят'),
+          kb: kb([
+            [btn('📣 Отправить личное сообщение', `a:sub:ping:${x.id}`), btn('🗑 Убрать из списка', `a:sub:del:${x.id}`)],
+            [NAV('s:subs')],
           ]),
         };
       }
 
       case 'requests': {
         const list = S.private.requests.slice(0, 12);
-        const icon = { merch: '🧢', booking: '📅', job: '💼', message: '💬' };
+        const icon = { booking: '📅', job: '💼', message: '💬', team: '👥' };
         const rows = list.map((r) => [btn(`${icon[r.type] || '🧾'} ${esc(r.fields?.name || r.contact || 'аноним')} · ${r.status}`.slice(0, 58), `rq:${r.id}`)]);
         if (!list.length)
-          return { text: '<b>🧾 Заявок нет</b>\nБронь, мерч и анкеты с сайта — здесь. Новые прилетают сами.', kb: kb([[NAV('s:home')]]) };
+          return { text: '<b>🧾 Заявок нет</b>\nБронь, анкеты и сообщения с сайта — здесь. Новые прилетают сами.', kb: kb([[NAV('s:home')]]) };
         rows.push([btn('✅ Взять все в работу', 'a:req:take'), btn('🗑 Очистить закрытые', 'a:req:clear')]);
         rows.push([NAV('s:home')]);
         return { text: `<b>🧾 Заявки</b> — новых: ${S.newRequestsCount()} · всего: ${S.private.requests.length}`, kb: kb(rows) };
@@ -389,22 +450,55 @@ export class Panel {
             (r.from?.userId ? `\nTelegram: ${esc(r.from.name || '')} <a href="https://t.me/${esc(r.from.username || '')}">${esc(r.from.username ? '@' + r.from.username : 'профиль')}</a>` : ''),
           kb: kb([
             r.status === 'new' ? [btn('🔧 В работу', `a:rq:${r.id}:work`)] : [btn('🏁 Закрыть', `a:rq:${r.id}:done`), btn('✅ Выполнено', `a:rq:${r.id}:done`)],
-            r.from?.userId ? [btn('⛔ В стоп-лист', `a:rq:${r.id}:block`)] : [],
+            r.from?.userId ? [btn('💬 Написать гостю', `a:rq:${r.id}:reply`)] : [],
             [btn('🗑 Удалить', `a:rq:${r.id}:del`), NAV('s:requests')],
           ]),
         };
       }
 
       case 'stop': {
-        const rows = S.private.blocked.slice(0, 15).map((b) => [btn(`⛔ ${esc(b.name || b.handle || String(b.userId || ''))}`, `bl:${b.id}`)]);
-        rows.push([btn('➕ Внести', 'a:bl:add'), NAV('s:home')]);
+        const stopped = this.stoppedItems();
+        const rows = stopped.slice(0, 14).map((x) => [btn(`⛔ ${esc(x.it.name)}`.slice(0, 56), `item:${x.i}:${x.j}:${x.k}`)]);
+        rows.push([btn('➕ Позицию в стоп', 'a:stop:pick'), stopped.length ? btn('🧹 Очистить стоп-лист', 'a:stop:clear') : null].filter(Boolean));
+        rows.push([NAV('s:home')]);
         return {
           text:
-            `<b>⛔ Стоп-лист гостей</b>\n` +
-            `Гость из стоп-листа не может оставить заявку ботом (с сайта заявки помечаются ⚠️).\n` +
-            `Как добавить: кнопка ниже, <code>/block @ник</code> или переслать сообщение гостя.`,
+            `<b>⛔ Стоп-лист позиций</b>\nСегодня не продаём: <b>${stopped.length}</b>\n\n` +
+            `В приложении такие позиции зачёркнуты, а на главной и в меню появляется плашка «${esc(st.copy.stopTitle || 'Сегодня не продаём')}».\n` +
+            `<i>Стоп-лист — про позиции меню, не про гостей.</i>`,
           kb: kb(rows),
         };
+      }
+
+      case 'stopCat': {
+        const rows = st.menu.categories.map((c, i) => [btn(`${c.icon || '🍴'} ${esc(c.title)}`, `stopsec:${i}`)]);
+        rows.push([btn('🧹 Очистить стоп-лист', 'a:stop:clear'), NAV('s:stop')]);
+        return { text: '<b>⛔ Стоп-лист · категория</b>\nГде ищем позицию?', kb: kb(rows) };
+      }
+
+      case 'stopSec': {
+        const c = st.menu.categories[screen.i];
+        if (!c) return this.view(chatId, { name: 'stopCat' });
+        const rows = c.sections.map((x, j) => [btn(`📂 ${esc(x.title)} — ${x.items.filter((y) => y.stop).length}/${x.items.length}`, `stopit:${screen.i}:${j}`)]);
+        rows.push([NAV('s:stop')]);
+        return { text: `<b>⛔ ${esc(c.title)} · раздел</b>`, kb: kb(rows) };
+      }
+
+      case 'stopItems': {
+        const c = st.menu.categories[screen.i];
+        const sec = c?.sections[screen.j];
+        if (!sec) return this.view(chatId, { name: 'stopCat' });
+        const rows = [];
+        const page = Math.max(0, screen.page || 0);
+        const per = 12;
+        for (let k = page * per; k < Math.min(sec.items.length, (page + 1) * per); k++) {
+          const it = sec.items[k];
+          rows.push([btn(`${it.stop ? '✅ снять' : '⛔ в стоп'} · ${esc(it.name)}`.slice(0, 58), `a:stoptoggle:${screen.i}:${screen.j}:${k}`)]);
+        }
+        if (Math.ceil(sec.items.length / per) > 1)
+          rows.push([btn(`◀️ ${page + 1}/${Math.ceil(sec.items.length / per)}`, `a:stoppg:${screen.i}:${screen.j}:${page - 1}`), btn('▶️', `a:stoppg:${screen.i}:${screen.j}:${page + 1}`)]);
+        rows.push([NAV(`stopsec:${screen.i}`)]);
+        return { text: `<b>⛔ ${esc(sec.title)}</b>\nТап — добавить в стоп или снять.`, kb: kb(rows) };
       }
 
       default:
@@ -436,11 +530,15 @@ export class Panel {
     if (data.startsWith('hour:')) { await ans(); return this.render(chatId, 'hour', { i: +data.split(':')[1] }); }
     if (data.startsWith('soc:')) { await ans(); return this.render(chatId, 'soc', { i: +data.split(':')[1] }); }
     if (data.startsWith('ev:') || data.startsWith('event:')) { await ans(); return this.render(chatId, 'event', { i: +data.split(':')[1] }); }
-    if (data.startsWith('mr:')) { await ans(); return this.render(chatId, 'merchItem', { i: +data.split(':')[1] }); }
+    if (data.startsWith('tm:')) { await ans(); return this.render(chatId, 'teamMember', { i: +data.split(':')[1] }); }
     if (data.startsWith('gal:')) { await ans(); return this.render(chatId, 'galItem', { i: +data.split(':')[1] }); }
     if (data.startsWith('aw:')) { await ans(); return this.render(chatId, 'awItem', { i: +data.split(':')[1] }); }
     if (data.startsWith('rq:')) { await ans(); return this.render(chatId, 'request', { id: data.split(':')[1] }); }
-    if (data.startsWith('bl:')) { await ans(); return this.render(chatId, 'blItem', { id: data.split(':')[1] }); }
+    if (data.startsWith('sub:')) { await ans(); return this.render(chatId, 'sub', { id: data.split(':')[1] }); }
+    // стоп-лист позиций: категория → раздел → позиции
+    if (data.startsWith('stopsec:')) { await ans(); return this.render(chatId, 'stopSec', { i: +data.split(':')[1] }); }
+    if (data.startsWith('stopit:')) { const [, i, j, pg] = data.split(':'); await ans(); return this.render(chatId, 'stopItems', { i: +i, j: +j, page: +(pg || 0) }); }
+    if (data.startsWith('a:stoppg:')) { const [, i, j, pg] = data.split(':'); await ans(); return this.render(chatId, 'stopItems', { i: +i, j: +j, page: Math.max(0, +pg) }); }
     if (data === 'a:cancel') {
       const s = this.sess(chatId);
       if (s.pending?.prompt) await this.bot.deleteMessage(chatId, s.pending.prompt).catch(() => {});
@@ -511,9 +609,16 @@ export class Panel {
       case 'a:ev:dellast':
         U('ev:del', (s) => s.events.pop());
         return this.render(chatId, 'events');
-      case 'a:mr:add':
-        U('mr:add', (s) => s.merch.push({ name: 'Новый мерч', desc: 'Описание', price: 'скоро', tag: 'заглушка', image: '' }));
-        return this.render(chatId, 'merchItem', { i: st.merch.length - 1 });
+      case 'a:team:toggle':
+        U('team', (s) => { s.team.enabled = !s.team.enabled; });
+        await ans(this.store.state.team.enabled ? '🟢 блок «Команда» виден' : '⚪️ блок скрыт');
+        return this.render(chatId, 'team');
+      case 'a:tm:add': {
+        const s = this.sess(chatId);
+        s.pending = { kind: 'member', stage: 0 };
+        await ans('');
+        return this.bot.sendMessage(chatId, 'Шаг 1/3. Имя (или «Имя Фамилия»):');
+      }
       case 'a:gal:add': {
         const s = this.sess(chatId);
         s.pending = { kind: 'photo', target: ['gal'] };
@@ -526,11 +631,62 @@ export class Panel {
       case 'soc:del':
         U('soc:del', (s) => s.socials.pop());
         return this.render(chatId, 'contacts');
-      case 'a:bl:add': {
+
+      /* ── пуши гостям, которые открыли бота ── */
+      case 'a:push:new':
+      case 'a:push:photo': {
         const s = this.sess(chatId);
-        s.pending = { kind: 'block' };
+        s.draft = null;
+        s.pending = { kind: 'push', withPhoto: data === 'a:push:photo' };
+        await ans('✍️');
+        const prompt = await this.bot.sendMessage(
+          chatId,
+          s.pending.withPhoto
+            ? '📸 Пришли фото для пуша (подпись спрошу следующим шагом). <i>/cancel — отмена.</i>'
+            : `✍️ Напиши текст пуша — уйдёт ${this.store.subStats().active} гостям, которые открыли бота.\nМожно несколько строк и HTML-теги &lt;b&gt;, &lt;i&gt;, &lt;a href="…"&gt;.\n\n<i>/cancel — отмена.</i>`,
+        );
+        if (prompt?.message_id) s.pending.prompt = prompt.message_id;
+        return;
+      }
+      case 'a:push:appbtn': {
+        const s = this.sess(chatId);
+        s.pushAppBtn = s.pushAppBtn === false;
+        await ans(s.pushAppBtn === false ? '⚪️ кнопка выключена' : '🟢 кнопка включена');
+        return this.render(chatId, 'push');
+      }
+      case 'a:push:ev': {
+        // ближайшее будущее событие; если афиша вся в прошлом — самое свежее
+        const today = new Date().toISOString().slice(0, 10);
+        const ev =
+          [...st.events].filter((e) => String(e.date || '') >= today).sort((a, b) => (a.date > b.date ? 1 : -1))[0] ||
+          [...st.events].sort((a, b) => (a.date < b.date ? 1 : -1))[0];
+        if (!ev) { await ans('в афише пусто'); return this.render(chatId, 'events'); }
+        this.sess(chatId).draft = this.eventDraft(ev);
         await ans('');
-        return this.bot.sendMessage(chatId, 'Пришли <b>@ник</b>, <b>ID</b> или перешли сообщение гостя. Со второй строки — причина.');
+        return this.confirmPush(chatId);
+      }
+      case 'a:push:send': {
+        const s = this.sess(chatId);
+        if (!s.draft?.text) { await ans('черновик пуст'); return this.render(chatId, 'push'); }
+        const draft = s.draft;
+        s.draft = null;
+        s.pending = null;
+        await ans('📨');
+        return this.broadcast(chatId, draft);
+      }
+      case 'a:push:cancel': {
+        const s = this.sess(chatId);
+        if (s.pending?.prompt) await this.bot.deleteMessage(chatId, s.pending.prompt).catch(() => {});
+        s.draft = null;
+        s.pending = null;
+        await ans('✖️');
+        return this.render(chatId, 'push');
+      }
+      case 'a:subs:clean': {
+        const before = this.store.private.subs.length;
+        for (const x of [...this.store.private.subs]) if (x.blockedBot) this.store.removeSub(x.id);
+        await ans(`🧹 убрали ${before - this.store.private.subs.length}`);
+        return this.render(chatId, 'subs');
       }
       case 'a:req:take':
         for (const r of [...this.store.private.requests]) if (r.status === 'new') this.store.setRequestStatus(r.id, 'in_work');
@@ -574,17 +730,37 @@ export class Panel {
       await ans('➕');
       return this.render(chatId, 'menuCat', { i });
     }
+    /* новая позиция — по шагам: название → цена → описание */
     if ((m = data.match(/^a:it:add:(\d+):(\d+)$/))) {
       const [_, i, j] = m.map(Number);
-      U('it:add', (s) => s.menu.categories[i].sections[j].items.push({ name: 'Новая позиция', price: '', desc: '', tags: [], image: '', stop: false }));
+      const s = this.sess(chatId);
+      s.pending = { kind: 'item', i, j, insertAt: null, stage: 0 };
       await ans('➕');
-      return this.render(chatId, 'item', { i, j, k: st.menu.categories[i].sections[j].items.length - 1 });
+      return this.askItemStep(chatId, s.pending);
     }
     if ((m = data.match(/^a:it:addafter:(\d+):(\d+):(\d+)$/))) {
       const [_, i, j, k] = m.map(Number);
-      U('it:addafter', (s) => s.menu.categories[i].sections[j].items.splice(k + 1, 0, { name: 'Новая позиция', price: '', desc: '', tags: [], image: '', stop: false }));
+      const s = this.sess(chatId);
+      s.pending = { kind: 'item', i, j, insertAt: k + 1, stage: 0 };
       await ans('➕');
-      return this.render(chatId, 'item', { i, j, k: k + 1 });
+      return this.askItemStep(chatId, s.pending);
+    }
+    /* сразу пачкой: «Название | описание | цена» построчно */
+    if ((m = data.match(/^a:it:bulk:(\d+):(\d+)$/))) {
+      const [_, i, j] = m.map(Number);
+      const s = this.sess(chatId);
+      s.pending = { kind: 'itembulk', i, j };
+      await ans('📋');
+      const prompt = await this.bot.sendMessage(
+        chatId,
+        `📋 <b>Позиции списком</b> — по одной на строку в раздел «${esc(this.store.state.menu.categories[i]?.sections[j]?.title || '')}»:\n\n` +
+          `<code>Название | описание | цена</code>\n` +
+          `<code>Название | цена</code>\n` +
+          `<code>Название цена</code>\n\n` +
+          `Пример:\n<code>Тартар из говядины | блю чиз | 790\nNEGRONI | джин / кампари / вермут | 950</code>\n\n<i>/cancel — отмена.</i>`,
+      );
+      if (prompt?.message_id) s.pending.prompt = prompt.message_id;
+      return;
     }
     if ((m = data.match(/^a:it:del:(\d+):(\d+):(\d+)$/))) {
       const [_, i, j, k] = m.map(Number);
@@ -617,21 +793,64 @@ export class Panel {
       await ans('🗑');
       return this.render(chatId, 'events');
     }
-    if ((m = data.match(/^a:mr:del:(\d+)$/))) {
+    if ((m = data.match(/^a:tm:del:(\d+)$/))) {
       const i = +m[1];
-      U('mr:del', (s) => s.merch.splice(i, 1));
+      U('tm:del', (s) => s.team.members.splice(i, 1));
       await ans('🗑');
-      return this.render(chatId, 'merch');
+      return this.render(chatId, 'team');
     }
-    if ((m = data.match(/^a:mr:move:(\d+)$/))) {
-      const i = +m[1];
-      U('mr:move', (s) => {
-        if (s.merch.length < 2) return;
-        const j = (i + 1) % s.merch.length;
-        [s.merch[i], s.merch[j]] = [s.merch[j], s.merch[i]];
+    if ((m = data.match(/^a:tm:move:(\d+):(-?\d+)$/))) {
+      const i = +m[1], d = +m[2];
+      U('tm:move', (s) => {
+        const arr = s.team.members;
+        const to = Math.max(0, Math.min(arr.length - 1, i + d));
+        const [x] = arr.splice(i, 1);
+        arr.splice(to, 0, x);
       });
-      await ans('🔀');
-      return this.render(chatId, 'merch');
+      await ans('↕️');
+      const nk = Math.max(0, Math.min(this.store.state.team.members.length - 1, i + d));
+      return this.render(chatId, 'teamMember', { i: nk });
+    }
+    /* стоп-лист позиций: добавить/снять */
+    if ((m = data.match(/^a:stoptoggle:(\d+):(\d+):(\d+)$/))) {
+      const [_, i, j, k] = m.map(Number);
+      U('stop', (s) => { const it = s.menu.categories[i].sections[j].items[k]; it.stop = !it.stop; });
+      const on = this.store.state.menu.categories[i].sections[j].items[k].stop;
+      await ans(on ? '⛔ в стоп-листе' : '✅ снова продаём');
+      return this.render(chatId, 'stopItems', { i, j, page: Math.floor(k / 12) });
+    }
+    if (data === 'a:stop:pick') {
+      await ans();
+      return this.render(chatId, 'stopCat');
+    }
+    if (data === 'a:stop:clear') {
+      const n = this.stoppedItems().length;
+      U('stop:clear', (s) => {
+        for (const c of s.menu.categories) for (const sec of c.sections) for (const it of sec.items) it.stop = false;
+      });
+      await ans(`🧹 сняли ${n}`);
+      return this.render(chatId, 'stop');
+    }
+    /* пуш по событию афиши */
+    if ((m = data.match(/^a:ev:push:(\d+)$/))) {
+      const e = this.store.state.events[+m[1]];
+      if (!e) { await ans('нет такого события'); return this.render(chatId, 'events'); }
+      this.sess(chatId).draft = this.eventDraft(e);
+      await ans('');
+      return this.confirmPush(chatId);
+    }
+    /* подписчик: личное сообщение / удаление */
+    if ((m = data.match(/^a:sub:(\w+):(\S+)$/))) {
+      const x = this.store.private.subs.find((y) => y.id === m[2]);
+      if (!x) { await ans('нет такого'); return this.render(chatId, 'subs'); }
+      if (m[1] === 'del') {
+        this.store.removeSub(x.id);
+        await ans('🗑');
+        return this.render(chatId, 'subs');
+      }
+      await this.bot.sendMessage(x.userId, '💬 Сообщение от бара Catch 22 — напишите ответным, если что-то нужно.').catch(() => {});
+      await ans('отправили');
+      return this.render(chatId, 'sub', { id: x.id });
     }
     if ((m = data.match(/^a:gal:del:(\d+)$/))) {
       U('gal:del', (s) => s.gallery.splice(+m[1], 1));
@@ -656,29 +875,23 @@ export class Panel {
       await ans('🧹');
       return this.render(chatId, 'menuCat', { i });
     }
-    if ((m = data.match(/^a:wal:(\w+)$/))) {
-      U('wallet', (s) => { s.wallet ||= {}; s.wallet.enabled = !s.wallet.enabled; });
-      await ans(this.store.state.wallet.enabled ? '🟢 включили — приложение обновилось' : '⚪️ скрыли');
-      return this.render(chatId, 'wallet');
+    if ((m = data.match(/^a:team:cover$/))) {
+      U('team:cover', (s) => { s.team.image = ''; });
+      await ans('🧹');
+      return this.render(chatId, 'team');
     }
     if ((m = data.match(/^a:rq:(\S+):(\w+)$/))) {
       const [, id, act] = m;
       if (act === 'del') this.store.delRequest(id);
       if (act === 'done') this.store.setRequestStatus(id, 'done');
       if (act === 'work') this.store.setRequestStatus(id, 'in_work');
-      if (act === 'block') {
-        const r = this.store.private.requests.find((x) => x.id === id);
-        if (r?.from?.userId) this.store.blockUser({ userId: r.from.userId, handle: r.from.username ? '@' + r.from.username : '', name: r.from.name || '', reason: 'заявка #' + id });
+      if (act === 'reply' && this.store.private.requests.find((x) => x.id === id)?.from?.userId) {
+        await this.bot.sendMessage(this.store.private.requests.find((x) => x.id === id).from.userId, '💬 Catch 22: получили вашу заявку — скоро ответим.').catch(() => {});
       }
       await ans('✅');
       return this.store.private.requests.some((x) => x.id === id)
         ? this.render(chatId, 'request', { id })
         : this.render(chatId, 'requests');
-    }
-    if ((m = data.match(/^a:unblock:(\S+)$/))) {
-      this.store.unblockUser(m[1]);
-      await ans('✅');
-      return this.render(chatId, 'stop');
     }
 
     // свободный выбор фото: fpick:<...>
@@ -732,28 +945,128 @@ export class Panel {
       return this.bot.sendMessage(chatId, '✖️ Отменено', { reply_markup: kb([[btn('🛠 Панель', 's:home')]]) });
     }
 
-    if (s.pending?.kind === 'block') {
-      const fwd = msg.forward_origin?.sender_user || msg.forward_from;
-      let userId = fwd?.id || null, handle = '', name = '', reason = '';
-      if (fwd) {
-        name = [fwd.first_name, fwd.last_name].filter(Boolean).join(' ');
-        handle = fwd.username ? '@' + fwd.username : '';
+    /* ── пуш гостям: ждём фото и/или текст ── */
+    if (s.pending?.kind === 'push') {
+      const p = s.pending;
+      const ph = pickPhoto(msg);
+      if (p.withPhoto && !p.photo && ph) {
+        p.photo = ph.fileId; // file_id этого же бота — им и шлём подписчикам
+        try {
+          const file = await this.bot.downloadFile(ph.fileId);
+          p.photoUrl = this.store.saveMedia(file.buffer, file.ext).url; // запасной вариант: шлём по URL
+        } catch {}
+        if (msg.caption?.trim()) p.text = msg.caption.trim();
+        if (p.text) return this.finishPushDraft(chatId, s);
+        const prompt = await this.bot.sendMessage(chatId, '📸 Фото получил. Теперь текст пуша:');
+        if (prompt?.message_id) p.prompt = prompt.message_id;
+        return true;
       }
-      const text = msg.text || '';
-      if (!userId) {
-        const mm = text.match(/@([A-Za-z][A-Za-z0-9_]{3,31})/) || null;
-        const mi = text.match(/(?<!\S)(\d{5,20})(?!\S)/);
-        if (mm) handle = '@' + mm[1];
-        if (mi) userId = Number(mi[2] || mi[1]);
+      // подписали фото текстом — считаем его текстом пуша
+      if (!p.withPhoto && ph && msg.caption?.trim()) {
+        p.text = msg.caption.trim();
+        return this.finishPushDraft(chatId, s);
       }
-      reason = text.split(/\n/)[1]?.trim() || '';
-      if (!userId && !handle) return this.bot.sendMessage(chatId, '🤔 Нужен @ник, Telegram ID или пересланное сообщение.');
-      const entry = this.store.blockUser({ userId: userId || null, handle, name: name || handle, reason: reason.slice(0, 200) });
-      if (s.pending.prompt) this.bot.deleteMessage(chatId, s.pending.prompt).catch(() => {});
-      s.pending = null;
-      return this.bot.sendMessage(chatId, entry ? `⛔ В стоп-листе: <b>${esc(entry.name || entry.handle || entry.userId)}</b>${entry.reason ? '\n' + esc(entry.reason) : ''}` : 'Уже в стоп-листе.', {
-        reply_markup: kb([[btn('📋 Открыть стоп-лист', 's:stop')]]),
+      if (msg.text?.trim()) {
+        if (p.withPhoto && !p.photo) {
+          await this.bot.sendMessage(chatId, 'Сначала пришли фото 📸 (или <code>/cancel</code>, чтобы написать пуш без фото).');
+          return true;
+        }
+        p.text = msg.text.trim();
+        return this.finishPushDraft(chatId, s);
+      }
+      await this.bot.sendMessage(chatId, p.withPhoto && !p.photo ? 'Жду фото 📸 для пуша.' : 'Жду текст пуша (или <code>/cancel</code>).');
+      return true;
+    }
+
+    /* ── новая позиция меню: название → цена → описание ── */
+    if (s.pending?.kind === 'item' && msg.text != null) {
+      const t = s.pending;
+      const v = msg.text.trim();
+      if (t.stage === 0) {
+        if (!v) return this.bot.sendMessage(chatId, 'Название не может быть пустым 🙂');
+        t.name = v;
+        t.stage = 1;
+        return this.askItemStep(chatId, t);
+      }
+      if (t.stage === 1) {
+        t.price = isSkip(v) ? '' : v;
+        t.stage = 2;
+        return this.askItemStep(chatId, t);
+      }
+      t.desc = isSkip(v) ? '' : v;
+      const sec = st.menu.categories[t.i]?.sections[t.j];
+      if (!sec) { s.pending = null; return this.bot.sendMessage(chatId, '⚠️ Раздел не найден — откройте меню заново.'); }
+      const item = { name: t.name, price: t.price || '', desc: t.desc || '', tags: [], image: '', stop: false };
+      const at = t.insertAt == null ? sec.items.length : Math.min(t.insertAt, sec.items.length);
+      const res = this.store.update('it:add', (s2) => {
+        const arr = s2.menu.categories[t.i].sections[t.j].items;
+        arr.splice(Math.min(at, arr.length), 0, item);
       });
+      if (t.prompt) this.bot.deleteMessage(chatId, t.prompt).catch(() => {});
+      s.pending = null;
+      if (!res.ok) return this.bot.sendMessage(chatId, '⚠️ ' + esc(res.error));
+      const k = Math.min(at, sec.items.length - 1);
+      await this.bot.sendMessage(
+        chatId,
+        `✅ <b>${esc(item.name)}</b>${item.price ? ' · ' + esc(item.price) + ' ₽' : ' · по запросу'} — позиция в меню\nrev ${res.rev}, приложение уже обновилось`,
+        { reply_markup: kb([[btn('🖼 Фото позиции', `p:it:${t.i}:${t.j}:${k}`), btn('⛔ В стоп-лист', `a:stop:${t.i}:${t.j}:${k}`)], [btn('➕ Ещё позицию', `a:it:add:${t.i}:${t.j}`), NAV(`menu:s:${t.i}:${t.j}`)]]) },
+      );
+      return this.render(chatId, 'item', { i: t.i, j: t.j, k });
+    }
+
+    /* ── позиции пачкой: «Название | описание | цена» построчно ── */
+    if (s.pending?.kind === 'itembulk' && msg.text != null) {
+      const t = s.pending;
+      const parsed = msg.text.split('\n').map(parseItemLine).filter((x) => x && x.name);
+      if (!parsed.length) return this.bot.sendMessage(chatId, '🤔 Не разобрал ни одной строки. Формат: <code>Название | описание | цена</code>');
+      const res = this.store.update('it:bulk', (s2) => {
+        const arr = s2.menu.categories[t.i]?.sections[t.j]?.items;
+        if (!arr) throw new Error('раздел не найден');
+        for (const x of parsed) arr.push({ name: x.name, price: x.price, desc: x.desc, tags: [], image: '', stop: false });
+      });
+      if (t.prompt) this.bot.deleteMessage(chatId, t.prompt).catch(() => {});
+      s.pending = null;
+      if (!res.ok) return this.bot.sendMessage(chatId, '⚠️ ' + esc(res.error));
+      await this.bot.sendMessage(
+        chatId,
+        `📋 Добавлено позиций: <b>${parsed.length}</b> · rev ${res.rev}\n` +
+          parsed.slice(0, 8).map((x) => `· ${esc(x.name)}${x.price ? ' — ' + esc(x.price) : ''}`).join('\n') +
+          (parsed.length > 8 ? `\n…и ещё ${parsed.length - 8}` : ''),
+        { reply_markup: kb([[btn('📂 Открыть раздел', `menu:s:${t.i}:${t.j}`), NAV('s:menu')]]) },
+      );
+      return this.render(chatId, 'menuSec', { i: t.i, j: t.j });
+    }
+
+    /* ── участник команды: имя → роль → пара слов ── */
+    if (s.pending?.kind === 'member' && msg.text != null) {
+      const t = s.pending;
+      const v = msg.text.trim();
+      if (t.stage === 0) {
+        if (!v) return this.bot.sendMessage(chatId, 'Имя не может быть пустым 🙂');
+        t.name = v;
+        t.stage = 1;
+        const p1 = await this.bot.sendMessage(chatId, `Шаг 2/3. Роль для «${esc(t.name)}» (бар, кухня, за пультом…):\n\n<i>/cancel — отмена.</i>`);
+        if (t.prompt) this.bot.deleteMessage(chatId, t.prompt).catch(() => {});
+        t.prompt = p1?.message_id;
+        return true;
+      }
+      if (t.stage === 1) {
+        t.role = isSkip(v) ? '' : v;
+        t.stage = 2;
+        const p2 = await this.bot.sendMessage(chatId, `Шаг 3/3. Пара слов о «${esc(t.name)}» («—» = пропустить):\n\n<i>/cancel — отмена.</i>`);
+        if (t.prompt) this.bot.deleteMessage(chatId, t.prompt).catch(() => {});
+        t.prompt = p2?.message_id;
+        return true;
+      }
+      const text = isSkip(v) ? '' : v;
+      const res = this.store.update('tm:add', (s2) => s2.team.members.push({ name: t.name, role: t.role || '', text, photo: '' }));
+      if (t.prompt) this.bot.deleteMessage(chatId, t.prompt).catch(() => {});
+      s.pending = null;
+      const i = this.store.state.team.members.length - 1;
+      await this.bot.sendMessage(chatId, `✅ <b>${esc(t.name)}</b> — в блоке «Команда» · rev ${res.rev}`, {
+        reply_markup: kb([[btn('🖼 Фото', `p:tm:${i}`), btn('➕ Ещё участника', 'a:tm:add')], [NAV('s:team')]]),
+      });
+      return this.render(chatId, 'teamMember', { i });
     }
 
     if (s.pending?.kind === 'award' && msg.text) {
@@ -778,7 +1091,6 @@ export class Panel {
         if (!target) throw new Error('не нашёл, куда писать');
         if (t.field === 'tags') target.tags = value.trim() && value.trim() !== '—' ? value.split(',').map((x) => x.trim()).filter(Boolean) : [];
         else if (t.field === 'positions') target.positions = value.split(',').map((x) => x.trim()).filter(Boolean);
-        else if (t.target[0] === 'mrnote') st.merchNote = value;
         else target[t.field] = value;
       };
       const res = this.store.update('field:' + t.field, apply);
@@ -801,10 +1113,10 @@ export class Panel {
         reply_markup: kb([
           [btn('🏷 На главную', 'fpick:meta'), btn('🖼 Галерея', 'fpick:gal')],
           [btn('🥂 Постер бранча', 'fpick:br'), btn('🍽 Позиция меню…', 'fpick:it')],
-          [btn('📅 Событие…', 'fpick:ev'), btn('🧢 Мерч…', 'fpick:mr')],
-          [btn('🖼 Фото «О нас»', 'fpick:about'), btn('📞 Фото контактов', 'fpick:c')],
-          [btn('🎫 Фото брони', 'fpick:book'), btn('💼 Фото «Работа»', 'fpick:j')],
-          [btn('✖️ Отмена', 'a:cancel')],
+          [btn('📅 Событие…', 'fpick:ev'), btn('👥 Участник команды…', 'fpick:tm')],
+          [btn('👥 Фото «Команда»', 'fpick:team'), btn('🖼 Фото «О нас»', 'fpick:about')],
+          [btn('📞 Фото контактов', 'fpick:c'), btn('🎫 Фото брони', 'fpick:book')],
+          [btn('💼 Фото «Работа»', 'fpick:j'), btn('✖️ Отмена', 'a:cancel')],
         ]),
       });
       return true;
@@ -819,7 +1131,7 @@ export class Panel {
     const s = this.sess(chatId);
     const parts = q.data.split(':'); // fpick, t, idx...
     const [_, t, i2, j2, k2] = parts;
-    if (parts.length === 2 && ['ev', 'mr', 'it'].includes(t)) return this.pickSubEntity(chatId, s, t);
+    if (parts.length === 2 && ['ev', 'tm', 'it'].includes(t)) return this.pickSubEntity(chatId, s, t);
     if (t === 'it' && parts.length === 3) return this.pickSec(chatId, s, +i2);
     if (t === 'it' && parts.length === 4) return this.pickItem(chatId, s, +i2, +j2);
     const photo = s.pending?.queue?.[0];
@@ -836,7 +1148,14 @@ export class Panel {
     const st = this.store.state;
     const rows = [];
     if (kind === 'ev') st.events.forEach((e, i) => rows.push([btn(`📅 ${e.date} · ${e.title}`.slice(0, 56), `fpick:ev:${i}`)]));
-    if (kind === 'mr') st.merch.forEach((x, i) => rows.push([btn(`🧢 ${x.name}`.slice(0, 56), `fpick:mr:${i}`)]));
+    if (kind === 'tm') {
+      if (!st.team.members.length) {
+        return this.bot.sendMessage(chatId, 'В блоке «Команда» пока нет участников — сначала добавьте: 👥 Команда → ➕ Участник.', {
+          reply_markup: kb([[btn('👥 Команда', 's:team'), btn('✖️ Отмена', 'a:cancel')]]),
+        });
+      }
+      st.team.members.forEach((x, i) => rows.push([btn(`👤 ${x.name || 'без имени'}`.slice(0, 56), `fpick:tm:${i}`)]));
+    }
     if (kind === 'it') st.menu.categories.forEach((c, i) => rows.push([btn(`${c.icon || '🍴'} ${c.title}`, `fpick:it:${i}`)]));
     rows.push([btn('✖️ Отмена', 'a:cancel')]);
     s.pending.queue = s.pending.queue || [];
@@ -875,12 +1194,12 @@ export class Panel {
       else if (t[0] === 'c') { s.contacts.image = media.url; label = 'фото контактов'; }
       else if (t[0] === 'book') { s.booking.image = media.url; label = 'фото брони'; }
       else if (t[0] === 'j') { s.jobs.image = media.url; label = 'фото-подложка «Работа»'; }
-      else if (t[0] === 'w') { s.wallet.image = media.url; label = 'фото блока «Кошелёк»'; }
+      else if (t[0] === 'team') { s.team.image = media.url; label = 'фото блока «Команда»'; }
+      else if (t[0] === 'tm') { const x = s.team.members[+t[1]]; if (!x) throw new Error('нет такого участника'); x.photo = media.url; if (caption && !x.text) x.text = caption; label = `команда · ${x.name}`; }
       else if (t[0] === 'cat') { const cc = s.menu.categories[+t[1]]; if (!cc) throw new Error('нет такой категории'); cc.cover = media.url; label = `обложка категории · ${cc.title}`; }
       else if (t[0] === 'gal') { s.gallery.unshift({ src: media.url, caption: caption || '' }); label = 'галерея (первым кадром)'; }
       else if (t[0] === 'br') { s.brunch.image = media.url; label = 'постер бранча'; }
       else if (t[0] === 'ev') { const e = s.events[+t[1]]; if (!e) throw new Error('нет такого события'); e.image = media.url; if (caption) e.subtitle = caption; label = `афиша · ${e.title}`; }
-      else if (t[0] === 'mr') { const x = s.merch[+t[1]]; if (!x) throw new Error('нет такого товара'); x.image = media.url; if (caption) x.desc = caption; label = `мерч · ${x.name}`; }
       else if (t[0] === 'it') { const it = s.menu.categories[+t[1]]?.sections[+t[2]]?.items[+t[3]]; if (!it) throw new Error('нет такой позиции'); it.image = media.url; if (caption) it.desc = caption; label = `меню · ${it.name}`; }
       else throw new Error('неизвестная цель для фото');
     });
@@ -896,22 +1215,179 @@ export class Panel {
 
   /* ────────────── публичный пользователь ────────────── */
   async publicStart(chatId, from) {
-    if (this.store.isBlocked(from?.id)) {
-      return this.bot.sendMessage(chatId, 'К сожалению, мы не сможем принять вашу заявку. Свяжитесь с баром напрямую 🙏');
-    }
     const st = this.store.state;
     const url = this.getAppUrl();
+
+    // гость открыл бота → пишем в базу пушей (админам придёт уведомление)
+    if (from?.id) {
+      this.store.addSub({
+        userId: from.id,
+        username: from.username || '',
+        name: [from.first_name, from.last_name].filter(Boolean).join(' '),
+      });
+    }
+
     return this.bot.sendMessage(
       chatId,
       `<b>${esc(st.meta.name)}</b> · ${esc(st.meta.sub)}\n\n${esc(st.meta.tagline)}\n\n` +
-        `В приложении: актуальное меню и цены, часы, афиша, бронирование, мерч и анкета для работы — всё обновляется живьём.`,
+        `В приложении: актуальное меню и цены, часы работы, афиша, бронирование, команда и анкета для работы — всё обновляется живьём.\n\n` +
+        `<i>Здесь можно оставить заявку — просто напишите сообщение, бару придёт уведомление. Иногда присылаем анонсы вечеров; чтобы не получать их, достаточно заблокировать бота.</i>`,
       {
         reply_markup: kb([
           url ? [urlBtn('📱 Открыть приложение', url)] : [],
+          st.contacts.site ? [urlBtn('🌐 Сайт', st.contacts.site)] : [],
+          st.contacts.instagram ? [urlBtn('📸 Instagram', st.contacts.instagram)] : [],
           st.contacts.phone ? [urlBtn('📞 Позвонить', st.contacts.phoneHref || 'tel:' + String(st.contacts.phone).replace(/[^\d+]/g, ''))] : [],
           this.isAdmin(chatId) ? [btn('🛠 Админ-панель', 's:home')] : [],
         ]),
       },
+    );
+  }
+
+  /* ────────────── стоп-лист позиций меню ────────────── */
+  stoppedItems() {
+    const out = [];
+    (this.store.state.menu?.categories || []).forEach((c, i) =>
+      (c.sections || []).forEach((sec, j) =>
+        (sec.items || []).forEach((it, k) => { if (it.stop) out.push({ i, j, k, it }); }),
+      ),
+    );
+    return out;
+  }
+
+  /* ────────────── пошаговое добавление позиции меню ────────────── */
+  async askItemStep(chatId, t) {
+    const sec = this.store.state.menu.categories[t.i]?.sections[t.j];
+    const where = sec ? ` в раздел «${esc(sec.title)}»` : '';
+    const steps = [
+      `Шаг 1/3. Название позиции${where}:`,
+      `Шаг 2/3. Цена «${esc(t.name)}» <i>(590 · 890/2790 · «—» = по запросу)</i>:`,
+      `Шаг 3/3. Описание/состав «${esc(t.name)}» <i>(«—» = без описания)</i>:`,
+    ];
+    if (t.prompt) await this.bot.deleteMessage(chatId, t.prompt).catch(() => {});
+    const p = await this.bot.sendMessage(chatId, `${steps[t.stage] || steps[0]}\n\n<i>/cancel — отмена.</i>`);
+    if (p?.message_id) t.prompt = p.message_id;
+    return true;
+  }
+
+  /* ────────────── пуши гостям, которые открыли бота ────────────── */
+  async finishPushDraft(chatId, s) {
+    if (s.pending?.prompt) await this.bot.deleteMessage(chatId, s.pending.prompt).catch(() => {});
+    s.draft = {
+      text: s.pending.text || '',
+      photo: s.pending.photo || '',
+      photoUrl: s.pending.photoUrl || '',
+      appBtn: s.pushAppBtn !== false && !!this.getAppUrl(),
+    };
+    s.pending = null;
+    return this.confirmPush(chatId);
+  }
+
+  async confirmPush(chatId) {
+    const s = this.sess(chatId);
+    const d = s.draft;
+    if (!d?.text) return this.render(chatId, 'push');
+    const n = this.store.pushTargets().length;
+    return this.bot.sendMessage(
+      chatId,
+      `<b>Черновик пуша</b>\n\n${d.text}\n\n` +
+        `${d.photo ? '📸 фото приложено\n' : ''}${d.appBtn ? '🔗 кнопка «Открыть приложение» приложена\n' : ''}` +
+        `<i>Получателей: <b>${n}</b>${n ? '' : ' — пока никто не открыл бота'}</i>`,
+      {
+        reply_markup: kb([
+          n ? [btn(`📨 Отправить (${n})`, 'a:push:send')] : [],
+          [btn('✏️ Переписать', 'a:push:new'), btn('✖️ Отмена', 'a:push:cancel')],
+        ]),
+      },
+    );
+  }
+
+  /** Анонс события афиши — готовый текст пуша (фото берём из постера). */
+  eventDraft(e) {
+    const appUrl = this.getAppUrl();
+    const date = String(e.date || '').replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$3.$2');
+    const photo = e.image && appUrl && !/^https?:/.test(e.image) ? appUrl + e.image : /^https?:/.test(e.image || '') ? e.image : '';
+    return {
+      text:
+        `🎧 <b>${esc(e.title)}</b>\n${date ? esc(date) + ' · ' : ''}${esc(e.time || '')}\n${e.subtitle ? esc(e.subtitle) + '\n' : ''}\n` +
+        `<i>Столы — в приложении Catch 22.</i>`,
+      photo: '',
+      photoUrl: photo,
+      appBtn: !!appUrl,
+    };
+  }
+
+  /**
+   * Рассылка всем, кто открыл бота (/start).
+   * Шлём последовательно с паузой — так мы точно внутри лимитов Telegram
+   * (~30 сообщений/с), а заблокировавшие бота автоматически выпадают из списка.
+   */
+  async broadcast(chatId, draft) {
+    const targets = this.store.pushTargets();
+    if (!targets.length) {
+      return this.bot.sendMessage(
+        chatId,
+        '📣 Пушить пока некого: бота ещё никто не открыл. Как только гости нажмут /start — они появятся в «👥 Подписчики».',
+        { reply_markup: kb([[NAV('s:push')]]) },
+      );
+    }
+    const appUrl = this.getAppUrl();
+    const markup = draft.appBtn && appUrl ? { inline_keyboard: [[urlBtn('📱 Открыть приложение', appUrl)]] } : undefined;
+    const progress = await this.bot.sendMessage(chatId, `📨 Отправляю ${targets.length} гостям…`);
+    const abs = (u) => (!u ? '' : /^https?:/.test(u) ? u : appUrl ? appUrl + u : '');
+    let photo = draft.photo || abs(draft.photoUrl);
+    let ok = 0;
+    let failed = 0;
+    let i = 0;
+    for (const t of targets) {
+      i++;
+      const extra = { parse_mode: 'HTML', disable_web_page_preview: true, ...(markup ? { reply_markup: markup } : {}) };
+      try {
+        if (photo) {
+          await this.bot.call('sendPhoto', { chat_id: t.userId, photo, caption: draft.text.slice(0, 1024), ...extra });
+        } else {
+          await this.bot.call('sendMessage', { chat_id: t.userId, text: draft.text, ...extra });
+        }
+        ok++;
+      } catch (e) {
+        // разметка не читается — не мучаем гостей, возвращаем текст админу
+        if (e.badRequest && /parse|entities/i.test(e.message || '')) {
+          if (progress?.message_id) await this.bot.deleteMessage(chatId, progress.message_id).catch(() => {});
+          return this.bot.sendMessage(
+            chatId,
+            `⚠️ Telegram не принял разметку: ${esc(e.message)}\n\nПришлите текст ещё раз — без «&lt;» и «&gt;» (или закройте теги: &lt;b&gt;…&lt;/b&gt;).`,
+            { reply_markup: kb([[btn('✍️ Переписать', 'a:push:new'), NAV('s:push')]]) },
+          );
+        }
+        // file_id мог не подойти (документ/истёк) — пробуем разок по URL из media
+        const alt = abs(draft.photoUrl);
+        if (photo && alt && photo !== alt) {
+          photo = alt;
+          try {
+            await this.bot.call('sendPhoto', { chat_id: t.userId, photo, caption: draft.text.slice(0, 1024), ...extra });
+            ok++;
+            failed--;
+          } catch (e2) {
+            failed++;
+            if (e2.telegramErrorCode === 403) this.store.markSubBlocked(t.userId);
+          }
+        } else {
+          failed++;
+          if (e.telegramErrorCode === 403) this.store.markSubBlocked(t.userId);
+        }
+      }
+      if (i % 20 === 0) {
+        await this.bot.editMessage(chatId, progress?.message_id, `📨 Отправлено ${i}/${targets.length}…`).catch(() => {});
+        await sleep(40);
+      }
+    }
+    this.store.setLastPush({ text: String(draft.text).slice(0, 160), total: targets.length, ok, failed });
+    if (progress?.message_id) await this.bot.deleteMessage(chatId, progress.message_id).catch(() => {});
+    return this.bot.sendMessage(
+      chatId,
+      `📣 <b>Пуш отправлен</b>\nДоставлено: <b>${ok}</b> из ${targets.length}${failed ? ` · не дошло: ${failed}` : ''}` +
+        (failed ? '\n<i>Кто заблокировал бота — исключён из рассылки автоматически.</i>' : ''),
+      { reply_markup: kb([[btn('✍️ Написать ещё', 'a:push:new'), NAV('s:push')]]) },
     );
   }
 
@@ -937,12 +1413,11 @@ function resolveTarget(state, target) {
     case 'br': return state.brunch;
     case 'j': return state.jobs;
     case 'gal': return state.gallery[idxs[0]];
-    case 'mr': return state.merch[idxs[0]];
-    case 'mrnote': return {}; // merchNote обрабатывается отдельно
+    case 'team': return state.team;
+    case 'tm': return state.team.members[idxs[0]];
     case 'hero': return state.meta.hero;
     case 'aw': return state.meta.awards?.[idxs[0]];
     case 'copy': return state.copy;
-    case 'w': return state.wallet;
     default: return null;
   }
 }
@@ -954,6 +1429,33 @@ function pickPhoto(msg) {
     return { fileId: msg.document.file_id, ext: ['jpg', 'jpeg', 'png', 'webp', 'gif'].includes(ext) ? ext : 'jpg' };
   }
   return null;
+}
+
+/** «—» / «-» / пусто = пропустить шаг визарда */
+function isSkip(v) {
+  const x = String(v || '').trim();
+  return !x || /^[-—–.]+$/.test(x);
+}
+
+/** Строка из «вставить списком»: Название | описание | цена (или Название цена). */
+function parseItemLine(line) {
+  const raw = String(line || '').trim().replace(/^[-*•·▪]\s*/, '');
+  if (!raw) return null;
+  if (raw.includes('|')) {
+    const parts = raw.split('|').map((x) => x.trim());
+    const name = parts[0];
+    if (!name) return null;
+    if (parts.length >= 3) return { name, desc: isSkip(parts[1]) ? '' : parts[1], price: cleanPrice(parts[2]) };
+    return { name, desc: '', price: cleanPrice(parts[1] || '') };
+  }
+  const mm = raw.match(/^(.*?)[\s—–-]+([\d][\d\s./]*\s*₽?)$/);
+  if (mm && mm[1].trim()) return { name: mm[1].trim(), desc: '', price: cleanPrice(mm[2]) };
+  return { name: raw, desc: '', price: '' };
+}
+
+function cleanPrice(p) {
+  const x = String(p || '').replace(/₽/g, '').replace(/\s+/g, '').trim();
+  return isSkip(x) ? '' : x.slice(0, 24);
 }
 
 function nextSaturday() {

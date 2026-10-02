@@ -111,7 +111,8 @@ export class BotClient {
         { command: 'start', description: 'Приложение CATCH 22' },
         { command: 'panel', description: 'Админ-панель' },
         { command: 'requests', description: 'Заявки с сайта' },
-        { command: 'stop', description: 'Стоп-лист' },
+        { command: 'stop', description: 'Стоп-лист позиций меню' },
+        { command: 'push', description: 'Пуш гостям, которые открыли бота' },
         { command: 'status', description: 'Статус деплоя' },
       ];
       await this.call('setMyCommands', { commands: cmds });

@@ -1,7 +1,7 @@
 {
-  "name": "CATCH 22 — Listening Bar & Bistro",
+  "name": "CATCH 22 — фонотека + бар",
   "short_name": "CATCH 22",
-  "description": "Меню, афиша, бронирование и мерч бара CATCH 22. Данные обновляет админ-бот.",
+  "description": "Меню, афиша, бронирование и команда бара CATCH 22 (наб. Фонтанки, 86). Данные обновляет админ-бот.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

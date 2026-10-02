@@ -7,8 +7,8 @@ import { COPY_DEFAULT } from '../seed/copy.js';
 
 /*
  * Единый стор приложения.
- *  - state.json  — публичные данные приложения (меню, часы, афиша, мерч, …)
- *  - private.json — приватное: заявки с сайта, стоп-лист пользователей
+ *  - state.json  — публичные данные приложения (меню, часы, афиша, команда, …)
+ *  - private.json — приватное: заявки с сайта и подписчики бота (для пушей)
  *  - media/      — фото, загруженные через бота (сжимаются Telegram при выдаче,
  *                  мы сохраняем максимальный размер)
  * Любое изменение: rev++, debounce-save, событие 'rev' → SSE у клиентов.
@@ -33,6 +33,64 @@ function normItem(it) {
   return it;
 }
 
+/* Версия структуры данных: при загрузке старого state.json применяем миграцию,
+   чтобы правки (фонотека + бар, часы, команда, ссылки) появились и там,
+   где приложение уже работало. */
+const STATE_VERSION = 2.1;
+
+/** Перенос рабочих данных на текущую версию. Трогаем только дефолты — то,
+ *  что бар уже переписал через бота, не затираем. */
+export function migrateState(s) {
+  if (Number(s?._v || 2) >= STATE_VERSION) return s;
+  const d = seed;
+  const hasBistro = (x) => /bistro|бистро/i.test(String(x || ''));
+
+  /* 2.1 — «бистро» убрано, сверху «фонотека + бар» */
+  s.meta ||= {};
+  s.meta.hero ||= {};
+  if (hasBistro(s.meta.sub)) s.meta.sub = d.meta.sub;
+  if (hasBistro(s.meta.hero.subtitle)) s.meta.hero.subtitle = d.meta.hero.subtitle;
+  if (hasBistro(s.meta.about)) s.meta.about = d.meta.about;
+  if (hasBistro(s.meta.tagline)) s.meta.tagline = d.meta.tagline;
+  if (hasBistro(s.meta.hero.text)) s.meta.hero.text = d.meta.hero.text;
+
+  /* 2.1 — часы работы: вт/ср/чт/вс 16:00–00:00, пт/сб 16:00–02:00 */
+  const oldHours = [['Вт – Чт, Вс', '16:00 – 01:00'], ['Пт – Сб', '16:00 – 02:00']];
+  if (Array.isArray(s.hours) && s.hours.length === 3 && oldHours.every(([days, time], i) => s.hours[i]?.days === days && s.hours[i]?.time === time)) {
+    s.hours = structuredClone(d.hours);
+  }
+
+  /* 2.1 — награды: Sobaka.ru (мы номинанты) и «сайт как награда» убираем */
+  if (Array.isArray(s.meta.awards)) {
+    s.meta.awards = s.meta.awards.filter(
+      (a) => !/sobaka|собака/i.test(String(a?.title || '')) && !/catch-22-bar\.ru/i.test(String(a?.title || '')),
+    );
+    if (!s.meta.awards.length) s.meta.awards = structuredClone(d.meta.awards);
+  }
+
+  /* 2.1 — ссылки на сайт и инстаграм */
+  s.contacts ||= {};
+  if (!s.contacts.site) s.contacts.site = d.contacts.site;
+  if (!s.contacts.instagram) s.contacts.instagram = d.contacts.instagram;
+  if (!s.contacts.bookingUrl) s.contacts.bookingUrl = d.contacts.bookingUrl;
+  s.socials = Array.isArray(s.socials) ? s.socials : [];
+  for (const x of s.socials) {
+    if (/inst/i.test(String(x.platform || '')) && !/catch22\.catch22\.catch22/.test(String(x.url || ''))) x.url = d.contacts.instagram;
+    if (/^(сайт|site)$/i.test(String(x.platform || '')) && !x.url) x.url = d.contacts.site;
+  }
+  if (!s.socials.some((x) => /inst/i.test(String(x.platform || '')))) s.socials.unshift({ platform: 'Instagram', url: d.contacts.instagram });
+  if (!s.socials.some((x) => /^(сайт|site)$/i.test(String(x.platform || '')))) s.socials.push({ platform: 'Сайт', url: d.contacts.site });
+
+  /* 2.1 — мерча нет, вместо него блок «Команда» */
+  if (!s.team) s.team = structuredClone(d.team);
+
+  /* 2.1 — тексты интерфейса без мерча и кошелька */
+  if (s.copy) for (const k of ['tabMerch', 'titleMerch', 'ctaMerch', 'merchSub', 'walletNote', 'titleWallet', 'ctaWallet']) delete s.copy[k];
+
+  s._v = STATE_VERSION;
+  return s;
+}
+
 export function normalizeState(s) {
   s.meta ||= {};
   s.meta.awards = ensureIds(s.meta.awards || [], 'aw');
@@ -49,7 +107,6 @@ export function normalizeState(s) {
     for (const sec of c.sections) sec.items = ensureIds((sec.items || []).map(normItem), 'it');
   }
   s.events = ensureIds(s.events || [], 'ev');
-  s.merch = ensureIds(s.merch || [], 'mr');
   s.jobs ||= {};
   s.jobs.positions = Array.isArray(s.jobs.positions) ? s.jobs.positions : [];
   s.gallery = ensureIds(s.gallery || [], 'g');
@@ -64,27 +121,33 @@ export function normalizeState(s) {
     c.cover = String(c.cover ?? '');
     c.note = String(c.note ?? '');
   }
-  // мерч: цена в TON и подпись кнопки
-  for (const m of s.merch) {
-    m.ton = String(m.ton ?? '');
-    m.cta = String(m.cta ?? '');
-  }
   // фото-подложки разделов
   s.booking.image = String(s.booking.image ?? '');
   s.contacts.image = String(s.contacts.image ?? '');
   s.contacts.note = String(s.contacts.note ?? '');
+  s.contacts.site = String(s.contacts.site ?? '');
+  s.contacts.instagram = String(s.contacts.instagram ?? '');
   s.jobs.image = String(s.jobs.image ?? '');
   s.meta.aboutImage = String(s.meta.aboutImage ?? '');
-  // кошелёк (оплата мерча — по умолчанию выключена)
-  const w = (s.wallet ||= {});
-  w.enabled = !!w.enabled;
-  w.title = String(w.title ?? '');
-  w.text = String(w.text ?? '');
-  w.note = String(w.note ?? '');
-  w.link = String(w.link ?? '');
-  w.linkText = String(w.linkText ?? '');
-  w.button = String(w.button ?? '');
-  w.image = String(w.image ?? '');
+
+  // блок «Команда» (вместо мерча): заглушка + список участников
+  const t = (s.team ||= {});
+  t.enabled = t.enabled !== false;
+  t.title = String(t.title ?? 'КОМАНДА');
+  t.text = String(t.text ?? '');
+  t.note = String(t.note ?? '');
+  t.image = String(t.image ?? '');
+  t.members = ensureIds(t.members || [], 'tm');
+  for (const m of t.members) {
+    m.name = String(m.name ?? '');
+    m.role = String(m.role ?? '');
+    m.text = String(m.text ?? '');
+    m.photo = String(m.photo ?? '');
+  }
+
+  // легаси v2.0: мерч и кошелёк из приложения убраны
+  for (const legacy of ['merch', 'merchNote', 'wallet']) delete s[legacy];
+
   // тексты интерфейса: недостающие ключи добираем из seed/copy.js
   s.copy = Object.assign({}, COPY_DEFAULT, s.copy || {});
 
@@ -105,14 +168,28 @@ export class Store extends EventEmitter {
     this.state = readJsonSafe(this.stateFile, null);
     if (!this.state || !this.state.menu) {
       this.state = normalizeState(structuredClone(seed));
+      this.state._v = STATE_VERSION;
       this._saveNow();
     } else {
       this.rev = Number(this.state._rev) || 0;
+      const raw = JSON.stringify(this.state);
+      migrateState(this.state);
+      const migrated = JSON.stringify(this.state) !== raw; // normalizeState трогает updatedAt, сравниваем до него
+      normalizeState(this.state);
+      if (migrated) {
+        this.rev++;
+        this.state._rev = this.rev;
+        log(`store: данные перенесены на v${STATE_VERSION} — приложение обновится само`);
+      }
+      this._saveNow();
     }
     const pr = readJsonSafe(this.privateFile, null);
-    this.private = pr && typeof pr === 'object' ? pr : { requests: [], blocked: [] };
+    this.private = pr && typeof pr === 'object' ? pr : { requests: [], subs: [] };
     this.private.requests ||= [];
-    this.private.blocked ||= [];
+    // подписчики бота: те, кто нажал /start — на них уходят пуши
+    this.private.subs ||= [];
+    // легаси: стоп-лист гостей больше не ведём (стоп-лист — только позиции меню)
+    delete this.private.blocked;
     this._saveTimer = null;
   }
 
@@ -138,8 +215,8 @@ export class Store extends EventEmitter {
 
   // Публичная выборка — то, что отдаётся сайту
   publicState() {
-    const { meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery, wallet, copy, updatedAt } = this.state;
-    return { rev: this.rev, updatedAt, meta, hours, contacts, socials, brunch, booking, menu, events, merch, merchNote, jobs, gallery, wallet, copy };
+    const { meta, hours, contacts, socials, brunch, booking, menu, events, team, jobs, gallery, copy, updatedAt } = this.state;
+    return { rev: this.rev, updatedAt, meta, hours, contacts, socials, brunch, booking, menu, events, team, jobs, gallery, copy };
   }
 
   update(label, fn) {
@@ -188,7 +265,7 @@ export class Store extends EventEmitter {
     }
   }
 
-  /* ── Заявки (мерч / бронь / работа) — только на сервере ───────────── */
+  /* ── Заявки (бронь / работа / вопрос) — только на сервере ───────────── */
   addRequest(req) {
     const entry = {
       id: nid('rq'),
@@ -229,25 +306,63 @@ export class Store extends EventEmitter {
     return this.private.requests.filter((r) => r.status === 'new').length;
   }
 
-  /* ── Стоп-лист пользователей (для бота) ───────────────────────────── */
-  blockUser(u) {
-    if (u.userId && this.private.blocked.some((b) => b.userId === u.userId)) return null;
-    const entry = { id: nid('bl'), addedAt: nowIso(), ...u };
-    this.private.blocked.unshift(entry);
+  /* ── Подписчики бота: пуши гостям, которые открыли бота (/start) ────── */
+
+  /** Записать гостя. Возвращает { entry, isNew } — isNew нужен, чтобы
+   *  поздравить админов только с новым подписчиком, а не с каждым /start. */
+  addSub(u) {
+    const userId = Number(u?.userId || u?.id || 0);
+    if (!userId) return null;
+    const list = this.private.subs;
+    let entry = list.find((s) => s.userId === userId);
+    const isNew = !entry;
+    if (!entry) {
+      entry = { id: nid('sb'), userId, addedAt: nowIso(), blockedBot: false };
+      list.unshift(entry);
+      if (list.length > 20000) list.length = 20000;
+    }
+    entry.username = String(u.username || entry.username || '').slice(0, 32);
+    entry.name = String(u.name || entry.name || '').slice(0, 80);
+    entry.lastSeen = nowIso();
+    entry.blockedBot = false;
     this._savePrivate();
-    return entry;
+    if (isNew) this.emit('sub', entry);
+    return { entry, isNew };
   }
 
-  unblockUser(id) {
-    const i = this.private.blocked.findIndex((b) => b.id === id);
+  /** Гость заблокировал бота (Telegram ответил 403) — больше не пушим. */
+  markSubBlocked(userId, blocked = true) {
+    const s = this.private.subs.find((x) => x.userId === Number(userId));
+    if (!s) return null;
+    s.blockedBot = !!blocked;
+    if (blocked) s.blockedAt = nowIso();
+    this._savePrivate();
+    return s;
+  }
+
+  removeSub(id) {
+    const i = this.private.subs.findIndex((s) => s.id === id);
     if (i < 0) return false;
-    this.private.blocked.splice(i, 1);
+    this.private.subs.splice(i, 1);
     this._savePrivate();
     return true;
   }
 
-  isBlocked(userId) {
-    if (!userId) return false;
-    return this.private.blocked.some((b) => b.userId === Number(userId));
+  /** Кому можно слать пуш: активные подписчики (не заблокировавшие бота). */
+  pushTargets() {
+    return this.private.subs.filter((s) => s.userId && !s.blockedBot);
+  }
+
+  subStats() {
+    const all = this.private.subs.length;
+    const blocked = this.private.subs.filter((s) => s.blockedBot).length;
+    return { all, blocked, active: all - blocked };
+  }
+
+  /** Отметка о последней рассылке — показываем в панели. */
+  setLastPush(info) {
+    this.private.lastPush = { at: nowIso(), ...info };
+    this._savePrivate();
+    return this.private.lastPush;
   }
 }
