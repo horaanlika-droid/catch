@@ -76,13 +76,23 @@ if (!cfg.token) {
 
   // заявки с сайта → админам
   store.on('request', (entry) => {
-    const icon = { merch: '🧢', booking: '📅', job: '💼', message: '💬' }[entry.type] || '🧾';
-    const blocked = entry.from?.userId ? store.isBlocked(entry.from.userId) : false;
+    const icon = { booking: '📅', job: '💼', message: '💬', team: '👥' }[entry.type] || '🧾';
     const lines = Object.entries(entry.fields).map(([k, v]) => `${k}: ${v}`);
     panel
       .notifyAdmins(
-        `${icon} <b>Новая заявка · ${entry.type}</b>${blocked ? ' ⚠️ <b>ГОСТЬ В СТОП-ЛИСТЕ</b>' : ''}\n${lines.join('\n')}\nконтакт: <code>${entry.contact || '—'}</code>`,
-        { inline_keyboard: [[{ text: '🧾 Открыть заявки', callback_data: 's:requests' }], [{ text: (blocked ? '✅ Разблокировать' : '⛔ В стоп-лист'), callback_data: 'a:reqtoggle:' + entry.id }]] },
+        `${icon} <b>Новая заявка · ${entry.type}</b>\n${lines.join('\n')}\nконтакт: <code>${entry.contact || '—'}</code>`,
+        { inline_keyboard: [[{ text: '🧾 Открыть заявки', callback_data: 's:requests' }]] },
+      )
+      .catch(() => {});
+  });
+
+  // новый гость открыл бота → пишем админам и добавляем в базу пушей
+  store.on('sub', (entry) => {
+    panel
+      .notifyAdmins(
+        `👋 <b>Новый гость открыл бота</b>\n${entry.name || 'без имени'} ${entry.username ? `<code>${entry.username}</code>` : ''} · id <code>${entry.userId}</code>\n` +
+          `Подписчиков для пушей: <b>${store.subStats().active}</b>`,
+        { inline_keyboard: [[{ text: '📣 Отправить пуш', callback_data: 's:push' }]] },
       )
       .catch(() => {});
   });
@@ -96,18 +106,6 @@ if (bot) bot._status = status;
 async function handleUpdate(upd) {
   if (!bot || !panel) return;
   if (upd.callback_query) {
-    if (upd.callback_query.data?.startsWith('a:reqtoggle:')) {
-      // кнопка из уведомления о заявке
-      const id = upd.callback_query.data.split(':')[2];
-      const q = upd.callback_query;
-      const r = store.private.requests.find((x) => x.id === id);
-      if (r?.from?.userId) {
-        if (store.isBlocked(r.from.userId)) store.unblockUser(store.private.blocked.find((b) => b.userId === r.from.userId)?.id);
-        else store.blockUser({ userId: r.from.userId, handle: r.from.username ? '@' + r.from.username : '', name: r.from.name || '' });
-        await bot.answerCallback(q.id, store.isBlocked(r.from.userId) ? '⛔ внесён' : '✅ убран');
-      } else await bot.answerCallback(q.id, 'нет контакта в заявке');
-      return;
-    }
     await panel.onCallback(upd.callback_query);
     return;
   }
@@ -125,21 +123,15 @@ async function handleUpdate(upd) {
   }
   if (text.startsWith('/requests')) { if (isAdmin) await panel.render(msg.chat.id, 'requests'); return; }
   if (text.startsWith('/status')) { if (isAdmin) await panel.render(msg.chat.id, 'status'); return; }
+  // стоп-лист — это позиции меню, которые сегодня не продаём
   if (text.startsWith('/stop')) { if (isAdmin) await panel.render(msg.chat.id, 'stop'); return; }
+  // пуши гостям, которые открыли бота
+  if (/^\/(push|broadcast)\b/.test(text)) { if (isAdmin) await panel.render(msg.chat.id, 'push'); return; }
   if (text.startsWith('/help')) {
     return bot.sendMessage(msg.chat.id,
       isAdmin
-        ? '<b>Команды админа</b>\n/panel — панель · /requests — заявки · /stop — стоп-лист · /status — диагностика\nФото, отправленное боту, обрабатывается сразу и попадает в приложение.'
-        : 'Привет! Меню, афиша, цены и часы — в веб-приложении. Здесь можно оставить заявку: напиши сообщение бату.');
-  }
-  if (text.startsWith('/block')) {
-    if (!isAdmin) return;
-    const mm = text.match(/@([A-Za-z][A-Za-z0-9_]{3,31})/) || text.match(/\b(\d{5,20})\b/);
-    if (!mm) return bot.sendMessage(msg.chat.id, 'Используй: <code>/block @username</code> или <code>/block 123456789</code>');
-    const entry = mm[1]?.length >= 3 && isNaN(+mm[1])
-      ? store.blockUser({ userId: null, handle: '@' + mm[1], name: '@' + mm[1] })
-      : store.blockUser({ userId: Number(mm[1]), handle: '', name: String(mm[1]) });
-    return bot.sendMessage(msg.chat.id, entry ? `⛔ ${entry.handle || entry.userId} в стоп-листе` : 'уже там');
+        ? '<b>Команды админа</b>\n/panel — панель · /requests — заявки · /stop — стоп-лист позиций · /push — рассылка гостям · /status — диагностика\nФото, отправленное боту, обрабатывается сразу и попадает в приложение.'
+        : 'Привет! Меню, афиша, цены и часы — в веб-приложении. Здесь можно оставить заявку: напиши сообщение боту.');
   }
 
   // админские сообщения/фото → в панель (pending-редакторы, свободные фото)
@@ -151,7 +143,6 @@ async function handleUpdate(upd) {
 
   // гость написал текст боту → превращаем в заявку
   if (msg.from && text && !isAdmin) {
-    if (store.isBlocked(from.id)) return bot.sendMessage(msg.chat.id, 'Твоя заявка не может быть принята 🙏');
     const entry = store.addRequest({
       type: 'message',
       fields: { 'сообщение': text.slice(0, 400) },

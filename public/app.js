@@ -28,7 +28,6 @@ const ICONS = {
   house: '<path d="M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',
   cutlery: '<path d="M7 3v7a2 2 0 0 0 2 2v9M5 3v6m4-6v6M17 3c-1.6 1.2-2.5 3.2-2.5 5.5 0 2 .9 3.2 2.5 3.5V21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
   cal: '<rect x="4" y="5.5" width="16" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
-  bag: '<path d="M6 8h12l1 12H5L6 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.8"/>',
   grid: '<path d="M4.5 6.5h15M4.5 12h15M4.5 17.5h9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>',
   menu: '<path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>',
   close: '<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>',
@@ -40,8 +39,6 @@ const ICONS = {
   book: '<path d="M5 4h9a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 8h6M8 11.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
   users: '<circle cx="9" cy="8.5" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 20c.6-3.4 2.7-5 5.5-5s4.9 1.6 5.5 5M16 5.6a3.1 3.1 0 0 1 0 6M18 20c-.3-2-1-3.5-2.1-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
   share: '<circle cx="6" cy="12" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="17.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8.2 10.9 7.1-3.3M8.2 13.1l7.1 3.3" stroke="currentColor" stroke-width="1.8"/>',
-  wallet: '<rect x="3.5" y="6" width="17" height="13" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17" stroke="currentColor" stroke-width="1.8"/><circle cx="16.5" cy="14.5" r="1.4"/>',
-  ton: '<path d="M12 3.4 4.6 7.9v8.2L12 20.6l7.4-4.5V7.9L12 3.4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.6 10.9 12 14l3.4-3.1M12 14v4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>',
   chev: '<path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
   arrow: '<path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>',
   search: '<circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m15.5 15.5 4.5 4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>',
@@ -109,8 +106,9 @@ function applyMeta(d) {
   if (sub) sub.textContent = d.meta.sub || '';
   const boot = $('#boot-sub');
   if (boot) boot.textContent = d.meta.sub || '';
-  document.title = `${viewTitle(d)} · ${d.meta.name || 'CATCH 22'}`;
-  const tabs = { home: c.tabHome, menu: c.tabMenu, events: c.tabEvents, merch: c.tabMerch, more: c.tabMore };
+  const vt = viewTitle(d);
+  document.title = vt ? `${vt} · ${d.meta.name || 'CATCH 22'}` : `${d.meta.name || 'CATCH 22'} — ${d.meta.sub || 'фонотека + бар'}`;
+  const tabs = { home: c.tabHome, menu: c.tabMenu, events: c.tabEvents, team: c.tabTeam, more: c.tabMore };
   document.querySelectorAll('#tabbar button').forEach((b) => {
     const lbl = tabs[b.dataset.tab];
     if (lbl) b.querySelector('span').textContent = lbl;
@@ -287,23 +285,23 @@ function todayStatus(hours) {
 /* ── тексты интерфейса: значения шлёт сервер (state.copy, правится ботом),
    здесь только запасной вариант для офлайна/старого снапшота ── */
 const COPY_DEFAULT = {
-  tabHome: 'Главная', tabMenu: 'Меню', tabEvents: 'Афиша', tabMerch: 'Мерч', tabMore: 'Ещё',
-  titleMenu: 'МЕНЮ', titleEvents: 'АФИША', titleMerch: 'МЕРЧ', titleMore: 'ПРОФИЛЬ',
-  titleBooking: 'БРОНИРОВАНИЕ', titleContacts: 'КОНТАКТЫ', titleJobs: 'РАБОТА', titleWallet: 'КОШЕЛЁК',
-  ctaBooking: 'Забронировать стол', ctaMerch: 'Оставить заявку', ctaContacts: 'Написать в Telegram',
-  ctaJobs: 'Отправить анкету', ctaGallery: 'Смотреть фото', ctaWallet: 'Подключить кошелёк',
+  tabHome: 'Главная', tabMenu: 'Меню', tabEvents: 'Афиша', tabTeam: 'Команда', tabMore: 'Ещё',
+  titleMenu: 'МЕНЮ', titleEvents: 'АФИША', titleTeam: 'КОМАНДА', titleMore: 'ПРОФИЛЬ',
+  titleBooking: 'БРОНИРОВАНИЕ', titleContacts: 'КОНТАКТЫ', titleJobs: 'РАБОТА',
+  ctaBooking: 'Забронировать стол', ctaContacts: 'Написать в Telegram',
+  ctaJobs: 'Отправить анкету', ctaGallery: 'Смотреть фото',
+  ctaSite: 'Открыть сайт', ctaInstagram: 'Мы в Instagram',
   eventsSub: 'Винил, сессии и гости за пультом',
-  merchSub: 'Фирменные вещи Catch 22',
-  walletTitle: 'КОШЕЛЁК',
+  teamSub: 'Люди, которые делают Catch 22',
+  teamNote: 'Раздел в работе — добавим фото и имена команды.',
   aboutCard: 'О нас',
   tonight: 'Этим вечером',
   stopTitle: 'Сегодня не продаём',
   hoursTitle: 'Часы работы',
-  socialsTitle: 'Соцсети',
+  socialsTitle: 'Мы на связи',
   awardsTitle: 'За что нас любят',
   galleryTitle: 'Галерея',
   jobsCard: 'Стань частью команды',
-  walletNote: 'Оплата мерча пока не подключена — оставьте заявку, согласуем лично.',
 };
 const copy = (d) => Object.assign({}, COPY_DEFAULT, d?.copy || {});
 
@@ -332,16 +330,17 @@ function socialIcon(name) {
 }
 ICONS.inst = '<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2"/>';
 ICONS.tg = '<path d="M21 4.5 2.8 11.6l6.2 2 1.9 6 2.5-3.7 4.8 3.6L21 4.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 13.6 9.2-7-6.6 7.9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>';
+ICONS.web = '<circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.8 9.6h16.4M3.8 14.4h16.4M12 3.6c2.4 2.3 3.6 5.2 3.6 8.4s-1.2 6.1-3.6 8.4c-2.4-2.3-3.6-5.2-3.6-8.4S9.6 5.9 12 3.6z" fill="none" stroke="currentColor" stroke-width="1.7"/>';
 ICONS.vk = '<path d="M3.5 7.5c.9 5 4 9.7 8.9 9.7h1.3l-1.9-3.6c2.7.9 4.6 3 5.3 4.7H21c-.7-2.3-2.3-4.2-4.3-5.3 1.8-1.2 3.3-3 4-5.2h-3.1c-.8 2-2.2 3.5-3.9 4.4V7.5H9.9c.2 1.8-.1 4-1.2 5.5-1-1.6-2.4-3.9-3-5.5H3.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>';
 
 /** заголовок в шапке: на подстраницах — с кнопкой «назад» */
 function viewTitle(d) {
   const c = copy(d);
-  return { home: '', menu: c.titleMenu, events: c.titleEvents, merch: c.titleMerch, more: c.titleMore, booking: c.titleBooking, contacts: c.titleContacts, jobs: c.titleJobs, wallet: c.titleWallet }[S.tab] || '';
+  return { home: '', menu: c.titleMenu, events: c.titleEvents, team: c.titleTeam, more: c.titleMore, booking: c.titleBooking, contacts: c.titleContacts, jobs: c.titleJobs }[S.tab] || '';
 }
 
 /* ────────────────── навигация ────────────────── */
-const VIEWS = ['home', 'menu', 'events', 'merch', 'more'];
+const VIEWS = ['home', 'menu', 'events', 'team', 'more'];
 function setTab(tab, opts = {}) {
   S.tab = tab;
   S.sub = opts.sub || '';
@@ -355,12 +354,12 @@ function setTab(tab, opts = {}) {
   if (!opts.keepScroll) window.scrollTo({ top: 0 });
   haptic('light');
 }
-const parentOf = (tab) => ({ booking: 'home', contacts: 'more', jobs: 'more', wallet: 'merch' }[tab] || tab);
+const parentOf = (tab) => ({ booking: 'home', contacts: 'more', jobs: 'more', team: 'team' }[tab] || tab);
 
 function render(animate = true) {
   if (!S.data) return;
   const view = $('#view');
-  const builders = { home: vHome, menu: vMenu, events: vEvents, merch: vMerch, more: vMore, booking: vBooking, contacts: vContacts, jobs: vJobs, wallet: vWallet };
+  const builders = { home: vHome, menu: vMenu, events: vEvents, team: vTeam, more: vMore, booking: vBooking, contacts: vContacts, jobs: vJobs };
   const node = (builders[S.tab] || vHome)(S.data);
   if (animate) { view.innerHTML = ''; node.classList.add('view-enter'); }
   view.innerHTML = '';
@@ -392,11 +391,10 @@ function openDrawer() {
     ['cutlery', c.tabMenu, () => setTab('menu')],
     ['cal', c.tabEvents, () => setTab('events')],
     ['book', c.titleBooking, () => setTab('booking')],
-    ['bag', c.tabMerch, () => setTab('merch')],
+    ['users', c.tabTeam, () => setTab('team')],
     ['brief', c.titleJobs, () => setTab('jobs')],
     ['pin', c.titleContacts, () => setTab('contacts')],
   ];
-  if (d.wallet?.enabled) rows.push(['wallet', c.titleWallet, () => setTab('wallet')]);
   const card = el('div', 'card');
   for (const [ic, t, fn] of rows) {
     if (!t) continue;
@@ -527,14 +525,21 @@ function vHome(d) {
     root.appendChild(box);
   }
 
+  // мы на связи: сайт + инстаграм + бот
+  root.appendChild(linksBlock(d, c));
+
   // виниловая подпись + обновлено
   root.appendChild(el('div', 'credits', brandFoot(d)));
   return root;
 }
 function brandFoot(d) {
   const upd = d.updatedAt ? ` · обновлено ${fmtRel(d.updatedAt)}` : '';
+  const site = siteOf(d);
+  const inst = instagramOf(d);
+  const links = [site ? `<a href="${esc(site)}" target="_blank" rel="noopener">catch-22-bar.ru</a>` : '', inst ? `<a href="${esc(inst)}" target="_blank" rel="noopener">instagram</a>` : ''].filter(Boolean).join(' · ');
   return `<span class="foot-logo"><img src="img/logo.svg" alt="CATCH 22"></span>`
     + `<span class="foot-sub">${esc(d.meta.sub || '')}${upd}</span>`
+    + (links ? `<span class="foot-links">${links}</span>` : '')
     + `<span class="foot-credit">app by <a href="https://t.me/stonym0ntana" target="_blank" rel="noopener">@stonym0ntana</a></span>`;
 }
 function upcoming(d) {
@@ -706,49 +711,90 @@ function openImageSheet(img, title) {
   openSheet(title || '', w);
 }
 
-/* ── Мерч ── */
-function vMerch(d) {
+/* ── Команда (сейчас заглушка: бар наполнит её из бота — 👥 Команда) ── */
+function vTeam(d) {
   const root = el('div', 'stack');
   const c = copy(d);
-  root.appendChild(pageHead(c.titleMerch, d.merchNote || c.merchSub));
-  const grid = el('div', 'merch-grid');
-  for (const m of d.merch || []) {
-    const card = el('div', 'merch');
-    const ph = imgBox('ph', m.image);
-    if (m.tag) ph.appendChild(el('div', 'soon', esc(m.tag)));
-    card.appendChild(ph);
-    const b = el('div', 'b');
-    b.innerHTML = `<div class="n">${esc(m.name)}</div>${m.desc ? `<div class="d">${esc(m.desc)}</div>` : ''}
-      <div class="prow">${m.price ? `<div class="p">${esc(m.price)}</div>` : ''}${m.ton ? `<div class="ton">${svg('ton', 11)}${esc(m.ton)}</div>` : ''}</div>`;
-    const req = el('button', 'req', `${esc(m.reqText || c.ctaMerch)} ${svg('arrow', 14)}`);
-    req.onclick = () => openSheet(m.name, merchForm(m));
-    b.appendChild(req);
-    card.appendChild(b);
-    grid.appendChild(card);
+  const t = d.team || {};
+  if (t.enabled === false) {
+    root.appendChild(pageHead(c.titleTeam, ''));
+    root.appendChild(el('div', 'card pad muted', 'Раздел временно скрыт'));
+    return root;
   }
-  if (!(d.merch || []).length) grid.appendChild(el('div', 'card pad muted', 'Скоро здесь появятся фирменные вещи — подпишись, чтобы не пропустить.'));
-  root.appendChild(grid);
-  if (d.wallet?.enabled) {
-    root.appendChild(el('button', 'btn cream', `${svg('wallet', 16)}<span>${esc(d.wallet.button || c.ctaWallet)}</span>`));
-    root.lastChild.onclick = () => setTab('wallet');
+  root.appendChild(pageHead(c.titleTeam, c.teamSub));
+
+  const members = t.members || [];
+
+  // обложка блока: фото ставит бар через бота
+  const hero = el('div', 'team-hero');
+  hero.appendChild(imgBox('bgimg', t.image || d.meta.hero?.image || d.gallery?.[0]?.src));
+  const w = el('div', 'c');
+  w.appendChild(el('div', 'mark', '<img src="img/mark.svg" alt="22">'));
+  w.appendChild(el('h2', null, esc(t.title || c.titleTeam)));
+  if (t.text) w.appendChild(el('p', null, esc(t.text)));
+  hero.appendChild(w);
+  root.appendChild(hero);
+
+  if (members.length) {
+    const grid = el('div', 'team-grid');
+    for (const m of members) {
+      const card = el('div', 'member');
+      card.appendChild(imgBox('ph', m.photo));
+      const b = el('div', 'b');
+      b.innerHTML = `<div class="n">${esc(m.name || '')}</div>${m.role ? `<div class="r">${esc(m.role)}</div>` : ''}${m.text ? `<div class="t">${esc(m.text)}</div>` : ''}`;
+      card.appendChild(b);
+      card.onclick = () => m.text || m.role ? openSheet(m.name || '', teamSheet(m)) : null;
+      grid.appendChild(card);
+    }
+    root.appendChild(grid);
+  } else {
+    // заглушка, пока команда не добавлена
+    const soon = el('div', 'team-soon card pad');
+    soon.appendChild(el('div', 'glyph', svg('users', 26)));
+    soon.appendChild(el('div', 't', 'Скоро здесь будет команда'));
+    soon.appendChild(el('p', 'd', esc(t.note || c.teamNote)));
+    const job = el('button', 'btn line sm', `${svg('brief', 15)}<span>${esc(c.jobsCard)}</span>`);
+    job.onclick = () => setTab('jobs');
+    soon.appendChild(job);
+    root.appendChild(soon);
   }
-  root.appendChild(el('p', 'hint', esc(d.wallet?.note || c.walletNote)));
+
+  root.appendChild(linksBlock(d, c));
   root.appendChild(el('div', 'credits', brandFoot(d)));
   return root;
 }
-function merchForm(m) {
-  return formSheet(
-    '',
-    [
-      { name: 'item', label: 'Что интересует', type: 'text', value: m.name, required: true },
-      { name: 'size', label: 'Размер / вариант', type: 'text', placeholder: 'M, L…' },
-      { name: 'name', label: 'Ваше имя', type: 'text', required: true, autocomplete: 'name' },
-      { name: 'contact', label: 'Телефон или @telegram', type: 'text', required: true, inputmode: 'tel', autocomplete: 'tel' },
-      { name: 'comment', label: 'Комментарий', type: 'textarea', placeholder: 'по желанию' },
-    ],
-    'Отправить заявку',
-    (v) => sendRequest('merch', { товар: v.item, размер: v.size, имя: v.name, комментарий: v.comment }, v.contact)
-  );
+function teamSheet(m) {
+  const w = el('div', 'stack');
+  if (m.photo) w.appendChild(imgBox('sheet-img', m.photo));
+  w.appendChild(el('div', null, `<div class="kicker">${esc(m.role || '')}</div><div class="sheet-name">${esc(m.name || '')}</div>`));
+  if (m.text) w.appendChild(el('p', 'muted', esc(m.text)));
+  return w;
+}
+
+/* ── Сайт / Instagram / бот: блок ссылок, который переиспользуется на экранах ── */
+function siteOf(d) {
+  return d.contacts?.site || (d.socials || []).find((x) => /сайт|site|catch-22-bar/i.test(x.platform + ' ' + x.url))?.url || d.contacts?.bookingUrl || '';
+}
+function instagramOf(d) {
+  return d.contacts?.instagram || (d.socials || []).find((x) => /inst/i.test(x.platform || ''))?.url || '';
+}
+function linksBlock(d, c) {
+  const wrap = el('div');
+  const rows = [];
+  const site = siteOf(d);
+  const inst = instagramOf(d);
+  if (site) rows.push(['web', c.ctaSite, String(site).replace(/^https?:\/\//, '').replace(/\/+$/, ''), () => window.open(site, '_blank')]);
+  if (inst) {
+    const nick = String(inst).match(/instagram\.com\/([^/?#]+)/)?.[1] || '';
+    rows.push(['inst', c.ctaInstagram, nick ? '@' + nick : '', () => window.open(inst, '_blank')]);
+  }
+  if (d.meta.bot) rows.push(['tg', 'Telegram-бот бара', '@' + d.meta.bot, () => openBot()]);
+  if (!rows.length) return wrap;
+  wrap.appendChild(sectionHead(c.socialsTitle));
+  const card = el('div', 'card');
+  for (const [ic, t, desc, fn] of rows) addRow(card, ic, t, desc, fn);
+  wrap.appendChild(card);
+  return wrap;
 }
 
 /* ── Бронирование ── */
@@ -803,26 +849,8 @@ function vContacts(d) {
   const w = el('button', 'btn', `<span>${esc(c.ctaContacts)}</span>${svg('tg', 17)}`);
   w.onclick = () => (d.meta.bot ? openBot() : d.contacts.phone ? tel(d) : setTab('more'));
   root.appendChild(w);
-  root.appendChild(sectionHead(c.socialsTitle));
-  const soc = el('div', 'card pad');
-  soc.appendChild(el('div', 'socials big-row', ''));
-  const rowBox = soc.querySelector('.socials');
-  for (const s of d.socials || []) {
-    if (!s.url) continue;
-    const b = el('button', 'soc big');
-    b.innerHTML = svg(socialIcon(s.platform), 22);
-    b.title = s.platform;
-    b.onclick = () => { haptic(); window.open(s.url, '_blank'); };
-    rowBox.appendChild(b);
-  }
-  if (d.meta.bot) {
-    const b = el('button', 'soc big');
-    b.innerHTML = svg('tg', 22);
-    b.title = 'Telegram-бот';
-    b.onclick = () => openBot();
-    rowBox.appendChild(b);
-  }
-  root.appendChild(soc);
+  // сайт / инстаграм / бот — строками с адресами, чтобы ссылку было видно
+  root.appendChild(linksBlock(d, c));
   return root;
 }
 function openHoursSheet(d, c) {
@@ -868,27 +896,6 @@ function vJobs(d) {
   return root;
 }
 
-/* ── Кошелёк (заглушка оплаты мерча, включается баром) ── */
-function vWallet(d) {
-  const c = copy(d);
-  const root = el('div', 'stack');
-  root.appendChild(pageHead(c.titleWallet, d.wallet?.text || ''));
-  const w = el('div', 'card pad wallet');
-  w.appendChild(el('div', 'glyph', svg('ton', 30)));
-  w.appendChild(el('div', 't', esc(d.wallet?.title || 'Кошелёк ещё не подключён')));
-  w.appendChild(el('p', 'd', esc(d.wallet?.note || c.walletNote)));
-  if (d.wallet?.link) {
-    const a = el('a', 'link', `${svg('wallet', 14)} ${esc(d.wallet.linkText || 'Открыть страницу оплаты')}`);
-    a.href = d.wallet.link; a.target = '_blank'; a.rel = 'noopener';
-    w.appendChild(a);
-  }
-  root.appendChild(w);
-  const back = el('button', 'btn line', `${svg('back', 15)}<span>${esc(c.tabMerch)}</span>`);
-  back.onclick = () => setTab('merch');
-  root.appendChild(back);
-  return root;
-}
-
 /* ── Ещё / профиль ── */
 function vMore(d) {
   const root = el('div', 'stack');
@@ -909,8 +916,8 @@ function vMore(d) {
   const nav = el('div', 'card');
   addRow(nav, 'book', c.titleBooking, d.booking?.text || 'Столы, виниловые вечеринки, бронь', () => setTab('booking'));
   addRow(nav, 'pin', c.titleContacts, d.contacts.address || '', () => setTab('contacts'));
+  addRow(nav, 'users', c.titleTeam, (d.team?.members || []).length ? `${d.team.members.length} чел.` : d.team?.text || '', () => setTab('team'));
   addRow(nav, 'brief', c.titleJobs, d.jobs?.text || '', () => setTab('jobs'));
-  if (d.wallet?.enabled) addRow(nav, 'wallet', c.titleWallet, d.wallet.text || '', () => setTab('wallet'));
   root.appendChild(nav);
 
   // о баре
@@ -929,26 +936,8 @@ function vMore(d) {
   }
   root.appendChild(hours);
 
-  // соцсети
-  const soc = el('div', 'card');
-  addRow(soc, 'share', c.socialsTitle, (d.socials || []).map((s) => s.platform).filter(Boolean).join(' · '), null, true);
-  const rowS = soc.lastChild;
-  const box = el('div', 'socials');
-  for (const s of d.socials || []) {
-    if (!s.url) continue;
-    const b = el('button', 'soc');
-    b.innerHTML = svg(socialIcon(s.platform), 20);
-    b.onclick = () => { haptic(); window.open(s.url, '_blank'); };
-    box.appendChild(b);
-  }
-  if (d.meta.bot) {
-    const b = el('button', 'soc');
-    b.innerHTML = svg('tg', 20);
-    b.onclick = () => openBot();
-    box.appendChild(b);
-  }
-  rowS.appendChild(box);
-  root.appendChild(soc);
+  // мы на связи: сайт, инстаграм, бот — строками с адресами
+  root.appendChild(linksBlock(d, c));
 
   // награды/фишки
   if ((d.meta.awards || []).length) {
@@ -1019,14 +1008,14 @@ $('#back-btn').onclick = () => { haptic(); setTab('home'); };
 $('#tg-btn').onclick = () => { haptic(); if (S.data?.meta?.bot) openBot(); else setTab('contacts'); };
 
 document.querySelectorAll('#tabbar button').forEach((b) => {
-  b.querySelector('i').outerHTML = svg({ home: 'house', menu: 'cutlery', events: 'cal', merch: 'bag', more: 'grid' }[b.dataset.tab] || 'grid', 22);
+  b.querySelector('i').outerHTML = svg({ home: 'house', menu: 'cutlery', events: 'cal', team: 'users', more: 'grid' }[b.dataset.tab] || 'grid', 22);
   b.onclick = () => setTab(b.dataset.tab);
 });
 
 /* hash router: #/tab[/sub] */
 function fromHash() {
   const [, tab, sub] = (location.hash || '').split('/');
-  const all = [...VIEWS, 'booking', 'contacts', 'jobs', 'wallet'];
+  const all = [...VIEWS, 'booking', 'contacts', 'jobs'];
   if (all.includes(tab)) return { tab, sub };
   return { tab: 'home' };
 }

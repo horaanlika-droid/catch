@@ -79,7 +79,7 @@ export function createApp({ store, onWebhook, mode, hookSecret = '' }) {
       const body = await readBody(req, 64 * 1024);
       let data;
       try { data = JSON.parse(body || '{}'); } catch { return json(res, 400, { ok: false, error: 'bad json' }); }
-      const allowed = ['merch', 'booking', 'job', 'message'];
+      const allowed = ['booking', 'job', 'message', 'team'];
       const type = allowed.includes(data.type) ? data.type : 'message';
       const entry = store.addRequest({
         type,

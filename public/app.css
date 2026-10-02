@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════════════════
-   CATCH 22 · listening bar & bistro — тёмная тема по референсу
+   CATCH 22 · фонотека + бар — тёмная тема по референсу
    (docs/reference/IMG_1861.png): чёрно-кофейный фон, терракота, cream-акценты,
    карточки с тонкой светлой линией, нижний таббар, логотип-вектор.
    ══════════════════════════════════════════════════════════════════════════ */
@@ -67,6 +67,7 @@ body::after {
 }
 ::-webkit-scrollbar { display: none }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer }
+[hidden] { display: none !important }
 a { color: var(--accent-hi); text-decoration: none }
 b, strong { font-weight: 700 }
 img, svg { user-select: none; -webkit-user-select: none }
@@ -121,11 +122,15 @@ header#hdr {
 }
 .hdr-btn:active { transform: scale(.86); background: var(--accent-soft); color: var(--accent-hi) }
 .hdr-btn svg { width: 21px; height: 21px }
-.hdr-right { min-width: 38px; display: flex; justify-content: flex-end }
-.hdr-brand { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 3px }
-.hdr-logo { display: flex; align-items: center; gap: 7px }
+.hdr-left { min-width: 38px; flex: none; display: flex; align-items: center }
+.hdr-right { min-width: 38px; flex: none; display: flex; align-items: center; justify-content: flex-end }
+.hdr-brand { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center }
+.hdr-logo { display: flex; align-items: center; justify-content: center; gap: 7px }
 .hdr-logo img { height: 16px; width: auto; display: block }
-.hdr-brand .tagline { font-size: 6.6px; letter-spacing: .3em; color: #8c8073; transition: opacity .3s }
+.hdr-brand .tagline {
+  font-size: 8px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase;
+  color: #b0a294; transition: opacity .3s; white-space: nowrap; text-indent: .24em;
+}
 #live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 rgba(134, 201, 138, .5); animation: pulse 2.4s infinite }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(134, 201, 138, .45) } 70% { box-shadow: 0 0 0 6px rgba(134, 201, 138, 0) } 100% { box-shadow: 0 0 0 0 rgba(134, 201, 138, 0) } }
 
@@ -370,28 +375,49 @@ button.ev:active { background: rgba(255, 240, 226, .03) }
 .ev.past { opacity: .5 }
 .ev.past .poster { filter: grayscale(.6) }
 
-/* ── мерч ─────────────────────────────────────────────────────────────────── */
-.merch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px }
-.merch { display: flex; flex-direction: column; gap: 9px }
-.merch .ph {
-  position: relative; aspect-ratio: 1/1; border-radius: var(--r-md); overflow: hidden;
-  background: linear-gradient(160deg, #efe4d3, var(--cream-2)); background-size: cover; background-position: center;
-  border: 1px solid var(--line); opacity: .96;
+/* ── команда ──────────────────────────────────────────────────────────────── */
+.team-hero {
+  position: relative; border-radius: var(--r-xl); overflow: hidden; border: 1px solid var(--line);
+  min-height: 220px; display: flex; align-items: flex-end; isolation: isolate;
 }
-.merch .ph.wo { background: linear-gradient(160deg, var(--card-2), #141110) }
-.merch .ph .soon {
-  position: absolute; top: 9px; left: 9px; padding: 4px 9px; border-radius: 999px;
-  font-size: 9.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
-  background: rgba(14, 11, 10, .62); color: #f0e6da; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+.team-hero .bgimg {
+  position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center;
+  background-color: var(--card-2); opacity: 0; transition: opacity .8s var(--ease), transform 6s var(--ease);
+  transform: scale(1.02);
 }
-.merch .n { font-size: 13.5px; font-weight: 600; line-height: 1.3 }
-.merch .d { font-size: 12px; color: var(--muted); line-height: 1.4; margin-top: -4px }
-.merch .prow { display: flex; align-items: center; gap: 7px; flex-wrap: wrap }
-.merch .p { font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums }
-.merch .ton { display: inline-flex; align-items: center; gap: 5px; padding: 4px 8px; border-radius: 8px; background: #241c18; border: 1px solid var(--line); font-size: 10.5px; font-weight: 600; color: var(--muted) }
-.merch .ton svg { width: 11px; height: 11px; color: #6fb0e8 }
-.merch .req { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-hi); display: inline-flex; align-items: center; gap: 6px; padding: 9px 2px }
-.merch .req svg { width: 14px; height: 14px }
+.team-hero.done .bgimg { opacity: 1; transform: scale(1.08) }
+.team-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(11, 9, 8, .25) 0%, rgba(11, 9, 8, .55) 45%, rgba(10, 8, 7, .92) 100%);
+}
+.team-hero .c { padding: 20px 18px; display: flex; flex-direction: column; align-items: center; gap: 9px; text-align: center; width: 100% }
+.team-hero .mark img { height: 40px; width: 40px; display: block; filter: drop-shadow(0 8px 20px rgba(0, 0, 0, .5)) }
+.team-hero h2 { margin: 0; font-size: clamp(19px, 5.6vw, 23px); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--cream) }
+.team-hero p { margin: 0; max-width: 320px; font-size: 13px; line-height: 1.55; color: #e6dccf; white-space: pre-line }
+
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+.member { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); background: linear-gradient(180deg, var(--card), #141110); text-align: left }
+.member .ph { position: relative; aspect-ratio: 4/5; background-size: cover; background-position: center top; background-color: var(--card-2); opacity: 0; transition: opacity .6s var(--ease) }
+.member .ph.on { opacity: 1 }
+.member .ph.empty::after {
+  content: "22"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 30px; font-weight: 800; letter-spacing: .06em; color: rgba(233, 220, 200, .18);
+}
+.member .b { padding: 11px 12px 13px }
+.member .n { font-size: 13.5px; font-weight: 700; line-height: 1.3 }
+.member .r { font-size: 9.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-top: 5px }
+.member .t { font-size: 12px; color: var(--muted); line-height: 1.45; margin-top: 6px }
+
+/* заглушка, пока команду не наполнили */
+.team-soon { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 30px 20px 24px; text-align: center }
+.team-soon .glyph {
+  width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(194, 102, 74, .4); color: var(--accent-hi); background: var(--accent-soft);
+}
+.team-soon .glyph svg { width: 28px; height: 28px }
+.team-soon .t { font-size: 15px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase }
+.team-soon .d { margin: 0 0 6px; font-size: 13px; color: var(--muted); line-height: 1.55; max-width: 300px; white-space: pre-line }
+.team-soon .btn { max-width: 260px }
 
 /* ── лента галереи ────────────────────────────────────────────────────────── */
 .reel { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 2px var(--pad) 12px; margin: 0 calc(var(--pad) * -1) }
@@ -416,6 +442,8 @@ button.ev:active { background: rgba(255, 240, 226, .03) }
 .award .d { font-size: 12px; color: var(--muted); margin-top: 2px }
 .credits { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; padding: 22px 10px 4px; font-size: 11px; color: var(--muted-2); line-height: 1.6 }
 .credits a { color: inherit }
+.foot-links { font-size: 11px; letter-spacing: .04em }
+.foot-links a { color: var(--accent-hi); font-weight: 600 }
 
 /* блок «стань частью команды» с фото-подложкой */
 .job-hero { position: relative; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); padding: 22px 18px; min-height: 210px; display: flex; flex-direction: column; justify-content: center }
@@ -425,14 +453,6 @@ button.ev:active { background: rgba(255, 240, 226, .03) }
 .job-hero h2 { margin: 0 0 12px; font-size: clamp(21px, 6.4vw, 27px); font-weight: 800; line-height: 1.12; letter-spacing: .01em; text-transform: uppercase; color: var(--cream) }
 .job-hero h2 em { font-style: normal; color: var(--accent) }
 .job-hero p { margin: 0; max-width: 340px; font-size: 13px; line-height: 1.55; color: #e6dccf }
-
-/* TON-кошелёк */
-.wallet { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 26px 18px 22px; text-align: center }
-.wallet .glyph { width: 62px; height: 62px; border-radius: 50%; background: #0098ea; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 30px rgba(0, 152, 234, .28) }
-.wallet .glyph svg { width: 30px; height: 30px; color: #fff }
-.wallet .t { font-size: 16px; font-weight: 700 }
-.wallet .d { font-size: 13px; color: var(--muted); line-height: 1.5; max-width: 300px }
-.wallet .link { font-size: 12.5px; color: var(--muted); display: inline-flex; align-items: center; gap: 5px }
 
 /* ── формы ─────────────────────────────────────────────────────────────────── */
 .form { display: flex; flex-direction: column; gap: 12px }
@@ -508,7 +528,7 @@ button.ev:active { background: rgba(255, 240, 226, .03) }
 .sk { border-radius: var(--r-lg); background: linear-gradient(100deg, var(--card) 40%, var(--card-2) 50%, var(--card) 60%); background-size: 220% 100%; animation: sk 1.35s infinite linear }
 .sk.h40 { height: 40px } .sk.h160 { height: 160px } .sk.h220 { height: 220px } .sk.h90 { height: 90px } .sk.w60p { width: 60% }
 @keyframes sk { to { background-position: -120% 0 } }
-body.live-flash .card, body.live-flash .photo-card, body.live-flash .promo, body.live-flash .hero, body.live-flash .job-hero { animation: flash .9s var(--ease) }
+body.live-flash .card, body.live-flash .photo-card, body.live-flash .promo, body.live-flash .hero, body.live-flash .job-hero, body.live-flash .team-hero { animation: flash .9s var(--ease) }
 @keyframes flash { 0% { box-shadow: 0 0 0 0 rgba(217, 126, 91, 0) } 35% { box-shadow: 0 0 0 2px rgba(217, 126, 91, .32) } 100% { box-shadow: none } }
 .fadeimg { opacity: 0; transition: opacity .5s var(--ease) }
 .fadeimg.on { opacity: 1 }

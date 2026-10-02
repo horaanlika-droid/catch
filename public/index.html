@@ -7,8 +7,8 @@
 <meta name="color-scheme" content="dark">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="CATCH 22 — listening bar & bistro. Винил, коктейли, comfort food. Меню, афиша, бронирование, мерч.">
-<title>CATCH 22 — Listening Bar &amp; Bistro</title>
+<meta name="description" content="CATCH 22 — фонотека + бар на наб. Фонтанки, 86. Винил, коктейли, comfort food. Меню, афиша, бронирование.">
+<title>CATCH 22 — фонотека + бар</title>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -26,7 +26,7 @@
 <div id="boot">
   <div class="boot-inner">
     <img class="boot-logo" src="img/logo.svg" alt="CATCH 22">
-    <div class="boot-sub" id="boot-sub">LISTENING BAR &amp; BISTRO</div>
+    <div class="boot-sub" id="boot-sub">ФОНОТЕКА + БАР</div>
     <div class="boot-bar"><i></i></div>
     <div class="boot-credit">app by <a href="https://t.me/stonym0ntana" target="_blank" rel="noopener">@stonym0ntana</a></div>
   </div>
@@ -35,15 +35,17 @@
 <div id="app" aria-hidden="true">
   <header id="hdr">
     <div class="hdr-in">
-      <button id="nav-btn" class="hdr-btn" aria-label="Меню">
-        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
-      </button>
-      <button id="back-btn" class="hdr-btn" aria-label="Назад" hidden>
-        <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
+      <div class="hdr-left">
+        <button id="nav-btn" class="hdr-btn" aria-label="Меню">
+          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+        </button>
+        <button id="back-btn" class="hdr-btn" aria-label="Назад" hidden>
+          <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
       <div class="hdr-brand">
         <span class="hdr-logo"><img src="img/logo.svg" alt="CATCH 22"><i id="live-dot" title="живые данные" hidden></i></span>
-        <div class="tagline" id="hdr-sub">LISTENING BAR &amp; BISTRO</div>
+        <div class="tagline" id="hdr-sub">ФОНОТЕКА + БАР</div>
       </div>
       <div class="hdr-right">
         <button id="tg-btn" class="hdr-btn" aria-label="Telegram">
@@ -57,7 +59,7 @@
     <button data-tab="home"><i>house</i><span>Главная</span></button>
     <button data-tab="menu"><i>cutlery</i><span>Меню</span></button>
     <button data-tab="events"><i>cal</i><span>Афиша</span></button>
-    <button data-tab="merch"><i>bag</i><span>Мерч</span></button>
+    <button data-tab="team"><i>users</i><span>Команда</span></button>
     <button data-tab="more"><i>grid</i><span>Ещё</span></button>
   </nav>
 </div>
@@ -65,7 +67,7 @@
 <div id="toasts"></div>
 <div id="sheet-root"></div>
 
-<noscript><div style="padding:24px;font:15px system-ui">Для приложения нужен JavaScript. Меню и афиша — также в <a href="https://t.me" style="color:#c2664a">Telegram-боте бара</a>.</div></noscript>
+<noscript><div style="padding:24px;font:15px system-ui">Для приложения нужен JavaScript. Меню и афиша — на сайте <a href="https://catch-22-bar.ru/" style="color:#c2664a">catch-22-bar.ru</a> и в <a href="https://www.instagram.com/catch22.catch22.catch22/" style="color:#c2664a">Instagram</a> бара.</div></noscript>
 <script src="app.js"></script>
 </body>
 </html>

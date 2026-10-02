@@ -43,7 +43,7 @@ const d = (list = rings) => list.map((r) => r.d).join('');
 function wordmark(fill, { trim = 0 } = {}) {
   const W = WORDMARK_W - trim * 2;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${round(W)} ${CAP}" width="${round(W * 2)}" height="${CAP * 2}" role="img" aria-label="CATCH 22">
-  <title>CATCH 22 — listening bar &amp; bistro</title>
+  <title>CATCH 22 — фонотека + бар</title>
   <path fill="${fill}" fill-rule="evenodd" transform="translate(${-trim},0)" d="${d()}"/>
 </svg>
 `;
