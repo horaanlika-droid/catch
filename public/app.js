@@ -15,13 +15,31 @@ const apiBase = (CFG.apiBase || '').replace(/\/+$/, '');
 const sameOriginAPI = !apiBase && !(location.hostname.endsWith('github.io') || location.protocol === 'file:');
 
 /* ── состояние ── */
+const storedLanguage = (() => { try { return localStorage.getItem('catch22-language'); } catch { return ''; } })();
 const S = {
   data: null, tab: 'home', sub: '', menuCat: 0, q: '', live: false, lastRev: 0,
+  lang: storedLanguage === 'en' ? 'en' : 'ru',
 };
+const I18N = window.CATCH_I18N || {};
 
 /* ── утилиты ── */
 const el = (tag, cls, html) => { const n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const L = (value) => {
+  if (S.lang !== 'en' || value == null) return String(value ?? '');
+  const raw = String(value);
+  if (Object.prototype.hasOwnProperty.call(I18N.text || {}, raw)) return I18N.text[raw];
+  return raw
+    .replace(/б\/а/giu, 'non-alcoholic')
+    .replace(/мл/giu, 'ml')
+    .replace(/[\p{Script=Cyrillic}]+/gu, (word) => {
+      const translated = I18N.words?.[word.toLocaleLowerCase('ru')];
+      if (!translated) return word;
+      if (word === word.toLocaleUpperCase('ru')) return translated.toLocaleUpperCase('en-US');
+      if (word[0] === word[0].toLocaleUpperCase('ru')) return translated[0].toLocaleUpperCase('en-US') + translated.slice(1);
+      return translated;
+    });
+};
 const api = (p) => (apiBase || '') + p;
 
 const ICONS = {
@@ -48,8 +66,44 @@ const ICONS = {
   brief: '<rect x="3.5" y="7" width="17" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 7V5.6c0-.9.7-1.6 1.6-1.6h2.8c.9 0 1.6.7 1.6 1.6V7" fill="none" stroke="currentColor" stroke-width="1.8"/>',
   check: '<path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>',
   stop: '<circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m7.5 16.5 9-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
+  speaker: '<rect x="4.5" y="3.5" width="15" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="15.5" r="1.4" fill="none" stroke="currentColor" stroke-width="1.7"/>',
+  cocktail: '<path d="M4 5h16l-6.2 7.1v5.4l3.2 1.8v1.2H7v-1.2l3.2-1.8v-5.4L4 5zM7.5 9h9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m16 3 4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>',
+  wine: '<path d="M7 3h10v5a5 5 0 0 1-10 0V3zM12 13v6m-4 2h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 8h9" stroke="currentColor" stroke-width="1.5"/>',
+  trophy: '<path d="M8 4h8v4.5a4 4 0 0 1-8 0V4zM8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 12.5V18m-4 3h8m-6-3h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>',
+  sofa: '<path d="M5 12V8a2.5 2.5 0 0 1 5 0v3h4V8a2.5 2.5 0 0 1 5 0v4a2 2 0 0 1 2 2v5H3v-5a2 2 0 0 1 2-2zM3 16h18M6 19v2m12-2v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+  bottle: '<path d="M9 3h6m-5 0v4l-2 2v11a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9l-2-2V3M8 12h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>',
+  spark: '<path d="m12 3 1.7 6.3L20 11l-6.3 1.7L12 19l-1.7-6.3L4 11l6.3-1.7L12 3zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>',
 };
-const svg = (n, w = 24) => `<svg viewBox="0 0 24 24" width="${w}" height="${w}">${ICONS[n] || ''}</svg>`;
+const svg = (n, w = 24) => `<svg viewBox="0 0 24 24" width="${w}" height="${w}" aria-hidden="true">${ICONS[n] || ''}</svg>`;
+function categoryIcon(cat) {
+  const key = `${cat?.id || ''} ${cat?.title || ''}`.toLowerCase();
+  if (/food|еда/.test(key)) return 'cutlery';
+  if (/bar|коктей|бар/.test(key)) return 'cocktail';
+  if (/spirit|крепк/.test(key)) return 'bottle';
+  if (/wine|вин/.test(key)) return 'wine';
+  return 'disc';
+}
+function infographicIcon(a, index) {
+  const key = `${a?.title || ''} ${a?.text || ''}`.toLowerCase();
+  if (/where2drink|award|прем|открытие года/.test(key)) return 'trophy';
+  if (/tannoy|звук|акуст|sound/.test(key)) return 'speaker';
+  if (/фонотек|vinyl|винил|record/.test(key)) return 'disc';
+  if (/коктейл|cocktail|бар/.test(key)) return 'cocktail';
+  if (/wine|вино/.test(key)) return 'wine';
+  if (/studio|cache|интерьер|interior/.test(key)) return 'sofa';
+  return ['disc', 'speaker', 'cocktail', 'wine', 'sofa', 'spark'][index % 6];
+}
+function renderInfographic(items = []) {
+  const box = el('div', 'infographic card');
+  items.forEach((a, index) => {
+    const item = el('article', 'infographic-item');
+    const count = String(index + 1).padStart(2, '0');
+    item.innerHTML = `<span class="infographic-index">${count}</span><span class="infographic-symbol">${svg(infographicIcon(a, index), 21)}</span>` +
+      `<span class="infographic-copy"><span class="t">${esc(L(a.title || ''))}</span><span class="d">${esc(L(a.text || ''))}</span></span>`;
+    box.appendChild(item);
+  });
+  return box;
+}
 
 function haptic(kind = 'light') {
   try {
@@ -88,7 +142,7 @@ async function loadData(showToast) {
   applyMeta(next);
   if (changed && S.tab) render();
   if (changed && showToast) {
-    toast('🔄 Данные обновлены');
+    toast(L('Данные обновлены'));
     document.body.classList.add('live-flash');
     setTimeout(() => document.body.classList.remove('live-flash'), 900);
   }
@@ -99,20 +153,35 @@ async function loadData(showToast) {
 function applyMeta(d) {
   if (!d?.meta) return;
   const c = copy(d);
+  document.documentElement.lang = S.lang;
+  document.body.classList.toggle('menu-view', S.tab === 'menu');
   // фон-подложка приложения = фото главной (ставится ботом)
   const bg = mediaUrl(d.meta.hero?.image || d.gallery?.[0]?.image || d.gallery?.[0]?.src || '');
   document.body.style.setProperty('--hero-bg', bg ? `url("${bg}")` : 'none');
   const sub = $('#hdr-sub');
-  if (sub) sub.textContent = d.meta.sub || '';
+  if (sub) sub.textContent = L(d.meta.sub || '');
   const boot = $('#boot-sub');
-  if (boot) boot.textContent = d.meta.sub || '';
+  if (boot) boot.textContent = L(d.meta.sub || '');
   const vt = viewTitle(d);
-  document.title = vt ? `${vt} · ${d.meta.name || 'CATCH 22'}` : `${d.meta.name || 'CATCH 22'} — ${d.meta.sub || 'фонотека + бар'}`;
+  const brandSub = L(d.meta.sub || 'фонотека + бар');
+  document.title = vt ? `${vt} · ${d.meta.name || 'CATCH 22'}` : `${d.meta.name || 'CATCH 22'} — ${brandSub}`;
+  const description = document.querySelector('meta[name="description"]');
+  if (description) description.content = S.lang === 'en'
+    ? 'CATCH 22 listening bar and record library at 86 Fontanka Embankment, Saint Petersburg. Vinyl, cocktails, comfort food, events and bookings.'
+    : 'CATCH 22 — фонотека + бар на наб. Фонтанки, 86. Винил, коктейли, comfort food. Меню, афиша, бронирование.';
   const tabs = { home: c.tabHome, menu: c.tabMenu, events: c.tabEvents, team: c.tabTeam, more: c.tabMore };
   document.querySelectorAll('#tabbar button').forEach((b) => {
     const lbl = tabs[b.dataset.tab];
     if (lbl) b.querySelector('span').textContent = lbl;
   });
+  const lang = $('#lang-btn');
+  if (lang) {
+    lang.textContent = S.lang === 'en' ? 'RU' : 'EN';
+    lang.title = S.lang === 'en' ? 'Switch to Russian' : 'Switch to English';
+    lang.setAttribute('aria-label', lang.title);
+  }
+  $('#nav-btn')?.setAttribute('aria-label', L('Меню'));
+  $('#back-btn')?.setAttribute('aria-label', L('Назад'));
 }
 
 function startLive() {
@@ -171,22 +240,22 @@ function formSheet(title, fields, submitLabel, onSubmit) {
   const form = el('form', 'stack');
   const inputs = {};
   for (const f of fields) {
-    if (f.type === 'note') { wrap.appendChild(el('p', 'hint', esc(f.text))); continue; }
+    if (f.type === 'note') { wrap.appendChild(el('p', 'hint', esc(L(f.text)))); continue; }
     const fd = el('div', 'field');
-    fd.appendChild(el('label', null, esc(f.label)));
+    fd.appendChild(el('label', null, esc(L(f.label))));
     let input;
     if (f.type === 'select') {
       input = el('select');
-      for (const o of f.options) input.appendChild(el('option', null, esc(o)));
+      for (const o of f.options) input.appendChild(el('option', null, esc(L(o))));
     } else if (f.type === 'textarea') {
       input = el('textarea');
-      if (f.placeholder) input.placeholder = f.placeholder;
+      if (f.placeholder) input.placeholder = L(f.placeholder);
     } else if (f.type === 'stepper') {
       input = (() => {
         const box = el('div', 'stepper');
         let v = f.value ?? 2;
-        const lbl = el('div', 'v', String(v));
-        const mk = (d, t) => { const b = el('button', null, t); b.type = 'button'; b.onclick = () => { v = Math.max(f.min ?? 1, Math.min(f.max ?? 20, v + d)); lbl.textContent = f.suffix ? v + ' ' + f.suffix : v; haptic(); }; return b; };
+        const lbl = el('div', 'v', String(f.suffix ? `${v} ${L(f.suffix)}` : v));
+        const mk = (d, t) => { const b = el('button', null, t); b.type = 'button'; b.onclick = () => { v = Math.max(f.min ?? 1, Math.min(f.max ?? 20, v + d)); lbl.textContent = f.suffix ? v + ' ' + L(f.suffix) : v; haptic(); }; return b; };
         box.append(mk(-1, '−'), lbl, mk(1, '+'));
         return { box, get value() { return String(v); } };
       })();
@@ -195,7 +264,7 @@ function formSheet(title, fields, submitLabel, onSubmit) {
         const box = el('div', 'slots');
         let sel = f.value || f.options[0];
         f.options.forEach((o, i) => {
-          const b = el('button', 'slot' + (i === 0 ? ' on' : ''), esc(o));
+          const b = el('button', 'slot' + (i === 0 ? ' on' : ''), esc(L(o)));
           b.type = 'button';
           b.onclick = () => { box.querySelectorAll('.slot').forEach((x) => x.classList.remove('on')); b.classList.add('on'); sel = o; haptic(); };
           box.appendChild(b);
@@ -205,7 +274,7 @@ function formSheet(title, fields, submitLabel, onSubmit) {
     } else {
       input = el('input');
       input.type = f.type || 'text';
-      if (f.placeholder) input.placeholder = f.placeholder;
+      if (f.placeholder) input.placeholder = L(f.placeholder);
       if (f.required) input.required = true;
       if (f.min) input.min = f.min;
       if (f.inputmode) input.inputMode = f.inputmode;
@@ -215,7 +284,7 @@ function formSheet(title, fields, submitLabel, onSubmit) {
     fd.appendChild(input.box || input);
     form.appendChild(fd);
   }
-  const btn = el('button', 'btn', esc(submitLabel) + `<span class="tail">${svg('arrow', 14)}</span>`);
+  const btn = el('button', 'btn', esc(L(submitLabel)) + `<span class="tail">${svg('arrow', 14)}</span>`);
   btn.type = 'submit';
   form.appendChild(btn);
   wrap.appendChild(form);
@@ -229,12 +298,12 @@ function formSheet(title, fields, submitLabel, onSubmit) {
     let ok;
     try { ok = await onSubmit(values); } catch { ok = false; }
     btn.removeAttribute('disabled');
-    if (ok === false) { toast('⚠️ Не вышло — попробуй ещё раз'); return; }
+    if (ok === false) { toast(L('Не вышло — попробуй ещё раз')); return; }
     wrap.innerHTML = '';
     const s = el('div', 'success');
     s.appendChild(el('div', 'ring', svg('check', 44)));
-    s.appendChild(el('div', null, '<b>Заявка отправлена</b>'));
-    s.appendChild(el('p', null, esc(typeof ok === 'string' ? ok : 'Мы свяжемся с вами в ближайшее время 🤝')));
+    s.appendChild(el('div', null, `<b>${esc(L('Заявка отправлена'))}</b>`));
+    s.appendChild(el('p', null, esc(L(typeof ok === 'string' ? ok : 'Мы свяжемся с вами в ближайшее время'))));
     wrap.appendChild(s);
   };
   return wrap;
@@ -247,7 +316,7 @@ async function sendRequest(type, fields, contact) {
     const r = await fetch(api('/api/request'), { method: 'POST', headers: { 'content-type': 'application/json' }, body: payload });
     const j = await r.json();
     if (j.ok) return true;
-    if (r.status === 429) { toast('Подожди минутку ⏳'); return false; }
+    if (r.status === 429) { toast(L('Подожди минутку')); return false; }
   } catch {}
   const bot = S.data?.meta?.bot;
   if (bot) {
@@ -269,7 +338,7 @@ function todayStatus(hours) {
   for (const h of hours || []) {
     const days = (h.days || '');
     if (!(days.includes(day) || /кажд|every|ежедн/i.test(days))) continue;
-    rowTxt = `${h.days} · ${h.time}`;
+    rowTxt = `${L(h.days)} · ${L(h.time)}`;
     if (h.closed) { open = false; break; }
     const m = (h.time || '').match(/(\d{1,2}):(\d{2})\s*[–\-—]\s*(\d{1,2}):(\d{2})/);
     if (!m) continue;
@@ -303,7 +372,14 @@ const COPY_DEFAULT = {
   galleryTitle: 'Галерея',
   jobsCard: 'Стань частью команды',
 };
-const copy = (d) => Object.assign({}, COPY_DEFAULT, d?.copy || {});
+function copy(d) {
+  const c = Object.assign({}, COPY_DEFAULT, d?.copy || {});
+  if (S.lang === 'en') {
+    for (const [key, value] of Object.entries(I18N.copy || {})) c[key] = value;
+    for (const key of Object.keys(c)) c[key] = L(c[key]);
+  }
+  return c;
+}
 
 /* ── переиспользуемые куски ── */
 function imgBox(cls, src, styleExtra = '') {
@@ -372,13 +448,13 @@ function render(animate = true) {
 function sectionHead(t, sub) {
   if (!t) return el('div');
   const w = el('div');
-  w.appendChild(el('div', 'sec-title', esc(t) + (sub ? `<span class="n">${esc(sub)}</span>` : '')));
+  w.appendChild(el('div', 'sec-title', esc(L(t)) + (sub ? `<span class="n">${esc(L(sub))}</span>` : '')));
   return w;
 }
 function pageHead(title, sub) {
   const w = el('div');
-  if (title) w.appendChild(el('h1', 'page-title', esc(title)));
-  if (sub) w.appendChild(el('p', 'page-sub', esc(sub)));
+  if (title) w.appendChild(el('h1', 'page-title', esc(L(title))));
+  if (sub) w.appendChild(el('p', 'page-sub', esc(L(sub))));
   return w;
 }
 
@@ -425,12 +501,12 @@ function openDrawer() {
   const img = d.meta.aboutImage || (d.gallery?.[0]?.src) || d.meta.hero?.image || '';
   about.appendChild(imgBox('ph', img));
   const b = el('div', 'b');
-  b.innerHTML = `<span style="flex:1;min-width:0"><span class="t">${esc(c.aboutCard)}</span><span class="d">${esc(d.meta.about || d.meta.tagline || '')}</span></span><span class="chev">${svg('chev', 16)}</span>`;
+  b.innerHTML = `<span style="flex:1;min-width:0"><span class="t">${esc(c.aboutCard)}</span><span class="d">${esc(L(d.meta.about || d.meta.tagline || ''))}</span></span><span class="chev">${svg('chev', 16)}</span>`;
   about.appendChild(b);
   about.onclick = () => { shut(); setTab('more'); };
   wrap.appendChild(about);
 
-  const hint = el('p', 'hint', 'Меню, афиша и цены обновляются баром сами — здесь всегда актуально.');
+  const hint = el('p', 'hint', L('Меню, афиша и цены обновляются баром сами — здесь всегда актуально.'));
   wrap.appendChild(hint);
 
   const { close: shut } = openSheet('', wrap, { logo: false });
@@ -452,20 +528,20 @@ function vHome(d) {
   const card = el('div', 'hero card');
   card.appendChild(imgBox('bgimg', hero.image || d.gallery?.[0]?.src));
   const pill = el('div', 'status-pill' + (st.open === false ? ' closed' : ''));
-  pill.innerHTML = `<span class="d"></span>${st.open ? 'Открыто сейчас' : st.open === false ? 'Закрыто' : 'Расписание'}`;
+  pill.innerHTML = `<span class="d"></span>${esc(L(st.open ? 'Открыто сейчас' : st.open === false ? 'Закрыто' : 'Расписание'))}`;
   pill.title = st.rowTxt;
   card.appendChild(pill);
   const cont = el('div', 'c');
-  cont.appendChild(el('div', 'mark', `<img src="img/logo.svg" alt="${esc(d.meta.name || 'CATCH 22')}"><div class="tagline">${esc(hero.subtitle || d.meta.sub || '')}</div>`));
+  cont.appendChild(el('div', 'mark', `<img src="img/logo.svg" alt="${esc(d.meta.name || 'CATCH 22')}"><div class="tagline">${esc(L(hero.subtitle || d.meta.sub || ''))}</div>`));
   const desc = hero.text || d.meta.tagline || '';
-  if (desc) cont.appendChild(el('p', 'desc', esc(desc)));
+  if (desc) cont.appendChild(el('p', 'desc', esc(L(desc))));
   const actions = el('div', 'stack');
   if (d.booking?.enabled !== false) {
-    const b = el('button', 'btn', `<span>${esc(hero.cta || c.ctaBooking)}</span>${svg('chev', 16)}`);
+    const b = el('button', 'btn', `<span>${esc(L(hero.cta || c.ctaBooking))}</span>${svg('chev', 16)}`);
     b.onclick = () => setTab('booking');
     actions.appendChild(b);
   }
-  const g = el('button', 'btn line', `${svg('pin', 16)}<span>${esc(d.contacts.address || 'Контакты')}</span>`);
+  const g = el('button', 'btn line', `${svg('pin', 16)}<span>${esc(L(d.contacts.address || 'Контакты'))}</span>`);
   g.onclick = () => window.open(d.contacts.maps || `https://yandex.ru/maps/?text=${encodeURIComponent(d.contacts.address || '')}`, '_blank');
   actions.appendChild(g);
   cont.appendChild(actions);
@@ -476,10 +552,10 @@ function vHome(d) {
   const nextEv = upcoming(d);
   const facts = el('div', 'facts');
   const f1 = el('button', 'fact');
-  f1.innerHTML = `<div class="l">${esc(c.hoursTitle)}</div><div class="v">${esc(st.rowTxt)}</div><div class="s">${st.open ? 'Идём к гостям 🍸' : st.open === false ? 'Откроемся чуть позже' : ''}</div>`;
+  f1.innerHTML = `<div class="l">${esc(c.hoursTitle)}</div><div class="v">${esc(st.rowTxt)}</div><div class="s">${esc(st.open ? L('Мы готовы вас встречать') : st.open === false ? L('Откроемся чуть позже') : '')}</div>`;
   f1.onclick = () => setTab('contacts');
   const f2 = el('button', 'fact');
-  f2.innerHTML = `<div class="l">Ближе всего</div><div class="v">${nextEv.length ? esc(nextEv[0].title) : 'Афиша пуста'}</div><div class="s">${nextEv.length ? fmtDate(nextEv[0].date) + ' · ' + esc(nextEv[0].time || '') : 'загляни позже'}</div>`;
+  f2.innerHTML = `<div class="l">${esc(L('Ближе всего'))}</div><div class="v">${nextEv.length ? esc(L(nextEv[0].title)) : esc(L('Афиша пуста'))}</div><div class="s">${nextEv.length ? fmtDate(nextEv[0].date) + ' · ' + esc(L(nextEv[0].time || '')) : esc(L('загляни позже'))}</div>`;
   f2.onclick = () => setTab('events');
   facts.append(f1, f2);
   root.appendChild(facts);
@@ -488,7 +564,7 @@ function vHome(d) {
   const stopped = stoppedItems(d);
   if (stopped.length) {
     const box = el('div', 'card');
-    addRow(box, 'stop', c.stopTitle, stopped.map((i) => i.name).slice(0, 4).join(', ') + (stopped.length > 4 ? '…' : ''), () => openStopSheet(stopped));
+    addRow(box, 'stop', c.stopTitle, stopped.map((i) => L(i.name)).slice(0, 4).join(', ') + (stopped.length > 4 ? '…' : ''), () => openStopSheet(stopped));
     root.appendChild(box);
   }
 
@@ -497,9 +573,9 @@ function vHome(d) {
     const p = el('button', 'promo');
     p.appendChild(imgBox('ph', d.brunch.image));
     const t = el('div', 'txt');
-    t.innerHTML = `<div class="k">${esc(d.brunch.title || 'БРАНЧ')}</div><p>${esc(d.brunch.text || '')}</p>`;
+    t.innerHTML = `<div class="k">${esc(L(d.brunch.title || 'БРАНЧ'))}</div><p>${esc(L(d.brunch.text || ''))}</p>`;
     p.appendChild(t);
-    p.onclick = () => (d.brunch.image ? openImageSheet(d.brunch.image, d.brunch.title || 'Бранч') : setTab('events'));
+    p.onclick = () => (d.brunch.image ? openImageSheet(d.brunch.image, L(d.brunch.title || 'Бранч')) : setTab('events'));
     root.appendChild(p);
   }
 
@@ -507,22 +583,16 @@ function vHome(d) {
   if (nextEv.length) {
     root.appendChild(sectionHead(c.tonight, `${nextEv.length}`));
     for (const e of nextEv.slice(0, 3)) root.appendChild(eventCard(e));
-    const more = el('button', 'btn line sm', `Вся афиша ${svg('chev', 15)}`);
+    const more = el('button', 'btn line sm', `${esc(L('Вся афиша'))} ${svg('chev', 15)}`);
     more.onclick = () => setTab('events');
     root.appendChild(more);
   }
 
-  // фишки/награды — полоса с круглыми иконками (низ референса)
+  // Факты о баре собраны как фирменная инфографика с векторными пиктограммами.
   const feats = d.meta.awards || [];
   if (feats.length) {
     root.appendChild(sectionHead(c.awardsTitle));
-    const box = el('div', 'card');
-    for (const a of feats) {
-      const f = el('div', 'feature');
-      f.innerHTML = `<span class="badge">${/^[^a-zа-я]{1,4}$/i.test(a.icon || '') ? esc(a.icon) : svg('disc', 20)}</span><span style="min-width:0"><span class="t">${esc(a.title)}</span><span class="d">${esc(a.text || '')}</span></span>`;
-      box.appendChild(f);
-    }
-    root.appendChild(box);
+    root.appendChild(renderInfographic(feats));
   }
 
   // мы на связи: сайт + инстаграм + бот
@@ -533,12 +603,12 @@ function vHome(d) {
   return root;
 }
 function brandFoot(d) {
-  const upd = d.updatedAt ? ` · обновлено ${fmtRel(d.updatedAt)}` : '';
+  const upd = d.updatedAt ? ` · ${L('обновлено')} ${fmtRel(d.updatedAt)}` : '';
   const site = siteOf(d);
   const inst = instagramOf(d);
   const links = [site ? `<a href="${esc(site)}" target="_blank" rel="noopener">catch-22-bar.ru</a>` : '', inst ? `<a href="${esc(inst)}" target="_blank" rel="noopener">instagram</a>` : ''].filter(Boolean).join(' · ');
   return `<span class="foot-logo"><img src="img/logo.svg" alt="CATCH 22"></span>`
-    + `<span class="foot-sub">${esc(d.meta.sub || '')}${upd}</span>`
+    + `<span class="foot-sub">${esc(L(d.meta.sub || ''))}${upd}</span>`
     + (links ? `<span class="foot-links">${links}</span>` : '')
     + `<span class="foot-credit">app by <a href="https://t.me/stonym0ntana" target="_blank" rel="noopener">@stonym0ntana</a></span>`;
 }
@@ -560,24 +630,25 @@ function openStopSheet(stopped) {
   for (const it of stopped) {
     const row = el('div', 'row');
     row.style.cssText = 'padding:10px 4px;border-bottom:1px solid var(--line)';
-    row.innerHTML = `<span class="ic">${svg('stop', 18)}</span><span class="tx"><span class="t">${esc(it.name)}</span><span class="d">${esc(it.desc || 'не продаётся сегодня')}</span></span>`;
+    row.innerHTML = `<span class="ic">${svg('stop', 18)}</span><span class="tx"><span class="t">${esc(L(it.name))}</span><span class="d">${esc(L(it.desc || 'не продаётся сегодня'))}</span></span>`;
     w.appendChild(row);
   }
-  w.appendChild(el('p', 'tiny', 'Список ведёт команда — актуальные позиции в меню зачёркнуты.'));
-  openSheet('Сегодня не продаём', w);
+  w.appendChild(el('p', 'tiny', L('Список ведёт команда — актуальные позиции в меню зачёркнуты.')));
+  openSheet(L('Сегодня не продаём'), w);
 }
 function vMenu(d) {
   const root = el('div');
   const c = copy(d);
   const cats = d.menu?.categories || [];
   root.appendChild(pageHead(c.titleMenu, d.menu?.note || ''));
-  if (!cats.length) { root.appendChild(el('p', 'muted', 'Меню скоро появится')); return root; }
+  if (!cats.length) { root.appendChild(el('p', 'muted', L('Меню скоро появится'))); return root; }
   S.menuCat = Math.min(S.menuCat, cats.length - 1);
 
   const tabs = el('div', 'tabs');
   cats.forEach((cat, i) => {
     const n = cat.sections?.reduce((a, sec) => a + (sec.items?.length || 0), 0) || 0;
-    const b = el('button', i === S.menuCat ? 'on' : '', `${esc(cat.icon ? cat.icon + ' ' : '')}${esc(cat.title)}<span class="n">${n}</span>`);
+    const b = el('button', i === S.menuCat ? 'on' : '');
+    b.innerHTML = `${svg(categoryIcon(cat), 15)}<span class="cat-title">${esc(L(cat.title))}</span><span class="n">${n}</span>`;
     b.onclick = () => { S.menuCat = i; haptic(); setTab('menu', { sub: cat.id, animate: false, keepScroll: true }); };
     tabs.appendChild(b);
   });
@@ -586,7 +657,7 @@ function vMenu(d) {
   const search = el('div', 'search');
   search.innerHTML = svg('search', 17);
   const inp = el('input');
-  inp.placeholder = 'Поиск по меню';
+  inp.placeholder = L('Поиск по меню');
   inp.value = S.q;
   inp.oninput = () => { S.q = inp.value; clearTimeout(inp._t); inp._t = setTimeout(() => { S.qFocus = true; render(false); }, 220); };
   search.appendChild(inp);
@@ -601,71 +672,65 @@ function vMenu(d) {
   const q = S.q.trim().toLowerCase();
   const stopped = stoppedItems(d).length;
   if (stopped) {
-    const bar = el('button', 'stop-flag', `${svg('stop', 15)} в стоп-листе сегодня: ${stopped} поз. — смотреть`);
+    const bar = el('button', 'stop-flag');
+    bar.innerHTML = `${svg('stop', 15)} ${esc(L('в стоп-листе сегодня:'))} ${stopped} ${esc(L('поз. — смотреть'))}`;
     bar.style.cssText = 'display:flex;margin:10px 2px 0';
     bar.onclick = () => openStopSheet(stoppedItems(d));
     root.appendChild(bar);
   }
 
-  // обложка категории (фото ставит бар через бота)
-  if (cat.cover) {
-    const ch = el('div', 'cat-hero');
-    ch.appendChild(imgBox('ph', cat.cover));
-    ch.appendChild(el('div', 'w', `<img src="img/logo-light.svg" alt=""><span>${esc(cat.title)}</span>`));
-    root.appendChild(ch);
-  }
-
   for (const sec of cat.sections || []) {
-    const items = (sec.items || []).filter((it) => !q || (`${it.name} ${it.desc || ''} ${(it.tags || []).join(' ')}`).toLowerCase().includes(q));
+    const items = (sec.items || []).filter((it) => {
+      if (!q) return true;
+      const searchable = [it.name, L(it.name), it.desc || '', L(it.desc || ''), ...(it.tags || []), ...(it.tags || []).map(L)].join(' ').toLowerCase();
+      return searchable.includes(q);
+    });
     if (!items.length) continue;
     const p = el('div', 'menu-sec card pad');
-    p.appendChild(el('h2', 'sec-title in-card', esc(sec.title)));
+    p.appendChild(el('h2', 'sec-title in-card', esc(L(sec.title))));
     for (const it of items) {
       const row = el('button', 'item');
       row.innerHTML =
-        (it.image ? '' : '') +
-        `<span class="tx"><span class="nm">${esc(it.name)}${(it.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</span>${it.desc ? `<span class="ds">${esc(it.desc)}</span>` : ''}</span>` +
-        `<span class="pr">${esc(it.price || '')}</span>`;
+        `<span class="tx"><span class="nm">${esc(L(it.name))}${(it.tags || []).map((t) => `<span class="tag">${esc(L(t))}</span>`).join('')}</span>${it.desc ? `<span class="ds">${esc(L(it.desc))}</span>` : ''}</span>` +
+        `<span class="pr">${esc(L(it.price || ''))}</span>`;
       if (it.stop) row.classList.add('stopped');
-      if (it.image) row.insertBefore(imgBox('thumb', it.image), row.firstChild);
       row.onclick = () => openItemSheet(cat, sec, it);
       p.appendChild(row);
     }
     root.appendChild(p);
   }
-  if (cat.note) root.appendChild(el('div', 'menu-note', esc(cat.note)));
+  if (cat.note) root.appendChild(el('div', 'menu-note', esc(L(cat.note))));
   return root;
 }
 
 function openItemSheet(cat, sec, it) {
   const w = el('div', 'stack');
-  if (it.image) w.appendChild(imgBox('sheet-img', it.image));
   const head = el('div');
-  head.innerHTML = `<div class="kicker">${esc(cat.title)} · ${esc(sec.title)}</div>
-    <div class="sheet-name">${esc(it.name)}</div>
-    ${it.desc ? `<p class="muted">${esc(it.desc)}</p>` : ''}
-    <div class="chips">${(it.tags || []).map((t) => `<span class="chip">${esc(t)}</span>`).join('')}${it.stop ? `<span class="chip stop">${esc('не продаётся')}</span>` : ''}</div>`;
+  head.innerHTML = `<div class="kicker">${esc(L(cat.title))} · ${esc(L(sec.title))}</div>
+    <div class="sheet-name">${esc(L(it.name))}</div>
+    ${it.desc ? `<p class="muted">${esc(L(it.desc))}</p>` : ''}
+    <div class="chips">${(it.tags || []).map((t) => `<span class="chip">${esc(L(t))}</span>`).join('')}${it.stop ? `<span class="chip stop">${esc(L('не продаётся'))}</span>` : ''}</div>`;
   w.appendChild(head);
   w.appendChild(el('div', 'sheet-price', fmtPrice(it.price)));
   openSheet('', w);
 }
 function fmtPrice(p) {
-  if (!p) return 'по запросу';
+  if (!p) return L('по запросу');
   const s = String(p);
   const nums = s.replace(/\d+/g, (m) => m.replace(/(\d)(?=(\d{3})+$)/g, '$1 '));
-  return /^\d/.test(nums.trim()) ? nums + ' ₽' : nums;
+  return /^\d/.test(nums.trim()) ? nums + (S.lang === 'en' ? ' RUB' : ' ₽') : L(nums);
 }
 
 /* ── Афиша ── */
 function fmtDate(s) {
   try {
     const d = new Date(s + 'T12:00:00');
-    return d.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit' });
+    return d.toLocaleDateString(S.lang === 'en' ? 'en-GB' : 'ru-RU', { day: '2-digit', month: S.lang === 'en' ? 'short' : '2-digit' });
   } catch { return s; }
 }
 function fmtDayShort(s) {
   try {
-    return new Date(s + 'T12:00:00').toLocaleDateString('ru-RU', { weekday: 'short' }).toUpperCase();
+    return new Date(s + 'T12:00:00').toLocaleDateString(S.lang === 'en' ? 'en-GB' : 'ru-RU', { weekday: 'short' }).toUpperCase();
   } catch { return ''; }
 }
 function vEvents(d) {
@@ -676,14 +741,14 @@ function vEvents(d) {
   const today = new Date(new Date().toDateString());
   const next = list.filter((e) => new Date((e.date || '') + 'T23:59') >= today).reverse();
   const past = list.filter((e) => new Date((e.date || '') + 'T23:59') < today);
-  if (!next.length && !past.length) { root.appendChild(el('div', 'card pad muted', 'Скоро анонсируем вечеринки 🎧')); return root; }
+  if (!next.length && !past.length) { root.appendChild(el('div', 'card pad muted', L('Скоро анонсируем вечеринки'))); return root; }
   if (next.length) {
     const box = el('div', 'card');
     next.forEach((e) => box.appendChild(eventCard(e)));
     root.appendChild(box);
   }
   if (past.length) {
-    root.appendChild(sectionHead('Было', `${past.length}`));
+    root.appendChild(sectionHead(L('Было'), `${past.length}`));
     const box = el('div', 'card');
     past.slice(0, 6).forEach((e) => box.appendChild(eventCard(e, false, true)));
     root.appendChild(box);
@@ -696,12 +761,12 @@ function eventCard(e, showTime = true, past = false) {
   card.appendChild(el('div', 'when', `<div class="dd">${esc(fmtDate(e.date))}</div><div class="tt">${esc(fmtDayShort(e.date))}${showTime && e.time ? ' ' + esc(String(e.time).split('–')[0].trim()) : ''}</div>`));
   if (e.image) card.appendChild(imgBox('poster', e.image));
   const info = el('div', 'info');
-  info.innerHTML = `<div class="ti">${esc(e.title)}</div>${e.subtitle ? `<div class="su">${esc(e.subtitle)}</div>` : ''}`;
+  info.innerHTML = `<div class="ti">${esc(L(e.title))}</div>${e.subtitle ? `<div class="su">${esc(L(e.subtitle))}</div>` : ''}`;
   card.appendChild(info);
   card.appendChild(el('span', 'chev', svg('chev', 15)));
   card.onclick = () => {
-    if (e.image) openImageSheet(e.image, e.title);
-    else toast(e.subtitle ? String(e.subtitle).split('\n')[0] : 'Анонс');
+    if (e.image) openImageSheet(e.image, L(e.title));
+    else toast(e.subtitle ? L(String(e.subtitle).split('\n')[0]) : L('Анонс'));
   };
   return card;
 }
@@ -718,7 +783,7 @@ function vTeam(d) {
   const t = d.team || {};
   if (t.enabled === false) {
     root.appendChild(pageHead(c.titleTeam, ''));
-    root.appendChild(el('div', 'card pad muted', 'Раздел временно скрыт'));
+    root.appendChild(el('div', 'card pad muted', L('Раздел временно скрыт')));
     return root;
   }
   root.appendChild(pageHead(c.titleTeam, c.teamSub));
@@ -730,8 +795,8 @@ function vTeam(d) {
   hero.appendChild(imgBox('bgimg', t.image || d.meta.hero?.image || d.gallery?.[0]?.src));
   const w = el('div', 'c');
   w.appendChild(el('div', 'mark', '<img src="img/mark.svg" alt="22">'));
-  w.appendChild(el('h2', null, esc(t.title || c.titleTeam)));
-  if (t.text) w.appendChild(el('p', null, esc(t.text)));
+  w.appendChild(el('h2', null, esc(L(t.title || c.titleTeam))));
+  if (t.text) w.appendChild(el('p', null, esc(L(t.text))));
   hero.appendChild(w);
   root.appendChild(hero);
 
@@ -741,9 +806,9 @@ function vTeam(d) {
       const card = el('div', 'member');
       card.appendChild(imgBox('ph', m.photo));
       const b = el('div', 'b');
-      b.innerHTML = `<div class="n">${esc(m.name || '')}</div>${m.role ? `<div class="r">${esc(m.role)}</div>` : ''}${m.text ? `<div class="t">${esc(m.text)}</div>` : ''}`;
+      b.innerHTML = `<div class="n">${esc(L(m.name || ''))}</div>${m.role ? `<div class="r">${esc(L(m.role))}</div>` : ''}${m.text ? `<div class="t">${esc(L(m.text))}</div>` : ''}`;
       card.appendChild(b);
-      card.onclick = () => m.text || m.role ? openSheet(m.name || '', teamSheet(m)) : null;
+      card.onclick = () => m.text || m.role ? openSheet(L(m.name || ''), teamSheet(m)) : null;
       grid.appendChild(card);
     }
     root.appendChild(grid);
@@ -751,8 +816,8 @@ function vTeam(d) {
     // заглушка, пока команда не добавлена
     const soon = el('div', 'team-soon card pad');
     soon.appendChild(el('div', 'glyph', svg('users', 26)));
-    soon.appendChild(el('div', 't', 'Скоро здесь будет команда'));
-    soon.appendChild(el('p', 'd', esc(t.note || c.teamNote)));
+    soon.appendChild(el('div', 't', L('Скоро здесь будет команда')));
+    soon.appendChild(el('p', 'd', esc(L(t.note || c.teamNote))));
     const job = el('button', 'btn line sm', `${svg('brief', 15)}<span>${esc(c.jobsCard)}</span>`);
     job.onclick = () => setTab('jobs');
     soon.appendChild(job);
@@ -766,8 +831,8 @@ function vTeam(d) {
 function teamSheet(m) {
   const w = el('div', 'stack');
   if (m.photo) w.appendChild(imgBox('sheet-img', m.photo));
-  w.appendChild(el('div', null, `<div class="kicker">${esc(m.role || '')}</div><div class="sheet-name">${esc(m.name || '')}</div>`));
-  if (m.text) w.appendChild(el('p', 'muted', esc(m.text)));
+  w.appendChild(el('div', null, `<div class="kicker">${esc(L(m.role || ''))}</div><div class="sheet-name">${esc(L(m.name || ''))}</div>`));
+  if (m.text) w.appendChild(el('p', 'muted', esc(L(m.text))));
   return w;
 }
 
@@ -815,7 +880,7 @@ function bookingForm(d, c) {
     ],
     c.ctaBooking,
     (v) => sendRequest('booking', { дата: v.date, время: v.time, гостей: v.guests, имя: v.name, пожелания: v.comment }, v.contact)
-      .then((ok) => (ok ? (d.booking?.text || 'Подтвердим бронь в течение 15 минут ⏱') : false))
+      .then((ok) => (ok ? L(d.booking?.text || 'Подтвердим бронь в течение 15 минут') : false))
   );
 }
 function vBooking(d) {
@@ -827,7 +892,7 @@ function vBooking(d) {
   const st = todayStatus(d.hours);
   root.appendChild(el('div', 'card pad', `<div class="row" style="padding:0;border:0"><span class="ic">${svg('clock', 18)}</span><span class="tx"><span class="t">${esc(c.hoursTitle)}</span><span class="d">${esc(st.rowTxt)}</span></span></div>`));
   root.appendChild(bookingForm(d, c));
-  if (d.booking?.text) root.appendChild(el('p', 'hint', esc(d.booking.text)));
+  if (d.booking?.text) root.appendChild(el('p', 'hint', esc(L(d.booking.text))));
   return root;
 }
 
@@ -856,9 +921,9 @@ function vContacts(d) {
 function openHoursSheet(d, c) {
   const box = el('div', 'card');
   for (const h of d.hours || []) {
-    box.appendChild(el('div', 'row', `<span class="tx"><span class="t" style="${h.closed ? 'color:var(--muted)' : ''}">${esc(h.days)}</span></span><span class="tiny" style="color:var(--accent-hi);font-weight:700">${esc(h.time)}</span>`));
+    box.appendChild(el('div', 'row', `<span class="tx"><span class="t" style="${h.closed ? 'color:var(--muted)' : ''}">${esc(L(h.days))}</span></span><span class="tiny" style="color:var(--accent-hi);font-weight:700">${esc(L(h.time))}</span>`));
   }
-  box.appendChild(el('p', 'hint', 'Статус «открыто сейчас» приложение считает само.'));
+  box.appendChild(el('p', 'hint', L('Статус «открыто сейчас» приложение считает само.')));
   openSheet(c.hoursTitle, box);
 }
 
@@ -875,21 +940,21 @@ function jobForm(d) {
     ],
     copy(d).ctaJobs,
     (v) => sendRequest('job', { имя: v.name, позиция: v.position, опыт: v.exp }, v.contact)
-      .then((ok) => (ok ? 'Спасибо! Мы перечитаем и напишем 🤍' : false))
+      .then((ok) => (ok ? L('Спасибо! Мы рассмотрим анкету и напишем') : false))
   );
 }
 function vJobs(d) {
   const c = copy(d);
   const root = el('div', 'stack');
-  if (d.jobs?.enabled === false) { root.appendChild(el('div', 'card pad muted', 'Анкета временно закрыта')); return root; }
+  if (d.jobs?.enabled === false) { root.appendChild(el('div', 'card pad muted', L('Анкета временно закрыта'))); return root; }
   const hero = el('div', 'job-hero');
   hero.appendChild(imgBox('bgimg', d.jobs.image || d.gallery?.[1]?.src || d.meta.hero?.image));
-  hero.appendChild(el('h2', null, esc(d.jobs.title || c.jobsCard)));
-  if (d.jobs.text) hero.appendChild(el('p', null, esc(d.jobs.text)));
+  hero.appendChild(el('h2', null, esc(L(d.jobs.title || c.jobsCard))));
+  if (d.jobs.text) hero.appendChild(el('p', null, esc(L(d.jobs.text))));
   root.appendChild(hero);
   if ((d.jobs.positions || []).length) {
     const box = el('div', 'card');
-    d.jobs.positions.forEach((p, i) => box.appendChild(el('div', 'row', `<span class="ic">${svg('star', 17)}</span><span class="tx"><span class="t">${esc(p)}</span></span><span class="tiny">#${i + 1}</span>`)));
+    d.jobs.positions.forEach((p, i) => box.appendChild(el('div', 'row', `<span class="ic">${svg('star', 17)}</span><span class="tx"><span class="t">${esc(L(p))}</span></span><span class="tiny">#${i + 1}</span>`)));
     root.appendChild(box);
   }
   root.appendChild(jobForm(d));
@@ -904,10 +969,10 @@ function vMore(d) {
 
   const prof = el('div', 'card pad prof');
   prof.appendChild(el('div', 'prof-logo', '<img src="img/logo.svg" alt="CATCH 22">'));
-  prof.appendChild(el('div', 'tagline', esc(d.meta.sub || '')));
-  if (d.meta.tagline) prof.appendChild(el('p', 'muted desc', esc(d.meta.tagline)));
+  prof.appendChild(el('div', 'tagline', esc(L(d.meta.sub || ''))));
+  if (d.meta.tagline) prof.appendChild(el('p', 'muted desc', esc(L(d.meta.tagline))));
   const chips = el('div', 'chips');
-  chips.appendChild(el('span', 'chip' + (st.open === false ? ' stop' : ' new'), st.open === false ? 'Закрыто' : 'Открыто сейчас'));
+  chips.appendChild(el('span', 'chip' + (st.open === false ? ' stop' : ' new'), L(st.open === false ? 'Закрыто' : 'Открыто сейчас')));
   chips.appendChild(el('span', 'chip outline', esc(st.rowTxt)));
   prof.appendChild(chips);
   root.appendChild(prof);
@@ -916,7 +981,7 @@ function vMore(d) {
   const nav = el('div', 'card');
   addRow(nav, 'book', c.titleBooking, d.booking?.text || 'Столы, виниловые вечеринки, бронь', () => setTab('booking'));
   addRow(nav, 'pin', c.titleContacts, d.contacts.address || '', () => setTab('contacts'));
-  addRow(nav, 'users', c.titleTeam, (d.team?.members || []).length ? `${d.team.members.length} чел.` : d.team?.text || '', () => setTab('team'));
+  addRow(nav, 'users', c.titleTeam, (d.team?.members || []).length ? `${d.team.members.length} ${L('чел.')}` : d.team?.text || '', () => setTab('team'));
   addRow(nav, 'brief', c.titleJobs, d.jobs?.text || '', () => setTab('jobs'));
   root.appendChild(nav);
 
@@ -925,15 +990,15 @@ function vMore(d) {
   if (story) {
     root.appendChild(sectionHead(c.aboutCard));
     const about = el('div', 'card pad');
-    about.appendChild(el('p', 'about', esc(story)));
+    about.appendChild(el('p', 'about', esc(L(story))));
     root.appendChild(about);
   }
 
   // часы
-  root.appendChild(sectionHead(c.hoursTitle, st.open === false ? 'закрыто' : 'открыто'));
+  root.appendChild(sectionHead(c.hoursTitle, L(st.open === false ? 'закрыто' : 'открыто')));
   const hours = el('div', 'card');
   for (const h of d.hours || []) {
-    hours.appendChild(el('div', 'row', `<span class="tx"><span class="t" style="font-weight:${h.closed ? 500 : 600}">${esc(h.days)}</span></span><span class="tiny" style="color:var(--accent-hi);font-weight:700">${esc(h.time)}</span>`));
+    hours.appendChild(el('div', 'row', `<span class="tx"><span class="t" style="font-weight:${h.closed ? 500 : 600}">${esc(L(h.days))}</span></span><span class="tiny" style="color:var(--accent-hi);font-weight:700">${esc(L(h.time))}</span>`));
   }
   root.appendChild(hours);
 
@@ -943,15 +1008,13 @@ function vMore(d) {
   // награды/фишки
   if ((d.meta.awards || []).length) {
     root.appendChild(sectionHead(c.awardsTitle));
-    const aw = el('div', 'card awards');
-    d.meta.awards.forEach((a) => aw.appendChild(el('div', 'award', `<span class="badge">${/^[^a-zа-я]{1,4}$/i.test(a.icon || '') ? esc(a.icon) : svg('disc', 18)}</span><span style="min-width:0"><span class="t">${esc(a.title)}</span><span class="d">${esc(a.text || '')}</span></span>`)));
-    root.appendChild(aw);
+    root.appendChild(renderInfographic(d.meta.awards));
   }
 
   // бранч
   if (d.brunch?.enabled && d.brunch.image) {
     const br = el('div', 'card');
-    addRow(br, '🍳', d.brunch.title || 'Бранч', (d.brunch.text || '').replace(/\n/g, ' · '), () => openImageSheet(d.brunch.image, d.brunch.title));
+    addRow(br, 'cutlery', d.brunch.title || 'Бранч', (d.brunch.text || '').replace(/\n/g, ' · '), () => openImageSheet(d.brunch.image, L(d.brunch.title)));
     root.appendChild(br);
   }
 
@@ -965,9 +1028,10 @@ function vMore(d) {
       img.loading = 'lazy';
       img.src = mediaUrl(g.src);
       img.onload = () => img.classList.add('on');
-      img.onclick = () => openImageSheet(g.src, g.caption || '');
+      img.alt = '';
+      img.onclick = () => openImageSheet(g.src, '');
       f.appendChild(img);
-      if (g.caption) f.appendChild(el('figcaption', null, esc(g.caption)));
+
       reel.appendChild(f);
     }
     root.appendChild(reel);
@@ -979,7 +1043,8 @@ function vMore(d) {
 function fmtRel(iso) {
   try {
     const d = new Date(iso);
-    return d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' }) + ', ' + d.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+    const locale = S.lang === 'en' ? 'en-GB' : 'ru-RU';
+    return d.toLocaleDateString(locale, { day: 'numeric', month: 'short' }) + ', ' + d.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' });
   } catch { return ''; }
 }
 function addRow(card, icon, title, desc, onclick, wrapDesc) {
@@ -987,7 +1052,7 @@ function addRow(card, icon, title, desc, onclick, wrapDesc) {
   const ic = el('span', 'ic');
   if (icon && ICONS[icon]) ic.innerHTML = svg(icon, 18);
   else ic.textContent = icon || '✦';
-  const tx = el('span', 'tx', `<span class="t">${esc(title)}</span>${desc ? `<span class="d" style="${wrapDesc ? '' : 'overflow:hidden;text-overflow:ellipsis;white-space:nowrap'}">${esc(desc)}</span>` : ''}`);
+  const tx = el('span', 'tx', `<span class="t">${esc(L(title))}</span>${desc ? `<span class="d" style="${wrapDesc ? '' : 'overflow:hidden;text-overflow:ellipsis;white-space:nowrap'}">${esc(L(desc))}</span>` : ''}`);
   r.append(ic, tx);
   if (onclick) { r.appendChild(el('span', 'chev', svg('chev', 15))); r.onclick = () => { haptic(); onclick(); }; }
   card.appendChild(r);
@@ -1007,6 +1072,13 @@ function applyChrome() {
 $('#nav-btn').onclick = () => { haptic(); openDrawer(); };
 $('#back-btn').onclick = () => { haptic(); setTab('home'); };
 $('#tg-btn').onclick = () => { haptic(); if (S.data?.meta?.bot) openBot(); else setTab('contacts'); };
+$('#lang-btn').onclick = () => {
+  S.lang = S.lang === 'en' ? 'ru' : 'en';
+  try { localStorage.setItem('catch22-language', S.lang); } catch {}
+  haptic();
+  if (S.data) render(false);
+  else document.documentElement.lang = S.lang;
+};
 
 document.querySelectorAll('#tabbar button').forEach((b) => {
   b.querySelector('i').outerHTML = svg({ home: 'house', menu: 'cutlery', events: 'cal', team: 'users', more: 'grid' }[b.dataset.tab] || 'grid', 22);

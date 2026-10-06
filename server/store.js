@@ -28,7 +28,9 @@ function normItem(it) {
   it.price = it.price == null ? '' : String(it.price);
   it.name = String(it.name ?? '').trim();
   it.desc = String(it.desc ?? '').trim();
-  it.image = it.image ?? '';
+  delete it.image;
+  delete it.cover;
+  delete it.icon;
   it.tags = Array.isArray(it.tags) ? it.tags : [];
   it.stop = !!it.stop;
   return it;
@@ -37,7 +39,8 @@ function normItem(it) {
 /* Версия структуры данных: при загрузке старого state.json применяем миграцию,
    чтобы правки (фонотека + бар, часы, команда, ссылки) появились и там,
    где приложение уже работало. */
-const STATE_VERSION = 2.2;
+const STATE_VERSION = 2.3;
+const isAvailabilityPrompt = (value) => /уточн(?:яйте|ить).*(?:налич|команд|состав)|(?:налич|состав).*уточн|\b(?:please\s+)?(?:check|ask|confirm).*(?:availability|with\s+(?:the\s+)?team|stock)|(?:availability|stock).*\b(?:check|ask|confirm|team)\b/i.test(String(value ?? ''));
 
 /** Перенос рабочих данных на текущую версию. Трогаем только дефолты — то,
  *  что бар уже переписал через бота, не затираем. */
@@ -46,6 +49,7 @@ export function migrateState(s) {
   if (v >= STATE_VERSION) return s;
   if (v < 2.1) migrate21(s);
   if (v < 2.2) migrate22(s);
+  if (v < 2.3) migrate23(s);
   s._v = STATE_VERSION;
   return s;
 }
@@ -165,7 +169,7 @@ export function migrate22(s) {
   s.menu = migrateMenu22(s.menu, d.menu);
 }
 
-/** Меню → официальная карта. Сохраняем: стоп-лист, фото, загруженные ботом,
+/** Меню → официальная карта. Сохраняем стоп-лист, идентификаторы и
  *  позиции/разделы/категории, которые бар завёл сам. */
 function migrateMenu22(old, fresh) {
   const next = structuredClone(fresh);
@@ -180,7 +184,6 @@ function migrateMenu22(old, fresh) {
     if (!prev) continue;
     if (prev.id) it.id = prev.id;
     if (prev.stop) it.stop = true;
-    if (/^\/media\//.test(prev.image || '')) it.image = prev.image;
   }
   const freshNames = new Set();
   for (const c of next.categories) for (const sec of c.sections) for (const it of sec.items) freshNames.add(nameKey(it.name));
@@ -188,7 +191,6 @@ function migrateMenu22(old, fresh) {
   for (const oc of old.categories) {
     const nc = next.categories.find((c) => c.id === oc.id || nameKey(c.title) === nameKey(oc.title));
     if (!nc) { next.categories.push(oc); continue; } // категория бара — целиком
-    if (/^\/media\//.test(oc.cover || '')) nc.cover = oc.cover;
     if (oc.id) nc.id = oc.id;
     for (const os of oc.sections || []) {
       const own = (os.items || []).filter((it) => !legacy.has(nameKey(it.name)) && !freshNames.has(nameKey(it.name)));
@@ -201,9 +203,40 @@ function migrateMenu22(old, fresh) {
   return next;
 }
 
+/* 2.3 — меню без фотографий, нейтральная сноска вместо просьбы уточнять
+   наличие, галерея без видимых/хранимых подписей и пиктограммы вместо emoji. */
+function migrate23(s) {
+  s.meta ||= {};
+  for (const award of s.meta.awards || []) delete award.icon;
+
+  s.menu ||= { categories: [] };
+  delete s.menu.image;
+  delete s.menu.cover;
+  delete s.menu.icon;
+  if (isAvailabilityPrompt(s.menu.note)) s.menu.note = '';
+  for (const category of s.menu.categories || []) {
+    delete category.cover;
+    delete category.image;
+    delete category.icon;
+    if (isAvailabilityPrompt(category.note)) category.note = '';
+    for (const section of category.sections || []) {
+      delete section.cover;
+      delete section.image;
+      delete section.icon;
+      for (const item of section.items || []) {
+        delete item.image;
+        delete item.cover;
+        delete item.icon;
+      }
+    }
+  }
+  for (const photo of s.gallery || []) delete photo.caption;
+}
+
 export function normalizeState(s) {
   s.meta ||= {};
   s.meta.awards = ensureIds(s.meta.awards || [], 'aw');
+  for (const award of s.meta.awards) delete award.icon;
   s.meta.hero ||= {};
   s.hours = ensureIds(s.hours || [], 'h');
   s.contacts ||= {};
@@ -211,24 +244,38 @@ export function normalizeState(s) {
   s.brunch ||= {};
   s.booking ||= {};
   s.menu ||= { categories: [] };
+  delete s.menu.image;
+  delete s.menu.cover;
+  delete s.menu.icon;
   s.menu.categories = ensureIds(s.menu.categories, 'cat');
+  if (isAvailabilityPrompt(s.menu.note)) s.menu.note = '';
   for (const c of s.menu.categories) {
+    delete c.cover;
+    delete c.image;
+    delete c.icon;
+    if (isAvailabilityPrompt(c.note)) c.note = '';
     c.sections = ensureIds(c.sections || [], 'sec');
-    for (const sec of c.sections) sec.items = ensureIds((sec.items || []).map(normItem), 'it');
+    for (const sec of c.sections) {
+      delete sec.cover;
+      delete sec.image;
+      delete sec.icon;
+      sec.items = ensureIds((sec.items || []).map(normItem), 'it');
+    }
   }
   s.events = ensureIds(s.events || [], 'ev');
   s.jobs ||= {};
   s.jobs.positions = Array.isArray(s.jobs.positions) ? s.jobs.positions : [];
   s.gallery = ensureIds(s.gallery || [], 'g');
+  for (const photo of s.gallery) delete photo.caption;
 
   /* ── v2: оформление и тексты — всё это правится админ-ботом ── */
   // герой главной: подпись, текст, кнопка, фон
   const hero = (s.meta.hero ||= {});
   hero.text = String(hero.text ?? '');
   hero.cta = String(hero.cta ?? '');
-  // обложки категорий меню + сноска под категорией
+  // Категории меню — только текст и векторные пиктограммы, без фотообложек.
   for (const c of s.menu.categories) {
-    c.cover = String(c.cover ?? '');
+    delete c.cover;
     c.note = String(c.note ?? '');
   }
   // фото-подложки разделов

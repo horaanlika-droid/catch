@@ -3,18 +3,15 @@
 // Цены, составы и пометки шефа/бара («must try», «new», «on a tap»…) — как в карте.
 // Дальше всё правится из админ-бота (🍽 Меню), этот файл — только стартовое состояние.
 
-const P = '/img/press';
 const it = (name, price, desc = '', extra = {}) => ({ name, price: String(price), ...(desc ? { desc } : {}), ...extra });
 
 export const menu = {
-  note: 'Меню сверено с картой бара. Состав и наличие уточняйте у команды.',
+  note: '',
   categories: [
     /* ───────────── ЕДА ───────────── */
     {
       id: 'food',
       title: 'Еда',
-      icon: '🍽',
-      cover: `${P}/food/table.jpg`,
       note: 'Comfort food со всего света — шеф Илья Борик и су-шеф Иван Королев',
       sections: [
         {
@@ -89,38 +86,36 @@ export const menu = {
     {
       id: 'bar',
       title: 'Бар',
-      icon: '🍸',
-      cover: `${P}/cocktails/martini-tray.jpg`,
       note: 'Каждый коктейль — одна из музыкальных революций. Шеф-бартендер Дмитрий Гукасян',
       sections: [
         {
           title: 'Signature Cocktails · 950',
           items: [
-            it('DIN45500', 950, 'ром / каффирский лайм / кокос / лемонграсс', { image: `${P}/cocktails/din45500.jpg` }),
-            it('ABBA', 950, 'персиковая водка / горечавка / донник / тоник', { image: `${P}/cocktails/abba.jpg` }),
-            it('MINIMOOG', 950, 'текила / джин / ром / водка / трипл сек / кофе / карамель / кола / мороженое', { image: `${P}/cocktails/minimoog.jpg` }),
-            it('WALKMAN', 950, 'мартини фиеро / джин / шалфей / клубника / розовый перец', { image: `${P}/cocktails/walkman.jpg` }),
-            it('FAIRLIGHT CMI', 950, 'джин / базилик / кампотский перец / малина', { tags: ['must try'], image: `${P}/cocktails/fairlight-cmi.jpg` }),
-            it('ITUNES', 950, 'кальвадос / фейхоа / яблоко / абсент', { image: `${P}/cocktails/itunes.jpg` }),
-            it('808', 950, 'коньяк мартиньяк VS / аперитив / амаро / ежевика / юдзу', { image: `${P}/cocktails/808.jpg` }),
-            it('GRAMOPHONE', 950, 'джин / кинкина / бузина / какао блан / фенхель', { image: `${P}/cocktails/gramophone.jpg` }),
-            it('GIBSON', 950, 'джин / мартини экстра драй / чёрный чеснок / кленовый уксус', { tags: ['frozen −7°C'], image: `${P}/cocktails/gibson.jpg` }),
-            it('LONGPLAY', 950, 'ром / кофейный ликёр / мисо-карамель / бобы тонка / эспрессо / дорблю', { image: `${P}/cocktails/longplay.jpg` }),
+            it('DIN45500', 950, 'ром / каффирский лайм / кокос / лемонграсс'),
+            it('ABBA', 950, 'персиковая водка / горечавка / донник / тоник'),
+            it('MINIMOOG', 950, 'текила / джин / ром / водка / трипл сек / кофе / карамель / кола / мороженое'),
+            it('WALKMAN', 950, 'мартини фиеро / джин / шалфей / клубника / розовый перец'),
+            it('FAIRLIGHT CMI', 950, 'джин / базилик / кампотский перец / малина', { tags: ['must try'] }),
+            it('ITUNES', 950, 'кальвадос / фейхоа / яблоко / абсент'),
+            it('808', 950, 'коньяк мартиньяк VS / аперитив / амаро / ежевика / юдзу'),
+            it('GRAMOPHONE', 950, 'джин / кинкина / бузина / какао блан / фенхель'),
+            it('GIBSON', 950, 'джин / мартини экстра драй / чёрный чеснок / кленовый уксус', { tags: ['frozen −7°C'] }),
+            it('LONGPLAY', 950, 'ром / кофейный ликёр / мисо-карамель / бобы тонка / эспрессо / дорблю'),
           ],
         },
         {
           title: 'Classic · 950',
           items: [
-            it('SKINNY BITCH', 950, 'водка / лайм / содовая', { image: `${P}/cocktails/skinny-bitch.jpg` }),
+            it('SKINNY BITCH', 950, 'водка / лайм / содовая'),
             it('BELLINI', 950, 'брют / белый персик'),
             it('GIN&TONIC', 950, 'джин / тоник / лайм', { tags: ['on a tap'] }),
             it('BLOODY MARY', 950, 'водка / сангрита / микс специй'),
             it('AMARETTO SOUR', 950, 'амаретто / бурбон / лимон'),
-            it('AVIATION', 950, 'джин / фиалка / мараскино', { image: `${P}/cocktails/aviation.jpg` }),
-            it('COSMOPOLITAN', 950, 'водка / апельсин / клюква / лайм', { tags: ['king cocktail special'], image: `${P}/cocktails/cosmopolitan.jpg` }),
+            it('AVIATION', 950, 'джин / фиалка / мараскино'),
+            it('COSMOPOLITAN', 950, 'водка / апельсин / клюква / лайм', { tags: ['king cocktail special'] }),
             it('TOMMY’S MARGARITA', 950, 'espolon blanco / агавовый нектар / лайм'),
             it('NEGRONI', 950, 'джин / campari / купаж вермутов'),
-            it('DRY MARTINI', 950, 'джин / мартини экстра драй / апельсиновый биттер', { image: `${P}/cocktails/dry-martini.jpg` }),
+            it('DRY MARTINI', 950, 'джин / мартини экстра драй / апельсиновый биттер'),
           ],
         },
         {
@@ -138,7 +133,7 @@ export const menu = {
           title: 'Special',
           items: [
             it('PENICILLIN + BLUE CHEESE TARTAR', 1100, 'dewar’s 8 yo / teeling blackpitts / мёд / имбирь / лимон + тартар / голубой сыр'),
-            it('PORNSTAR MARTINI', 1400, 'grey goose / cremant de limoux / ваниль / маракуйя', { image: `${P}/cocktails/pornstar-martini.jpg` }),
+            it('PORNSTAR MARTINI', 1400, 'grey goose / cremant de limoux / ваниль / маракуйя'),
             it('WATERMELON FROZEN MARGO', 950, 'espolon blanco / арбуз / малина / лайм / перец тимут'),
             it('COCO NEGRONI', 950, 'ром / кампари / амаретто / кокос / вишня / красный вермут'),
             it('APEROL SPRITZ', 950, 'апероль / брют / содовая', { tags: ['no shame'] }),
@@ -162,8 +157,6 @@ export const menu = {
     {
       id: 'drinks',
       title: 'Крепкое',
-      icon: '🥃',
-      cover: `${P}/interior/bar-shelves.jpg`,
       note: 'Все позиции — порция 40 мл',
       sections: [
         {
@@ -329,8 +322,6 @@ export const menu = {
     {
       id: 'wine',
       title: 'Вино',
-      icon: '🍷',
-      cover: `${P}/interior/table-wine.jpg`,
       note: 'Карта как пластинка: сторона A — хиты и понятные ориентиры, сторона B — new wave и эксперименты. Цены — 125 мл / 750 мл',
       sections: [
         {

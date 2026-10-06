@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { Store } from '../server/store.js';
+import { Store, migrateState, normalizeState } from '../server/store.js';
 import { Panel } from '../server/admin/panel.js';
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'catch22-test-'));
@@ -84,14 +84,35 @@ check(sec0.items.length === n1 + 3, 'список распарсен: 3 пози
 check(sec0.items.at(-3).name === 'Тартар из говядины' && sec0.items.at(-3).desc === 'блю чиз' && sec0.items.at(-3).price === '790', 'строка «название | описание | цена»');
 check(sec0.items.at(-1).name === 'Оливки' && sec0.items.at(-1).price === '640', 'строка «название цена»');
 
-/* ── фото в позицию (pending) ── */
-await click('item:0:0:0'); await click('p:it:0:0:0');
-await msg(111, { photo: [{ file_id: 'AAA', sizes: {} }], caption: 'со свежим чатни' });
-const it0 = store.state.menu.categories[0].sections[0].items[0];
-check(/^\/media\/[\w-]+\.jpg$/.test(it0.image), 'фото позиции: путь /media/...');
-const mediaFile = path.join(tmp, 'media', path.basename(it0.image));
-check(fs.existsSync(mediaFile) && fs.readFileSync(mediaFile).includes('FAKEJPG'), 'байты файла реально скачаны в data/media');
-check(it0.desc === 'со свежим чатни', 'caption стал описанием');
+/* ── меню: фото отключены, legacy-поля удаляются при нормализации ── */
+await click('item:0:0:0');
+const itemControls = sent.at(-1).kb.inline_keyboard.flat();
+check(!itemControls.some((b) => /Фото/.test(b.text)), 'у позиции меню нет элементов управления фото');
+store.update('legacy:menu-images', (s) => {
+  s.menu.note = 'Меню сверено с картой. Состав и наличие уточняйте у команды.';
+  s.menu.categories[0].cover = '/media/old-menu-cover.jpg';
+  s.menu.categories[0].icon = '🍽';
+  s.menu.categories[0].sections[0].cover = '/media/old-section-cover.jpg';
+  s.menu.categories[0].sections[0].items[0].icon = '🍟';
+  s.menu.categories[0].sections[0].items[0].image = '/media/old-menu-item.jpg';
+  s.gallery[0].caption = 'Подпись, которую нужно удалить';
+  s.meta.awards[0].icon = '🏆';
+});
+const firstItem = store.state.menu.categories[0].sections[0].items[0];
+check(!('image' in firstItem) && !('cover' in store.state.menu.categories[0]) && !('cover' in store.state.menu.categories[0].sections[0]), 'нормализация удаляет фото меню и обложки');
+check(!('icon' in firstItem) && !('icon' in store.state.menu.categories[0]) && store.state.menu.note === '', 'иконки-emoji и просьба уточнять наличие удалены');
+check(!('caption' in store.state.gallery[0]) && !('icon' in store.state.meta.awards[0]), 'подписи галереи и emoji наград удалены');
+
+const legacyState = structuredClone(store.state);
+legacyState._v = 2.2;
+legacyState.menu.categories[0].sections[0].items[0].image = '/media/legacy.jpg';
+legacyState.gallery[0].caption = 'Legacy caption';
+legacyState.meta.awards[0].icon = '🏆';
+legacyState.menu.categories[0].cover = '/media/legacy-cover.jpg';
+legacyState.menu.categories[0].sections[0].icon = '🍟';
+migrateState(legacyState);
+normalizeState(legacyState);
+check(!('image' in legacyState.menu.categories[0].sections[0].items[0]) && !('caption' in legacyState.gallery[0]), 'миграция 2.3 очищает legacy-поля');
 
 /* ── свободное фото → выбор цели → галерея ── */
 const galBefore = store.state.gallery.length;
@@ -119,6 +140,7 @@ check(sent.at(-1).text.includes('Команда'), 'экран «Команда�
 const team0 = store.state.team.members.length;
 check(team0 >= 4 && store.state.team.members.some((m) => m.name === 'Даниил Золотухин' && m.photo), 'команда из пресс-кита: участники с фото');
 check(store.state.team.enabled === true && store.state.team.title === 'КОМАНДА', 'блок включён и озаглавлен');
+check(store.state.team.members.find((m) => m.name === 'Илья Борик')?.photo === '', 'фото шефа оставлено пустым для добавления через админку');
 await click('a:tm:add');
 await msg(111, { text: 'Глеб' });
 await msg(111, { text: 'за пультом' });
@@ -126,9 +148,19 @@ await msg(111, { text: 'ставит джаз и хаус' });
 const tmI = store.state.team.members.length - 1;
 check(store.state.team.members.length === team0 + 1, 'участник добавлен визардом');
 check(store.state.team.members[tmI].name === 'Глеб' && store.state.team.members[tmI].role === 'за пультом', 'имя и роль записаны');
+await click(`tm:${tmI}`); await click(`f:tm:${tmI}:name`); await msg(111, { text: 'Глеб Тестовый' });
+await click(`tm:${tmI}`); await click(`f:tm:${tmI}:role`); await msg(111, { text: 'Музыкальный редактор' });
+await click(`tm:${tmI}`); await click(`f:tm:${tmI}:text`); await msg(111, { text: 'Собирает виниловые сеты для вечеров.' });
+check(store.state.team.members[tmI].name === 'Глеб Тестовый' && store.state.team.members[tmI].role === 'Музыкальный редактор' && store.state.team.members[tmI].text.includes('виниловые'), 'существующего участника можно редактировать');
 await click(`tm:${tmI}`); await click(`p:tm:${tmI}`);
 await msg(111, { photo: [{ file_id: 'TEAM1' }] });
-check(/^\/media\//.test(store.state.team.members[tmI].photo), 'фото участника загружено');
+check(/^\/media\//.test(store.state.team.members[tmI].photo), 'фото участника загружено или заменено');
+await click(`tm:${tmI}`); await click(`a:tm:confirm:${tmI}`);
+check(sent.at(-1).text.includes('Удалить участника?'), 'перед удалением показывается подтверждение');
+await click(`tm:${tmI}`);
+check(store.state.team.members.length === team0 + 1, 'отмена подтверждения сохраняет участника');
+await click(`a:tm:confirm:${tmI}`); await click(`a:tm:del:${tmI}`);
+check(store.state.team.members.length === team0 && !store.state.team.members.some((m) => m.name === 'Глеб Тестовый'), 'подтверждённое удаление убирает участника');
 await click('s:team'); await click('a:team:toggle');
 check(store.state.team.enabled === false, 'блок «Команда» скрывается из бота');
 await click('s:team'); await click('a:team:toggle');
@@ -159,9 +191,9 @@ check(store.private.requests.find((x) => x.id === rq.id).status === 'in_work', '
 /* ── добавление награды (пошаговый визард) ── */
 await click('s:meta'); await click('a:aw:add');
 await msg(111, { text: 'Time Out' });
-await msg(111, { text: '🏅 Бар года' });
+await msg(111, { text: 'Бар года' });
 const awards = store.state.meta.awards;
-check(awards.at(-1).title === 'Time Out' && awards.at(-1).icon === '🏅' && awards.at(-1).text === 'Бар года', 'награда добавлена визардом');
+check(awards.at(-1).title === 'Time Out' && !('icon' in awards.at(-1)) && awards.at(-1).text === 'Бар года', 'факт для инфографики добавлен без emoji-иконки');
 
 /* ── отмена ввода ── */
 await click('item:0:0:0'); await click('f:it:0:0:0:name');
@@ -242,9 +274,9 @@ check(store.state.copy.tabTeam === 'Команда' && store.state.copy.titleTea
 await click('s:menu'); await click('menu:c:0'); await click('f:cat:0:note');
 await msg(111, { text: 'Цены за 125 мл' });
 check(store.state.menu.categories[0].note === 'Цены за 125 мл', 'сноска категории обновлена');
-await click('menu:c:0'); await click('p:cat:0');
-await msg(111, { photo: [{ file_id: 'cover1' }] });
-check(/^\/media\/.+\.jpg$/.test(store.state.menu.categories[0].cover), 'обложка категории загружена фото-пайплайном');
+await click('menu:c:0');
+const categoryControls = sent.at(-1).kb.inline_keyboard.flat();
+check(!categoryControls.some((b) => /обложка|иконка|фото меню/i.test(b.text)), 'для категорий меню нет управления фото и emoji-иконками');
 
 await click('s:meta'); await click('p:about');
 await msg(111, { photo: [{ file_id: 'about1' }], caption: 'Зал Catch 22' });
@@ -262,13 +294,14 @@ check(store.state.contacts.instagram.includes('catch22.catch22.catch22'), 'сс�
 
 /* публичная выборка должна отдавать всё, что читает клиент */
 const pub = store.publicState();
-check(pub.team && pub.copy && pub.meta.hero && pub.menu.categories[0].cover, 'publicState отдаёт team/copy/hero/cover');
+check(pub.team && pub.copy && pub.meta.hero && !('cover' in pub.menu.categories[0]), 'publicState отдаёт team/copy/hero без обложек меню');
+check(!('image' in pub.menu.categories[0].sections[0].items[0]), 'publicState не отдаёт фото позиций меню');
 check(pub.merch === undefined && pub.wallet === undefined, 'мерча и кошелька в публичных данных нет');
 
 /* ── сериализация/перезагрузка ── */
 store.save();
 const store2 = new Store(tmp);
-check(store2.state.menu.categories[0].sections[0].items[0].image === it0.image, 'state.json пережил перезагрузку');
+check(!('image' in store2.state.menu.categories[0].sections[0].items[0]), 'state.json пережил перезагрузку без фото меню');
 check(store2.private.subs.length === 2 && store2.subStats().active === 1, 'подписчики пушей пережили перезагрузку');
 check(store2.state.team.members[0].photo === store.state.team.members[0].photo, 'команда пережила перезагрузку');
 check(store2.rev > 0, 'rev сохраняется');
@@ -299,6 +332,12 @@ legacy.contacts.instagram = '';
 delete legacy.team;
 legacy.copy.tabMerch = 'Мерч';
 legacy.copy.titleWallet = 'КОШЕЛЁК';
+legacy.menu.note = 'Состав и наличие уточняйте у команды.';
+legacy.menu.categories[0].cover = '/media/legacy-cover.jpg';
+legacy.menu.categories[0].icon = '🍽';
+legacy.menu.categories[0].sections[0].items[0].image = '/media/legacy-item.jpg';
+legacy.gallery[0].caption = 'Старая подпись';
+legacy.meta.awards[0].icon = '🏆';
 fs.writeFileSync(path.join(tmp, 'state.json'), JSON.stringify(legacy));
 const store3 = new Store(tmp);
 check(store3.state.merch === undefined && store3.state.wallet === undefined, 'старые мерч/кошелёк удаляются при загрузке');
@@ -312,6 +351,8 @@ check(store3.state.contacts.site === 'https://catch-22-bar.ru/' && store3.state.
 check(store3.publicState().team?.title === 'КОМАНДА', 'блок «Команда» появился на месте мерча');
 check(store3.state.copy.tabMerch === undefined && store3.state.copy.titleWallet === undefined, 'тексты мерча/кошелька убраны');
 check(store3.state.copy.tabTeam === 'Команда', 'текст вкладки «Команда» добавился');
+check(store3.state.menu.note === '' && !('cover' in store3.state.menu.categories[0]) && !('icon' in store3.state.menu.categories[0]), 'миграция 2.3 убрала старую сноску и иконки/обложки меню');
+check(!('image' in store3.state.menu.categories[0].sections[0].items[0]) && !('caption' in store3.state.gallery[0]) && !('icon' in store3.state.meta.awards[0]), 'миграция 2.3 удалила legacy-фото, подписи и emoji наград');
 check(store3.rev > store2.rev, 'после переноса rev вырос — приложение обновится само');
 check(new Store(tmp).state.meta.sub === 'ФОНОТЕКА + БАР', 'миграция идемпотентна: второй запуск ничего не ломает');
 
@@ -321,7 +362,7 @@ store3.save();
 const store4 = new Store(tmp);
 check(store4.state.meta.hero.text === 'Наш текст про винил', 'текст, который бар поставил сам, миграция не трогает');
 
-/* ── v2.1 → v2.2: данные из пресс-кита (тексты, команда, официальное меню) ── */
+/* ── v2.1 → v2.3: данные пресс-кита и очистка старых полей меню ── */
 const v21 = structuredClone(store4.state);
 v21._v = 2.1;
 v21.meta.tagline = 'Винил. Коктейли. Comfort food.\nМузыка, которую хочется слушать.\nБар и фонотека Catch 22.';
@@ -339,7 +380,7 @@ bar21.sections[0].items = [
 fs.writeFileSync(path.join(tmp, 'state.json'), JSON.stringify(v21));
 const store5 = new Store(tmp);
 const all5 = store5.state.menu.categories.flatMap((c) => c.sections.flatMap((x) => x.items));
-check(store5.state._v === 2.2, 'состояние перенесено на v2.2');
+check(store5.state._v === 2.3, 'состояние перенесено на v2.3');
 check(store5.state.meta.story.includes('Studio Cache') && store5.state.meta.tagline.includes('listening bar'), 'тексты из пресс-релиза');
 check(store5.state.meta.hero.text === 'Наш текст про винил', 'свой текст героя бара сохранён и в 2.2');
 check(store5.state.contacts.phone === '+7 (931) 531-22-32' && store5.state.contacts.email === '', 'телефон из пресс-кита, выдуманная почта убрана');

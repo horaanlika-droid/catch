@@ -336,13 +336,6 @@ button.row:active { background: rgba(255, 240, 226, .03) }
 .search input::placeholder { color: var(--muted-2) }
 .search svg { width: 17px; height: 17px; color: var(--muted-2); flex: none }
 
-.cat-hero { position: relative; height: 168px; border-radius: var(--r-lg); overflow: hidden; margin: 14px 0 6px; border: 1px solid var(--line) }
-.cat-hero .ph { position: absolute; inset: 0; background-size: cover; background-position: center; background-color: var(--card-2); opacity: 0; transition: opacity .8s var(--ease), transform 6s var(--ease); transform: scale(1.02) }
-.cat-hero.done .ph { opacity: 1; transform: scale(1.08) }
-.cat-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 9, 8, .05), rgba(11, 9, 8, .78)) }
-.cat-hero .w { position: absolute; z-index: 2; left: 16px; bottom: 13px; display: flex; align-items: center; gap: 8px; opacity: .92 }
-.cat-hero .w img { height: 15px; width: auto; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .6)) }
-
 .menu-sec { padding-top: 4px }
 .item {
   display: flex; align-items: center; gap: 13px; width: 100%; text-align: left; background: none;
@@ -350,7 +343,6 @@ button.row:active { background: rgba(255, 240, 226, .03) }
 }
 .item:last-child { border-bottom: 0 }
 button.item:active { background: rgba(255, 240, 226, .03) }
-.item .thumb { width: 50px; height: 50px; border-radius: 12px; flex: none; background-size: cover; background-position: center; background-color: var(--card-2) }
 .item .tx { flex: 1; min-width: 0 }
 .item .nm { display: block; font-weight: 600; font-size: 14.5px; line-height: 1.35; color: var(--txt) }
 .item .ds { display: block; font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.4 }
@@ -424,7 +416,6 @@ button.ev:active { background: rgba(255, 240, 226, .03) }
 .reel figure { margin: 0; flex: 0 0 74%; max-width: 320px; scroll-snap-align: center; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); background: var(--card); position: relative; aspect-ratio: 4/5 }
 .reel img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity .6s var(--ease) }
 .reel img.on { opacity: 1 }
-.reel figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 14px 12px; font-size: 12px; color: #ece2d6; background: linear-gradient(transparent, rgba(10, 8, 7, .85)) }
 
 /* соцсети */
 .socials { display: flex; gap: 10px; align-items: center }
@@ -554,7 +545,6 @@ body.live-flash .card, body.live-flash .photo-card, body.live-flash .promo, body
 .menu-sec { margin-top: 14px; padding: 14px 16px 10px }
 .sec-title.in-card { margin: 2px 0 8px; font-size: 12.5px }
 .sec-title.in-card::after { display: none }
-.cat-hero .w span { font-size: 10px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: rgba(244, 236, 225, .86) }
 
 /* страница с фото в шапке блока (бронь / контакты) */
 .page-photo { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); height: 168px; background: var(--card-2) }
@@ -587,3 +577,54 @@ button.fact:active { transform: scale(.985); border-color: var(--line-2) }
 
 /* мелочь: ссылки в подвале */
 .credits img { opacity: .92 }
+
+/* Language switch */
+.hdr-right { gap: 4px }
+.lang-btn.hdr-btn {
+  width: 36px; height: 30px; border: 1px solid var(--line-2); border-radius: 999px;
+  font-size: 10px; font-weight: 800; letter-spacing: .08em; color: var(--cream-2);
+}
+.lang-btn.hdr-btn:active { transform: scale(.94); background: var(--accent-soft); color: var(--accent-hi) }
+
+/* The menu is deliberately typography-first: no photos, covers or blurred hero art. */
+body.menu-view::after { opacity: 0 }
+.tabs button { display: inline-flex; align-items: center; gap: 6px }
+.tabs button > svg { width: 15px; height: 15px; color: var(--accent-hi); flex: none }
+.tabs button .cat-title { display: inline-block }
+.cat-hero { display: none !important }
+
+/* Brand infographic: illustrated facts instead of emoji badges. */
+.infographic {
+  position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden; isolation: isolate; background:
+    radial-gradient(95% 120% at 100% 0%, rgba(194, 102, 74, .08), transparent 64%),
+    linear-gradient(155deg, #191512, #131110 75%);
+}
+.infographic::before {
+  content: ""; position: absolute; z-index: -1; top: 18px; bottom: 18px; left: 50%; width: 1px;
+  background: linear-gradient(transparent, rgba(194, 102, 74, .24) 18%, rgba(194, 102, 74, .24) 82%, transparent);
+}
+.infographic-item {
+  position: relative; min-width: 0; min-height: 118px; padding: 15px 14px 14px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.infographic-item:nth-last-child(-n + 2) { border-bottom: 0 }
+.infographic-item:nth-child(odd) { border-right: 1px solid var(--line) }
+.infographic-index {
+  position: absolute; right: 12px; top: 13px; font-size: 9px; font-weight: 800;
+  letter-spacing: .14em; color: var(--muted-2); font-variant-numeric: tabular-nums;
+}
+.infographic-symbol {
+  width: 34px; height: 34px; border-radius: 11px; display: flex; align-items: center; justify-content: center;
+  color: var(--accent-hi); border: 1px solid rgba(194, 102, 74, .33); background: rgba(194, 102, 74, .08);
+}
+.infographic-symbol svg { width: 20px; height: 20px }
+.infographic-copy { display: block; min-width: 0 }
+.infographic .t { display: block; font-size: 11px; line-height: 1.35; font-weight: 800; letter-spacing: .09em; text-transform: uppercase }
+.infographic .d { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.42 }
+@media (max-width: 360px) {
+  .infographic-item { min-height: 126px; padding: 13px 11px }
+  .infographic .t { font-size: 10px }
+  .infographic .d { font-size: 10.5px }
+}
