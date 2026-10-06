@@ -1,0 +1,823 @@
+warning: `--folder` is no longer required for folder URLs and will be removed in a future release
+Retrieving folder contents
+Retrieving folder contents completed
+Building directory structure
+Building directory structure completed
+Downloading...
+From: https://drive.google.com/uc?id=190HhLSRs9WHDIye6q4t0OXhE364KmcTf
+To: /tmp/d/raw/20251211_0001.jpg
+Processing file 190HhLSRs9WHDIye6q4t0OXhE364KmcTf 20251211_0001.jpg
+Processing file 1vG9h6A1IOFXNEwom7jTVMklGPHZvaL6- 20251211_0002.jpg
+Processing file 1PGsZiWenO7Fv4gk3x1W6DCM5ZwN-034e 20251211_0003.jpg
+Processing file 1kT1T5BctCz41YlsWbW84fKTLQlp_-J8G 20251211_0004.jpg
+Processing file 1V34_7gKCbHyrfanSHbxSSKpFid2PD2Mw 20251211_0005.jpg
+Processing file 1iPde7AlL8uwbepgP3Y6CeNxemJCwNlVV 20251211_0006.jpg
+Processing file 1IL2fgnqXCiaSiacxzrF5BnKZrrZ6ocPj 20251211_0007.jpg
+Processing file 1u_0PYFMFF7TAVv-4ssRF35q0cUzl0uZ5 20251211_0008.jpg
+Processing file 1CiKDNKAv4GeR-jRGxd-mkZaZfWdToWyz 20251211_0009.jpg
+Processing file 1QVp-z-0gX41olFS70f6_-L0EggRz4kiQ 20251211_0010.jpg
+Processing file 1MuMm2jtcbpuaVTwsy-hdQ4B3HF6XLl4V 20251211_0011.jpg
+Processing file 1noo7xQsJWOkRPWtHSRGR39fqQUejUxdI 20251211_0012.jpg
+Processing file 1chmpL7MEPvDJvnubdqPMuI7LP5hWYsdn 20251211_0013.jpg
+Processing file 1GIa2sFQ2xcW898mnTBAwWR4PcGVZPLV2 20251211_0014.jpg
+Processing file 1iXqQM-XQH1D-cO6iJTiNafM6njoAZLuC 20251211_0015.jpg
+Processing file 1rDKnwD27VhS--iOPm5XjK6jjJ_1wvt5K 20251211_0016.jpg
+Processing file 1C91NBK1ct3d3NOlsl20T6acUhIpb5xFj 20251211_0017.jpg
+Processing file 1_QTfBhKROfb7W3e5o1TKN9sD6_SZWHfX 20251211_0018.jpg
+Processing file 1IcVhd6NEIMOlkuOCBalZBVQ5PSJSIqPt 20251211_0019.jpg
+Processing file 1aVtq7OQ8Qu_JQ9ES-NYhJxSC4cV90mKM 20251211_0020.jpg
+Processing file 1h24f0Sc6iLc4cKQ03hXg0jbEwVvfQMyV 20251211_0021.jpg
+Processing file 1Ry94qzDNIv6AbyQK9A3K3qj2lo4RjmbW 20251211_0022.jpg
+Processing file 1GuJeqGpJ_kAZL8HF7z-YB94olHnDXX2- 20251211_0023.jpg
+Processing file 1GjN9Kt_09viV67ph3fzrT8rvcnqUUFQJ 20251211_0024.jpg
+Processing file 10wDQCY1hYMIpmvn50YMWpuzEn-Mw6sRz 20251211_0025.jpg
+Processing file 1O_rcLFXWamxQfYobayhKL37K565xcXeO 20251211_0026.jpg
+Processing file 1y2QEiFpo1YoPpV3DHeW3j3MZjzgM4K7I 20251211_0027.jpg
+Processing file 1qI6nWGB__LInOXnITTBF663lSWqOFPN- 20251211_0028.jpg
+Processing file 1fyWffL_Ft1dFD8t6Lakil0oSg1Fd31Om 20251211_0029.jpg
+Processing file 1mBsxRhvPSwb1KfFJk4dcXKuG6UxWrpbP 20251211_0030.jpg
+Processing file 1WjI8JAY7O-71eQKtIbwSACu3q85SFfyc 20251211_0031.jpg
+Processing file 1jdYAEN8Mbp-SEQ9Ty-kQRoyK8c4NEWmL 20251211_0032.jpg
+Processing file 1X8UTURgX0LmmG8me82cufCUfkPRNjRaw 20251211_0033.jpg
+Processing file 12KJrQD4QESm2yvnE8-TDv_VTdohwJXrL 20251211_0034.jpg
+Processing file 1JKxm9yr3r61Yivg-I_s9Nli0Kb8BJS_n 20251211_0035.jpg
+Processing file 1I5PYtUhnup9knau0l2ITL2AX9wAdnv1C 20251211_0036.jpg
+Processing file 1jJwP95Rgnp89I1DWcf_k8UgNpMKCPyDI 20251211_0037.jpg
+Processing file 1ScGCwVDmH7-b1gmvSzMYgPrs_hY1C6kx 20251211_0051.jpg
+Processing file 1ROxjOijGIndY933U1GRZIirfjwE8WfHT 20251211_0052.jpg
+Processing file 1vFuY_cPkufkl8EyQ1zl8csIbi4VHiOOr 20251211_0053.jpg
+Processing file 1_Asvz8ep22sOUP4ZYXrmJBh-k1Q7f_5a 20251211_0054.jpg
+Processing file 1Xf2kYHeRVpGZ8zwwSgjgKMeJl1DFh12A 20251211_0055.jpg
+Processing file 1U3A6texO3Wob7y-4pgR2zxBSEqZeEwzp Aviation
+Processing file 1HxG5pyfI1QUXO2H0QWJ1si6lP_No92ft Aviation
+Processing file 13XZqIYNDCCuKaKaC0UqJsd-KQSAWcKvG Aviation
+Processing file 1S2b95fOWBrv_98EJS-4r1RyjmgSwgH5J Aviation
+Processing file 1-VdUNYaZw1lvpY7EMAnPgD_4_Ngb_NVU Aviation
+Processing file 1TD8lp2tafsQkX1zoFuFs-SpoV7zQOFrm Aviation
+Processing file 1pYveXUgh6TCfSAJlH6VAxZ3LY3Y6oReW Aviation
+Processing file 1gbaUiCraLZy3qp6-K7I1mmgiysD2Bhmq Aviation
+Processing file 1_k-LC1g3PeI4mNu6IZdtafhJtjqD5jrG Boulevardier
+Processing file 1PmG_-aGH_wRTa-n3Q7MPyAroDVG3FbnW Boulevardier
+Processing file 1UO0bTxFOnlQePF0t-gGPCNQCXZVoE3ll Boulevardier
+Processing file 1FwCXTUwBjWR2ipDTNuOBzumjsIntvbdt Boulevardier
+Processing file 1ktLELZFmGhcb5BfocS9sstDl7OFhonjt Boulevardier
+Processing file 1WIfTezq91Hc09Q4gEOwzPKvPn_ra_762 Boulevardier
+Processing file 1HdyhSNJ49Dt723K7zjhMvEbEA3BLYBIz Boulevardier
+Processing file 16E2QKUrYIg7_HbXpcIsi1CsSI3JDAsBU Boulevardier
+Processing file 1JWdJklL0zPzop8AyZIMfEmovB8cqGQfK Boulevardier
+Processing file 1NJH2kRPbCrh1PdkNUzFCcPDCvZTUflJz Boulevardier
+Processing file 12BDCbAh0GQtn0Vjrl6d6qpGO4i0rTaBW Cosmopolitan
+Processing file 1jSBFHw1t9gupbN2NfQ864LbXbpvpgvuM Cosmopolitan
+Processing file 1Kxfh7DDwGu8EAEFgZ9OJPrrt0wJ6GtIK Cosmopolitan
+Processing file 109g2Np-jzH4X_bQCzeu9ETTpYXTssXl1 Cosmopolitan
+Processing file 1bpJWep6HEyiraKkR4LY5zSicZ1bp_qIB Cosmopolitan
+Processing file 1al1FK6Bj3Bw04C5cct05CqSBZ5EuKZzy Dry Martini
+Processing file 10beS1AwCYR9-52thGCYdnMKmeCuAOz7C Dry Martini
+Processing file 1mgS1cBftUUcZtD51twbaHBy3hjX7yWn2 Dry Martini
+Processing file 1R0lIduzCl6OaIjlpe_eL02yIo8_v1HAy Dry Martini
+Processing file 1iQhlvxMgvhr2zHqMJoRKEmPrezleZm83 Dry Martini
+Processing file 15sgtEEcwstsbBOL-LTawsCWNgklDMlvc Dry Martini
+Processing file 1e0-uAe6KSyH6GM-JFuAAfS9tCFPRS4RY Dry Martini
+Processing file 1mErSFPMa9l2wIwp-uzWcq4rKV0yVndGE Dry Martini
+Processing file 1LnBi0LBr_RSSvwgKcfZPJLHVlOCpoYP5 Dry Martini
+Processing file 1VjbwLYtA6FFetF_TUTvL3Onuo6YqS0-M Dry Martini
+Processing file 1O7HVNU2fPMRFHGgcK7rLPkwLBUoODecv Gin Made 75
+Processing file 1_y8L7uwAliMYrCXqe4A4f4Qf1qc3V1x9 Gin Made 75
+Processing file 1MSZYvgjp7glaQQySh-v4Z-H80M5ohrdr Gin Made 75
+Processing file 1weE9IjtO0QL9HDphrLAKL8ziDQZ_Z2Sl Gin Made 75
+Processing file 1mUqqyMXAWsLE9T-mF2GTN3afKFwtZbXb Gin Made 75
+Processing file 1TPNugkqG-uy7cfM6bXicisWKczdBH8PM Gin Made 75
+Processing file 13Kj335Ddz-fSshjbab32ee0ctoxFGTkx Gin Made 75
+Processing file 1LmGxXYd0mIHsYXdk0TS9Aco4-Vj_pgtG Gin Made 75
+Processing file 1xxaK_WxcRXKMfFfvmKJq6Pz0sek8sQSk Gin Made 75
+Processing file 1Yv9oJhCUCOQtb1LzbPag8KMoDWLzqaGV Gin Made 75
+Processing file 1YK37AxseHLikn8Qc6iQRh52FhqzzQDnZ Negroni
+Processing file 1Gn86nEzcMKs-4OpyZ1kYp-f5ZTaNfn3E Negroni
+Processing file 1UtF3Q-d0BlBLnKX--FNLPdvE8cJeRXM- Negroni
+Processing file 1pgjmCvcCD1z5HVdLGHw3mFn-iU5C-ich Negroni
+Processing file 1U1WfQzy6AC403OU_XvmbEoB5BssC8hSb Negroni
+Processing file 1M6anXjFT3bjewKDo_NicH8mttW-Kla4U Negroni
+Processing file 13kR9VjhgReiVvecQQ6L5h3fCeYozzp6J Negroni
+Processing file 1X4GhVW5Rmz-tVuDWveWwsIYR_oPFnuqz Negroni
+Processing file 1AIhr-3Y5VwjgEioaBwwzVPLIaeUqaaRo Negroni
+Processing file 1ZgasN-W9RMJ6TtjN1PmNZ-EWrnxo-W7B Negroni
+Processing file 1OM5OE0whoh-a3LbI1IOz9HQIJWCXvXeG Penicillin
+Processing file 11cd9Yo5DLDgCc1TqwXtgIxRaPUPx01Kl Penicillin
+Processing file 1U2jrKSzQGs8MjUTRKLPMtTHxF-dRYBQO Penicillin
+Processing file 1aqRtWKCcj99_iCOkD86BLtLDUMb2c-Ug Penicillin
+Processing file 1dyvTLq-PyH5069PgxlMtNgui5aVvzXip Penicillin
+Processing file 1fTgq81l_q5Qd4BCsakimbLPYIx0cZ3Lg Penicillin
+Processing file 1BO_KoFipQeFBPZZFCNcgASzM719G753P Penicillin
+Processing file 1ui4xn6JTqa_BP7BHwsPV--pzT057Amg8 Penicillin
+Processing file 1w4LwSmFOYcsJvKcd3RKpoI_7njlsjXSQ Penicillin
+Processing file 1Bh1AiiW55BSP2KL1EHYph7bMx2svLE8A Penicillin
+Processing file 1Gxl0L_bMJl8Hopaexy0ofHiuzkCDf4sN Skinny Bitch
+Processing file 1hn0HoIPu9hvHMgsPkQM1c12_eu1NlrHY Skinny Bitch
+Processing file 11d1spXEu_PtCB06-jZLckl0lueVt-4OC Skinny Bitch
+Processing file 1ntBq_KOSP943o84ZZ_oIahW63SZovY3o Skinny Bitch
+Processing file 1Bxdxxc3tXt3SYyQaoFsYaskYq4QFKVL3 Skinny Bitch
+Processing file 1QasVQEFlI9XNa_iVw1c89pOopbzm1mqs Skinny Bitch
+Processing file 1hp94rDlYnogOhTP6i58yKKZkhBFgjsGQ Skinny Bitch
+Processing file 1pzUXaOvxUgqH90sFf7fOYExDT4M9vK8P Skinny Bitch
+Processing file 1-wau2TJxIvti1NdEa76Om_w18Rqv8v_x Skinny Bitch
+Processing file 1ZlooWV-8gW2Obyqgueddf2rfS3-67IMc Skinny Bitch
+Processing file 1yO157LNFXLQiAaBftB_Ys4CsLRXWf2UO Tommy's Margarita
+Processing file 13UdayAcoVLtyeSfNEzbefkGwCGc7FitW Tommy's Margarita
+Processing file 1V2_r4hXpzUQRBahyQTXmU1WaS_4thK9w Tommy's Margarita
+Processing file 1uQfmyZ7oRYhOAbF5WR_NZvIwPbkbBwyb Tommy's Margarita
+Processing file 1v5yLbfb3GC0vLqM_6KUPPSDErvudCENj Tommy's Margarita
+  0%|          | 0.00/2.51M [00:00<?, ?B/s]100%|██████████| 2.51M/2.51M [00:00<00:00, 24.8MB/s]100%|██████████| 2.51M/2.51M [00:00<00:00, 24.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1vG9h6A1IOFXNEwom7jTVMklGPHZvaL6-
+To: /tmp/d/raw/20251211_0002.jpg
+  0%|          | 0.00/2.81M [00:00<?, ?B/s] 56%|█████▌    | 1.57M/2.81M [00:00<00:00, 15.0MB/s]100%|██████████| 2.81M/2.81M [00:00<00:00, 23.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1PGsZiWenO7Fv4gk3x1W6DCM5ZwN-034e
+To: /tmp/d/raw/20251211_0003.jpg
+  0%|          | 0.00/2.81M [00:00<?, ?B/s] 56%|█████▌    | 1.57M/2.81M [00:00<00:00, 14.9MB/s]100%|██████████| 2.81M/2.81M [00:00<00:00, 23.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1kT1T5BctCz41YlsWbW84fKTLQlp_-J8G
+To: /tmp/d/raw/20251211_0004.jpg
+  0%|          | 0.00/2.60M [00:00<?, ?B/s]100%|██████████| 2.60M/2.60M [00:00<00:00, 26.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1V34_7gKCbHyrfanSHbxSSKpFid2PD2Mw
+To: /tmp/d/raw/20251211_0005.jpg
+  0%|          | 0.00/2.62M [00:00<?, ?B/s]100%|██████████| 2.62M/2.62M [00:00<00:00, 50.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1iPde7AlL8uwbepgP3Y6CeNxemJCwNlVV
+To: /tmp/d/raw/20251211_0006.jpg
+  0%|          | 0.00/2.92M [00:00<?, ?B/s] 72%|███████▏  | 2.10M/2.92M [00:00<00:00, 20.8MB/s]100%|██████████| 2.92M/2.92M [00:00<00:00, 26.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1IL2fgnqXCiaSiacxzrF5BnKZrrZ6ocPj
+To: /tmp/d/raw/20251211_0007.jpg
+  0%|          | 0.00/2.89M [00:00<?, ?B/s]100%|██████████| 2.89M/2.89M [00:00<00:00, 53.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1u_0PYFMFF7TAVv-4ssRF35q0cUzl0uZ5
+To: /tmp/d/raw/20251211_0008.jpg
+  0%|          | 0.00/2.76M [00:00<?, ?B/s]100%|██████████| 2.76M/2.76M [00:00<00:00, 27.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1CiKDNKAv4GeR-jRGxd-mkZaZfWdToWyz
+To: /tmp/d/raw/20251211_0009.jpg
+  0%|          | 0.00/2.73M [00:00<?, ?B/s] 58%|█████▊    | 1.57M/2.73M [00:00<00:00, 14.4MB/s]100%|██████████| 2.73M/2.73M [00:00<00:00, 21.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1QVp-z-0gX41olFS70f6_-L0EggRz4kiQ
+To: /tmp/d/raw/20251211_0010.jpg
+  0%|          | 0.00/2.84M [00:00<?, ?B/s] 74%|███████▍  | 2.10M/2.84M [00:00<00:00, 20.9MB/s]100%|██████████| 2.84M/2.84M [00:00<00:00, 25.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1MuMm2jtcbpuaVTwsy-hdQ4B3HF6XLl4V
+To: /tmp/d/raw/20251211_0011.jpg
+  0%|          | 0.00/2.59M [00:00<?, ?B/s] 81%|████████  | 2.10M/2.59M [00:00<00:00, 20.7MB/s]100%|██████████| 2.59M/2.59M [00:00<00:00, 24.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1noo7xQsJWOkRPWtHSRGR39fqQUejUxdI
+To: /tmp/d/raw/20251211_0012.jpg
+  0%|          | 0.00/2.59M [00:00<?, ?B/s] 81%|████████  | 2.10M/2.59M [00:00<00:00, 19.3MB/s]100%|██████████| 2.59M/2.59M [00:00<00:00, 23.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1chmpL7MEPvDJvnubdqPMuI7LP5hWYsdn
+To: /tmp/d/raw/20251211_0013.jpg
+  0%|          | 0.00/2.21M [00:00<?, ?B/s] 71%|███████   | 1.57M/2.21M [00:00<00:00, 15.3MB/s]100%|██████████| 2.21M/2.21M [00:00<00:00, 19.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1GIa2sFQ2xcW898mnTBAwWR4PcGVZPLV2
+To: /tmp/d/raw/20251211_0014.jpg
+  0%|          | 0.00/2.58M [00:00<?, ?B/s] 81%|████████▏ | 2.10M/2.58M [00:00<00:00, 19.6MB/s]100%|██████████| 2.58M/2.58M [00:00<00:00, 22.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1iXqQM-XQH1D-cO6iJTiNafM6njoAZLuC
+To: /tmp/d/raw/20251211_0015.jpg
+  0%|          | 0.00/2.69M [00:00<?, ?B/s] 78%|███████▊  | 2.10M/2.69M [00:00<00:00, 20.8MB/s]100%|██████████| 2.69M/2.69M [00:00<00:00, 25.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1rDKnwD27VhS--iOPm5XjK6jjJ_1wvt5K
+To: /tmp/d/raw/20251211_0016.jpg
+  0%|          | 0.00/2.84M [00:00<?, ?B/s] 74%|███████▍  | 2.10M/2.84M [00:00<00:00, 19.9MB/s]100%|██████████| 2.84M/2.84M [00:00<00:00, 24.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1C91NBK1ct3d3NOlsl20T6acUhIpb5xFj
+To: /tmp/d/raw/20251211_0017.jpg
+  0%|          | 0.00/2.53M [00:00<?, ?B/s] 62%|██████▏   | 1.57M/2.53M [00:00<00:00, 14.8MB/s]100%|██████████| 2.53M/2.53M [00:00<00:00, 21.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1_QTfBhKROfb7W3e5o1TKN9sD6_SZWHfX
+To: /tmp/d/raw/20251211_0018.jpg
+  0%|          | 0.00/2.89M [00:00<?, ?B/s] 91%|█████████ | 2.62M/2.89M [00:00<00:00, 25.1MB/s]100%|██████████| 2.89M/2.89M [00:00<00:00, 27.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1IcVhd6NEIMOlkuOCBalZBVQ5PSJSIqPt
+To: /tmp/d/raw/20251211_0019.jpg
+  0%|          | 0.00/2.46M [00:00<?, ?B/s] 85%|████████▌ | 2.10M/2.46M [00:00<00:00, 20.3MB/s]100%|██████████| 2.46M/2.46M [00:00<00:00, 23.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1aVtq7OQ8Qu_JQ9ES-NYhJxSC4cV90mKM
+To: /tmp/d/raw/20251211_0020.jpg
+  0%|          | 0.00/2.75M [00:00<?, ?B/s]100%|██████████| 2.75M/2.75M [00:00<00:00, 43.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1h24f0Sc6iLc4cKQ03hXg0jbEwVvfQMyV
+To: /tmp/d/raw/20251211_0021.jpg
+  0%|          | 0.00/2.62M [00:00<?, ?B/s]100%|██████████| 2.62M/2.62M [00:00<00:00, 22.8MB/s]100%|██████████| 2.62M/2.62M [00:00<00:00, 22.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Ry94qzDNIv6AbyQK9A3K3qj2lo4RjmbW
+To: /tmp/d/raw/20251211_0022.jpg
+  0%|          | 0.00/2.36M [00:00<?, ?B/s] 89%|████████▉ | 2.10M/2.36M [00:00<00:00, 19.8MB/s]100%|██████████| 2.36M/2.36M [00:00<00:00, 21.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1GuJeqGpJ_kAZL8HF7z-YB94olHnDXX2-
+To: /tmp/d/raw/20251211_0023.jpg
+  0%|          | 0.00/2.99M [00:00<?, ?B/s]100%|██████████| 2.99M/2.99M [00:00<00:00, 52.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1GjN9Kt_09viV67ph3fzrT8rvcnqUUFQJ
+To: /tmp/d/raw/20251211_0024.jpg
+  0%|          | 0.00/2.99M [00:00<?, ?B/s] 88%|████████▊ | 2.62M/2.99M [00:00<00:00, 21.9MB/s]100%|██████████| 2.99M/2.99M [00:00<00:00, 24.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=10wDQCY1hYMIpmvn50YMWpuzEn-Mw6sRz
+To: /tmp/d/raw/20251211_0025.jpg
+  0%|          | 0.00/2.44M [00:00<?, ?B/s]100%|██████████| 2.44M/2.44M [00:00<00:00, 29.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1O_rcLFXWamxQfYobayhKL37K565xcXeO
+To: /tmp/d/raw/20251211_0026.jpg
+  0%|          | 0.00/2.63M [00:00<?, ?B/s]100%|██████████| 2.63M/2.63M [00:00<00:00, 38.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1y2QEiFpo1YoPpV3DHeW3j3MZjzgM4K7I
+To: /tmp/d/raw/20251211_0027.jpg
+  0%|          | 0.00/2.99M [00:00<?, ?B/s]100%|██████████| 2.99M/2.99M [00:00<00:00, 50.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1qI6nWGB__LInOXnITTBF663lSWqOFPN-
+To: /tmp/d/raw/20251211_0028.jpg
+  0%|          | 0.00/2.47M [00:00<?, ?B/s]100%|██████████| 2.47M/2.47M [00:00<00:00, 46.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1fyWffL_Ft1dFD8t6Lakil0oSg1Fd31Om
+To: /tmp/d/raw/20251211_0029.jpg
+  0%|          | 0.00/2.85M [00:00<?, ?B/s] 92%|█████████▏| 2.62M/2.85M [00:00<00:00, 23.2MB/s]100%|██████████| 2.85M/2.85M [00:00<00:00, 25.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1mBsxRhvPSwb1KfFJk4dcXKuG6UxWrpbP
+To: /tmp/d/raw/20251211_0030.jpg
+  0%|          | 0.00/2.77M [00:00<?, ?B/s]100%|██████████| 2.77M/2.77M [00:00<00:00, 52.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1WjI8JAY7O-71eQKtIbwSACu3q85SFfyc
+To: /tmp/d/raw/20251211_0031.jpg
+  0%|          | 0.00/2.90M [00:00<?, ?B/s]100%|██████████| 2.90M/2.90M [00:00<00:00, 46.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1jdYAEN8Mbp-SEQ9Ty-kQRoyK8c4NEWmL
+To: /tmp/d/raw/20251211_0032.jpg
+  0%|          | 0.00/3.06M [00:00<?, ?B/s]100%|██████████| 3.06M/3.06M [00:00<00:00, 45.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1X8UTURgX0LmmG8me82cufCUfkPRNjRaw
+To: /tmp/d/raw/20251211_0033.jpg
+  0%|          | 0.00/2.71M [00:00<?, ?B/s]100%|██████████| 2.71M/2.71M [00:00<00:00, 48.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=12KJrQD4QESm2yvnE8-TDv_VTdohwJXrL
+To: /tmp/d/raw/20251211_0034.jpg
+  0%|          | 0.00/2.67M [00:00<?, ?B/s]100%|██████████| 2.67M/2.67M [00:00<00:00, 53.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1JKxm9yr3r61Yivg-I_s9Nli0Kb8BJS_n
+To: /tmp/d/raw/20251211_0035.jpg
+  0%|          | 0.00/2.77M [00:00<?, ?B/s]100%|██████████| 2.77M/2.77M [00:00<00:00, 46.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1I5PYtUhnup9knau0l2ITL2AX9wAdnv1C
+To: /tmp/d/raw/20251211_0036.jpg
+  0%|          | 0.00/3.14M [00:00<?, ?B/s]100%|██████████| 3.14M/3.14M [00:00<00:00, 53.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1jJwP95Rgnp89I1DWcf_k8UgNpMKCPyDI
+To: /tmp/d/raw/20251211_0037.jpg
+  0%|          | 0.00/2.90M [00:00<?, ?B/s] 91%|█████████ | 2.62M/2.90M [00:00<00:00, 23.5MB/s]100%|██████████| 2.90M/2.90M [00:00<00:00, 25.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1ScGCwVDmH7-b1gmvSzMYgPrs_hY1C6kx
+To: /tmp/d/raw/20251211_0051.jpg
+  0%|          | 0.00/3.37M [00:00<?, ?B/s]100%|██████████| 3.37M/3.37M [00:00<00:00, 44.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1ROxjOijGIndY933U1GRZIirfjwE8WfHT
+To: /tmp/d/raw/20251211_0052.jpg
+  0%|          | 0.00/3.43M [00:00<?, ?B/s] 61%|██████    | 2.10M/3.43M [00:00<00:00, 19.6MB/s]100%|██████████| 3.43M/3.43M [00:00<00:00, 28.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1vFuY_cPkufkl8EyQ1zl8csIbi4VHiOOr
+To: /tmp/d/raw/20251211_0053.jpg
+  0%|          | 0.00/3.23M [00:00<?, ?B/s] 49%|████▉     | 1.57M/3.23M [00:00<00:00, 15.7MB/s]100%|██████████| 3.23M/3.23M [00:00<00:00, 26.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1_Asvz8ep22sOUP4ZYXrmJBh-k1Q7f_5a
+To: /tmp/d/raw/20251211_0054.jpg
+  0%|          | 0.00/3.08M [00:00<?, ?B/s] 68%|██████▊   | 2.10M/3.08M [00:00<00:00, 20.1MB/s]100%|██████████| 3.08M/3.08M [00:00<00:00, 26.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Xf2kYHeRVpGZ8zwwSgjgKMeJl1DFh12A
+To: /tmp/d/raw/20251211_0055.jpg
+  0%|          | 0.00/2.75M [00:00<?, ?B/s] 76%|███████▋  | 2.10M/2.75M [00:00<00:00, 20.8MB/s]100%|██████████| 2.75M/2.75M [00:00<00:00, 21.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1U3A6texO3Wob7y-4pgR2zxBSEqZeEwzp
+To: /tmp/d/raw/Aviation
+  0%|          | 0.00/2.73M [00:00<?, ?B/s]100%|██████████| 2.73M/2.73M [00:00<00:00, 51.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1HxG5pyfI1QUXO2H0QWJ1si6lP_No92ft
+To: /tmp/d/raw/Aviation
+  0%|          | 0.00/2.93M [00:00<?, ?B/s] 89%|████████▉ | 2.62M/2.93M [00:00<00:00, 22.2MB/s]100%|██████████| 2.93M/2.93M [00:00<00:00, 24.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=13XZqIYNDCCuKaKaC0UqJsd-KQSAWcKvG
+To: /tmp/d/raw/Aviation
+  0%|          | 0.00/2.86M [00:00<?, ?B/s] 55%|█████▍    | 1.57M/2.86M [00:00<00:00, 14.4MB/s]100%|██████████| 2.86M/2.86M [00:00<00:00, 22.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1S2b95fOWBrv_98EJS-4r1RyjmgSwgH5J
+To: /tmp/d/raw/Aviation
+  0%|          | 0.00/3.24M [00:00<?, ?B/s] 49%|████▊     | 1.57M/3.24M [00:00<00:00, 15.6MB/s]100%|██████████| 3.24M/3.24M [00:00<00:00, 26.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1-VdUNYaZw1lvpY7EMAnPgD_4_Ngb_NVU
+To: /tmp/d/raw/Aviation
+  0%|          | 0.00/2.52M [00:00<?, ?B/s] 83%|████████▎ | 2.10M/2.52M [00:00<00:00, 20.6MB/s]100%|██████████| 2.52M/2.52M [00:00<00:00, 21.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1TD8lp2tafsQkX1zoFuFs-SpoV7zQOFrm
+To: /tmp/d/raw/Aviation
+  0%|          | 0.00/3.21M [00:00<?, ?B/s]100%|██████████| 3.21M/3.21M [00:00<00:00, 38.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1pYveXUgh6TCfSAJlH6VAxZ3LY3Y6oReW
+To: /tmp/d/raw/Aviation
+  0%|          | 0.00/2.45M [00:00<?, ?B/s]100%|██████████| 2.45M/2.45M [00:00<00:00, 24.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1gbaUiCraLZy3qp6-K7I1mmgiysD2Bhmq
+To: /tmp/d/raw/Aviation
+  0%|          | 0.00/2.73M [00:00<?, ?B/s] 77%|███████▋  | 2.10M/2.73M [00:00<00:00, 20.8MB/s]100%|██████████| 2.73M/2.73M [00:00<00:00, 25.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1_k-LC1g3PeI4mNu6IZdtafhJtjqD5jrG
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/3.61M [00:00<?, ?B/s] 58%|█████▊    | 2.10M/3.61M [00:00<00:00, 20.6MB/s]100%|██████████| 3.61M/3.61M [00:00<00:00, 31.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1PmG_-aGH_wRTa-n3Q7MPyAroDVG3FbnW
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/3.21M [00:00<?, ?B/s] 65%|██████▌   | 2.10M/3.21M [00:00<00:00, 20.6MB/s]100%|██████████| 3.21M/3.21M [00:00<00:00, 28.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1UO0bTxFOnlQePF0t-gGPCNQCXZVoE3ll
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/3.54M [00:00<?, ?B/s] 59%|█████▉    | 2.10M/3.54M [00:00<00:00, 20.7MB/s]100%|██████████| 3.54M/3.54M [00:00<00:00, 30.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1FwCXTUwBjWR2ipDTNuOBzumjsIntvbdt
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/3.75M [00:00<?, ?B/s] 42%|████▏     | 1.57M/3.75M [00:00<00:00, 15.5MB/s]100%|██████████| 3.75M/3.75M [00:00<00:00, 29.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1ktLELZFmGhcb5BfocS9sstDl7OFhonjt
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/2.64M [00:00<?, ?B/s]100%|██████████| 2.64M/2.64M [00:00<00:00, 42.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1WIfTezq91Hc09Q4gEOwzPKvPn_ra_762
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/2.98M [00:00<?, ?B/s] 70%|███████   | 2.10M/2.98M [00:00<00:00, 20.2MB/s]100%|██████████| 2.98M/2.98M [00:00<00:00, 26.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1HdyhSNJ49Dt723K7zjhMvEbEA3BLYBIz
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/3.85M [00:00<?, ?B/s] 55%|█████▍    | 2.10M/3.85M [00:00<00:00, 20.6MB/s]100%|██████████| 3.85M/3.85M [00:00<00:00, 32.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=16E2QKUrYIg7_HbXpcIsi1CsSI3JDAsBU
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/3.56M [00:00<?, ?B/s] 59%|█████▉    | 2.10M/3.56M [00:00<00:00, 20.1MB/s]100%|██████████| 3.56M/3.56M [00:00<00:00, 29.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1JWdJklL0zPzop8AyZIMfEmovB8cqGQfK
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/3.67M [00:00<?, ?B/s] 57%|█████▋    | 2.10M/3.67M [00:00<00:00, 20.5MB/s]100%|██████████| 3.67M/3.67M [00:00<00:00, 31.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1NJH2kRPbCrh1PdkNUzFCcPDCvZTUflJz
+To: /tmp/d/raw/Boulevardier
+  0%|          | 0.00/3.33M [00:00<?, ?B/s] 79%|███████▊  | 2.62M/3.33M [00:00<00:00, 15.9MB/s]100%|██████████| 3.33M/3.33M [00:00<00:00, 19.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=12BDCbAh0GQtn0Vjrl6d6qpGO4i0rTaBW
+To: /tmp/d/raw/Cosmopolitan
+  0%|          | 0.00/2.93M [00:00<?, ?B/s] 54%|█████▎    | 1.57M/2.93M [00:00<00:00, 15.4MB/s]100%|██████████| 2.93M/2.93M [00:00<00:00, 23.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1jSBFHw1t9gupbN2NfQ864LbXbpvpgvuM
+To: /tmp/d/raw/Cosmopolitan
+  0%|          | 0.00/2.70M [00:00<?, ?B/s] 58%|█████▊    | 1.57M/2.70M [00:00<00:00, 15.4MB/s]100%|██████████| 2.70M/2.70M [00:00<00:00, 22.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Kxfh7DDwGu8EAEFgZ9OJPrrt0wJ6GtIK
+To: /tmp/d/raw/Cosmopolitan
+  0%|          | 0.00/3.03M [00:00<?, ?B/s] 86%|████████▋ | 2.62M/3.03M [00:00<00:00, 19.8MB/s]100%|██████████| 3.03M/3.03M [00:00<00:00, 22.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=109g2Np-jzH4X_bQCzeu9ETTpYXTssXl1
+To: /tmp/d/raw/Cosmopolitan
+  0%|          | 0.00/2.77M [00:00<?, ?B/s] 76%|███████▌  | 2.10M/2.77M [00:00<00:00, 20.5MB/s]100%|██████████| 2.77M/2.77M [00:00<00:00, 24.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1bpJWep6HEyiraKkR4LY5zSicZ1bp_qIB
+To: /tmp/d/raw/Cosmopolitan
+  0%|          | 0.00/3.18M [00:00<?, ?B/s] 66%|██████▌   | 2.10M/3.18M [00:00<00:00, 19.9MB/s]100%|██████████| 3.18M/3.18M [00:00<00:00, 26.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1al1FK6Bj3Bw04C5cct05CqSBZ5EuKZzy
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/2.84M [00:00<?, ?B/s]100%|██████████| 2.84M/2.84M [00:00<00:00, 53.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=10beS1AwCYR9-52thGCYdnMKmeCuAOz7C
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/2.57M [00:00<?, ?B/s]100%|██████████| 2.57M/2.57M [00:00<00:00, 24.9MB/s]100%|██████████| 2.57M/2.57M [00:00<00:00, 24.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1mgS1cBftUUcZtD51twbaHBy3hjX7yWn2
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/2.56M [00:00<?, ?B/s] 82%|████████▏ | 2.10M/2.56M [00:00<00:00, 20.6MB/s]100%|██████████| 2.56M/2.56M [00:00<00:00, 24.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1R0lIduzCl6OaIjlpe_eL02yIo8_v1HAy
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/2.68M [00:00<?, ?B/s] 78%|███████▊  | 2.10M/2.68M [00:00<00:00, 19.8MB/s]100%|██████████| 2.68M/2.68M [00:00<00:00, 24.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1iQhlvxMgvhr2zHqMJoRKEmPrezleZm83
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/1.84M [00:00<?, ?B/s]100%|██████████| 1.84M/1.84M [00:00<00:00, 39.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=15sgtEEcwstsbBOL-LTawsCWNgklDMlvc
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/3.32M [00:00<?, ?B/s] 47%|████▋     | 1.57M/3.32M [00:00<00:00, 15.5MB/s]100%|██████████| 3.32M/3.32M [00:00<00:00, 26.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1e0-uAe6KSyH6GM-JFuAAfS9tCFPRS4RY
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/2.41M [00:00<?, ?B/s]100%|██████████| 2.41M/2.41M [00:00<00:00, 40.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1mErSFPMa9l2wIwp-uzWcq4rKV0yVndGE
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/2.69M [00:00<?, ?B/s] 78%|███████▊  | 2.10M/2.69M [00:00<00:00, 20.0MB/s]100%|██████████| 2.69M/2.69M [00:00<00:00, 23.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1LnBi0LBr_RSSvwgKcfZPJLHVlOCpoYP5
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/2.77M [00:00<?, ?B/s] 57%|█████▋    | 1.57M/2.77M [00:00<00:00, 15.5MB/s]100%|██████████| 2.77M/2.77M [00:00<00:00, 23.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1VjbwLYtA6FFetF_TUTvL3Onuo6YqS0-M
+To: /tmp/d/raw/Dry Martini
+  0%|          | 0.00/2.28M [00:00<?, ?B/s]100%|██████████| 2.28M/2.28M [00:00<00:00, 45.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1O7HVNU2fPMRFHGgcK7rLPkwLBUoODecv
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.78M [00:00<?, ?B/s] 75%|███████▌  | 2.10M/2.78M [00:00<00:00, 20.5MB/s]100%|██████████| 2.78M/2.78M [00:00<00:00, 24.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1_y8L7uwAliMYrCXqe4A4f4Qf1qc3V1x9
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.72M [00:00<?, ?B/s]100%|██████████| 2.72M/2.72M [00:00<00:00, 51.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1MSZYvgjp7glaQQySh-v4Z-H80M5ohrdr
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.92M [00:00<?, ?B/s]100%|██████████| 2.92M/2.92M [00:00<00:00, 51.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1weE9IjtO0QL9HDphrLAKL8ziDQZ_Z2Sl
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.89M [00:00<?, ?B/s]100%|██████████| 2.89M/2.89M [00:00<00:00, 48.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1mUqqyMXAWsLE9T-mF2GTN3afKFwtZbXb
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.65M [00:00<?, ?B/s] 99%|█████████▉| 2.62M/2.65M [00:00<00:00, 23.0MB/s]100%|██████████| 2.65M/2.65M [00:00<00:00, 23.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1TPNugkqG-uy7cfM6bXicisWKczdBH8PM
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.76M [00:00<?, ?B/s]100%|██████████| 2.76M/2.76M [00:00<00:00, 56.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=13Kj335Ddz-fSshjbab32ee0ctoxFGTkx
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.78M [00:00<?, ?B/s]100%|██████████| 2.78M/2.78M [00:00<00:00, 52.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1LmGxXYd0mIHsYXdk0TS9Aco4-Vj_pgtG
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.43M [00:00<?, ?B/s]100%|██████████| 2.43M/2.43M [00:00<00:00, 40.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1xxaK_WxcRXKMfFfvmKJq6Pz0sek8sQSk
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.85M [00:00<?, ?B/s]100%|██████████| 2.85M/2.85M [00:00<00:00, 55.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Yv9oJhCUCOQtb1LzbPag8KMoDWLzqaGV
+To: /tmp/d/raw/Gin Made 75
+  0%|          | 0.00/2.26M [00:00<?, ?B/s]100%|██████████| 2.26M/2.26M [00:00<00:00, 42.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1YK37AxseHLikn8Qc6iQRh52FhqzzQDnZ
+To: /tmp/d/raw/Negroni
+  0%|          | 0.00/3.31M [00:00<?, ?B/s]100%|██████████| 3.31M/3.31M [00:00<00:00, 55.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Gn86nEzcMKs-4OpyZ1kYp-f5ZTaNfn3E
+To: /tmp/d/raw/Negroni
+  0%|          | 0.00/3.40M [00:00<?, ?B/s]100%|██████████| 3.40M/3.40M [00:00<00:00, 59.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1UtF3Q-d0BlBLnKX--FNLPdvE8cJeRXM-
+To: /tmp/d/raw/Negroni
+  0%|          | 0.00/2.91M [00:00<?, ?B/s] 90%|████████▉ | 2.62M/2.91M [00:00<00:00, 25.3MB/s]100%|██████████| 2.91M/2.91M [00:00<00:00, 27.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1pgjmCvcCD1z5HVdLGHw3mFn-iU5C-ich
+To: /tmp/d/raw/Negroni
+  0%|          | 0.00/3.30M [00:00<?, ?B/s]100%|██████████| 3.30M/3.30M [00:00<00:00, 52.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1U1WfQzy6AC403OU_XvmbEoB5BssC8hSb
+To: /tmp/d/raw/Negroni
+  0%|          | 0.00/3.85M [00:00<?, ?B/s]100%|██████████| 3.85M/3.85M [00:00<00:00, 60.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1M6anXjFT3bjewKDo_NicH8mttW-Kla4U
+To: /tmp/d/raw/Negroni
+  0%|          | 0.00/3.65M [00:00<?, ?B/s]100%|██████████| 3.65M/3.65M [00:00<00:00, 59.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=13kR9VjhgReiVvecQQ6L5h3fCeYozzp6J
+To: /tmp/d/raw/Negroni
+  0%|          | 0.00/3.65M [00:00<?, ?B/s] 72%|███████▏  | 2.62M/3.65M [00:00<00:00, 24.7MB/s]100%|██████████| 3.65M/3.65M [00:00<00:00, 31.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1X4GhVW5Rmz-tVuDWveWwsIYR_oPFnuqz
+To: /tmp/d/raw/Negroni
+  0%|          | 0.00/3.46M [00:00<?, ?B/s]100%|██████████| 3.46M/3.46M [00:00<00:00, 62.2MB/s]
+Failed to download raw/Negroni: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1AIhr-3Y5VwjgEioaBwwzVPLIaeUqaaRo
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Negroni: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1ZgasN-W9RMJ6TtjN1PmNZ-EWrnxo-W7B
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1OM5OE0whoh-a3LbI1IOz9HQIJWCXvXeG
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=11cd9Yo5DLDgCc1TqwXtgIxRaPUPx01Kl
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1U2jrKSzQGs8MjUTRKLPMtTHxF-dRYBQO
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1aqRtWKCcj99_iCOkD86BLtLDUMb2c-Ug
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1dyvTLq-PyH5069PgxlMtNgui5aVvzXip
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1fTgq81l_q5Qd4BCsakimbLPYIx0cZ3Lg
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1BO_KoFipQeFBPZZFCNcgASzM719G753P
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1ui4xn6JTqa_BP7BHwsPV--pzT057Amg8
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1w4LwSmFOYcsJvKcd3RKpoI_7njlsjXSQ
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Penicillin: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1Bh1AiiW55BSP2KL1EHYph7bMx2svLE8A
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1Gxl0L_bMJl8Hopaexy0ofHiuzkCDf4sN
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1hn0HoIPu9hvHMgsPkQM1c12_eu1NlrHY
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=11d1spXEu_PtCB06-jZLckl0lueVt-4OC
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1ntBq_KOSP943o84ZZ_oIahW63SZovY3o
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1Bxdxxc3tXt3SYyQaoFsYaskYq4QFKVL3
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1QasVQEFlI9XNa_iVw1c89pOopbzm1mqs
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1hp94rDlYnogOhTP6i58yKKZkhBFgjsGQ
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1pzUXaOvxUgqH90sFf7fOYExDT4M9vK8P
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1-wau2TJxIvti1NdEa76Om_w18Rqv8v_x
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Skinny Bitch: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1ZlooWV-8gW2Obyqgueddf2rfS3-67IMc
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Tommy's Margarita: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1yO157LNFXLQiAaBftB_Ys4CsLRXWf2UO
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Tommy's Margarita: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=13UdayAcoVLtyeSfNEzbefkGwCGc7FitW
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Tommy's Margarita: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1V2_r4hXpzUQRBahyQTXmU1WaS_4thK9w
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Tommy's Margarita: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1uQfmyZ7oRYhOAbF5WR_NZvIwPbkbBwyb
+
+but Gdown can't. Please check connections and permissions.
+Failed to download raw/Tommy's Margarita: Failed to retrieve file url:
+
+	Cannot retrieve the public link of the file. You may need to change
+	the permission to 'Anyone with the link', or have had many accesses.
+	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
+
+You may still be able to access the file from the browser:
+
+	https://drive.google.com/uc?id=1v5yLbfb3GC0vLqM_6KUPPSDErvudCENj
+
+but Gdown can't. Please check connections and permissions.
+Failed to download the following files:
+- raw/Negroni
+- raw/Negroni
+- raw/Penicillin
+- raw/Penicillin
+- raw/Penicillin
+- raw/Penicillin
+- raw/Penicillin
+- raw/Penicillin
+- raw/Penicillin
+- raw/Penicillin
+- raw/Penicillin
+- raw/Penicillin
+- raw/Skinny Bitch
+- raw/Skinny Bitch
+- raw/Skinny Bitch
+- raw/Skinny Bitch
+- raw/Skinny Bitch
+- raw/Skinny Bitch
+- raw/Skinny Bitch
+- raw/Skinny Bitch
+- raw/Skinny Bitch
+- raw/Skinny Bitch
+- raw/Tommy's Margarita
+- raw/Tommy's Margarita
+- raw/Tommy's Margarita
+- raw/Tommy's Margarita
+- raw/Tommy's Margarita
+FAIL/TIMEOUT 1

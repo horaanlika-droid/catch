@@ -1,0 +1,71 @@
+warning: `--folder` is no longer required for folder URLs and will be removed in a future release
+Retrieving folder contents
+Retrieving folder contents completed
+Building directory structure
+Building directory structure completed
+Downloading...
+From: https://drive.google.com/uc?id=1nIVRyYRYlY5ufW6BCCDRVhjAg9h8hmQ9
+To: /tmp/d/raw/0001.jpg
+Processing file 1nIVRyYRYlY5ufW6BCCDRVhjAg9h8hmQ9 0001.jpg
+Processing file 1WW1prVIOI8HjQRNiZKdNFRWGmWUSHCR3 0012.jpg
+Processing file 1VdugQJtk1TH85HQo75gtBRN_-itl2tgx 0013.jpg
+Processing file 1Z5vQs7N-YeIjdaGUpOgT45zh9TFMS41Q 0015.jpg
+Processing file 108slvLhgwhGdDTKIA1IYj_-u3ki5YGPP 0024.jpg
+Processing file 1rYPl_V3tOalj23USEO3Ic8sULKQ5HS8A 0025.jpg
+Processing file 1e4-8VqhLBLuFqiv859JMA6FeCBvY6kbZ 0026.jpg
+Processing file 12GpqPyUf5vxASnyfAF8rU0ARK08mZWeK 0027.jpg
+Processing file 1i-PoThqXiN9hY_GPe6p7mXny8pYV4feH 0030.jpg
+Processing file 1AU7FX-rAegvQ0VXF-Pr90A3NkfprQ-Az 0031.jpg
+Processing file 1x2tYzWRECZ8_HEu-u9mzjCinoqU9B9Pj 0032.jpg
+Processing file 15-6ybdo2-zfUPBD-dvn8Ie-FJowa5YbC 0034.jpg
+Processing file 197GEeJZJuJgJNhvmuKcOaArLIk3aIv8N 0036.jpg
+  0%|          | 0.00/11.8M [00:00<?, ?B/s] 40%|███▉      | 4.72M/11.8M [00:00<00:00, 24.6MB/s]100%|██████████| 11.8M/11.8M [00:00<00:00, 44.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1WW1prVIOI8HjQRNiZKdNFRWGmWUSHCR3
+To: /tmp/d/raw/0012.jpg
+  0%|          | 0.00/10.9M [00:00<?, ?B/s] 39%|███▊      | 4.19M/10.9M [00:00<00:00, 40.9MB/s] 82%|████████▏ | 8.91M/10.9M [00:00<00:00, 24.5MB/s]100%|██████████| 10.9M/10.9M [00:00<00:00, 30.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1VdugQJtk1TH85HQo75gtBRN_-itl2tgx
+To: /tmp/d/raw/0013.jpg
+  0%|          | 0.00/13.8M [00:00<?, ?B/s]  4%|▍         | 524k/13.8M [00:00<00:11, 1.21MB/s]  8%|▊         | 1.05M/13.8M [00:00<00:06, 2.02MB/s] 15%|█▌        | 2.10M/13.8M [00:00<00:03, 3.70MB/s] 27%|██▋       | 3.67M/13.8M [00:00<00:01, 6.40MB/s] 46%|████▌     | 6.29M/13.8M [00:00<00:00, 11.1MB/s] 68%|██████▊   | 9.44M/13.8M [00:01<00:00, 15.7MB/s] 91%|█████████ | 12.6M/13.8M [00:01<00:00, 19.6MB/s]100%|██████████| 13.8M/13.8M [00:01<00:00, 11.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Z5vQs7N-YeIjdaGUpOgT45zh9TFMS41Q
+To: /tmp/d/raw/0015.jpg
+  0%|          | 0.00/9.72M [00:00<?, ?B/s] 11%|█         | 1.05M/9.72M [00:00<00:00, 9.20MB/s] 97%|█████████▋| 9.44M/9.72M [00:00<00:00, 48.6MB/s]100%|██████████| 9.72M/9.72M [00:00<00:00, 43.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=108slvLhgwhGdDTKIA1IYj_-u3ki5YGPP
+To: /tmp/d/raw/0024.jpg
+  0%|          | 0.00/7.13M [00:00<?, ?B/s]  7%|▋         | 524k/7.13M [00:00<00:01, 4.47MB/s] 51%|█████▏    | 3.67M/7.13M [00:00<00:00, 19.1MB/s]100%|██████████| 7.13M/7.13M [00:00<00:00, 27.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1rYPl_V3tOalj23USEO3Ic8sULKQ5HS8A
+To: /tmp/d/raw/0025.jpg
+  0%|          | 0.00/10.4M [00:00<?, ?B/s] 15%|█▌        | 1.57M/10.4M [00:00<00:00, 14.4MB/s]100%|██████████| 10.4M/10.4M [00:00<00:00, 59.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1e4-8VqhLBLuFqiv859JMA6FeCBvY6kbZ
+To: /tmp/d/raw/0026.jpg
+  0%|          | 0.00/8.61M [00:00<?, ?B/s] 30%|███       | 2.62M/8.61M [00:00<00:00, 25.6MB/s] 61%|██████    | 5.24M/8.61M [00:00<00:00, 22.2MB/s]100%|██████████| 8.61M/8.61M [00:00<00:00, 33.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=12GpqPyUf5vxASnyfAF8rU0ARK08mZWeK
+To: /tmp/d/raw/0027.jpg
+  0%|          | 0.00/11.4M [00:00<?, ?B/s]  5%|▍         | 524k/11.4M [00:00<00:09, 1.10MB/s]  9%|▉         | 1.05M/11.4M [00:00<00:05, 1.87MB/s] 18%|█▊        | 2.10M/11.4M [00:00<00:02, 3.50MB/s] 32%|███▏      | 3.67M/11.4M [00:00<00:01, 6.06MB/s] 55%|█████▌    | 6.29M/11.4M [00:00<00:00, 10.6MB/s] 83%|████████▎ | 9.44M/11.4M [00:01<00:00, 15.1MB/s]100%|██████████| 11.4M/11.4M [00:01<00:00, 9.74MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1i-PoThqXiN9hY_GPe6p7mXny8pYV4feH
+To: /tmp/d/raw/0030.jpg
+  0%|          | 0.00/9.70M [00:00<?, ?B/s] 11%|█         | 1.05M/9.70M [00:00<00:00, 9.71MB/s] 49%|████▊     | 4.72M/9.70M [00:00<00:00, 24.4MB/s]100%|██████████| 9.70M/9.70M [00:00<00:00, 36.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1AU7FX-rAegvQ0VXF-Pr90A3NkfprQ-Az
+To: /tmp/d/raw/0031.jpg
+  0%|          | 0.00/9.67M [00:00<?, ?B/s]  5%|▌         | 524k/9.67M [00:00<00:02, 4.51MB/s] 38%|███▊      | 3.67M/9.67M [00:00<00:00, 19.1MB/s]100%|██████████| 9.67M/9.67M [00:00<00:00, 35.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1x2tYzWRECZ8_HEu-u9mzjCinoqU9B9Pj
+To: /tmp/d/raw/0032.jpg
+  0%|          | 0.00/11.3M [00:00<?, ?B/s]  5%|▍         | 524k/11.3M [00:00<00:02, 4.52MB/s] 33%|███▎      | 3.67M/11.3M [00:00<00:00, 18.6MB/s]100%|██████████| 11.3M/11.3M [00:00<00:00, 39.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=15-6ybdo2-zfUPBD-dvn8Ie-FJowa5YbC
+To: /tmp/d/raw/0034.jpg
+  0%|          | 0.00/9.69M [00:00<?, ?B/s]  5%|▌         | 524k/9.69M [00:00<00:02, 4.49MB/s] 38%|███▊      | 3.67M/9.69M [00:00<00:00, 19.0MB/s]100%|██████████| 9.69M/9.69M [00:00<00:00, 34.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=197GEeJZJuJgJNhvmuKcOaArLIk3aIv8N
+To: /tmp/d/raw/0036.jpg
+  0%|          | 0.00/10.4M [00:00<?, ?B/s] 65%|██████▌   | 6.82M/10.4M [00:00<00:00, 30.3MB/s]100%|██████████| 10.4M/10.4M [00:00<00:00, 42.9MB/s]
+Download completed
