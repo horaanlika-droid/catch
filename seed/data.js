@@ -36,12 +36,12 @@ export const seed = {
     bot: '',
     // «За что нас любят» — только подтверждённые факты из пресс-кита
     awards: [
-      { icon: '🏆', title: 'Открытие года 2026', text: 'Всероссийская премия Where2Drink' },
-      { icon: '🔊', title: 'Звук Tannoy', text: 'Акустическая система погружения High Fidelity' },
-      { icon: '🎧', title: 'Фонотека', text: 'Винил и музыкальная концепция Евгения Литвяка' },
-      { icon: '🍸', title: 'Коктейли', text: 'Каждый — одна из музыкальных революций, от 950 ₽' },
-      { icon: '🍷', title: 'Вино A / B', text: 'Карта как пластинка: хиты и new wave' },
-      { icon: '🛋', title: 'Studio Cache', text: 'Интерьер от лондонского бюро' },
+      { title: 'Открытие года 2026', text: 'Всероссийская премия Where2Drink' },
+      { title: 'Звук Tannoy', text: 'Акустическая система погружения High Fidelity' },
+      { title: 'Фонотека', text: 'Винил и музыкальная концепция Евгения Литвяка' },
+      { title: 'Коктейли', text: 'Каждый — одна из музыкальных революций, от 950 ₽' },
+      { title: 'Вино A / B', text: 'Карта как пластинка: хиты и new wave' },
+      { title: 'Studio Cache', text: 'Интерьер от лондонского бюро' },
     ],
   },
 
@@ -142,7 +142,7 @@ export const seed = {
         name: 'Илья Борик',
         role: 'Шеф-повар',
         text: 'Ex Beefzavod, Nola Jazz Bar. Comfort food со всего света: от севиче из гребешка до фокаччи с прошутто котто и европейскими сырами.',
-        photo: `${P}/team/ilya-borik.jpg`,
+        photo: '',
       },
       {
         name: 'Иван Королев',
@@ -183,15 +183,15 @@ export const seed = {
   },
 
   gallery: [
-    { src: `${P}/interior/bar-wide.jpg`, caption: 'Бар Catch 22' },
-    { src: `${P}/vibe/vinyl-shelves.jpg`, caption: 'Фонотека' },
-    { src: `${P}/interior/turntable.jpg`, caption: 'За пультом' },
-    { src: `${P}/interior/lounge-chair.jpg`, caption: 'Интерьер — Studio Cache, Лондон' },
-    { src: `${P}/cocktails/martini-tray.jpg`, caption: 'Pornstar Martini' },
-    { src: `${P}/food/table.jpg`, caption: 'Comfort food' },
-    { src: `${P}/vibe/cassette-deck.jpg`, caption: 'Звук и техника' },
-    { src: `${P}/interior/bar-window.jpg`, caption: 'Вид на Фонтанку' },
-    { src: `${P}/vibe/dj-hands.jpg`, caption: 'Винил' },
-    { src: `${P}/interior/vinyl-records.jpg`, caption: 'Коллекция пластинок' },
+    { src: `${P}/interior/bar-wide.jpg` },
+    { src: `${P}/vibe/vinyl-shelves.jpg` },
+    { src: `${P}/interior/turntable.jpg` },
+    { src: `${P}/interior/lounge-chair.jpg` },
+    { src: `${P}/cocktails/martini-tray.jpg` },
+    { src: `${P}/food/table.jpg` },
+    { src: `${P}/vibe/cassette-deck.jpg` },
+    { src: `${P}/interior/bar-window.jpg` },
+    { src: `${P}/vibe/dj-hands.jpg` },
+    { src: `${P}/interior/vinyl-records.jpg` },
   ],
 };

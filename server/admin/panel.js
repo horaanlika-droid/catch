@@ -99,7 +99,7 @@ export class Panel {
 
       case 'meta': {
         const m = st.meta;
-        const aw = m.awards.map((a, i) => [btn(`${a.icon || '🏆'} ${esc(a.title)}`, `aw:${i}`)]).slice(0, 8);
+        const aw = m.awards.map((a, i) => [btn(`${String(i + 1).padStart(2, '0')} · ${esc(a.title)}`, `aw:${i}`)]).slice(0, 8);
         return {
           text:
             `<b>🏷 О заведении</b>\n` +
@@ -183,7 +183,7 @@ export class Panel {
         const rows = st.menu.categories.map((c, i) => {
           const n = c.sections.reduce((a, s2) => a + s2.items.length, 0);
           const stop = c.sections.reduce((a, s2) => a + s2.items.filter((x) => x.stop).length, 0);
-          return [btn(`${c.icon || '🍴'} ${esc(c.title)} — ${n}${stop ? ` · ⛔${stop}` : ''}`, `menu:c:${i}`)];
+          return [btn(`${i + 1}. ${esc(c.title)} — ${n}${stop ? ` · ⛔${stop}` : ''}`, `menu:c:${i}`)];
         });
         rows.push([btn('➕ Категория', 'a:cat:add'), btn('🗑 Последняя', 'a:cat:del')]);
         rows.push([NAV('s:home')]);
@@ -202,11 +202,10 @@ export class Panel {
         if (!c) return this.view(chatId, { name: 'menu' });
         const rows = c.sections.map((s2, j) => [btn(`📂 ${esc(s2.title)} — ${s2.items.length}`, `menu:s:${screen.i}:${j}`)]);
         rows.push([btn('➕ Раздел', `a:sec:add:${screen.i}`), btn('🗑 Последний раздел', `a:sec:del:${screen.i}`)]);
-        rows.push([btn('✏️ Название', `f:cat:${screen.i}:title`), btn('✏️ Иконка', `f:cat:${screen.i}:icon`)]);
-        rows.push([btn('🖼 Обложка категории', `p:cat:${screen.i}`), btn(c.cover ? '🧹 Убрать обложку' : '🧹 Обложки нет', `a:cat:cover:${screen.i}`)]);
+        rows.push([btn('✏️ Название', `f:cat:${screen.i}:title`)]);
         rows.push([btn('✏️ Сноска снизу', `f:cat:${screen.i}:note`)]);
         rows.push([NAV('s:menu')]);
-        return { text: `<b>${esc(c.icon || '')} ${esc(c.title)}</b>\nРазделов: ${c.sections.length}\nОбложка: ${c.cover ? '✅' : '—'} · сноска: ${c.note ? '✅' : '—'}`, kb: kb(rows) };
+        return { text: `<b>${esc(c.title)}</b>\nРазделов: ${c.sections.length}\nСноска: ${c.note ? '✅' : '—'}\nФото меню отключены; категории показываются с векторными иконками.`, kb: kb(rows) };
       }
 
       case 'menuSec': {
@@ -219,7 +218,7 @@ export class Panel {
         const page = Math.min(Math.max(screen.page || 0, 0), Math.ceil(N / per) - 1);
         for (let k = page * per; k < Math.min(N, (page + 1) * per); k++) {
           const it = s2.items[k];
-          rows.push([btn(`${it.stop ? '⛔' : it.image ? '🖼' : '·'} ${esc(it.name)}${it.price ? ' · ' + esc(it.price) : ''}`.slice(0, 60), `item:${screen.i}:${screen.j}:${k}`)]);
+          rows.push([btn(`${it.stop ? '⛔' : '·'} ${esc(it.name)}${it.price ? ' · ' + esc(it.price) : ''}`.slice(0, 60), `item:${screen.i}:${screen.j}:${k}`)]);
         }
         if (Math.ceil(N / per) > 1) {
           rows.push([btn(`◀️ ${page + 1}/${Math.ceil(N / per)}`, `a:secpg:${screen.i}:${screen.j}:${page - 1}`), btn('▶️', `a:secpg:${screen.i}:${screen.j}:${page + 1}`)]);
@@ -230,7 +229,7 @@ export class Panel {
         return {
           text:
             `<b>${esc(s2.title)}</b>\nПозиций: ${N}${N && s2.items.every((x) => x.stop) ? ' — всё в стоп-листе 🫡' : s2.items.some((x) => x.stop) ? ' · есть ⛔' : ''}\n\n` +
-            `<i>Тап по позиции — название, цена, описание, теги, фото, порядок, удаление и стоп-лист.</i>`,
+            `<i>Нажмите на позицию, чтобы изменить название, цену, состав, теги, порядок или стоп-лист. Фото для меню отключены.</i>`,
           kb: kb(rows),
         };
       }
@@ -242,11 +241,11 @@ export class Panel {
           text:
             `<b>${esc(it.name)}</b> · ${esc(it.price || '—')}\n${it.desc ? esc(it.desc) + '\n' : ''}` +
             `${it.tags?.length ? 'Теги: <i>' + it.tags.map(esc).join(' · ') + '</i>\n' : ''}` +
-            `Фото: ${it.image ? '✅' : '—'} · Стоп-лист: ${it.stop ? '<b>⛔ позиция не продаётся</b>' : 'нет'}`,
+            `Стоп-лист: ${it.stop ? '<b>⛔ позиция не продаётся</b>' : 'нет'}`,
           kb: kb([
             [btn('✏️ Название', `f:it:${screen.i}:${screen.j}:${screen.k}:name`), btn('✏️ Цена', `f:it:${screen.i}:${screen.j}:${screen.k}:price`)],
-            [btn('✏️ Описание', `f:it:${screen.i}:${screen.j}:${screen.k}:desc`), btn('✏️ Теги', `f:it:${screen.i}:${screen.j}:${screen.k}:tags`)],
-            [btn('🖼 Фото', `p:it:${screen.i}:${screen.j}:${screen.k}`), btn(it.stop ? '✅ Снять со стопа' : '⛔ В стоп-лист', `a:stop:${screen.i}:${screen.j}:${screen.k}`)],
+            [btn('✏️ Состав/описание', `f:it:${screen.i}:${screen.j}:${screen.k}:desc`), btn('✏️ Теги', `f:it:${screen.i}:${screen.j}:${screen.k}:tags`)],
+            [btn(it.stop ? '✅ Снять со стопа' : '⛔ В стоп-лист', `a:stop:${screen.i}:${screen.j}:${screen.k}`)],
             [btn('⬆️', `a:move:it:${screen.i}:${screen.j}:${screen.k}:-1`), btn('⬇️', `a:move:it:${screen.i}:${screen.j}:${screen.k}:1`), btn('🗑 Удалить', `a:it:del:${screen.i}:${screen.j}:${screen.k}`)],
             [btn('➕ Добавить после', `a:it:addafter:${screen.i}:${screen.j}:${screen.k}`), NAV(`menu:s:${screen.i}:${screen.j}`)],
           ]),
@@ -299,8 +298,8 @@ export class Panel {
             `<b>👥 Команда</b>\n${t.enabled ? '🟢 Блок виден в приложении (вкладка «Команда»)' : '⚪️ Скрыт'}\n\n` +
             `<b>${esc(t.title || '')}</b>\n${esc(t.text || '')}\nПлашка: <i>${esc(t.note || '')}</i>\n\n` +
             (t.members.length
-              ? `Участников: ${t.members.length}`
-              : `Участников пока нет — в приложении показывается заглушка.\nДобавьте первого: имя, роль, пара слов и фото.`),
+              ? `Участников: ${t.members.length}. Нажмите на имя, чтобы изменить данные, фото или порядок; удаление запрашивает подтверждение.`
+              : `Участников пока нет — в приложении показывается заглушка.\nДобавьте первого: имя, роль, описание и фото.`),
           kb: kb(rows),
         };
       }
@@ -309,28 +308,38 @@ export class Panel {
         const m = st.team.members[screen.i];
         if (!m) return this.view(chatId, { name: 'team' });
         return {
-          text: `<b>👤 ${esc(m.name || '—')}</b>\n${esc(m.role || '— роль не указана —')}\n${esc(m.text || '')}\nФото: ${m.photo ? '✅' : '—'}`,
+          text: `<b>👤 ${esc(m.name || '—')}</b>\n${esc(m.role || '— роль не указана —')}\n${esc(m.text || '')}\nФото: ${m.photo ? '✅' : 'не добавлено'}`,
           kb: kb([
-            [btn('✏️ Имя', `f:tm:${screen.i}:name`), btn('✏️ Роль', `f:tm:${screen.i}:role`)],
-            [btn('✏️ Пара слов', `f:tm:${screen.i}:text`), btn('🖼 Фото', `p:tm:${screen.i}`)],
-            [btn('⬆️ Выше', `a:tm:move:${screen.i}:-1`), btn('⬇️ Ниже', `a:tm:move:${screen.i}:1`), btn('🗑 Удалить', `a:tm:del:${screen.i}`)],
-            [NAV('s:team')],
+            [btn('✏️ Изменить имя', `f:tm:${screen.i}:name`), btn('✏️ Изменить роль', `f:tm:${screen.i}:role`)],
+            [btn('✏️ Изменить описание', `f:tm:${screen.i}:text`)],
+            [btn(m.photo ? '🖼 Заменить фото' : '🖼 Добавить фото', `p:tm:${screen.i}`)],
+            [btn('⬆️ Выше', `a:tm:move:${screen.i}:-1`), btn('⬇️ Ниже', `a:tm:move:${screen.i}:1`)],
+            [btn('🗑 Удалить участника', `a:tm:confirm:${screen.i}`), NAV('s:team')],
           ]),
         };
       }
 
+      case 'teamDelete': {
+        const m = st.team.members[screen.i];
+        if (!m) return this.view(chatId, { name: 'team' });
+        return {
+          text: `<b>Удалить участника?</b>\n${esc(m.name || 'Без имени')} будет удалён из списка команды. Действие нельзя отменить.`,
+          kb: kb([[btn('🗑 Да, удалить', `a:tm:del:${screen.i}`), btn('Отмена', `tm:${screen.i}`)]]),
+        };
+      }
+
       case 'gallery': {
-        const rows = st.gallery.map((g, i) => [btn(`🖼 #${i + 1} ${esc(g.caption || 'без подписи')}`.slice(0, 58), `gal:${i}`)]);
+        const rows = st.gallery.map((g, i) => [btn(`🖼 Фото #${i + 1}`, `gal:${i}`)]);
         rows.push([btn('➕ Прислать фото', 'a:gal:add'), NAV('s:home')]);
-        return { text: `<b>🖼 Галерея</b>\nЛента в разделе «Ещё». Подпись = caption фото.`, kb: kb(rows) };
+        return { text: `<b>🖼 Галерея</b>\nЛента в разделе «Ещё». Подписи к изображениям не отображаются.`, kb: kb(rows) };
       }
 
       case 'galItem': {
         const g = st.gallery[screen.i];
         if (!g) return this.view(chatId, { name: 'gallery' });
         return {
-          text: `<b>Фото #${screen.i + 1}</b>\n${esc(g.caption || '—')}\n<code>${esc(g.src)}</code>`,
-          kb: kb([[btn('✏️ Подпись', `f:gal:${screen.i}:caption`), btn('🗑 Удалить', `a:gal:del:${screen.i}`)], [NAV('s:gallery')]]),
+          text: `<b>Фото #${screen.i + 1}</b>\n<code>${esc(g.src)}</code>`,
+          kb: kb([[btn('🗑 Удалить', `a:gal:del:${screen.i}`)], [NAV('s:gallery')]]),
         };
       }
 
@@ -350,11 +359,11 @@ export class Panel {
         const a = st.meta.awards[screen.i];
         if (!a) return this.view(chatId, { name: 'meta' });
         return {
-          text: `<b>${esc(a.icon || '🏆')} ${esc(a.title)}</b>\n${esc(a.text || '')}\n\n<i>Это строка «фишки/награды» — показывается полосой на главной и в профиле.</i>`,
+          text: `<b>${esc(a.title)}</b>\n${esc(a.text || '')}\n\n<i>Показывается в инфографике на главной и в профиле. Векторная пиктограмма выбирается автоматически.</i>`,
           kb: kb([
             [btn('✏️ Название', `f:aw:${screen.i}:title`), btn('✏️ Текст', `f:aw:${screen.i}:text`)],
-            [btn('✏️ Иконка (эмодзи)', `f:aw:${screen.i}:icon`), btn('🔀 Переместить', `a:aw:move:${screen.i}`)],
-            [btn('🗑 Удалить', `a:aw:del:${screen.i}`), NAV('s:meta')],
+            [btn('🔀 Переместить', `a:aw:move:${screen.i}`), btn('🗑 Удалить', `a:aw:del:${screen.i}`)],
+            [NAV('s:meta')],
           ]),
         };
       }
@@ -473,7 +482,7 @@ export class Panel {
       }
 
       case 'stopCat': {
-        const rows = st.menu.categories.map((c, i) => [btn(`${c.icon || '🍴'} ${esc(c.title)}`, `stopsec:${i}`)]);
+        const rows = st.menu.categories.map((c, i) => [btn(`${i + 1}. ${esc(c.title)}`, `stopsec:${i}`)]);
         rows.push([btn('🧹 Очистить стоп-лист', 'a:stop:clear'), NAV('s:stop')]);
         return { text: '<b>⛔ Стоп-лист · категория</b>\nГде ищем позицию?', kb: kb(rows) };
       }
@@ -591,7 +600,7 @@ export class Panel {
         const s = this.sess(chatId);
         s.pending = { kind: 'award', stage: 0 };
         await ans('');
-        return this.bot.sendMessage(chatId, 'Шаг 1/2. Название награды/фишки (например <b>WhereToEat</b>):');
+        return this.bot.sendMessage(chatId, 'Шаг 1/2. Название факта для инфографики (например <b>Звук Tannoy</b>):');
       }
       case 'a:j:toggle':
         U('j', (s) => { s.jobs.enabled = !s.jobs.enabled; });
@@ -600,7 +609,7 @@ export class Panel {
         U('br', (s) => { s.brunch.enabled = !s.brunch.enabled; });
         return this.render(chatId, 'brunch');
       case 'a:cat:add':
-        U('cat:add', (s) => s.menu.categories.push({ title: 'Новая категория', icon: '🍴', sections: [] }));
+        U('cat:add', (s) => s.menu.categories.push({ title: 'Новая категория', sections: [] }));
         return this.render(chatId, 'menu');
       case 'a:cat:del':
         U('cat:del', (s) => s.menu.categories.pop());
@@ -625,7 +634,7 @@ export class Panel {
         const s = this.sess(chatId);
         s.pending = { kind: 'photo', target: ['gal'] };
         await ans('📸');
-        return this.bot.sendMessage(chatId, 'Прислай фото — добавлю в галерею. Caption станет подписью.');
+        return this.bot.sendMessage(chatId, 'Пришлите фото — добавлю в галерею без подписи к изображению.');
       }
       case 'soc:add':
         U('soc:add', (s) => s.socials.push({ platform: 'Новая соцсеть', url: '' }));
@@ -795,10 +804,17 @@ export class Panel {
       await ans('🗑');
       return this.render(chatId, 'events');
     }
+    if ((m = data.match(/^a:tm:confirm:(\d+)$/))) {
+      const i = +m[1];
+      if (!st.team.members[i]) { await ans('Участник не найден'); return this.render(chatId, 'team'); }
+      await ans();
+      return this.render(chatId, 'teamDelete', { i });
+    }
     if ((m = data.match(/^a:tm:del:(\d+)$/))) {
       const i = +m[1];
-      U('tm:del', (s) => s.team.members.splice(i, 1));
-      await ans('🗑');
+      if (!st.team.members[i]) { await ans('Участник не найден'); return this.render(chatId, 'team'); }
+      U('tm:del', (s) => { if (s.team.members[i]) s.team.members.splice(i, 1); });
+      await ans('Удалено');
       return this.render(chatId, 'team');
     }
     if ((m = data.match(/^a:tm:move:(\d+):(-?\d+)$/))) {
@@ -871,12 +887,6 @@ export class Panel {
       await ans('✅');
       return this.render(chatId, act === 'del' ? 'meta' : 'awItem', act === 'del' ? {} : { i });
     }
-    if ((m = data.match(/^a:cat:cover:(\d+)$/))) {
-      const i = +m[1];
-      U('cat:cover', (s) => { const c = s.menu.categories[i]; if (c) c.cover = ''; });
-      await ans('🧹');
-      return this.render(chatId, 'menuCat', { i });
-    }
     if ((m = data.match(/^a:team:cover$/))) {
       U('team:cover', (s) => { s.team.image = ''; });
       await ans('🧹');
@@ -919,7 +929,7 @@ export class Panel {
       address: 'новый адрес', maps: 'ссылка на карты (https://)', phone: 'телефон', phoneHref: 'tel-ссылка', email: 'email',
       bookingUrl: 'ссылка на бронь', text: 'новый текст', title: 'новый заголовок', subtitle: 'новый подзаголовок',
       date: 'дата YYYY-MM-DD', positions: 'позиции через запятую', url: 'ссылка https://', platform: 'название соцсети',
-      caption: 'подпись', icon: 'эмодзи-иконка (1 символ)', note: 'текст плашки',
+      note: 'текст плашки',
       cta: 'текст кнопки', ton: 'цена в TON (например 0.12 TON)', link: 'https-ссылка',
       linkText: 'подпись ссылки', button: 'текст кнопки', about: 'новое описание',
       story: 'история бара для экрана «О нас» (абзацы — через пустую строку)', role: 'роль в команде',
@@ -999,7 +1009,7 @@ export class Panel {
       t.desc = isSkip(v) ? '' : v;
       const sec = st.menu.categories[t.i]?.sections[t.j];
       if (!sec) { s.pending = null; return this.bot.sendMessage(chatId, '⚠️ Раздел не найден — откройте меню заново.'); }
-      const item = { name: t.name, price: t.price || '', desc: t.desc || '', tags: [], image: '', stop: false };
+      const item = { name: t.name, price: t.price || '', desc: t.desc || '', tags: [], stop: false };
       const at = t.insertAt == null ? sec.items.length : Math.min(t.insertAt, sec.items.length);
       const res = this.store.update('it:add', (s2) => {
         const arr = s2.menu.categories[t.i].sections[t.j].items;
@@ -1012,7 +1022,7 @@ export class Panel {
       await this.bot.sendMessage(
         chatId,
         `✅ <b>${esc(item.name)}</b>${item.price ? ' · ' + esc(item.price) + ' ₽' : ' · по запросу'} — позиция в меню\nrev ${res.rev}, приложение уже обновилось`,
-        { reply_markup: kb([[btn('🖼 Фото позиции', `p:it:${t.i}:${t.j}:${k}`), btn('⛔ В стоп-лист', `a:stop:${t.i}:${t.j}:${k}`)], [btn('➕ Ещё позицию', `a:it:add:${t.i}:${t.j}`), NAV(`menu:s:${t.i}:${t.j}`)]]) },
+        { reply_markup: kb([[btn('⛔ В стоп-лист', `a:stop:${t.i}:${t.j}:${k}`)], [btn('➕ Ещё позицию', `a:it:add:${t.i}:${t.j}`), NAV(`menu:s:${t.i}:${t.j}`)]]) },
       );
       return this.render(chatId, 'item', { i: t.i, j: t.j, k });
     }
@@ -1025,7 +1035,7 @@ export class Panel {
       const res = this.store.update('it:bulk', (s2) => {
         const arr = s2.menu.categories[t.i]?.sections[t.j]?.items;
         if (!arr) throw new Error('раздел не найден');
-        for (const x of parsed) arr.push({ name: x.name, price: x.price, desc: x.desc, tags: [], image: '', stop: false });
+        for (const x of parsed) arr.push({ name: x.name, price: x.price, desc: x.desc, tags: [], stop: false });
       });
       if (t.prompt) this.bot.deleteMessage(chatId, t.prompt).catch(() => {});
       s.pending = null;
@@ -1075,12 +1085,10 @@ export class Panel {
     if (s.pending?.kind === 'award' && msg.text) {
       if (s.pending.stage === 0) {
         s.pending = { kind: 'award', stage: 1, title: msg.text.trim() };
-        return this.bot.sendMessage(chatId, `Отлично, «<b>${esc(msg.text.trim())}</b>». Теперь текст награды (иконку можно первым эмодзи):`);
+        return this.bot.sendMessage(chatId, `Отлично, «<b>${esc(msg.text.trim())}</b>». Шаг 2/2. Добавьте короткое пояснение:`);
       }
-      const mm = msg.text.match(/^(\p{Extended_Pictographic}+)\s*/u);
-      const icon = mm ? mm[1] : '🏆';
-      const txt = (mm ? msg.text.slice(mm[0].length) : msg.text).trim();
-      this.store.update('aw:add', (s2) => s2.meta.awards.push({ title: s.pending.title, text: txt || msg.text.trim(), icon }));
+      const txt = msg.text.trim();
+      this.store.update('aw:add', (s2) => s2.meta.awards.push({ title: s.pending.title, text: txt }));
       s.pending = null;
       return this.render(chatId, 'meta');
     }
@@ -1115,7 +1123,7 @@ export class Panel {
       await this.bot.sendMessage(chatId, '📸 Фотку получил, оригинал скачан. Куда её?', {
         reply_markup: kb([
           [btn('🏷 На главную', 'fpick:meta'), btn('🖼 Галерея', 'fpick:gal')],
-          [btn('🥂 Постер бранча', 'fpick:br'), btn('🍽 Позиция меню…', 'fpick:it')],
+          [btn('🥂 Постер бранча', 'fpick:br')],
           [btn('📅 Событие…', 'fpick:ev'), btn('👥 Участник команды…', 'fpick:tm')],
           [btn('👥 Фото «Команда»', 'fpick:team'), btn('🖼 Фото «О нас»', 'fpick:about')],
           [btn('📞 Фото контактов', 'fpick:c'), btn('🎫 Фото брони', 'fpick:book')],
@@ -1134,9 +1142,7 @@ export class Panel {
     const s = this.sess(chatId);
     const parts = q.data.split(':'); // fpick, t, idx...
     const [_, t, i2, j2, k2] = parts;
-    if (parts.length === 2 && ['ev', 'tm', 'it'].includes(t)) return this.pickSubEntity(chatId, s, t);
-    if (t === 'it' && parts.length === 3) return this.pickSec(chatId, s, +i2);
-    if (t === 'it' && parts.length === 4) return this.pickItem(chatId, s, +i2, +j2);
+    if (parts.length === 2 && ['ev', 'tm'].includes(t)) return this.pickSubEntity(chatId, s, t);
     const photo = s.pending?.queue?.[0];
     if (!photo) {
       s.pending = null;
@@ -1159,25 +1165,9 @@ export class Panel {
       }
       st.team.members.forEach((x, i) => rows.push([btn(`👤 ${x.name || 'без имени'}`.slice(0, 56), `fpick:tm:${i}`)]));
     }
-    if (kind === 'it') st.menu.categories.forEach((c, i) => rows.push([btn(`${c.icon || '🍴'} ${c.title}`, `fpick:it:${i}`)]));
     rows.push([btn('✖️ Отмена', 'a:cancel')]);
     s.pending.queue = s.pending.queue || [];
     return this.bot.sendMessage(chatId, 'Куда положить фото?', { reply_markup: kb(rows) });
-  }
-
-  pickSec(chatId, s, ci) {
-    const c = this.store.state.menu.categories[ci];
-    const rows = c.sections.map((x, i) => [btn(`📂 ${x.title}`, `fpick:it:${ci}:${i}`)]);
-    rows.push([btn('✖️ Отмена', 'a:cancel')]);
-    return this.bot.sendMessage(chatId, `Раздел в «${c.title}»?`, { reply_markup: kb(rows) });
-  }
-
-  pickItem(chatId, s, ci, si) {
-    const items = this.store.state.menu.categories[ci].sections[si].items;
-    const rows = [];
-    items.forEach((x, k) => k < 30 && rows.push([btn(`${x.name}`.slice(0, 58), `fpick:it:${ci}:${si}:${k}`)]));
-    rows.push([btn('✖️ Отмена', 'a:cancel')]);
-    return this.bot.sendMessage(chatId, 'Какая позиция?', { reply_markup: kb(rows) });
   }
 
   /* ────────────── фото-пайплайн ────────────── */
@@ -1198,12 +1188,10 @@ export class Panel {
       else if (t[0] === 'book') { s.booking.image = media.url; label = 'фото брони'; }
       else if (t[0] === 'j') { s.jobs.image = media.url; label = 'фото-подложка «Работа»'; }
       else if (t[0] === 'team') { s.team.image = media.url; label = 'фото блока «Команда»'; }
-      else if (t[0] === 'tm') { const x = s.team.members[+t[1]]; if (!x) throw new Error('нет такого участника'); x.photo = media.url; if (caption && !x.text) x.text = caption; label = `команда · ${x.name}`; }
-      else if (t[0] === 'cat') { const cc = s.menu.categories[+t[1]]; if (!cc) throw new Error('нет такой категории'); cc.cover = media.url; label = `обложка категории · ${cc.title}`; }
-      else if (t[0] === 'gal') { s.gallery.unshift({ src: media.url, caption: caption || '' }); label = 'галерея (первым кадром)'; }
+      else if (t[0] === 'tm') { const x = s.team.members[+t[1]]; if (!x) throw new Error('нет такого участника'); x.photo = media.url; label = `команда · ${x.name}`; }
+      else if (t[0] === 'gal') { s.gallery.unshift({ src: media.url }); label = 'галерея (первым кадром)'; }
       else if (t[0] === 'br') { s.brunch.image = media.url; label = 'постер бранча'; }
       else if (t[0] === 'ev') { const e = s.events[+t[1]]; if (!e) throw new Error('нет такого события'); e.image = media.url; if (caption) e.subtitle = caption; label = `афиша · ${e.title}`; }
-      else if (t[0] === 'it') { const it = s.menu.categories[+t[1]]?.sections[+t[2]]?.items[+t[3]]; if (!it) throw new Error('нет такой позиции'); it.image = media.url; if (caption) it.desc = caption; label = `меню · ${it.name}`; }
       else throw new Error('неизвестная цель для фото');
     });
     this.sess(chatId).pending = null;
