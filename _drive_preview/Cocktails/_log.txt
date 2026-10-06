@@ -1,0 +1,246 @@
+warning: `--folder` is no longer required for folder URLs and will be removed in a future release
+Retrieving folder contents
+Retrieving folder contents completed
+Building directory structure
+Building directory structure completed
+Downloading...
+From: https://drive.google.com/uc?id=1urUF_V1L8oEA0Z3EDbGchWvuEme3hswH
+To: /tmp/d/Cocktails/808
+Processing file 1urUF_V1L8oEA0Z3EDbGchWvuEme3hswH 808
+Processing file 1yJJfUqCIZRgxLxzcqCBQTtN9IBFuZGEM 808
+Processing file 1tJcZ7wfxzfjKm7pvyoMJoOMRVrqgxcde abba
+Processing file 10fMmO5RcMnXSD102Mc6rRkqY3jhqYfuk ABBA.jpg
+Processing file 1nNqVq5UUnP-h4swHU65qNmsP88rbfHq5 ABBA.jpg
+Processing file 1K6tKj5puIqdmXZQt1MqePckNtYwoFM9l ABBA.jpg
+Processing file 1arLQFz5Q6dY3A9GcX8IXk8iUT1z5BWOJ b/a Dirty Martini..jpg
+Processing file 1c3tmJGlXglrFyJHmmuTJGS0qqwY5zkpq b/a Dirty Martini..jpg
+Processing file 1bkW2Ltdvkc8d6IQK0eQAAczy5d0Qn2cg b/a Dirty Martini..jpg
+Processing file 1l9jLnuXoPBqzw0kAfJvRY-O6fzRV0U2c b/a Dirty Martini.jpg
+Processing file 1ekZ7LahjkVW_EX5sfnfcGZKi7aiPzKWx DIN 45500..jpg
+Processing file 1u2qMlCy-uMEcncDTiG8Ot36LZ0EIES2q DIN 45500..jpg
+Processing file 1zuE8JNBBZa2gp53GJpJ4XkSSNeLqk5Dr DIN 45500.jpg
+Processing file 1o8aa341PMv6oMkHXlmvaV_E7lYS5Bnwm Dry Martini.jpg
+Processing file 1cH41I7kak-p4VHioLs6qw1LgB6ka8xw1 Dry Martini.jpg
+Processing file 153l4504CsO-gsfDTZhNGPBMCXGWsIf0s Dry Martini.jpg
+Processing file 1Bt7wtpczHN3ntPs4WGhIcn7nvC8IzXDs fairlight smi
+Processing file 1KFWu0Zpl01qkrdDpcTN8B-J8nnRGxrXu fairlight smi
+Processing file 1hVRObIsIHmHuXiz3-n1qJZg2pFfCi_3S fairlight smi
+Processing file 1hdwZ7Bpj73G-XTFevG-PBOPTLSrNDfBj gibson
+Processing file 1I5V10diz9tIClXgLWqGrq0NC7RMFYS6j gibson
+Processing file 1dBcMYPhe9QQ-QQ_pT7kFU7UOx9IA96Cs gibson
+Processing file 1p4FSNTqbbyHMNRpsZ23OA7R_4U-aL80t gramophone
+Processing file 16Tq8ud85zqmOh73gYcF5WdN3kY2X3FcV Itunes..jpg
+Processing file 1AQe1Nr571olqS1B1tcgUfVx28kZEX_-x Itunes..jpg
+Processing file 18-PeiBE4NZN0QTb4v5VKs2PBKFXew76p Itunes..jpg
+Processing file 1ENJ3tf1af-hCmbq3CwC5cuLQNeG0icxb Itunes.jpg
+Processing file 1eHa9LCyOsUKEht2rWJ-uaVRdnd48WWia Itunes.jpg
+Processing file 1QiJT1I9jIOQE029jB6mN7KsQZx97E1Br Itunes.jpg
+Processing file 1YGLD8kLp4SztVorbNM0RBLd5WsfLqIRH Itunes.jpg
+Processing file 1BRCCZxV6-RNYfzfBClQ7hw7ysiNgoiXF Itunes.jpg
+Processing file 1vGuZjmAAKawBsIufZofuIwUVtwGbA8x2 longplay
+Processing file 1slvHXLXIqDYM6B6nE43ROVydoojMBcec longplay
+Processing file 1qrDxAR_o-F-_U7vVjhx7-yHNnpXCsAyA longplay
+Processing file 1QgqvKl9vjC38bfpm3Cjfu5sI3FoeksNj Longplay.jpg
+Processing file 1tL-elfg6Ug7hLdq1-zJbOcosmoA7jmwA minimoog
+Processing file 1EC7ylF4tZMmgH_cDxEjPHeYMw1pgZuc_ Minimoog.jpg
+Processing file 1Zx2qCCB6FdPkvJJeylyITYpyV2V59AxQ Pornstar Martini.j.jpg
+Processing file 1U0ZMGFB06pBoITOdIPQwLUUURr79QpDq Pornstar Martini.j.jpg
+Processing file 1Yi2ldQ3pxYr9plMs7I0quqcQ5wkioCHS Pornstar Martini.j.jpg
+Processing file 1fDuT8FTZP4EXtgNpTM0Ln29j8mThJH5k Pornstar Martini.jpg
+Processing file 1Ln4Xic4b3JG4v-pEp_ZRm0T4iTim_N-h Pornstar Martini.jpg
+Processing file 1eGNxayqulcmVf9BWrdQ43Nzsb3LTgoE2 Skinny Bitch.jpg
+Processing file 1ywfnVgp2QPx7bsXcdxP5TYt9Qt42KIQ7 Skinny Bitch.jpg
+Processing file 1WBwQ77v0v2NTjuUmp7ap-hdMDS1ialcq Skinny Bitch.jpg
+Processing file 123rBHBtCOL63j9Vtp_CwXpAelcc7dR0r Skinny Bitch.jpg
+Processing file 1xhHVh3CiE04iifrNTz3DpjpbXIdj_Dqz walkman
+Processing file 1_SD_kHLR8ctkd7-bMOM83w7UlHwf5EGU walkman
+  0%|          | 0.00/5.27M [00:00<?, ?B/s] 10%|▉         | 524k/5.27M [00:00<00:00, 5.05MB/s] 90%|████████▉ | 4.72M/5.27M [00:00<00:00, 26.1MB/s]100%|██████████| 5.27M/5.27M [00:00<00:00, 25.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1yJJfUqCIZRgxLxzcqCBQTtN9IBFuZGEM
+To: /tmp/d/Cocktails/808
+  0%|          | 0.00/6.21M [00:00<?, ?B/s]  8%|▊         | 524k/6.21M [00:00<00:01, 4.38MB/s] 68%|██████▊   | 4.19M/6.21M [00:00<00:00, 21.8MB/s]100%|██████████| 6.21M/6.21M [00:00<00:00, 25.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1tJcZ7wfxzfjKm7pvyoMJoOMRVrqgxcde
+To: /tmp/d/Cocktails/abba
+  0%|          | 0.00/10.9M [00:00<?, ?B/s] 72%|███████▏  | 7.86M/10.9M [00:00<00:00, 78.0MB/s]100%|██████████| 10.9M/10.9M [00:00<00:00, 89.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=10fMmO5RcMnXSD102Mc6rRkqY3jhqYfuk
+To: /tmp/d/Cocktails/ABBA.jpg
+  0%|          | 0.00/9.19M [00:00<?, ?B/s] 86%|████████▌ | 7.86M/9.19M [00:00<00:00, 77.7MB/s]100%|██████████| 9.19M/9.19M [00:00<00:00, 86.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1nNqVq5UUnP-h4swHU65qNmsP88rbfHq5
+To: /tmp/d/Cocktails/ABBA.jpg
+  0%|          | 0.00/8.55M [00:00<?, ?B/s] 80%|███████▉  | 6.82M/8.55M [00:00<00:00, 49.4MB/s]100%|██████████| 8.55M/8.55M [00:00<00:00, 58.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1K6tKj5puIqdmXZQt1MqePckNtYwoFM9l
+To: /tmp/d/Cocktails/ABBA.jpg
+  0%|          | 0.00/9.18M [00:00<?, ?B/s] 63%|██████▎   | 5.77M/9.18M [00:00<00:00, 56.6MB/s]100%|██████████| 9.18M/9.18M [00:00<00:00, 54.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1arLQFz5Q6dY3A9GcX8IXk8iUT1z5BWOJ
+To: /tmp/d/Cocktails/b_a Dirty Martini..jpg
+  0%|          | 0.00/10.1M [00:00<?, ?B/s] 62%|██████▏   | 6.29M/10.1M [00:00<00:00, 61.3MB/s]100%|██████████| 10.1M/10.1M [00:00<00:00, 60.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1c3tmJGlXglrFyJHmmuTJGS0qqwY5zkpq
+To: /tmp/d/Cocktails/b_a Dirty Martini..jpg
+  0%|          | 0.00/9.68M [00:00<?, ?B/s] 76%|███████▌  | 7.34M/9.68M [00:00<00:00, 71.7MB/s]100%|██████████| 9.68M/9.68M [00:00<00:00, 71.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1bkW2Ltdvkc8d6IQK0eQAAczy5d0Qn2cg
+To: /tmp/d/Cocktails/b_a Dirty Martini..jpg
+  0%|          | 0.00/9.76M [00:00<?, ?B/s] 48%|████▊     | 4.72M/9.76M [00:00<00:00, 35.5MB/s]100%|██████████| 9.76M/9.76M [00:00<00:00, 45.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1l9jLnuXoPBqzw0kAfJvRY-O6fzRV0U2c
+To: /tmp/d/Cocktails/b_a Dirty Martini.jpg
+  0%|          | 0.00/10.7M [00:00<?, ?B/s] 44%|████▍     | 4.72M/10.7M [00:00<00:00, 34.8MB/s]100%|██████████| 10.7M/10.7M [00:00<00:00, 61.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1ekZ7LahjkVW_EX5sfnfcGZKi7aiPzKWx
+To: /tmp/d/Cocktails/DIN 45500..jpg
+  0%|          | 0.00/8.72M [00:00<?, ?B/s] 84%|████████▍ | 7.34M/8.72M [00:00<00:00, 72.4MB/s]100%|██████████| 8.72M/8.72M [00:00<00:00, 77.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1u2qMlCy-uMEcncDTiG8Ot36LZ0EIES2q
+To: /tmp/d/Cocktails/DIN 45500..jpg
+  0%|          | 0.00/9.78M [00:00<?, ?B/s] 27%|██▋       | 2.62M/9.78M [00:00<00:00, 11.5MB/s]100%|██████████| 9.78M/9.78M [00:00<00:00, 34.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1zuE8JNBBZa2gp53GJpJ4XkSSNeLqk5Dr
+To: /tmp/d/Cocktails/DIN 45500.jpg
+  0%|          | 0.00/10.1M [00:00<?, ?B/s]  5%|▌         | 524k/10.1M [00:00<00:02, 4.23MB/s] 41%|████▏     | 4.19M/10.1M [00:00<00:00, 21.1MB/s]100%|██████████| 10.1M/10.1M [00:00<00:00, 36.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1o8aa341PMv6oMkHXlmvaV_E7lYS5Bnwm
+To: /tmp/d/Cocktails/Dry Martini.jpg
+  0%|          | 0.00/7.28M [00:00<?, ?B/s] 94%|█████████▎| 6.82M/7.28M [00:00<00:00, 37.1MB/s]100%|██████████| 7.28M/7.28M [00:00<00:00, 39.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1cH41I7kak-p4VHioLs6qw1LgB6ka8xw1
+To: /tmp/d/Cocktails/Dry Martini.jpg
+  0%|          | 0.00/7.69M [00:00<?, ?B/s] 61%|██████▏   | 4.72M/7.69M [00:00<00:00, 25.2MB/s]100%|██████████| 7.69M/7.69M [00:00<00:00, 38.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=153l4504CsO-gsfDTZhNGPBMCXGWsIf0s
+To: /tmp/d/Cocktails/Dry Martini.jpg
+  0%|          | 0.00/9.13M [00:00<?, ?B/s] 52%|█████▏    | 4.72M/9.13M [00:00<00:00, 24.4MB/s]100%|██████████| 9.13M/9.13M [00:00<00:00, 42.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Bt7wtpczHN3ntPs4WGhIcn7nvC8IzXDs
+To: /tmp/d/Cocktails/fairlight smi
+  0%|          | 0.00/6.81M [00:00<?, ?B/s]  8%|▊         | 524k/6.81M [00:00<00:01, 4.38MB/s] 62%|██████▏   | 4.19M/6.81M [00:00<00:00, 21.7MB/s]100%|██████████| 6.81M/6.81M [00:00<00:00, 27.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1KFWu0Zpl01qkrdDpcTN8B-J8nnRGxrXu
+To: /tmp/d/Cocktails/fairlight smi
+  0%|          | 0.00/6.88M [00:00<?, ?B/s]100%|██████████| 6.88M/6.88M [00:00<00:00, 77.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1hVRObIsIHmHuXiz3-n1qJZg2pFfCi_3S
+To: /tmp/d/Cocktails/fairlight smi
+  0%|          | 0.00/6.76M [00:00<?, ?B/s]100%|██████████| 6.76M/6.76M [00:00<00:00, 83.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1hdwZ7Bpj73G-XTFevG-PBOPTLSrNDfBj
+To: /tmp/d/Cocktails/gibson
+  0%|          | 0.00/12.6M [00:00<?, ?B/s] 62%|██████▏   | 7.86M/12.6M [00:00<00:00, 77.1MB/s]100%|██████████| 12.6M/12.6M [00:00<00:00, 96.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1I5V10diz9tIClXgLWqGrq0NC7RMFYS6j
+To: /tmp/d/Cocktails/gibson
+  0%|          | 0.00/11.1M [00:00<?, ?B/s]100%|██████████| 11.1M/11.1M [00:00<00:00, 112MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1dBcMYPhe9QQ-QQ_pT7kFU7UOx9IA96Cs
+To: /tmp/d/Cocktails/gibson
+  0%|          | 0.00/12.5M [00:00<?, ?B/s]  4%|▍         | 524k/12.5M [00:00<00:02, 4.49MB/s] 38%|███▊      | 4.72M/12.5M [00:00<00:00, 15.6MB/s] 88%|████████▊ | 11.0M/12.5M [00:00<00:00, 18.8MB/s]100%|██████████| 12.5M/12.5M [00:00<00:00, 19.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1p4FSNTqbbyHMNRpsZ23OA7R_4U-aL80t
+To: /tmp/d/Cocktails/gramophone
+  0%|          | 0.00/11.5M [00:00<?, ?B/s] 41%|████      | 4.72M/11.5M [00:00<00:00, 18.5MB/s]100%|██████████| 11.5M/11.5M [00:00<00:00, 33.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=16Tq8ud85zqmOh73gYcF5WdN3kY2X3FcV
+To: /tmp/d/Cocktails/Itunes..jpg
+  0%|          | 0.00/8.82M [00:00<?, ?B/s] 48%|████▊     | 4.19M/8.82M [00:00<00:00, 40.5MB/s]100%|██████████| 8.82M/8.82M [00:00<00:00, 65.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1AQe1Nr571olqS1B1tcgUfVx28kZEX_-x
+To: /tmp/d/Cocktails/Itunes..jpg
+  0%|          | 0.00/8.91M [00:00<?, ?B/s] 59%|█████▉    | 5.24M/8.91M [00:00<00:00, 52.1MB/s]100%|██████████| 8.91M/8.91M [00:00<00:00, 76.0MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=18-PeiBE4NZN0QTb4v5VKs2PBKFXew76p
+To: /tmp/d/Cocktails/Itunes..jpg
+  0%|          | 0.00/9.77M [00:00<?, ?B/s] 59%|█████▉    | 5.77M/9.77M [00:00<00:00, 54.9MB/s]100%|██████████| 9.77M/9.77M [00:00<00:00, 78.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1ENJ3tf1af-hCmbq3CwC5cuLQNeG0icxb
+To: /tmp/d/Cocktails/Itunes.jpg
+  0%|          | 0.00/8.42M [00:00<?, ?B/s]  6%|▌         | 524k/8.42M [00:00<00:01, 4.25MB/s] 50%|████▉     | 4.19M/8.42M [00:00<00:00, 21.5MB/s]100%|██████████| 8.42M/8.42M [00:00<00:00, 31.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1eHa9LCyOsUKEht2rWJ-uaVRdnd48WWia
+To: /tmp/d/Cocktails/Itunes.jpg
+  0%|          | 0.00/7.42M [00:00<?, ?B/s] 57%|█████▋    | 4.19M/7.42M [00:00<00:00, 40.4MB/s]100%|██████████| 7.42M/7.42M [00:05<00:00, 1.25MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1QiJT1I9jIOQE029jB6mN7KsQZx97E1Br
+To: /tmp/d/Cocktails/Itunes.jpg
+  0%|          | 0.00/8.70M [00:00<?, ?B/s] 78%|███████▊  | 6.82M/8.70M [00:00<00:00, 65.0MB/s]100%|██████████| 8.70M/8.70M [00:00<00:00, 79.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1YGLD8kLp4SztVorbNM0RBLd5WsfLqIRH
+To: /tmp/d/Cocktails/Itunes.jpg
+  0%|          | 0.00/9.21M [00:00<?, ?B/s] 91%|█████████ | 8.39M/9.21M [00:00<00:00, 83.1MB/s]100%|██████████| 9.21M/9.21M [00:00<00:00, 85.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1BRCCZxV6-RNYfzfBClQ7hw7ysiNgoiXF
+To: /tmp/d/Cocktails/Itunes.jpg
+  0%|          | 0.00/12.1M [00:00<?, ?B/s] 22%|██▏       | 2.62M/12.1M [00:00<00:00, 18.5MB/s] 56%|█████▌    | 6.82M/12.1M [00:00<00:00, 19.5MB/s]100%|██████████| 12.1M/12.1M [00:00<00:00, 30.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1vGuZjmAAKawBsIufZofuIwUVtwGbA8x2
+To: /tmp/d/Cocktails/longplay
+  0%|          | 0.00/5.44M [00:00<?, ?B/s]100%|██████████| 5.44M/5.44M [00:00<00:00, 63.7MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1slvHXLXIqDYM6B6nE43ROVydoojMBcec
+To: /tmp/d/Cocktails/longplay
+  0%|          | 0.00/4.53M [00:00<?, ?B/s]100%|██████████| 4.53M/4.53M [00:00<00:00, 49.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1qrDxAR_o-F-_U7vVjhx7-yHNnpXCsAyA
+To: /tmp/d/Cocktails/longplay
+  0%|          | 0.00/4.71M [00:00<?, ?B/s]100%|██████████| 4.71M/4.71M [00:00<00:00, 59.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1QgqvKl9vjC38bfpm3Cjfu5sI3FoeksNj
+To: /tmp/d/Cocktails/Longplay.jpg
+  0%|          | 0.00/11.3M [00:00<?, ?B/s] 42%|████▏     | 4.72M/11.3M [00:00<00:00, 27.9MB/s]100%|██████████| 11.3M/11.3M [00:00<00:00, 53.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1tL-elfg6Ug7hLdq1-zJbOcosmoA7jmwA
+To: /tmp/d/Cocktails/minimoog
+  0%|          | 0.00/6.68M [00:00<?, ?B/s] 71%|███████   | 4.72M/6.68M [00:00<00:00, 31.0MB/s]100%|██████████| 6.68M/6.68M [00:00<00:00, 41.2MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1EC7ylF4tZMmgH_cDxEjPHeYMw1pgZuc_
+To: /tmp/d/Cocktails/Minimoog.jpg
+  0%|          | 0.00/6.27M [00:00<?, ?B/s] 42%|████▏     | 2.62M/6.27M [00:00<00:00, 22.9MB/s]100%|██████████| 6.27M/6.27M [00:00<00:00, 44.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Zx2qCCB6FdPkvJJeylyITYpyV2V59AxQ
+To: /tmp/d/Cocktails/Pornstar Martini.j.jpg
+  0%|          | 0.00/9.64M [00:00<?, ?B/s] 16%|█▋        | 1.57M/9.64M [00:00<00:01, 5.62MB/s] 38%|███▊      | 3.67M/9.64M [00:00<00:00, 10.7MB/s] 92%|█████████▏| 8.91M/9.64M [00:00<00:00, 16.9MB/s]100%|██████████| 9.64M/9.64M [00:00<00:00, 15.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1U0ZMGFB06pBoITOdIPQwLUUURr79QpDq
+To: /tmp/d/Cocktails/Pornstar Martini.j.jpg
+  0%|          | 0.00/10.5M [00:00<?, ?B/s] 45%|████▌     | 4.72M/10.5M [00:00<00:00, 33.2MB/s]100%|██████████| 10.5M/10.5M [00:00<00:00, 61.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Yi2ldQ3pxYr9plMs7I0quqcQ5wkioCHS
+To: /tmp/d/Cocktails/Pornstar Martini.j.jpg
+  0%|          | 0.00/10.4M [00:00<?, ?B/s] 75%|███████▌  | 7.86M/10.4M [00:00<00:00, 78.0MB/s]100%|██████████| 10.4M/10.4M [00:00<00:00, 82.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1fDuT8FTZP4EXtgNpTM0Ln29j8mThJH5k
+To: /tmp/d/Cocktails/Pornstar Martini.jpg
+  0%|          | 0.00/9.87M [00:00<?, ?B/s]  5%|▌         | 524k/9.87M [00:00<00:02, 4.35MB/s] 42%|████▏     | 4.19M/9.87M [00:00<00:00, 21.9MB/s]100%|██████████| 9.87M/9.87M [00:00<00:00, 36.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Ln4Xic4b3JG4v-pEp_ZRm0T4iTim_N-h
+To: /tmp/d/Cocktails/Pornstar Martini.jpg
+  0%|          | 0.00/8.59M [00:00<?, ?B/s] 79%|███████▉  | 6.82M/8.59M [00:00<00:00, 61.8MB/s]100%|██████████| 8.59M/8.59M [00:00<00:00, 71.6MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1eGNxayqulcmVf9BWrdQ43Nzsb3LTgoE2
+To: /tmp/d/Cocktails/Skinny Bitch.jpg
+  0%|          | 0.00/7.93M [00:00<?, ?B/s] 60%|█████▉    | 4.72M/7.93M [00:00<00:00, 40.9MB/s]100%|██████████| 7.93M/7.93M [00:00<00:00, 58.3MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1ywfnVgp2QPx7bsXcdxP5TYt9Qt42KIQ7
+To: /tmp/d/Cocktails/Skinny Bitch.jpg
+  0%|          | 0.00/8.65M [00:00<?, ?B/s] 79%|███████▉  | 6.82M/8.65M [00:00<00:00, 47.2MB/s]100%|██████████| 8.65M/8.65M [00:00<00:00, 57.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1WBwQ77v0v2NTjuUmp7ap-hdMDS1ialcq
+To: /tmp/d/Cocktails/Skinny Bitch.jpg
+  0%|          | 0.00/10.1M [00:00<?, ?B/s] 62%|██████▏   | 6.29M/10.1M [00:00<00:00, 62.6MB/s]100%|██████████| 10.1M/10.1M [00:00<00:00, 35.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=123rBHBtCOL63j9Vtp_CwXpAelcc7dR0r
+To: /tmp/d/Cocktails/Skinny Bitch.jpg
+  0%|          | 0.00/8.59M [00:00<?, ?B/s]  6%|▌         | 524k/8.59M [00:00<00:01, 4.97MB/s] 55%|█████▍    | 4.72M/8.59M [00:00<00:00, 26.0MB/s]100%|██████████| 8.59M/8.59M [00:00<00:00, 36.5MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1xhHVh3CiE04iifrNTz3DpjpbXIdj_Dqz
+To: /tmp/d/Cocktails/walkman
+  0%|          | 0.00/13.3M [00:00<?, ?B/s] 24%|██▎       | 3.15M/13.3M [00:00<00:00, 29.3MB/s] 51%|█████▏    | 6.82M/13.3M [00:00<00:00, 32.1MB/s]100%|██████████| 13.3M/13.3M [00:00<00:00, 44.9MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1_SD_kHLR8ctkd7-bMOM83w7UlHwf5EGU
+To: /tmp/d/Cocktails/walkman
+  0%|          | 0.00/13.8M [00:00<?, ?B/s] 34%|███▍      | 4.72M/13.8M [00:00<00:00, 17.4MB/s] 80%|███████▉  | 11.0M/13.8M [00:00<00:00, 32.8MB/s]100%|██████████| 13.8M/13.8M [00:00<00:00, 35.2MB/s]
+Download completed

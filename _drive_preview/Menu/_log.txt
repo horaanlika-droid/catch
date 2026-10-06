@@ -1,0 +1,26 @@
+warning: `--folder` is no longer required for folder URLs and will be removed in a future release
+Retrieving folder contents
+Retrieving folder contents completed
+Building directory structure
+Building directory structure completed
+Downloading...
+From: https://drive.google.com/uc?id=17h362OYVI0-ObBHbYBJNz1w6vD00lksQ
+To: /tmp/d/Menu/11.png
+Processing file 17h362OYVI0-ObBHbYBJNz1w6vD00lksQ 11.png
+Processing file 1QJQYKbQLSAXdqjhkDp4c0rdhTHK9LIRC 22.png
+Processing file 1Ror33d1gYf-WtqwjnXS6hQOlCmYmQnMg 33.png
+Processing file 1Wv_rlsy87p19k7uCjQqwOoHuo50ocjTG 44.png
+  0%|          | 0.00/1.62M [00:00<?, ?B/s]100%|██████████| 1.62M/1.62M [00:00<00:00, 25.4MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1QJQYKbQLSAXdqjhkDp4c0rdhTHK9LIRC
+To: /tmp/d/Menu/22.png
+  0%|          | 0.00/1.17M [00:00<?, ?B/s]100%|██████████| 1.17M/1.17M [00:00<00:00, 16.1MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Ror33d1gYf-WtqwjnXS6hQOlCmYmQnMg
+To: /tmp/d/Menu/33.png
+  0%|          | 0.00/2.43M [00:00<?, ?B/s]100%|██████████| 2.43M/2.43M [00:00<00:00, 25.8MB/s]
+Downloading...
+From: https://drive.google.com/uc?id=1Wv_rlsy87p19k7uCjQqwOoHuo50ocjTG
+To: /tmp/d/Menu/44.png
+  0%|          | 0.00/1.47M [00:00<?, ?B/s]100%|██████████| 1.47M/1.47M [00:00<00:00, 25.8MB/s]
+Download completed
