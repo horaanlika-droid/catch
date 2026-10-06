@@ -8,44 +8,50 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { n: Logo, id: 1BU98FcTX7pFfGoWr-ELMJZ_OJrPfvWv4 }
+          - { n: Menu, id: 1J2p_Wq5YNrIALggJNneRvDDhVrQcVhnM }
+          - { n: Team, id: 1-uduGv3Byj5uoA1m25xqgMO2bA7F0PXF }
+          - { n: Classy_cocktails, id: 1UTqJeVQ8FvKqEE2AL32Guv5emnfju-0L }
+          - { n: Cocktails, id: 1Zw-61UqS7PSSjRjigcF7cOQKS0n5lSzI }
+          - { n: Espolon, id: 1zj7UFN4XdZuu9wtnID85FUhi7fT9pQuD }
+          - { n: Film, id: 1NOswF0EgSqGjICgF-o06198m8m0r3mwB }
+          - { n: Food, id: 1h5a5u7m9LYUhpbILTQORBVbHkhRyYC6T }
+          - { n: Interior, id: 13yOm7UYjoNt-NLIG5_TtE1FDtSobhqjT }
+          - { n: Merch, id: 1IJcrh6_MUU4bXq1LDYTHSDguTjGZy9E8 }
+          - { n: Vibe, id: 10JtQBTA8xXAYIXzTwF0FwEsm6HsCQv3T }
     steps:
-      - uses: actions/checkout@v4
-      - run: pip install gdown && sudo apt-get install -y imagemagick poppler-utils >/dev/null
-      - name: download
+      - run: pip install -q gdown && sudo apt-get install -y imagemagick poppler-utils >/dev/null
+      - name: download + previews
         run: |
-          mkdir -p /tmp/d && cd /tmp/d
-          dl() { gdown --folder "https://drive.google.com/drive/folders/$2" -O "$1" > "/tmp/log-$1.txt" 2>&1 || echo "FAIL $1" >> /tmp/fails.txt; }
-          dl Logo 1BU98FcTX7pFfGoWr-ELMJZ_OJrPfvWv4
-          dl Menu 1J2p_Wq5YNrIALggJNneRvDDhVrQcVhnM
-          dl Classy_cocktails 1UTqJeVQ8FvKqEE2AL32Guv5emnfju-0L
-          dl Cocktails 1Zw-61UqS7PSSjRjigcF7cOQKS0n5lSzI
-          dl Espolon 1zj7UFN4XdZuu9wtnID85FUhi7fT9pQuD
-          dl Film 1NOswF0EgSqGjICgF-o06198m8m0r3mwB
-          dl Food 1h5a5u7m9LYUhpbILTQORBVbHkhRyYC6T
-          dl Interior 13yOm7UYjoNt-NLIG5_TtE1FDtSobhqjT
-          dl Merch 1IJcrh6_MUU4bXq1LDYTHSDguTjGZy9E8
-          dl Team 1-uduGv3Byj5uoA1m25xqgMO2bA7F0PXF
-          dl Vibe 10JtQBTA8xXAYIXzTwF0FwEsm6HsCQv3T
-      - name: previews
-        run: |
-          O=$GITHUB_WORKSPACE/_drive_preview
-          mkdir -p $O
-          cp /tmp/log-*.txt $O/ || true
-          cp /tmp/fails.txt $O/ 2>/dev/null || true
-          cd /tmp/d
-          find . -type f -printf '%s\t%p\n' | sort -k2 > $O/listing.tsv
+          O=$PWD/out/${{ matrix.n }}; mkdir -p $O /tmp/d; cd /tmp/d
+          timeout 900 gdown --folder "https://drive.google.com/drive/folders/${{ matrix.id }}" -O "${{ matrix.n }}" > $O/_log.txt 2>&1 || echo "FAIL/TIMEOUT $?" >> $O/_log.txt
+          find . -type f -printf '%s\t%p\n' | sort -k2 > $O/_listing.tsv
           find . -type f | sort | while read f; do
-            dir=$(dirname "$f"); mkdir -p "$O/$dir"; base="${f%.*}"
+            rel="${f#./${{ matrix.n }}/}"; base="${rel%.*}"; mkdir -p "$O/$(dirname "$rel")"
             case "${f,,}" in
               ./menu/*) convert "$f[0]" -auto-orient -resize '1700x2400>' -quality 85 "$O/$base.jpg" || true;;
-              *.jpg|*.jpeg|*.png|*.heic|*.webp|*.tif|*.tiff) convert "$f[0]" -auto-orient -resize '420x420>' -quality 70 "$O/$base.jpg" || echo "conv fail $f" >> $O/fails.txt;;
+              ./team/*) convert "$f[0]" -auto-orient -resize '1000x1000>' -quality 82 "$O/$base.jpg" || true;;
+              *.jpg|*.jpeg|*.png|*.heic|*.webp|*.tif|*.tiff) convert "$f[0]" -auto-orient -resize '420x420>' -quality 70 "$O/$base.jpg" || echo "conv fail $f" >> $O/_log.txt;;
               *.pdf) pdftoppm -png -r 60 -singlefile "$f" "$O/$base" || true;;
-              *) echo "skip $f" >> $O/skipped.txt;;
             esac
           done
-          du -sh $O
-      - name: commit
-        run: |
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "p-${{ matrix.n }}", path: out }
+  commit:
+    needs: fetch
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { path: /tmp/a, pattern: "p-*", merge-multiple: true }
+      - run: |
+          mkdir -p _drive_preview && cp -r /tmp/a/* _drive_preview/ || true
           git config user.name "drive-fetch-bot"; git config user.email "bot@users.noreply.github.com"
-          git add _drive_preview
-          git commit -m "tmp: drive previews" && git push origin HEAD:arena/c014fa3f-catch
+          git add _drive_preview && git commit -m "tmp: drive previews" && git push origin HEAD:arena/c014fa3f-catch
