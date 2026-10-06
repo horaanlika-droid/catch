@@ -14,7 +14,7 @@ jobs:
       - name: download
         run: |
           mkdir -p /tmp/d && cd /tmp/d
-          dl() { gdown --folder "https://drive.google.com/drive/folders/$2" -O "$1" --remaining-ok > "/tmp/log-$1.txt" 2>&1 || echo "FAIL $1" >> /tmp/fails.txt; }
+          dl() { gdown --folder "https://drive.google.com/drive/folders/$2" -O "$1" > "/tmp/log-$1.txt" 2>&1 || echo "FAIL $1" >> /tmp/fails.txt; }
           dl Logo 1BU98FcTX7pFfGoWr-ELMJZ_OJrPfvWv4
           dl Menu 1J2p_Wq5YNrIALggJNneRvDDhVrQcVhnM
           dl Classy_cocktails 1UTqJeVQ8FvKqEE2AL32Guv5emnfju-0L
