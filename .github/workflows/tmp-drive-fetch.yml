@@ -8,50 +8,80 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - { n: Logo, id: 1BU98FcTX7pFfGoWr-ELMJZ_OJrPfvWv4 }
-          - { n: Menu, id: 1J2p_Wq5YNrIALggJNneRvDDhVrQcVhnM }
-          - { n: Team, id: 1-uduGv3Byj5uoA1m25xqgMO2bA7F0PXF }
-          - { n: Classy_cocktails, id: 1UTqJeVQ8FvKqEE2AL32Guv5emnfju-0L }
-          - { n: Cocktails, id: 1Zw-61UqS7PSSjRjigcF7cOQKS0n5lSzI }
-          - { n: Espolon, id: 1zj7UFN4XdZuu9wtnID85FUhi7fT9pQuD }
-          - { n: Film, id: 1NOswF0EgSqGjICgF-o06198m8m0r3mwB }
-          - { n: Food, id: 1h5a5u7m9LYUhpbILTQORBVbHkhRyYC6T }
-          - { n: Interior, id: 13yOm7UYjoNt-NLIG5_TtE1FDtSobhqjT }
-          - { n: Merch, id: 1IJcrh6_MUU4bXq1LDYTHSDguTjGZy9E8 }
-          - { n: Vibe, id: 10JtQBTA8xXAYIXzTwF0FwEsm6HsCQv3T }
-    steps:
-      - run: pip install -q gdown && sudo apt-get install -y imagemagick poppler-utils >/dev/null
-      - name: download + previews
-        run: |
-          O=$PWD/out/${{ matrix.n }}; mkdir -p $O /tmp/d; cd /tmp/d
-          timeout 900 gdown --folder "https://drive.google.com/drive/folders/${{ matrix.id }}" -O "${{ matrix.n }}" > $O/_log.txt 2>&1 || echo "FAIL/TIMEOUT $?" >> $O/_log.txt
-          find . -type f -printf '%s\t%p\n' | sort -k2 > $O/_listing.tsv
-          find . -type f | sort | while read f; do
-            rel="${f#./${{ matrix.n }}/}"; base="${rel%.*}"; mkdir -p "$O/$(dirname "$rel")"
-            case "${f,,}" in
-              ./menu/*) convert "$f[0]" -auto-orient -resize '1700x2400>' -quality 85 "$O/$base.jpg" || true;;
-              ./team/*) convert "$f[0]" -auto-orient -resize '1000x1000>' -quality 82 "$O/$base.jpg" || true;;
-              *.jpg|*.jpeg|*.png|*.heic|*.webp|*.tif|*.tiff) convert "$f[0]" -auto-orient -resize '420x420>' -quality 70 "$O/$base.jpg" || echo "conv fail $f" >> $O/_log.txt;;
-              *.pdf) pdftoppm -png -r 60 -singlefile "$f" "$O/$base" || true;;
-            esac
-          done
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with: { name: "p-${{ matrix.n }}", path: out }
-  commit:
-    needs: fetch
-    if: always()
-    runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with: { path: /tmp/a, pattern: "p-*", merge-multiple: true }
-      - run: |
-          mkdir -p _drive_preview && cp -r /tmp/a/* _drive_preview/ || true
+      - run: pip install -q gdown && sudo apt-get install -y imagemagick poppler-utils >/dev/null
+      - name: fetch selected
+        run: |
+          cat > /tmp/f.py <<'PY'
+          import gdown, os, subprocess, sys, json, time
+          F = {
+            'Team': '1-uduGv3Byj5uoA1m25xqgMO2bA7F0PXF',
+            'Interior': '13yOm7UYjoNt-NLIG5_TtE1FDtSobhqjT',
+            'Cocktails': '1Zw-61UqS7PSSjRjigcF7cOQKS0n5lSzI',
+            'Classy': '1UTqJeVQ8FvKqEE2AL32Guv5emnfju-0L',
+            'Vibe': '10JtQBTA8xXAYIXzTwF0FwEsm6HsCQv3T',
+            'Food': '1h5a5u7m9LYUhpbILTQORBVbHkhRyYC6T',
+            'Logo': '1BU98FcTX7pFfGoWr-ELMJZ_OJrPfvWv4',
+          }
+          WANT = {
+            'Interior': {'0001','0025','0031','0032','0036','0013','0015','0027','0034','0026'},
+            'Vibe': {'0150','0151','0157','0162','0168','0174','0182','0198','0208','0229'},
+            'Food': {'0003','0017','0021','0039','0041','0044','0057','0069','0073'},
+            'Classy': {'20251211_0012','20251211_0021','20251211_0045','Aviation','Boulevardier','Cosmopolitan','Dry Martini'},
+          }
+          os.makedirs('/tmp/raw', exist_ok=True)
+          report = []
+          for name, fid in F.items():
+            files = None
+            for attempt in range(4):
+              try:
+                files = gdown.download_folder(id=fid, skip_download=True, quiet=True); break
+              except Exception as e:
+                report.append(f'list fail {name} {e}'); time.sleep(5)
+            if not files: continue
+            for f in files:
+              base = os.path.basename(f.path); stem = os.path.splitext(base)[0] if base.lower().endswith(('.jpg','.jpeg','.png','.pdf')) else base
+              key = stem.split('_',1)[1] if name in ('Food',) and '_' in stem else stem
+              w = WANT.get(name)
+              if w is not None and key not in w and stem not in w: continue
+              out = f'/tmp/raw/{name}/{f.id}__{base}'
+              os.makedirs(os.path.dirname(out), exist_ok=True)
+              ok = False
+              for attempt in range(4):
+                try:
+                  gdown.download(id=f.id, output=out, quiet=True); ok = os.path.exists(out); break
+                except Exception as e:
+                  time.sleep(4)
+              report.append(f'{"ok " if ok else "FAIL"} {name}/{base} {f.id}')
+          open('/tmp/report.txt','w').write('\n'.join(report))
+          PY
+          python /tmp/f.py; cat /tmp/report.txt
+      - name: process
+        run: |
+          O=$GITHUB_WORKSPACE/_drive_stage2; mkdir -p $O; cp /tmp/report.txt $O/
+          cd /tmp/raw
+          for f in */*; do
+            dir=${f%%/*}; base=${f#*/}; base=${base#*__}; stem="${base%.*}"
+            [ "$stem" = "$base" ] || true
+            mt=$(file -b --mime-type "$f")
+            mkdir -p "$O/$dir"
+            slug=$(echo "$stem" | tr ' ' '-' )
+            case "$mt" in
+              image/*)
+                case $dir in
+                  Team) convert "$f[0]" -auto-orient -resize '1000x1250>' -strip -interlace Plane -quality 80 "$O/$dir/$slug-${f:${#dir}+1:6}.jpg";;
+                  Cocktails|Classy) convert "$f[0]" -auto-orient -resize '1000x1000>' -strip -interlace Plane -quality 80 "$O/$dir/$slug.jpg";;
+                  *) convert "$f[0]" -auto-orient -resize '1500x1500>' -strip -interlace Plane -quality 78 "$O/$dir/$slug.jpg";;
+                esac;;
+              application/pdf) pdftocairo -svg "$f" "$O/$dir/$slug.svg"; pdftoppm -png -r 200 -singlefile "$f" "$O/$dir/$slug";;
+              *) echo "skip $f $mt" >> $O/report.txt;;
+            esac
+          done
+          du -sh $O; ls -R $O | head -100
+      - name: commit
+        run: |
           git config user.name "drive-fetch-bot"; git config user.email "bot@users.noreply.github.com"
-          git add _drive_preview && git commit -m "tmp: drive previews" && git push origin HEAD:arena/c014fa3f-catch
+          git pull --rebase origin arena/c014fa3f-catch || true
+          git add _drive_stage2 && git commit -m "tmp: drive stage2" && git push origin HEAD:arena/c014fa3f-catch
