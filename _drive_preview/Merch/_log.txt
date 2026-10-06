@@ -1,6 +1,0 @@
-warning: `--folder` is no longer required for folder URLs and will be removed in a future release
-Retrieving folder contents
-Retrieving folder contents completed
-Building directory structure
-Building directory structure completed
-Download completed

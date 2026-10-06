@@ -1,51 +1,0 @@
-warning: `--folder` is no longer required for folder URLs and will be removed in a future release
-Retrieving folder contents
-Retrieving folder contents completed
-Building directory structure
-Building directory structure completed
-Downloading...
-From: https://drive.google.com/uc?id=1h7Km8t_UnXkO95YnCxMk42CKRcNwT13z
-To: /tmp/d/Espolon/20260623_0001.jpg
-Processing file 1h7Km8t_UnXkO95YnCxMk42CKRcNwT13z 20260623_0001.jpg
-Processing file 1cnFry-G_yKX2VifIsPqSSX57pRt4cyKs 20260623_0002.jpg
-Processing file 1GwDAMloYxINPQqTAizAd95odmGVbKdyc 20260623_0003.jpg
-Processing file 1gFiwcpVv85aYA_HNXOy5FzO0wpOrHgM6 20260623_0004 (1).jpg
-Processing file 1zhV-GhbqhQt50yalvKPKcpjnMeCIXzkV 20260623_0004.jpg
-Processing file 19fLtqHgiA6lN2YeWZ7W9PuwJ0ys8htQM 20260623_0005.jpg
-Processing file 1TmRDTGf5JroZbOyhDV-5K20OloRk_jnf 20260623_0006.jpg
-Processing file 1IvxqfBfKqBnjjs3Uo0p69LEmlHpl0VRw 20260623_0007.jpg
-Processing file 12doNWCWi5fQD2llcoUE-BfSxF-RDGTeR 20260623_0008.jpg
-  0%|          | 0.00/8.29M [00:00<?, ?B/s]  6%|▋         | 524k/8.29M [00:00<00:01, 4.74MB/s] 38%|███▊      | 3.15M/8.29M [00:00<00:00, 16.6MB/s]100%|██████████| 8.29M/8.29M [00:00<00:00, 30.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1cnFry-G_yKX2VifIsPqSSX57pRt4cyKs
-To: /tmp/d/Espolon/20260623_0002.jpg
-  0%|          | 0.00/6.94M [00:00<?, ?B/s] 68%|██████▊   | 4.72M/6.94M [00:00<00:00, 19.7MB/s]100%|██████████| 6.94M/6.94M [00:00<00:00, 26.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1GwDAMloYxINPQqTAizAd95odmGVbKdyc
-To: /tmp/d/Espolon/20260623_0003.jpg
-  0%|          | 0.00/9.11M [00:00<?, ?B/s]  6%|▌         | 524k/9.11M [00:00<00:01, 4.56MB/s] 40%|████      | 3.67M/9.11M [00:00<00:00, 19.3MB/s]100%|██████████| 9.11M/9.11M [00:00<00:00, 33.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1gFiwcpVv85aYA_HNXOy5FzO0wpOrHgM6
-To: /tmp/d/Espolon/20260623_0004 (1).jpg
-  0%|          | 0.00/10.7M [00:00<?, ?B/s]  5%|▍         | 524k/10.7M [00:00<00:02, 4.25MB/s] 29%|██▉       | 3.15M/10.7M [00:00<00:00, 15.7MB/s]100%|██████████| 10.7M/10.7M [00:00<00:00, 36.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1zhV-GhbqhQt50yalvKPKcpjnMeCIXzkV
-To: /tmp/d/Espolon/20260623_0004.jpg
-  0%|          | 0.00/10.7M [00:00<?, ?B/s]  5%|▍         | 524k/10.7M [00:00<00:02, 4.44MB/s] 34%|███▍      | 3.67M/10.7M [00:00<00:00, 18.9MB/s]100%|██████████| 10.7M/10.7M [00:00<00:00, 38.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=19fLtqHgiA6lN2YeWZ7W9PuwJ0ys8htQM
-To: /tmp/d/Espolon/20260623_0005.jpg
-  0%|          | 0.00/10.7M [00:00<?, ?B/s]  5%|▍         | 524k/10.7M [00:00<00:02, 4.38MB/s] 34%|███▍      | 3.67M/10.7M [00:00<00:00, 18.9MB/s]100%|██████████| 10.7M/10.7M [00:00<00:00, 37.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1TmRDTGf5JroZbOyhDV-5K20OloRk_jnf
-To: /tmp/d/Espolon/20260623_0006.jpg
-  0%|          | 0.00/10.9M [00:00<?, ?B/s] 43%|████▎     | 4.72M/10.9M [00:00<00:00, 42.7MB/s]100%|██████████| 10.9M/10.9M [00:00<00:00, 74.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1IvxqfBfKqBnjjs3Uo0p69LEmlHpl0VRw
-To: /tmp/d/Espolon/20260623_0007.jpg
-  0%|          | 0.00/8.45M [00:00<?, ?B/s]  6%|▌         | 524k/8.45M [00:00<00:01, 4.52MB/s] 43%|████▎     | 3.67M/8.45M [00:00<00:00, 18.9MB/s]100%|██████████| 8.45M/8.45M [00:00<00:00, 31.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=12doNWCWi5fQD2llcoUE-BfSxF-RDGTeR
-To: /tmp/d/Espolon/20260623_0008.jpg
-  0%|          | 0.00/12.0M [00:00<?, ?B/s]  9%|▊         | 1.05M/12.0M [00:00<00:01, 10.3MB/s] 57%|█████▋    | 6.82M/12.0M [00:00<00:00, 30.4MB/s]100%|██████████| 12.0M/12.0M [00:00<00:00, 41.4MB/s]
-Download completed

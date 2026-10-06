@@ -1,16 +1,0 @@
-warning: `--folder` is no longer required for folder URLs and will be removed in a future release
-Retrieving folder contents
-Retrieving folder contents completed
-Building directory structure
-Building directory structure completed
-Downloading...
-From: https://drive.google.com/uc?id=1cMntPI4xPSqwL0B_bOCrOFyhY5QukDvQ
-To: /tmp/d/Logo/CATCH_22_main_black_full.pdf
-Processing file 1cMntPI4xPSqwL0B_bOCrOFyhY5QukDvQ CATCH_22_main_black_full.pdf
-Processing file 1rNunLihk07B3i4jT3TwEfVDhAYmj-CCd CATCH_22_main_black_full_descriptor.pdf
-  0%|          | 0.00/773k [00:00<?, ?B/s] 68%|██████▊   | 524k/773k [00:00<00:00, 4.90MB/s]100%|██████████| 773k/773k [00:00<00:00, 6.07MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1rNunLihk07B3i4jT3TwEfVDhAYmj-CCd
-To: /tmp/d/Logo/CATCH_22_main_black_full_descriptor.pdf
-  0%|          | 0.00/782k [00:00<?, ?B/s]100%|██████████| 782k/782k [00:00<00:00, 8.30MB/s]
-Download completed

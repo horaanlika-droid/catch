@@ -105,11 +105,13 @@ export class Panel {
             `<b>🏷 О заведении</b>\n` +
             `Название: <b>${esc(m.name)}</b>\nПодпись: ${esc(m.sub)}\n\n` +
             `Слоган:\n<i>${esc(m.tagline)}</i>\n\nОписание:\n${esc(m.about)}\n\n` +
+            `История (экран «Ещё» → «О нас»): ${m.story ? esc(m.story.slice(0, 160)) + (m.story.length > 160 ? '…' : '') : '—'}\n\n` +
             `Герой главной: ${m.hero?.image ? '🖼 фото есть' : '— без фото'} · текст: <i>${esc((m.hero?.text || '').replace(/\n/g, ' '))}</i>\n` +
             `Кнопка: <b>${esc(m.hero?.cta || 'Забронировать стол')}</b> · Наград/фишек: ${m.awards.length}`,
           kb: kb([
             [btn('✏️ Название', 'f:meta:name'), btn('✏️ Подпись', 'f:meta:sub')],
             [btn('✏️ Слоган', 'f:meta:tagline'), btn('✏️ Описание', 'f:meta:about')],
+            [btn('✏️ История «О нас»', 'f:meta:story')],
             [btn('🖼 Фото главной', 'p:meta'), btn('🧹 Убрать фото', 'a:meta:herodel')],
             [btn('✏️ Текст героя', 'f:hero:text'), btn('✏️ Подпись героя', 'f:hero:subtitle')],
             [btn('✏️ Кнопка на главной', 'f:hero:cta'), btn('🖼 Фото «О нас»', 'p:about')],
@@ -920,6 +922,7 @@ export class Panel {
       caption: 'подпись', icon: 'эмодзи-иконка (1 символ)', note: 'текст плашки',
       cta: 'текст кнопки', ton: 'цена в TON (например 0.12 TON)', link: 'https-ссылка',
       linkText: 'подпись ссылки', button: 'текст кнопки', about: 'новое описание',
+      story: 'история бара для экрана «О нас» (абзацы — через пустую строку)', role: 'роль в команде',
     };
     const label = hints[field] || field;
     await this.bot.answerCallback(q.id, '✏️');

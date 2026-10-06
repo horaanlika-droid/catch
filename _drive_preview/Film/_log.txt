@@ -1,1370 +1,0 @@
-warning: `--folder` is no longer required for folder URLs and will be removed in a future release
-Retrieving folder contents
-Processing file 1lg7dcG4H3q78-1L1J_hdCDrgFaEfEyM4 68500001.JPG
-Processing file 12bH-QikjgciuflVbSok_1MamJ3fpy6OT 68500002.JPG
-Processing file 18TXI1-oUUJEZdZjbBea7Ql-g8qAc2PVg 68500003.JPG
-Processing file 1_2FZACExyLeEmg5TrXSsctqORQzAs081 68500004.JPG
-Processing file 16cUo8RZmqjd5nZKn3zLLHX8Q3bq1dJmF 68500005.JPG
-Processing file 1T7mvEsgXlUtHt6YD8IYEpjn877UGpKqq 68500006.JPG
-Processing file 17DJPPAbsQd3cVYRwIMUAlfPW71eoM2wU 68500007.JPG
-Processing file 1pekzi8oLDpNonMIJajLEU3-ygHdWhASm 68500008.JPG
-Processing file 1V6MVQoIrbGFOWh4CdQ5JPlo7Z5PkmreZ 68500009.JPG
-Processing file 1dmfTLDbhXo1iFEShbf-w2r3PIL-gUp_L 68500010.JPG
-Processing file 1es1rYqIZWgtxNJbg1-ChqSR-ASNQ3mRx 68500011.JPG
-Processing file 1noKFBryQ-D4VH_X3wFD4HvmMfDdtwby3 68500012.JPG
-Processing file 1IxS3Xl-ywQjBJOOcKy3Ul27Yn1MX2eAY 68500013.JPG
-Processing file 15mHkclQw9mBkoYyRv_PChtsWEpCFF0hO 68500014.JPG
-Processing file 1XosCbRWiTQz3yQJkirGAYtdiIJPnfv7V 68500015.JPG
-Processing file 1t6N6vrhKqCLCRTVSsBNHcvtgBztkHCQ5 68500016.JPG
-Processing file 1HAzU6mwD7_uFOW_7f4eteN7cUrWn7_s2 68500017.JPG
-Processing file 1JdYdHnzRkreS--rVQChwaRkHV12szSyD 68500018.JPG
-Processing file 1nDVqzaxqGNvo9oIFqiQ2GkJ1PqPghOyr 68500019.JPG
-Processing file 1OEEm1yTld1UWK3WQBLo-u-uySpK3v9VO 68500020.JPG
-Processing file 1Mbibz7mVaXlsc_tVHQFZn-ah7dqUr1WI 68500021.JPG
-Processing file 12suCOf4q7gCtymSokKcid1p_VOlJNN4K 68500022.JPG
-Processing file 19Ux5nEEGfr4LFWeS0-fpz8qAKE33_WxU 68500023.JPG
-Processing file 1eBYefXRCuSY_SXdR5xvTmiUp9dvMW7IX 68500024.JPG
-Processing file 1q4uaWJ9whi-wDOP8zdV1LyqdS7r81hXL 68500025.JPG
-Processing file 1NpNnmHi183T3EQWSB9KSeAKdtCjMo82_ 68500026.JPG
-Processing file 1TKzWfIBCBrtlPTWwJ2MFPNMrUbNJfltb 68500027.JPG
-Processing file 15mF6fBcqeMMMDln4lFkZk8kR83ptUk8n 68500028.JPG
-Processing file 1wxF5R1UuMpMgNyXoUghVmUnCfEg8c3Wx 68500029.JPG
-Processing file 192b8xlJ8hyownBFyCs-G-ludujQzG5wd 68500030.JPG
-Processing file 1stt97hCrBdbvaTDEsaMGmW-lyfo3MojB 68500031.JPG
-Processing file 1OsuEW9FamRvbQbVYYVXQayk_oxt6yXDQ 68500032.JPG
-Processing file 1X66T9rn3o74iSNldIKL3BYbukp6vlc6b 68500033.JPG
-Processing file 1FQZCEMTuiGmAWAwQZRECROeZMw5t9Sdv 68500034.JPG
-Processing file 1f_k0n3-l3mmswwXeUp20Km9QUkqPzwhO 68500035.JPG
-Processing file 18H-doLbuCcVp5CBd7NUJ08Xb_TYpkBtF 68500036.JPG
-Processing file 1eE38ErQ9Ab7utri7pMC1avuxutUXUXmj 68500037.JPG
-Processing file 1OK8juqP_Y7DX-9UmMspfnYHiTRBCccuo 84270001.JPG
-Processing file 1MmJbtEGFNzlksm7tOU1AW8Og8qO0UCQn 84270002.JPG
-Processing file 1sb1VFFXbZdJcuIFRL0tumWVUBv5Fzby4 84270003.JPG
-Processing file 1T-aVK9Si9lc-zTcWiF4hae_5UdUpCYj5 84270004.JPG
-Processing file 1rS6XkMAMaY7gLdmG30P081gbH759C0Mt 84270005.JPG
-Processing file 1VzSfad_XjyDtx8Hv50tXGYl6IYkXiLMR 84270006.JPG
-Processing file 11mDFjT4uOaNFvlgUs66n1bk26P3l68pn 84270007.JPG
-Processing file 1LpJvD6JMfFikPk0SLK6r2UBDQJiFlPb_ 84270008.JPG
-Processing file 1RVQFgRaacRwEpurAZogmRzwlSMG--t4T 84270009.JPG
-Processing file 18oWkJczGLrWS68dTpTgYRQc3BBndDLU0 84270010.JPG
-Processing file 1c9TcNlIwA0CIut2hkC57ezuGL592HMAS 84270011.JPG
-Processing file 1-utNdm2I5epNRuLLQ4pVUEhn4Mm0KWAr 84270012.JPG
-Processing file 1DinNuGeIVck5j6L-IVRU1kBqkX19JhXj 84270013.JPG
-Processing file 1MRjIZP2WOyCTWygtP158HGgbZ57pyGBl 84270014.JPG
-Processing file 1FUdG309CvoWM7iysYlPguNEmYOir5-Bv 84270015.JPG
-Processing file 15xZG_JV0Qd8MGrjA5wElEet6ktAcPdP4 84270016.JPG
-Processing file 1U5HC3jEKO-_nI1XhYkNUg8wOVHz4dgh7 84270017.JPG
-Processing file 1dD7x8y3LLgFPw66D-O2jTk4YfPzA2_xR 84270018.JPG
-Processing file 1IBZsTWu3ynqr4WRs7c_P7h-cnJlGfHZf 84270019.JPG
-Processing file 11bvz8h25kNXoV1O90HmXw-5TZReevMhG 84270020.JPG
-Processing file 1oUbAjT9TMTCR-KVjytoh-qO1fg-w5Yso 84270021.JPG
-Processing file 1GtZ3FKE4eMVjYkBhHD7K7lYJgV7_3A84 84270022.JPG
-Processing file 1EUV9DlWxIWcuirWyomMPd7vCg430XQT6 84270023.JPG
-Processing file 1hY-GLfW13CBwO5VfNHT1qWG2VjdHIA0N 84270024.JPG
-Processing file 1GjUaVr9BVe2uKpnI3dyzPf76W9V4G-wX 84270025.JPG
-Processing file 1nObFID2YBUhjyIcivoc-7G5YwMl7_Gze 84270026.JPG
-Processing file 1Qpu0LcR-YUu4sWhNxdghKKWUJJgPbGTS 84270027.JPG
-Processing file 1mv3OBFkB0fXAzDCo_xVI8CXjL4RDSrzn 84270028.JPG
-Processing file 1oYwQBARp-ycB0_F62TZ1sD4PELAgSgaE 84270029.JPG
-Processing file 1Ky91qzzRmtpfZKyvBOspjf9t9gBOGyvk 84270030.JPG
-Processing file 1T4MQHLHcMwqI2i0XVwUDK52CKYXeoHE2 84270031.JPG
-Processing file 1I6oGL8eHpExgJ7B5R6tevMEzr2EqhovV 84270032.JPG
-Processing file 1JDB_iW6KCMsX_55Ih8JAaKWLZV-_4o4G 84270033.JPG
-Processing file 1ov_mIRdEpJth3U_QSDOp6Wc9ppd8O-ST 84270034.JPG
-Processing file 1b-zbwQGGuOieBjkaixnir1W8FRBVzTGi 84270035.JPG
-Processing file 1azhFsEvUknY5lRjFWQtOA61ace19BAoQ 84270036.JPG
-Processing file 1YOq1YDWQbGIQBqTTlp5cjOC7flKEUwSJ 84270037.JPG
-Processing file 1QpiXAHxeaLI7mC33nlg5Mi0sF1lovs1b 84270038.JPG
-Processing file 1TrLx9YBAihwIaUCNslq7iRMpEQEnoQ3n 88400001.JPG
-Processing file 1lMDFwvL9bzsjsXYKCTLx9vglRF_nRXXg 88400002.JPG
-Processing file 1pMkPB-ijPKosd8wONwN6NE2ZEZcXurLL 88400003.JPG
-Processing file 1aVXV1vQNyV-x_Uw1dhtxqpcIjxC0NwSx 88400004.JPG
-Processing file 1wpXYvcfKPg5Pxd9WCXJEsphksHxDshku 88400005.JPG
-Processing file 1BU3A-OpeKAgNrkkWuhoc3Md__Bq54W9K 88400006.JPG
-Processing file 1dS-PRrGnvTP5O8f9iD9Y2VneGbYPKiDI 88400007.JPG
-Processing file 1Pks1HPNRjW5zS8qBj79-23eu2SL3zsRz 88400008.JPG
-Processing file 1oGnBUwt06tKbvpjedKds_rPTtn22eQ-1 88400009.JPG
-Processing file 1q9KoKCU5FQS6_MwtbC0Fx36Do4xwnc_x 88400010.JPG
-Processing file 1tB6a22o9l3gSC6B-ZHfS0na06I5rWHIx 88400011.JPG
-Processing file 1cTbAEjBlUBO3yklKPr0utgo5jzp1-OVv 88400012.JPG
-Processing file 17Z7J_-dX74iQNAJ56D29-Ocxaig02qAN 88400013.JPG
-Processing file 1sxO1J8CxIzVhdL6BSwtc9yM_t06wRrde 88400014.JPG
-Processing file 1xf9e3Ge7VounQatLAC9oEUuFBBdfqiyO 88400015.JPG
-Processing file 13no3vzLY8LuN_bs7a9KZH7VLUpL99EF4 88400016.JPG
-Processing file 1q551jTqSJuliD_pNQlQKjmSxSOeGvCSS 88400017.JPG
-Processing file 1zzC51c-qhNv_osfixGBBHLC4ihY6jpmN 88400018.JPG
-Processing file 1X93ds3F4v_Pja2kq7jqgZhGYpgzjBfZn 88400019.JPG
-Processing file 1AKC85W-CsfplDZR88P_DtEItVuEE3ztL 88400020.JPG
-Processing file 1t8MoBWzKWoskG1It7BkY61kIo3ncXlOF 88400021.JPG
-Processing file 1l7LaTSphL3g5zo-ae7N9QLV8ZC9CAB_t 88400022.JPG
-Processing file 1EMnTggaCMlb8bjvPSHyAHzJDu0HgQgol 88400023.JPG
-Processing file 1NXam1OWFjYfPfjmVdCRPniZW_LTEKD-P 88400024.JPG
-Processing file 1KsxRIQmkAzHkW8ojmGrqjAzR07AxTGo_ 88400025.JPG
-Processing file 15s26AExmQ1p-GkKbTM6gJo82Yr_SWsBz 88400026.JPG
-Processing file 1ebDl3uU4fANkZWyvE7gWLCR3XyUA7juB 88400027.JPG
-Processing file 1LIC5-tGjq90VMt-10i5TPdWN8MVRAn58 88400028.JPG
-Processing file 1Njh_Vh0_UbRb0l1I8quC_ytT4Wg2uVZT 88400029.JPG
-Processing file 1MBjtqo5bGQGxctJBBBdbxGa7ja0ZC1Se 88400030.JPG
-Processing file 1_OFYcuhffeTxhX8fDmUpbsm8jwTFYZKS 88400031.JPG
-Processing file 16RvOTjG47pb0QzAX7Bc4n7UssrLOX3QO 88400032.JPG
-Processing file 1KRF5QvfsXLP8ellASte7wwfffq77ki5U 88400033.JPG
-Processing file 1l13rwzjMx6QBoFL9MuyFj5VZpDsHGw8W 88400034.JPG
-Processing file 1C5SYXRLJfPHtWtwBsDExGV4KLhfhIeqe 88400035.JPG
-Processing file 12KnXfkpqPqqaxOZWFKIq9lSOeRiKABe5 88450001.JPG
-Processing file 1Rw88nRg8YtfchgoA9kDW7_-pa1fHpZFz 88450002.JPG
-Processing file 1t0UhTQ-jj2i-MPCasE_xnD5_6YPqCtNr 88450003.JPG
-Processing file 1lB-VDkoWkHbDU64ZugtEPgnYCHlAjUM5 88450004.JPG
-Processing file 1iUgTf5M4BzPqckwhFQ5tU3iRreXv3TjY 88450005.JPG
-Processing file 1rjduy4KbIcRPCG73y6HcuNUftHYBY253 88450006.JPG
-Processing file 1gEYbVEdFD-lQWnzbCoTn__nVDv2vwHvN 88450007.JPG
-Processing file 1O7gf-DftcRAxRw4yCuO5Q8AyHEdPmGfv 88450008.JPG
-Processing file 1B0PNjc1TLbyX4WW0elFIcyIaO4euYNmw 88450009.JPG
-Processing file 1Oh_bvRvkMWC5h2OorKGH33EOQuJ3TJ2g 88450010.JPG
-Processing file 1esiojdCyrxWeQw9fHR8rxDc-JDST6CHj 88450011.JPG
-Processing file 1_QjwqSCfp16U94b8wkvnmRfVVs_qUerY 88450012.JPG
-Processing file 1vJf26X-zK9sDJE-QkO9XJ_2EZxafGue9 88450013.JPG
-Processing file 1bPhusG-3IHWbbPPLY6SV4a7_fPELcDj7 88450014.JPG
-Processing file 1arFCkSe9VUlQz6dyeTqtxPlcaU75OXuv 88450015.JPG
-Processing file 1fB6RmsiswDw2qZ7Jy3TakB6xeNeQ39cG 88450016.JPG
-Processing file 1vCQalcmzD7-71aEKnVfRZZKCyR7mtWf4 88450017.JPG
-Processing file 1VDAfNxaOqHUQ153wVfzW0iEGDvQbWMDD 88450018.JPG
-Processing file 1YaBiAHJcJSOZQ4GAQK5OeoEkQ_eEDSGx 88450019.JPG
-Processing file 1cRVNNRyWY72M651J_xE0XoqoNdtj3ZaI 88450020.JPG
-Processing fileRetrieving folder contents completed
-Building directory structure
-Building directory structure completed
-Downloading...
-From: https://drive.google.com/uc?id=1lg7dcG4H3q78-1L1J_hdCDrgFaEfEyM4
-To: /tmp/d/Film/68500001.JPG
- 1XjMGb1UFlxlZBpbqdOqzgzmein8e1WN9 88450021.JPG
-Processing file 1myKUuspBj-RRAGrCCSYPzKBZbbURIDxH 88450022.JPG
-Processing file 1F0nsPElvscX0qcDLMogbYd7Pmq_ax5lH 88450023.JPG
-Processing file 1plMBcA-wWe4Y41pqVpTO2154X5pQ52_W 88450024.JPG
-Processing file 17606FxxdDAF5o1a6ucfriadORyHuZXLv 88450025.JPG
-Processing file 1Epzf_MPhCOEQjUcMJQ0TSdzcqr5SZOmC 88450026.JPG
-Processing file 1XCZkERl3xLA4ceVPH3QnSJpkEaNwGqxc 88450027.JPG
-Processing file 1OvmuCp0LOfftg70q35tX7ixDv7ZQk7BU 88450028.JPG
-Processing file 1umCP7twL74Bz_7Nwl8opa6Bbhu0pRxZz 88450029.JPG
-Processing file 19Ao4GqtheU1BPY2I6nFH-0Pgslr_XjaR 88450030.JPG
-Processing file 1CbCuV2CEMW6ef-SH7dZQSrgW2hhB0KQt 88450031.JPG
-Processing file 1uCnoKmeqnXgXG-_FDp3gZSnBneCfqSPJ 88450032.JPG
-Processing file 1ltJAMwNluFu-n5URgTFIr76cA6IPPBP3 88450033.JPG
-Processing file 1ZNXAfZudcF4WAY1Y3Jlz2ULQELmJG0ka 88450034.JPG
-Processing file 1CEa-xk1tU7BzpzDUFSGDEwiMOBlte0Rm 88450035.JPG
-Processing file 1gI_K7nPxn2aXp9IYzv3sgRGfQG7RiqbW 88450036.JPG
-  0%|          | 0.00/11.9M [00:00<?, ?B/s] 31%|███       | 3.67M/11.9M [00:00<00:00, 36.5MB/s] 62%|██████▏   | 7.34M/11.9M [00:00<00:00, 21.9MB/s] 88%|████████▊ | 10.5M/11.9M [00:00<00:00, 24.1MB/s]100%|██████████| 11.9M/11.9M [00:00<00:00, 25.7MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=12bH-QikjgciuflVbSok_1MamJ3fpy6OT
-To: /tmp/d/Film/68500002.JPG
-  0%|          | 0.00/12.4M [00:00<?, ?B/s] 38%|███▊      | 4.72M/12.4M [00:00<00:00, 28.4MB/s] 93%|█████████▎| 11.5M/12.4M [00:00<00:00, 44.8MB/s]100%|██████████| 12.4M/12.4M [00:00<00:00, 42.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=18TXI1-oUUJEZdZjbBea7Ql-g8qAc2PVg
-To: /tmp/d/Film/68500003.JPG
-  0%|          | 0.00/14.5M [00:00<?, ?B/s] 72%|███████▏  | 10.5M/14.5M [00:00<00:00, 100MB/s]100%|██████████| 14.5M/14.5M [00:00<00:00, 108MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1_2FZACExyLeEmg5TrXSsctqORQzAs081
-To: /tmp/d/Film/68500004.JPG
-  0%|          | 0.00/13.4M [00:00<?, ?B/s] 31%|███       | 4.19M/13.4M [00:00<00:00, 39.5MB/s] 62%|██████▏   | 8.39M/13.4M [00:00<00:00, 34.4MB/s]100%|██████████| 13.4M/13.4M [00:00<00:00, 46.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=16cUo8RZmqjd5nZKn3zLLHX8Q3bq1dJmF
-To: /tmp/d/Film/68500005.JPG
-  0%|          | 0.00/14.6M [00:00<?, ?B/s] 32%|███▏      | 4.72M/14.6M [00:00<00:00, 25.2MB/s] 83%|████████▎ | 12.1M/14.6M [00:00<00:00, 45.4MB/s]100%|██████████| 14.6M/14.6M [00:00<00:00, 46.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1T7mvEsgXlUtHt6YD8IYEpjn877UGpKqq
-To: /tmp/d/Film/68500006.JPG
-  0%|          | 0.00/14.4M [00:00<?, ?B/s] 33%|███▎      | 4.72M/14.4M [00:00<00:00, 34.3MB/s] 69%|██████▉   | 9.96M/14.4M [00:00<00:00, 43.4MB/s]100%|██████████| 14.4M/14.4M [00:00<00:00, 48.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=17DJPPAbsQd3cVYRwIMUAlfPW71eoM2wU
-To: /tmp/d/Film/68500007.JPG
-  0%|          | 0.00/14.7M [00:00<?, ?B/s]  7%|▋         | 1.05M/14.7M [00:00<00:01, 9.46MB/s] 85%|████████▌ | 12.6M/14.7M [00:00<00:00, 68.5MB/s]100%|██████████| 14.7M/14.7M [00:00<00:00, 52.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1pekzi8oLDpNonMIJajLEU3-ygHdWhASm
-To: /tmp/d/Film/68500008.JPG
-  0%|          | 0.00/10.1M [00:00<?, ?B/s] 41%|████▏     | 4.19M/10.1M [00:00<00:00, 41.4MB/s]100%|██████████| 10.1M/10.1M [00:00<00:00, 54.8MB/s]
-Downloading...
-From (original): https://drive.google.com/uc?id=1V6MVQoIrbGFOWh4CdQ5JPlo7Z5PkmreZ
-From (redirected): https://drive.google.com/uc?id=1V6MVQoIrbGFOWh4CdQ5JPlo7Z5PkmreZ&confirm=t&uuid=3b80b126-abcf-406c-a8ce-1dca3b7d7255
-To: /tmp/d/Film/68500009.JPG
-  0%|          | 0.00/12.4M [00:00<?, ?B/s] 21%|██        | 2.62M/12.4M [00:00<00:00, 16.7MB/s] 55%|█████▍    | 6.82M/12.4M [00:00<00:00, 20.7MB/s]100%|██████████| 12.4M/12.4M [00:00<00:00, 33.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1dmfTLDbhXo1iFEShbf-w2r3PIL-gUp_L
-To: /tmp/d/Film/68500010.JPG
-  0%|          | 0.00/13.4M [00:00<?, ?B/s] 23%|██▎       | 3.15M/13.4M [00:00<00:00, 28.5MB/s] 67%|██████▋   | 8.91M/13.4M [00:00<00:00, 36.2MB/s] 98%|█████████▊| 13.1M/13.4M [00:00<00:00, 37.0MB/s]100%|██████████| 13.4M/13.4M [00:00<00:00, 36.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1es1rYqIZWgtxNJbg1-ChqSR-ASNQ3mRx
-To: /tmp/d/Film/68500011.JPG
-  0%|          | 0.00/12.7M [00:00<?, ?B/s] 37%|███▋      | 4.72M/12.7M [00:00<00:00, 32.6MB/s] 79%|███████▊  | 9.96M/12.7M [00:00<00:00, 42.3MB/s]100%|██████████| 12.7M/12.7M [00:00<00:00, 41.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1noKFBryQ-D4VH_X3wFD4HvmMfDdtwby3
-To: /tmp/d/Film/68500012.JPG
-  0%|          | 0.00/11.0M [00:00<?, ?B/s] 10%|▉         | 1.05M/11.0M [00:00<00:01, 9.10MB/s] 91%|█████████ | 9.96M/11.0M [00:00<00:00, 52.7MB/s]100%|██████████| 11.0M/11.0M [00:00<00:00, 48.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1IxS3Xl-ywQjBJOOcKy3Ul27Yn1MX2eAY
-To: /tmp/d/Film/68500013.JPG
-  0%|          | 0.00/14.9M [00:00<?, ?B/s] 28%|██▊       | 4.19M/14.9M [00:00<00:00, 40.9MB/s] 56%|█████▌    | 8.39M/14.9M [00:00<00:00, 37.1MB/s]100%|██████████| 14.9M/14.9M [00:00<00:00, 51.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=15mHkclQw9mBkoYyRv_PChtsWEpCFF0hO
-To: /tmp/d/Film/68500014.JPG
-  0%|          | 0.00/12.1M [00:00<?, ?B/s] 39%|███▉      | 4.72M/12.1M [00:00<00:00, 34.6MB/s] 74%|███████▍  | 8.91M/12.1M [00:00<00:00, 37.3MB/s]100%|██████████| 12.1M/12.1M [00:00<00:00, 40.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1XosCbRWiTQz3yQJkirGAYtdiIJPnfv7V
-To: /tmp/d/Film/68500015.JPG
-  0%|          | 0.00/11.8M [00:00<?, ?B/s] 22%|██▏       | 2.62M/11.8M [00:00<00:00, 16.1MB/s] 58%|█████▊    | 6.82M/11.8M [00:00<00:00, 24.9MB/s]100%|██████████| 11.8M/11.8M [00:00<00:00, 32.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1t6N6vrhKqCLCRTVSsBNHcvtgBztkHCQ5
-To: /tmp/d/Film/68500016.JPG
-  0%|          | 0.00/14.9M [00:00<?, ?B/s] 18%|█▊        | 2.62M/14.9M [00:00<00:02, 4.69MB/s] 46%|████▌     | 6.82M/14.9M [00:00<00:00, 11.0MB/s]100%|██████████| 14.9M/14.9M [00:00<00:00, 19.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1HAzU6mwD7_uFOW_7f4eteN7cUrWn7_s2
-To: /tmp/d/Film/68500017.JPG
-  0%|          | 0.00/15.3M [00:00<?, ?B/s] 24%|██▍       | 3.67M/15.3M [00:00<00:00, 36.6MB/s] 48%|████▊     | 7.34M/15.3M [00:00<00:00, 25.7MB/s] 82%|████████▏ | 12.6M/15.3M [00:00<00:00, 35.4MB/s]100%|██████████| 15.3M/15.3M [00:00<00:00, 38.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1JdYdHnzRkreS--rVQChwaRkHV12szSyD
-To: /tmp/d/Film/68500018.JPG
-  0%|          | 0.00/14.3M [00:00<?, ?B/s] 33%|███▎      | 4.72M/14.3M [00:00<00:00, 23.7MB/s]100%|██████████| 14.3M/14.3M [00:00<00:00, 56.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1nDVqzaxqGNvo9oIFqiQ2GkJ1PqPghOyr
-To: /tmp/d/Film/68500019.JPG
-  0%|          | 0.00/15.2M [00:00<?, ?B/s] 31%|███       | 4.72M/15.2M [00:00<00:00, 25.9MB/s] 72%|███████▏  | 11.0M/15.2M [00:00<00:00, 33.2MB/s]100%|██████████| 15.2M/15.2M [00:00<00:00, 39.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1OEEm1yTld1UWK3WQBLo-u-uySpK3v9VO
-To: /tmp/d/Film/68500020.JPG
-  0%|          | 0.00/13.5M [00:00<?, ?B/s]100%|██████████| 13.5M/13.5M [00:00<00:00, 137MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Mbibz7mVaXlsc_tVHQFZn-ah7dqUr1WI
-To: /tmp/d/Film/68500021.JPG
-  0%|          | 0.00/13.3M [00:00<?, ?B/s] 47%|████▋     | 6.29M/13.3M [00:00<00:00, 58.7MB/s] 95%|█████████▍| 12.6M/13.3M [00:00<00:00, 57.8MB/s]100%|██████████| 13.3M/13.3M [00:00<00:00, 59.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=12suCOf4q7gCtymSokKcid1p_VOlJNN4K
-To: /tmp/d/Film/68500022.JPG
-  0%|          | 0.00/13.4M [00:00<?, ?B/s] 20%|█▉        | 2.62M/13.4M [00:00<00:00, 23.7MB/s] 51%|█████     | 6.82M/13.4M [00:00<00:00, 11.4MB/s] 66%|██████▋   | 8.91M/13.4M [00:00<00:00, 11.8MB/s] 94%|█████████▎| 12.6M/13.4M [00:00<00:00, 16.7MB/s]100%|██████████| 13.4M/13.4M [00:00<00:00, 15.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=19Ux5nEEGfr4LFWeS0-fpz8qAKE33_WxU
-To: /tmp/d/Film/68500023.JPG
-  0%|          | 0.00/16.1M [00:00<?, ?B/s] 23%|██▎       | 3.67M/16.1M [00:00<00:00, 35.3MB/s] 68%|██████▊   | 11.0M/16.1M [00:00<00:00, 57.1MB/s]100%|██████████| 16.1M/16.1M [00:00<00:00, 65.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1eBYefXRCuSY_SXdR5xvTmiUp9dvMW7IX
-To: /tmp/d/Film/68500024.JPG
-  0%|          | 0.00/13.6M [00:00<?, ?B/s]  8%|▊         | 1.05M/13.6M [00:00<00:01, 9.60MB/s] 62%|██████▏   | 8.39M/13.6M [00:00<00:00, 45.7MB/s]100%|██████████| 13.6M/13.6M [00:00<00:00, 52.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1q4uaWJ9whi-wDOP8zdV1LyqdS7r81hXL
-To: /tmp/d/Film/68500025.JPG
-  0%|          | 0.00/14.8M [00:00<?, ?B/s] 32%|███▏      | 4.72M/14.8M [00:00<00:00, 31.0MB/s] 64%|██████▍   | 9.44M/14.8M [00:00<00:00, 38.4MB/s]100%|██████████| 14.8M/14.8M [00:00<00:00, 47.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1NpNnmHi183T3EQWSB9KSeAKdtCjMo82_
-To: /tmp/d/Film/68500026.JPG
-  0%|          | 0.00/13.0M [00:00<?, ?B/s] 16%|█▌        | 2.10M/13.0M [00:00<00:00, 20.7MB/s] 52%|█████▏    | 6.82M/13.0M [00:00<00:00, 18.2MB/s]100%|██████████| 13.0M/13.0M [00:00<00:00, 30.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1TKzWfIBCBrtlPTWwJ2MFPNMrUbNJfltb
-To: /tmp/d/Film/68500027.JPG
-  0%|          | 0.00/15.2M [00:00<?, ?B/s] 10%|█         | 1.57M/15.2M [00:00<00:00, 15.3MB/s] 35%|███▍      | 5.24M/15.2M [00:00<00:00, 27.5MB/s] 86%|████████▋ | 13.1M/15.2M [00:00<00:00, 43.2MB/s]100%|██████████| 15.2M/15.2M [00:00<00:00, 42.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=15mF6fBcqeMMMDln4lFkZk8kR83ptUk8n
-To: /tmp/d/Film/68500028.JPG
-  0%|          | 0.00/14.9M [00:00<?, ?B/s] 11%|█         | 1.57M/14.9M [00:00<00:00, 15.5MB/s] 46%|████▌     | 6.82M/14.9M [00:00<00:00, 22.7MB/s]100%|██████████| 14.9M/14.9M [00:00<00:00, 40.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1wxF5R1UuMpMgNyXoUghVmUnCfEg8c3Wx
-To: /tmp/d/Film/68500029.JPG
-  0%|          | 0.00/13.8M [00:00<?, ?B/s]100%|██████████| 13.8M/13.8M [00:00<00:00, 138MB/s]100%|██████████| 13.8M/13.8M [00:00<00:00, 137MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=192b8xlJ8hyownBFyCs-G-ludujQzG5wd
-To: /tmp/d/Film/68500030.JPG
-  0%|          | 0.00/13.5M [00:00<?, ?B/s] 12%|█▏        | 1.57M/13.5M [00:00<00:00, 14.5MB/s] 66%|██████▌   | 8.91M/13.5M [00:00<00:00, 47.6MB/s]100%|██████████| 13.5M/13.5M [00:00<00:00, 53.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1stt97hCrBdbvaTDEsaMGmW-lyfo3MojB
-To: /tmp/d/Film/68500031.JPG
-  0%|          | 0.00/11.7M [00:00<?, ?B/s]  9%|▉         | 1.05M/11.7M [00:00<00:01, 9.82MB/s] 85%|████████▍ | 9.96M/11.7M [00:00<00:00, 54.4MB/s]100%|██████████| 11.7M/11.7M [00:00<00:00, 46.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1OsuEW9FamRvbQbVYYVXQayk_oxt6yXDQ
-To: /tmp/d/Film/68500032.JPG
-  0%|          | 0.00/15.2M [00:00<?, ?B/s] 24%|██▍       | 3.67M/15.2M [00:00<00:00, 36.5MB/s] 48%|████▊     | 7.34M/15.2M [00:00<00:00, 17.8MB/s] 86%|████████▌ | 13.1M/15.2M [00:00<00:00, 28.6MB/s]100%|██████████| 15.2M/15.2M [00:00<00:00, 25.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1X66T9rn3o74iSNldIKL3BYbukp6vlc6b
-To: /tmp/d/Film/68500033.JPG
-  0%|          | 0.00/14.3M [00:00<?, ?B/s] 33%|███▎      | 4.72M/14.3M [00:00<00:00, 32.6MB/s]100%|██████████| 14.3M/14.3M [00:00<00:00, 58.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1FQZCEMTuiGmAWAwQZRECROeZMw5t9Sdv
-To: /tmp/d/Film/68500034.JPG
-  0%|          | 0.00/14.0M [00:00<?, ?B/s] 34%|███▍      | 4.72M/14.0M [00:00<00:00, 29.0MB/s]100%|██████████| 14.0M/14.0M [00:00<00:00, 61.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1f_k0n3-l3mmswwXeUp20Km9QUkqPzwhO
-To: /tmp/d/Film/68500035.JPG
-  0%|          | 0.00/13.5M [00:00<?, ?B/s] 16%|█▌        | 2.10M/13.5M [00:00<00:00, 20.3MB/s] 31%|███       | 4.19M/13.5M [00:00<00:00, 18.9MB/s] 51%|█████     | 6.82M/13.5M [00:00<00:00, 20.9MB/s] 74%|███████▍  | 9.96M/13.5M [00:00<00:00, 24.6MB/s]100%|██████████| 13.5M/13.5M [00:00<00:00, 25.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=18H-doLbuCcVp5CBd7NUJ08Xb_TYpkBtF
-To: /tmp/d/Film/68500036.JPG
-  0%|          | 0.00/14.2M [00:00<?, ?B/s] 37%|███▋      | 5.24M/14.2M [00:00<00:00, 51.5MB/s]100%|██████████| 14.2M/14.2M [00:00<00:00, 81.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1eE38ErQ9Ab7utri7pMC1avuxutUXUXmj
-To: /tmp/d/Film/68500037.JPG
-  0%|          | 0.00/12.9M [00:00<?, ?B/s] 12%|█▏        | 1.57M/12.9M [00:00<00:00, 15.1MB/s] 69%|██████▉   | 8.91M/12.9M [00:00<00:00, 46.6MB/s]100%|██████████| 12.9M/12.9M [00:00<00:00, 44.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1OK8juqP_Y7DX-9UmMspfnYHiTRBCccuo
-To: /tmp/d/Film/84270001.JPG
-  0%|          | 0.00/19.6M [00:00<?, ?B/s] 13%|█▎        | 2.62M/19.6M [00:00<00:01, 14.8MB/s] 29%|██▉       | 5.77M/19.6M [00:00<00:00, 20.9MB/s] 45%|████▌     | 8.91M/19.6M [00:00<00:00, 23.4MB/s] 64%|██████▍   | 12.6M/19.6M [00:00<00:00, 27.3MB/s] 80%|████████  | 15.7M/19.6M [00:00<00:00, 22.3MB/s] 99%|█████████▉| 19.4M/19.6M [00:00<00:00, 24.6MB/s]100%|██████████| 19.6M/19.6M [00:00<00:00, 23.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1MmJbtEGFNzlksm7tOU1AW8Og8qO0UCQn
-To: /tmp/d/Film/84270002.JPG
-  0%|          | 0.00/2.93M [00:00<?, ?B/s] 36%|███▌      | 1.05M/2.93M [00:00<00:00, 9.21MB/s]100%|██████████| 2.93M/2.93M [00:00<00:00, 15.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1sb1VFFXbZdJcuIFRL0tumWVUBv5Fzby4
-To: /tmp/d/Film/84270003.JPG
-  0%|          | 0.00/14.1M [00:00<?, ?B/s] 59%|█████▉    | 8.39M/14.1M [00:00<00:00, 81.6MB/s]100%|██████████| 14.1M/14.1M [00:00<00:00, 94.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1T-aVK9Si9lc-zTcWiF4hae_5UdUpCYj5
-To: /tmp/d/Film/84270004.JPG
-  0%|          | 0.00/15.5M [00:00<?, ?B/s] 24%|██▎       | 3.67M/15.5M [00:00<00:00, 35.1MB/s]100%|██████████| 15.5M/15.5M [00:00<00:00, 77.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1rS6XkMAMaY7gLdmG30P081gbH759C0Mt
-To: /tmp/d/Film/84270005.JPG
-  0%|          | 0.00/15.0M [00:00<?, ?B/s] 28%|██▊       | 4.19M/15.0M [00:00<00:00, 41.8MB/s]100%|██████████| 15.0M/15.0M [00:00<00:00, 77.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1VzSfad_XjyDtx8Hv50tXGYl6IYkXiLMR
-To: /tmp/d/Film/84270006.JPG
-  0%|          | 0.00/13.3M [00:00<?, ?B/s] 24%|██▎       | 3.15M/13.3M [00:00<00:00, 27.1MB/s] 55%|█████▍    | 7.34M/13.3M [00:00<00:00, 32.3MB/s] 82%|████████▏ | 11.0M/13.3M [00:00<00:00, 25.4MB/s]100%|██████████| 13.3M/13.3M [00:00<00:00, 26.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=11mDFjT4uOaNFvlgUs66n1bk26P3l68pn
-To: /tmp/d/Film/84270007.JPG
-  0%|          | 0.00/13.0M [00:00<?, ?B/s] 48%|████▊     | 6.29M/13.0M [00:00<00:00, 59.5MB/s]100%|██████████| 13.0M/13.0M [00:00<00:00, 63.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1LpJvD6JMfFikPk0SLK6r2UBDQJiFlPb_
-To: /tmp/d/Film/84270008.JPG
-  0%|          | 0.00/12.8M [00:00<?, ?B/s] 29%|██▊       | 3.67M/12.8M [00:00<00:00, 35.6MB/s] 57%|█████▋    | 7.34M/12.8M [00:00<00:00, 25.6MB/s] 94%|█████████▍| 12.1M/12.8M [00:00<00:00, 32.8MB/s]100%|██████████| 12.8M/12.8M [00:00<00:00, 31.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1RVQFgRaacRwEpurAZogmRzwlSMG--t4T
-To: /tmp/d/Film/84270009.JPG
-  0%|          | 0.00/13.9M [00:00<?, ?B/s] 34%|███▍      | 4.72M/13.9M [00:00<00:00, 33.3MB/s]100%|██████████| 13.9M/13.9M [00:00<00:00, 57.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=18oWkJczGLrWS68dTpTgYRQc3BBndDLU0
-To: /tmp/d/Film/84270010.JPG
-  0%|          | 0.00/13.4M [00:00<?, ?B/s]100%|██████████| 13.4M/13.4M [00:00<00:00, 135MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1c9TcNlIwA0CIut2hkC57ezuGL592HMAS
-To: /tmp/d/Film/84270011.JPG
-  0%|          | 0.00/13.0M [00:00<?, ?B/s] 20%|██        | 2.62M/13.0M [00:00<00:00, 23.1MB/s] 40%|████      | 5.24M/13.0M [00:00<00:00, 18.0MB/s] 60%|██████    | 7.86M/13.0M [00:00<00:00, 19.8MB/s] 80%|████████  | 10.5M/13.0M [00:00<00:00, 21.3MB/s]100%|██████████| 13.0M/13.0M [00:00<00:00, 21.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1-utNdm2I5epNRuLLQ4pVUEhn4Mm0KWAr
-To: /tmp/d/Film/84270012.JPG
-  0%|          | 0.00/12.1M [00:00<?, ?B/s] 26%|██▌       | 3.15M/12.1M [00:00<00:00, 31.4MB/s]100%|██████████| 12.1M/12.1M [00:00<00:00, 62.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1DinNuGeIVck5j6L-IVRU1kBqkX19JhXj
-To: /tmp/d/Film/84270013.JPG
-  0%|          | 0.00/13.2M [00:00<?, ?B/s] 20%|█▉        | 2.62M/13.2M [00:00<00:00, 26.1MB/s]100%|██████████| 13.2M/13.2M [00:00<00:00, 80.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1MRjIZP2WOyCTWygtP158HGgbZ57pyGBl
-To: /tmp/d/Film/84270014.JPG
-  0%|          | 0.00/12.9M [00:00<?, ?B/s]  8%|▊         | 1.05M/12.9M [00:00<00:01, 8.81MB/s] 49%|████▉     | 6.29M/12.9M [00:00<00:00, 23.9MB/s]100%|██████████| 12.9M/12.9M [00:00<00:00, 40.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1FUdG309CvoWM7iysYlPguNEmYOir5-Bv
-To: /tmp/d/Film/84270015.JPG
-  0%|          | 0.00/16.2M [00:00<?, ?B/s] 23%|██▎       | 3.67M/16.2M [00:00<00:00, 36.6MB/s] 49%|████▊     | 7.86M/16.2M [00:00<00:00, 39.3MB/s] 94%|█████████▍| 15.2M/16.2M [00:00<00:00, 50.0MB/s]100%|██████████| 16.2M/16.2M [00:00<00:00, 49.7MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=15xZG_JV0Qd8MGrjA5wElEet6ktAcPdP4
-To: /tmp/d/Film/84270016.JPG
-  0%|          | 0.00/12.9M [00:00<?, ?B/s] 16%|█▌        | 2.10M/12.9M [00:00<00:00, 20.4MB/s] 32%|███▏      | 4.19M/12.9M [00:00<00:01, 5.36MB/s] 53%|█████▎    | 6.82M/12.9M [00:00<00:00, 7.85MB/s] 93%|█████████▎| 12.1M/12.9M [00:00<00:00, 15.6MB/s]100%|██████████| 12.9M/12.9M [00:01<00:00, 12.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1U5HC3jEKO-_nI1XhYkNUg8wOVHz4dgh7
-To: /tmp/d/Film/84270017.JPG
-  0%|          | 0.00/11.7M [00:00<?, ?B/s] 40%|████      | 4.72M/11.7M [00:00<00:00, 38.2MB/s]100%|██████████| 11.7M/11.7M [00:00<00:00, 59.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1dD7x8y3LLgFPw66D-O2jTk4YfPzA2_xR
-To: /tmp/d/Film/84270018.JPG
-  0%|          | 0.00/13.2M [00:00<?, ?B/s] 28%|██▊       | 3.67M/13.2M [00:00<00:00, 36.2MB/s] 79%|███████▉  | 10.5M/13.2M [00:00<00:00, 49.9MB/s]100%|██████████| 13.2M/13.2M [00:00<00:00, 50.7MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1IBZsTWu3ynqr4WRs7c_P7h-cnJlGfHZf
-To: /tmp/d/Film/84270019.JPG
-  0%|          | 0.00/13.2M [00:00<?, ?B/s] 32%|███▏      | 4.19M/13.2M [00:00<00:00, 41.4MB/s] 80%|███████▉  | 10.5M/13.2M [00:00<00:00, 54.0MB/s]100%|██████████| 13.2M/13.2M [00:00<00:00, 57.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=11bvz8h25kNXoV1O90HmXw-5TZReevMhG
-To: /tmp/d/Film/84270020.JPG
-  0%|          | 0.00/14.5M [00:00<?, ?B/s] 25%|██▌       | 3.67M/14.5M [00:00<00:00, 34.5MB/s] 54%|█████▍    | 7.86M/14.5M [00:00<00:00, 35.2MB/s] 79%|███████▉  | 11.5M/14.5M [00:00<00:00, 31.8MB/s]100%|██████████| 14.5M/14.5M [00:00<00:00, 31.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1oUbAjT9TMTCR-KVjytoh-qO1fg-w5Yso
-To: /tmp/d/Film/84270021.JPG
-  0%|          | 0.00/10.7M [00:00<?, ?B/s] 10%|▉         | 1.05M/10.7M [00:00<00:00, 9.64MB/s]100%|██████████| 10.7M/10.7M [00:00<00:00, 51.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1GtZ3FKE4eMVjYkBhHD7K7lYJgV7_3A84
-To: /tmp/d/Film/84270022.JPG
-  0%|          | 0.00/13.9M [00:00<?, ?B/s] 34%|███▍      | 4.72M/13.9M [00:00<00:00, 36.3MB/s] 87%|████████▋ | 12.1M/13.9M [00:00<00:00, 54.4MB/s]100%|██████████| 13.9M/13.9M [00:00<00:00, 51.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1EUV9DlWxIWcuirWyomMPd7vCg430XQT6
-To: /tmp/d/Film/84270023.JPG
-  0%|          | 0.00/14.5M [00:00<?, ?B/s] 29%|██▉       | 4.19M/14.5M [00:00<00:00, 41.4MB/s] 58%|█████▊    | 8.39M/14.5M [00:00<00:00, 38.2MB/s]100%|██████████| 14.5M/14.5M [00:00<00:00, 51.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1hY-GLfW13CBwO5VfNHT1qWG2VjdHIA0N
-To: /tmp/d/Film/84270024.JPG
-  0%|          | 0.00/14.4M [00:00<?, ?B/s] 25%|██▌       | 3.67M/14.4M [00:00<00:00, 30.7MB/s] 47%|████▋     | 6.82M/14.4M [00:00<00:00, 27.7MB/s] 91%|█████████ | 13.1M/14.4M [00:00<00:00, 34.9MB/s]100%|██████████| 14.4M/14.4M [00:00<00:00, 35.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1GjUaVr9BVe2uKpnI3dyzPf76W9V4G-wX
-To: /tmp/d/Film/84270025.JPG
-  0%|          | 0.00/14.1M [00:00<?, ?B/s] 33%|███▎      | 4.72M/14.1M [00:00<00:00, 34.8MB/s] 82%|████████▏ | 11.5M/14.1M [00:00<00:00, 50.7MB/s]100%|██████████| 14.1M/14.1M [00:00<00:00, 54.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1nObFID2YBUhjyIcivoc-7G5YwMl7_Gze
-To: /tmp/d/Film/84270026.JPG
-  0%|          | 0.00/12.5M [00:00<?, ?B/s] 96%|█████████▌| 12.1M/12.5M [00:00<00:00, 118MB/s]100%|██████████| 12.5M/12.5M [00:00<00:00, 118MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Qpu0LcR-YUu4sWhNxdghKKWUJJgPbGTS
-To: /tmp/d/Film/84270027.JPG
-  0%|          | 0.00/10.1M [00:00<?, ?B/s] 10%|█         | 1.05M/10.1M [00:00<00:00, 9.54MB/s] 67%|██████▋   | 6.82M/10.1M [00:00<00:00, 32.2MB/s]100%|██████████| 10.1M/10.1M [00:00<00:00, 35.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1mv3OBFkB0fXAzDCo_xVI8CXjL4RDSrzn
-To: /tmp/d/Film/84270028.JPG
-  0%|          | 0.00/14.4M [00:00<?, ?B/s] 25%|██▌       | 3.67M/14.4M [00:00<00:00, 36.2MB/s] 91%|█████████ | 13.1M/14.4M [00:00<00:00, 68.2MB/s]100%|██████████| 14.4M/14.4M [00:00<00:00, 62.7MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1oYwQBARp-ycB0_F62TZ1sD4PELAgSgaE
-To: /tmp/d/Film/84270029.JPG
-  0%|          | 0.00/11.8M [00:00<?, ?B/s] 36%|███▌      | 4.19M/11.8M [00:00<00:00, 41.4MB/s] 80%|████████  | 9.44M/11.8M [00:00<00:00, 46.3MB/s]100%|██████████| 11.8M/11.8M [00:00<00:00, 51.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Ky91qzzRmtpfZKyvBOspjf9t9gBOGyvk
-To: /tmp/d/Film/84270030.JPG
-  0%|          | 0.00/14.6M [00:00<?, ?B/s] 29%|██▊       | 4.19M/14.6M [00:00<00:00, 41.4MB/s] 72%|███████▏  | 10.5M/14.6M [00:00<00:00, 53.0MB/s]100%|██████████| 14.6M/14.6M [00:00<00:00, 62.7MB/s]
-Failed to download Film/84270031.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1T4MQHLHcMwqI2i0XVwUDK52CKYXeoHE2
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/84270032.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1I6oGL8eHpExgJ7B5R6tevMEzr2EqhovV
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/84270033.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1JDB_iW6KCMsX_55Ih8JAaKWLZV-_4o4G
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/84270034.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1ov_mIRdEpJth3U_QSDOp6Wc9ppd8O-ST
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/84270035.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1b-zbwQGGuOieBjkaixnir1W8FRBVzTGi
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/84270036.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1azhFsEvUknY5lRjFWQtOA61ace19BAoQ
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/84270037.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1YOq1YDWQbGIQBqTTlp5cjOC7flKEUwSJ
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/84270038.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1QpiXAHxeaLI7mC33nlg5Mi0sF1lovs1b
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400001.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1TrLx9YBAihwIaUCNslq7iRMpEQEnoQ3n
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400002.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1lMDFwvL9bzsjsXYKCTLx9vglRF_nRXXg
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400003.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1pMkPB-ijPKosd8wONwN6NE2ZEZcXurLL
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400004.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1aVXV1vQNyV-x_Uw1dhtxqpcIjxC0NwSx
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400005.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1wpXYvcfKPg5Pxd9WCXJEsphksHxDshku
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400006.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1BU3A-OpeKAgNrkkWuhoc3Md__Bq54W9K
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400007.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1dS-PRrGnvTP5O8f9iD9Y2VneGbYPKiDI
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400008.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Pks1HPNRjW5zS8qBj79-23eu2SL3zsRz
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400009.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1oGnBUwt06tKbvpjedKds_rPTtn22eQ-1
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400010.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1q9KoKCU5FQS6_MwtbC0Fx36Do4xwnc_x
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400011.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1tB6a22o9l3gSC6B-ZHfS0na06I5rWHIx
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400012.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1cTbAEjBlUBO3yklKPr0utgo5jzp1-OVv
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400013.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=17Z7J_-dX74iQNAJ56D29-Ocxaig02qAN
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400014.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1sxO1J8CxIzVhdL6BSwtc9yM_t06wRrde
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400015.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1xf9e3Ge7VounQatLAC9oEUuFBBdfqiyO
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400016.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=13no3vzLY8LuN_bs7a9KZH7VLUpL99EF4
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400017.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1q551jTqSJuliD_pNQlQKjmSxSOeGvCSS
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400018.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1zzC51c-qhNv_osfixGBBHLC4ihY6jpmN
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400019.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1X93ds3F4v_Pja2kq7jqgZhGYpgzjBfZn
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400020.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1AKC85W-CsfplDZR88P_DtEItVuEE3ztL
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400021.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1t8MoBWzKWoskG1It7BkY61kIo3ncXlOF
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400022.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1l7LaTSphL3g5zo-ae7N9QLV8ZC9CAB_t
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400023.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1EMnTggaCMlb8bjvPSHyAHzJDu0HgQgol
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400024.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1NXam1OWFjYfPfjmVdCRPniZW_LTEKD-P
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400025.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1KsxRIQmkAzHkW8ojmGrqjAzR07AxTGo_
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400026.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=15s26AExmQ1p-GkKbTM6gJo82Yr_SWsBz
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400027.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1ebDl3uU4fANkZWyvE7gWLCR3XyUA7juB
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400028.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1LIC5-tGjq90VMt-10i5TPdWN8MVRAn58
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400029.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Njh_Vh0_UbRb0l1I8quC_ytT4Wg2uVZT
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400030.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1MBjtqo5bGQGxctJBBBdbxGa7ja0ZC1Se
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400031.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1_OFYcuhffeTxhX8fDmUpbsm8jwTFYZKS
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400032.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=16RvOTjG47pb0QzAX7Bc4n7UssrLOX3QO
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400033.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1KRF5QvfsXLP8ellASte7wwfffq77ki5U
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400034.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1l13rwzjMx6QBoFL9MuyFj5VZpDsHGw8W
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88400035.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1C5SYXRLJfPHtWtwBsDExGV4KLhfhIeqe
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450001.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=12KnXfkpqPqqaxOZWFKIq9lSOeRiKABe5
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450002.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Rw88nRg8YtfchgoA9kDW7_-pa1fHpZFz
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450003.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1t0UhTQ-jj2i-MPCasE_xnD5_6YPqCtNr
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450004.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1lB-VDkoWkHbDU64ZugtEPgnYCHlAjUM5
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450005.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1iUgTf5M4BzPqckwhFQ5tU3iRreXv3TjY
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450006.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1rjduy4KbIcRPCG73y6HcuNUftHYBY253
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450007.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1gEYbVEdFD-lQWnzbCoTn__nVDv2vwHvN
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450008.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1O7gf-DftcRAxRw4yCuO5Q8AyHEdPmGfv
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450009.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1B0PNjc1TLbyX4WW0elFIcyIaO4euYNmw
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450010.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Oh_bvRvkMWC5h2OorKGH33EOQuJ3TJ2g
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450011.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1esiojdCyrxWeQw9fHR8rxDc-JDST6CHj
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450012.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1_QjwqSCfp16U94b8wkvnmRfVVs_qUerY
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450013.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1vJf26X-zK9sDJE-QkO9XJ_2EZxafGue9
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450014.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1bPhusG-3IHWbbPPLY6SV4a7_fPELcDj7
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450015.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1arFCkSe9VUlQz6dyeTqtxPlcaU75OXuv
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450016.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1fB6RmsiswDw2qZ7Jy3TakB6xeNeQ39cG
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450017.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1vCQalcmzD7-71aEKnVfRZZKCyR7mtWf4
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450018.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1VDAfNxaOqHUQ153wVfzW0iEGDvQbWMDD
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450019.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1YaBiAHJcJSOZQ4GAQK5OeoEkQ_eEDSGx
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450020.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1cRVNNRyWY72M651J_xE0XoqoNdtj3ZaI
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450021.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1XjMGb1UFlxlZBpbqdOqzgzmein8e1WN9
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450022.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1myKUuspBj-RRAGrCCSYPzKBZbbURIDxH
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450023.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1F0nsPElvscX0qcDLMogbYd7Pmq_ax5lH
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450024.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1plMBcA-wWe4Y41pqVpTO2154X5pQ52_W
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450025.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=17606FxxdDAF5o1a6ucfriadORyHuZXLv
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450026.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Epzf_MPhCOEQjUcMJQ0TSdzcqr5SZOmC
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450027.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1XCZkERl3xLA4ceVPH3QnSJpkEaNwGqxc
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450028.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1OvmuCp0LOfftg70q35tX7ixDv7ZQk7BU
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450029.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1umCP7twL74Bz_7Nwl8opa6Bbhu0pRxZz
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450030.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=19Ao4GqtheU1BPY2I6nFH-0Pgslr_XjaR
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450031.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1CbCuV2CEMW6ef-SH7dZQSrgW2hhB0KQt
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450032.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1uCnoKmeqnXgXG-_FDp3gZSnBneCfqSPJ
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450033.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1ltJAMwNluFu-n5URgTFIr76cA6IPPBP3
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450034.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1ZNXAfZudcF4WAY1Y3Jlz2ULQELmJG0ka
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450035.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1CEa-xk1tU7BzpzDUFSGDEwiMOBlte0Rm
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Film/88450036.JPG: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1gI_K7nPxn2aXp9IYzv3sgRGfQG7RiqbW
-
-but Gdown can't. Please check connections and permissions.
-Failed to download the following files:
-- Film/84270031.JPG
-- Film/84270032.JPG
-- Film/84270033.JPG
-- Film/84270034.JPG
-- Film/84270035.JPG
-- Film/84270036.JPG
-- Film/84270037.JPG
-- Film/84270038.JPG
-- Film/88400001.JPG
-- Film/88400002.JPG
-- Film/88400003.JPG
-- Film/88400004.JPG
-- Film/88400005.JPG
-- Film/88400006.JPG
-- Film/88400007.JPG
-- Film/88400008.JPG
-- Film/88400009.JPG
-- Film/88400010.JPG
-- Film/88400011.JPG
-- Film/88400012.JPG
-- Film/88400013.JPG
-- Film/88400014.JPG
-- Film/88400015.JPG
-- Film/88400016.JPG
-- Film/88400017.JPG
-- Film/88400018.JPG
-- Film/88400019.JPG
-- Film/88400020.JPG
-- Film/88400021.JPG
-- Film/88400022.JPG
-- Film/88400023.JPG
-- Film/88400024.JPG
-- Film/88400025.JPG
-- Film/88400026.JPG
-- Film/88400027.JPG
-- Film/88400028.JPG
-- Film/88400029.JPG
-- Film/88400030.JPG
-- Film/88400031.JPG
-- Film/88400032.JPG
-- Film/88400033.JPG
-- Film/88400034.JPG
-- Film/88400035.JPG
-- Film/88450001.JPG
-- Film/88450002.JPG
-- Film/88450003.JPG
-- Film/88450004.JPG
-- Film/88450005.JPG
-- Film/88450006.JPG
-- Film/88450007.JPG
-- Film/88450008.JPG
-- Film/88450009.JPG
-- Film/88450010.JPG
-- Film/88450011.JPG
-- Film/88450012.JPG
-- Film/88450013.JPG
-- Film/88450014.JPG
-- Film/88450015.JPG
-- Film/88450016.JPG
-- Film/88450017.JPG
-- Film/88450018.JPG
-- Film/88450019.JPG
-- Film/88450020.JPG
-- Film/88450021.JPG
-- Film/88450022.JPG
-- Film/88450023.JPG
-- Film/88450024.JPG
-- Film/88450025.JPG
-- Film/88450026.JPG
-- Film/88450027.JPG
-- Film/88450028.JPG
-- Film/88450029.JPG
-- Film/88450030.JPG
-- Film/88450031.JPG
-- Film/88450032.JPG
-- Film/88450033.JPG
-- Film/88450034.JPG
-- Film/88450035.JPG
-- Film/88450036.JPG
-FAIL/TIMEOUT 1

@@ -1,1452 +1,0 @@
-warning: `--folder` is no longer required for folder URLs and will be removed in a future release
-Retrieving folder contents
-Retrieving folder 1IDB9XfAk9y3-sWFyEG0cZbIL41zEEymR fresh
-Processing file 1Ud6qS08qqikk_7QbGXsypFqXRCkvjWdi 20260407_0001.jpg
-Processing file 1BRfAEBzHQ0L4x_bff1VC79kWBvpVWhNO 20260407_0002.jpg
-Processing file 1tAyrhlY3FiSGGAJVlLnavMbEfs5r4W9W 20260407_0003.jpg
-Processing file 1Y0ZozRibOtJkVRIe7EflcUzCGeUACC9y 20260407_0004.jpg
-Processing file 137O0u-k0Tj9nNZKmQjjj0_nH61RRFUst 20260407_0005.jpg
-Processing file 1tUhLkG0NhxKnTXuYq76DWNk3EG_GsMEh 20260407_0006.jpg
-Processing file 12AUH31UZLvZRn7celvXFGvZkAt-YN4lj 20260407_0007.jpg
-Processing file 13DKKZ_R6VrWoeylGixFrrm_5aMQrqcrm 20260407_0008.jpg
-Processing file 1ZazMF0tUDEGKmxDUDMA7Wh7QuZczsGCh 20260407_0009.jpg
-Processing file 1wSqvEwjkdVg02MXTDBeSqsUAK2OF8e0P 20260407_0010.jpg
-Processing file 1Is_DBXSyafkfQymxSGZ8YvH34EzTNznV 20260407_0011.jpg
-Processing file 1H0nKtG6qoWPBle5K9oacEuEJnn636MsV 20260407_0012.jpg
-Processing file 1-OwOMyAyDU11rI5w_HYH08xkI0X9o-wk 20260407_0013.jpg
-Processing file 1WtFCRtGq2RFqU5NAH-X4kCUNDVA7Pfq_ 20260407_0014.jpg
-Processing file 1cuL1FeaGSf7qdNPEnhZsSj3aE3PcP-ZV 20260407_0015.jpg
-Processing file 10nVqvVQfvhKVrM132txFJ9EcLOXTI_5G 20260407_0016.jpg
-Processing file 1HpwvklkCoDDy91aUDfsXx4kMka9dH0IZ 20260407_0017.jpg
-Processing file 1d41ztO5LanjIGOd1RzJuwAyNP1Rd-_0_ 20260407_0018.jpg
-Processing file 1l41HAkwsqGtZIn9g9UjG_cce2E_GxRJG 20260407_0019.jpg
-Processing file 1lpcoPtJghXbYnIkFWul_RhMHAHSK09Tf 20260407_0020.jpg
-Processing file 1532Vgbe3fUbYAdcHu_BqegiF_UK5THCt 20260407_0021.jpg
-Processing file 1XuGtArn1CCpvOquUzBnFskCk2WX7hh7m 20260407_0022.jpg
-Processing file 1EztFsRKKQxPYhXgButPaNXbnglIUUBVr 20260407_0023.jpg
-Processing file 1j2l4N19YUZ7IsiyvCgete_V4I-ii-Yee 20260407_0024.jpg
-Processing file 1xE195HIt_dP6XVMj0XRHubB-s_66LII7 20260407_0025.jpg
-Processing file 10Cw-DBQLgp72H9NrDsx8Q5a3lQVCyggU 20260407_0026.jpg
-Processing file 1Di4v7lU8Kq_CodqR5yyZjzkMNMTIQYSp 20260407_0027.jpg
-Processing file 1tF12nJoquSSApPfH1JinNmRyGOFe53MS 20260407_0028.jpg
-Processing file 1Dn43XbzVMoTVIRlauM6O9GTqqj-8Z1ns 20260407_0029.jpg
-Processing file 1nzk6Gx8F__uUPrnbFljZmBg6uw74w0Ej 20260407_0030.jpg
-Processing file 1Lvd5FMa3oJhKYz0drPtYlSE9VbZ0hJ5Z 20260407_0031.jpg
-Processing file 15ti_E1pfLR0ykWSIbLebSsVW21K9lbSB 20260407_0032.jpg
-Processing file 1kPsmwwCg3R6QkKY1dcqUlQXEhpSzbXVj 20260407_0033.jpg
-Processing file 1FvjujxV1yOmG_ff2QTLRQt53x-KkERXd 20260407_0034.jpg
-Processing file 1QFG2cZ-FtTpjWbyBSitkh7_Ut_3ZyqrJ 20260407_0035.jpg
-Processing file 1fObqRLedDRZ2yMCKts8VsoIn7gJRDoUz 20260407_0036.jpg
-Processing file 12LKMCF68uKuIb1HRkmIkM_Ph_leK972D 20260407_0037.jpg
-Processing file 175WMXD5kqULyIkHAZUONzYd5lBqoEBkv 20260407_0038.jpg
-Processing file 1NQjkH0lwb6qD4rrlGkgeQFamOrIhbLxx 20260407_0039.jpg
-Processing file 1ETOFiwCSvC4r9GP5FElEPrHiHJonbHX7 20260407_0040.jpg
-Processing file 1DNU29vza1AtcROQOoFLlq5Rou2tffHhi 20260407_0041.jpg
-Processing file 1Qm2esgt4dUCdCYfwR3o5eB5pOpLz11QM 20260407_0042.jpg
-Processing file 1LLEpYKQkQuGza3jxO-Bgyy9oPaxKhuAP 20260407_0043.jpg
-Processing file 1BjS0nP_ynOjamkU4ibWdxfqU3BI5pa8o 20260407_0044.jpg
-Processing file 1YX2ZVx-KpfWiqBzbY5w0ovTeyhQrQXbt 20260407_0045.jpg
-Processing file 19c9V5yYSG15AWCMYUMNRASy5qlq6G1EK 20260407_0046.jpg
-Processing file 1r48paKKmAh_8hXyozP8Mi-xvivcP9cIW 20260407_0047.jpg
-Processing file 1h4du7b38CTTCOC4C9b2uwrxGiREgRHtV 20260407_0048.jpg
-Processing file 1Sjq7R_kQZjHQKClbKO0vmWCW8hR0E-Wg 20260407_0049.jpg
-Processing file 1One52voAdnDDmQwwIOCKZK5afjI5C3r5 20260407_0050.jpg
-Processing file 15tg1sQCrsOT6unING_c7hdnMbUhpuAaL 20260407_0051.jpg
-Processing file 1uHsokF-X-3ZtNrlh_CNzVCnfKsyRlumb 20260407_0052.jpg
-Processing file 1W5EZhC7kmU1GU_pCKbJKhABgXtee52OM 20260407_0053.jpg
-Processing file 1L9R_Ps0Nf1Ntqe4TPjbd2Xu4Qokfm-mV 20260407_0054.jpg
-Processing file 1M4uqMIsGywJHxSkD-n7kMG-3LnCUF67W 20260407_0055.jpg
-Processing file 1QLwRJfaLXYU4MsF4szOiDw-8bT9icpL4 20260407_0056.jpg
-Processing file 1ufAfeEdRVfUGduXNfpmgr8mXVYtSDVdC 20260407_0057.jpg
-Processing file 1FTaCzOR6puy1PISkPSlQKxUa-oHz54Qv 20260407_0058.jpg
-Processing file 1jFxQmM-Ys6H7FW_FcGIb545kI30WVMxT 20260407_0059.jpg
-Processing file 1Rl8xK-ov_-dP4kdoM57GISkD7siMYyxi 20260407_0060.jpg
-Processing file 1HASPde1LuLjx3ASDP64GgSZbZYCIYoF1 20260407_0061.jpg
-Processing file 1aF0f0PBJ58QFnVe2qMfEoR6HMU1AcnDQ 20260407_0062.jpg
-Processing file 1TBhpF73CpGA5agFIQfnoVY5UQac_QG5P 20260407_0063.jpg
-Processing file 1M17meeG1p0Qhg8Mtw9P2JfBwEzR1Wk2Z 20260407_0064.jpg
-Processing file 1-YtTPPHDlnQV_7VGbXeyl4_LxsWtVsxt 20260407_0065.jpg
-Processing file 1PoPZYJTZaTUKf3nDkU-wpdIyO8r883ea 20260407_0066.jpg
-Processing file 1OfGBcoIIUib6ks3dE08CcLpCdDS8lG2W 20260407_0067.jpg
-Processing file 1X6aorKE5TNcnY1w5PKCPWQ1cV0mKj1aw 20260407_0068.jpg
-Processing file 17kOnzqpKombvNsD63EfcogRa5LGsMKUe 20260407_0069.jpg
-Processing file 1iM3g9AQMYIH_G6kHaJrOlSjTFKzk7qa5 20260407_0070.jpg
-Processing file 1g-JPjm-0x36HIzWLOibkWbc3eJHxDG-i 20260407_0071.jpg
-Processing file 1NPB8ynQksMA5hPmgrro1E4QTohIi77WN 20260407_0072.jpg
-Processing file 1udKm3YdptfgaViLC6KinrdwCSo0IwYxp 20260407_0073.jpg
-Processing file 1UmetLXRNo63rb3i-ZCL7Ka19lNZi5OYx 20260407_0074.jpg
-Processing file 16c753PbMWx5TZ5NM2Y9Zjfwt1wzevqBk 20260407_0075.jpg
-Processing file 1-ymX91vOVxUDz2379JGUj01FKrNTcMUB 20260407_0076.jpg
-Processing file 1tGb7H_yBU6q8ZP8-ucDJplQoujXVVo5e 20260407_0077.jpg
-Processing file 1FC33HRKvYJr334_wOeSyvuIRGI55ZOXr 20260407_0079.jpg
-Processing file 1BwfA0gvfJ8MJbeu7f5as1SVSlU9lWJ_X 20260407_0080.jpg
-Processing file 1-v8F4cxZAnBitMg6T5W1krkMKR9MjBsi 20260407_0081.jpg
-Processing file 1XGyGlLLU_AJdsnX2SquR3duBsDbM9lc7 20260407_0082.jpg
-Processing file 1gf9dS2FM1Z74AD8Q8x4O80LrE5JwoWWV 20260407_0083.jpg
-Processing file 1GSRcvI7BeNYev4HRFr5jhM1rAejORo4m 20260407_0084.jpg
-Processing file 1Dmba4A5xyEvU3nSsnXev9YFGl2Z_FC5n 20260407_0085.jpg
-Processing file 1soJwxt_4cx1dnwkZ4FUgLMBHBa2JQ167 20260407_0086.jpg
-Processing file 1BRkbwB4y7N26JvJpXd-NoiJuJme-KR4P 20260407_0087.jpg
-Processing file 1Ss6028D07SAQ-tX8Px70aPgBkfd-VEq6 20260407_0088.jpg
-Processing file 1xGM-r6grwNlxa6HTcrO0g_mdNRLlZix2 20260407_0089.jpg
-Processing file 16zznAor1M459JsXm5iWOYmUpqp_pHDNp 20260407_0090.jpg
-Processing file 1VyFlFRYjqLyFU0m6l2f5w7qKcUiQCyqy 20260407_0091.jpg
-Processing file 1NU-R252P85LnYCRW4fOTeTTU3_-4QiEh 20260407_0092.jpg
-Processing file 1zVf-MmwzZXo8OimG4A_478xdiVaKNGW6 20260407_0093.jpg
-Processing file 1Vb--l-xPg-LlvKi3KNrzU8rLfiOTQrGD 20260407_0094.jpg
-Processing file 1nZjN-qnJ6B_hKWkfHlF6zBDcJ8Xqgn-4 20260407_0095.jpg
-Processing file 13jKU-0Zy_-hg5q6j4LtcCynHFFlImMjw 20260407_0096.jpg
-Processing file 1eF-2L1JDsH9359GmdD3aYj9HudiucCwN 20260407_0097.jpg
-Processing file 10YA37FwQAIx5O_ZwmlCnMcqKZRdZRZh1 20260407_0098.jpg
-Processing file 1DgQ8kr2ytA_yZiErk58YuqGNdz90kjdb 20260407_0099.jpg
-Processing file 1i_XHzYrBx8vP7kMPJ2cBCBybjmZesucL 20260407_0100.jpg
-Processing file 1O_qnDnuau_-7G91-WzhQG4Ky0nG5tsIW 20260407_0101.jpg
-Processing file 1OtDZoe3Xn3wrC80qPTsGmECS5fbPBEMo 20260407_0102.jpg
-Processing file 1yrNIWAB3_tEgRrTVoLV810yhEq3irrPP 20260407_0103.jpg
-Processing file 1OB4smqzc2VdnP-t9o9rVVVGQ7Oe8aoQr 20260407_0104.jpg
-Processing file 1GOpgN8lfxLTJMC0Jd-n-ZpMskqsh8a0l 20260407_0105.jpg
-Processing file 17WBaToVVpabZPbQYjQ_2S_666YjKE7o0 20260407_0106.jpg
-Processing file 1Z0m-LV9u3ScqSQ81pPEYHAfIW8l6kOPw 20260407_0107.jpg
-Processing file 1RSawUex3gThMzKprREmNW9cea9IqZPWQ 20260407_0108.jpg
-Processing file 1xR0rtHvq24ibEverMerRnFll32hNeWJS 20260407_0109.jpg
-Processing file 1gT1U7N59gl1B5bU2OguVL27rEtDgf0HG 20260407_0110.jpg
-Processing file 1s9mAaoHoo1H_MnqUUEPEKLEzCxRsYjpx 20260407_0111.jpg
-Processing file 1CPqifTsPgaOFQtTcd9MNYAVbCPboOr4f 20260407_0112.jpg
-Processing file 18I5u1rYWSkpO7y7h9GwhjY5EYnk5SlOd 20260407_0113.jpg
-Processing file 14rTce_cOACC-PoTuDrgig-qe_xdFrPVU 20260407_0114.jpg
-Processing file 1lN8Pf1Bj_QUdt19kq-iUXW9LiZjEmVie 20260407_0115.jpg
-Processing file 1t1kAOwmRQdxqvJmKJF4Drcrvvhq3jtqD 20260407_0116.jpg
-Processing file 1qC4cAxOMgzHW9BUJfI3zcvT1qDCwCFbM 20260407_0117.jpg
-Processing file 14WlO1fynhtnNYN9NyMxZ01nPtRd51sjQ 20260407_0118.jpg
-Processing file 18MMHjRtXUPNd2Fr62Jce3u6w009ijYu4 20260407_0119.jpg
-Processing file 1wDZo_etTuDmvyjkRb9CztgP8HGIKYhjX 20260407_0120.jpg
-Processing file 1HS9ZuZEnsTc8PFjXvucPSmyTf64iBX6YRetrieving folder contents completed
-Building directory structure
-Building directory structure completed
-Downloading...
-From: https://drive.google.com/uc?id=1Ud6qS08qqikk_7QbGXsypFqXRCkvjWdi
-To: /tmp/d/Food/fresh/20260407_0001.jpg
- 20260407_0121.jpg
-Processing file 1St_-dTeFkthKMqnhDIz8azLVdsf1C8jE 20260407_0122.jpg
-Processing file 16-tzXxevkysXz1PZf0x7z_kWIGIsx4wX 20260407_0123.jpg
-Processing file 1CLDixI8LLfyT_uUJq9Imy5dDPMqCnbNw 20260407_0124.jpg
-Processing file 1fhPRQZ27CTqk0F6Ka2yyFr5VY4tlRomU 20260407_0125.jpg
-Processing file 1yqvc1wwmxOjlkIHfhvz4W6OGM7rvI74n starts
-Processing file 1T5ceRsofazLHbOziE42kAXLtxcN354Xe starts
-Processing file 1buEY5GpmSNzjMjFSYvSQcZxrNdt_P-8b бананы фостер.jpg
-Processing file 1YOhdS2l1KP3mIugDL-RKDw5xzk0kCwuG батат фри.jpg
-Processing file 1ZcICewD2GIMCwMR8m-fRPzenL-aiYlH_ батат фри.jpg
-Processing file 1dzVtMobMwG7qMl_bMHQbL3hhCfJTONfG буррата с томатами
-Processing file 1a8rZtUj6KtXsEJnjZvuQ8oriNDUffvfG буррата с томатами
-Processing file 1wFVqP6wfIp7znoKBoFQy_YtTRnPSYE9n запеченные черри с фетой.jpg
-Processing file 1Gca88-2yYCLXk1CnaarZ9Y-pGdHvKnMt запеченные черри с фетой.jpg
-Processing file 1zR-eU61Pp0DRmP92p4pjhvuRGsjytKQU картофель фри.jpg
-Processing file 13NUYV5IEkpZ_Syw2YBpzFzHRqtWiy8i1 картофель фри.jpg
-Processing file 1Bb2WmQ3cnCXN6gRlmQkMsA9vFoQcZ8Bd креветки сальса копченая страчателла
-Processing file 1-adTNfJ1lZn4wIvXFFkK7e3MVeVz2ZMk креветочные шарики.jpg
-Processing file 1uHzHHfFXnhnK822zOYhGdfwrtU7QzC9u перец рамиро.jpg
-Processing file 1IcjgxxyBlO3I9Y1O6inMJDb4UD-CVwYA перец рамиро.jpg
-Processing file 15rltj0_TyQIpmDXDT72IM3Juz-a44DKb салат Табуле
-Processing file 15xXpM2HfOb_AUgvxqmwfux6_CTYILteF салат Табуле
-Processing file 1lzQIwkQ5bIt8j_NvSnHTqeSy6A27lqxE салат Хориатики
-Processing file 1lahMEyNaaH667uOV2DTia6nH1K-oswUS севиче из гребешка.jpg
-Processing file 1864ujK2Ge6C0sflYePOwWR3r_zCrvTPI севиче из гребешка.jpg
-Processing file 1cD4O8H8N2hOP3dIamdueArW0zFaZfat7 сырный мусс с жженым лимоном.jpg
-Processing file 1IWE6O0Dn_SX6fqDAUx_8TBsZgKRGJx2r тартар блючиз
-Processing file 1itKMYTH8iFqBfrZcIp57KCM4LFRPtha1 тартар из говядины.jpg
-Processing file 1-ETQvjKha4DPQQu0HstOTPKiQpmfi7rL тартар из говядины.jpg
-Processing file 1SpB92d0p-m_4LtVC1edn2eSabDIJQNAZ томатный суп с гриль-чизом.jpg
-Processing file 1eY2ZtXi9yoSNbSmBblmKd81hqFffhN56 фаршированные яйца.jpg
-Processing file 1tuV3olGdi1zW5iB_BIhhcgnFi1ENNYmy фаршированные яйца.jpg
-Processing file 1yd1olDta0Fg6WzBHU50e7LwGZLiaWv7E фаршированные яйца.jpg
-Processing file 10iV0tTLOMuFjbvRI_dlyce6L46BO-hD0 фокачча с прошутто котто..jpg
-Processing file 1dZoOcKMGwi0CFrEVVAt5La-IyOsubmSl фокачча с прошутто котто.jpg
-Processing file 1PFJE1bfRg-JI1B_CiN-Kky_tpsZJca72 чикен сэндвич.jpg
-Processing file 1mBLt4xUNnJ77uoh_XJN-wND5YWRqJFBG чипсы с красной икрой.jpg
-  0%|          | 0.00/11.8M [00:00<?, ?B/s]  4%|▍         | 524k/11.8M [00:00<00:02, 4.38MB/s] 31%|███       | 3.67M/11.8M [00:00<00:00, 18.3MB/s]100%|██████████| 11.8M/11.8M [00:00<00:00, 39.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1BRfAEBzHQ0L4x_bff1VC79kWBvpVWhNO
-To: /tmp/d/Food/fresh/20260407_0002.jpg
-  0%|          | 0.00/12.8M [00:00<?, ?B/s]  4%|▍         | 524k/12.8M [00:00<00:02, 4.62MB/s] 33%|███▎      | 4.19M/12.8M [00:00<00:00, 22.1MB/s]100%|██████████| 12.8M/12.8M [00:00<00:00, 44.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1tAyrhlY3FiSGGAJVlLnavMbEfs5r4W9W
-To: /tmp/d/Food/fresh/20260407_0003.jpg
-  0%|          | 0.00/14.4M [00:00<?, ?B/s] 33%|███▎      | 4.72M/14.4M [00:00<00:00, 20.8MB/s]100%|██████████| 14.4M/14.4M [00:00<00:00, 47.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Y0ZozRibOtJkVRIe7EflcUzCGeUACC9y
-To: /tmp/d/Food/fresh/20260407_0004.jpg
-  0%|          | 0.00/10.9M [00:00<?, ?B/s]  5%|▍         | 524k/10.9M [00:00<00:02, 4.55MB/s] 34%|███▎      | 3.67M/10.9M [00:00<00:00, 19.2MB/s] 96%|█████████▌| 10.5M/10.9M [00:00<00:00, 40.7MB/s]100%|██████████| 10.9M/10.9M [00:00<00:00, 34.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=137O0u-k0Tj9nNZKmQjjj0_nH61RRFUst
-To: /tmp/d/Food/fresh/20260407_0005.jpg
-  0%|          | 0.00/10.1M [00:00<?, ?B/s] 47%|████▋     | 4.72M/10.1M [00:00<00:00, 24.0MB/s]100%|██████████| 10.1M/10.1M [00:00<00:00, 38.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1tUhLkG0NhxKnTXuYq76DWNk3EG_GsMEh
-To: /tmp/d/Food/fresh/20260407_0006.jpg
-  0%|          | 0.00/11.6M [00:00<?, ?B/s] 41%|████      | 4.72M/11.6M [00:00<00:00, 6.99MB/s]100%|██████████| 11.6M/11.6M [00:00<00:00, 16.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=12AUH31UZLvZRn7celvXFGvZkAt-YN4lj
-To: /tmp/d/Food/fresh/20260407_0007.jpg
-  0%|          | 0.00/10.8M [00:00<?, ?B/s] 24%|██▍       | 2.62M/10.8M [00:00<00:00, 17.0MB/s] 63%|██████▎   | 6.82M/10.8M [00:00<00:00, 18.9MB/s]100%|██████████| 10.8M/10.8M [00:00<00:00, 27.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=13DKKZ_R6VrWoeylGixFrrm_5aMQrqcrm
-To: /tmp/d/Food/fresh/20260407_0008.jpg
-  0%|          | 0.00/10.9M [00:00<?, ?B/s] 43%|████▎     | 4.72M/10.9M [00:00<00:00, 14.1MB/s]100%|██████████| 10.9M/10.9M [00:00<00:00, 30.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1ZazMF0tUDEGKmxDUDMA7Wh7QuZczsGCh
-To: /tmp/d/Food/fresh/20260407_0009.jpg
-  0%|          | 0.00/11.3M [00:00<?, ?B/s] 23%|██▎       | 2.62M/11.3M [00:00<00:00, 25.1MB/s]100%|██████████| 11.3M/11.3M [00:00<00:00, 74.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1wSqvEwjkdVg02MXTDBeSqsUAK2OF8e0P
-To: /tmp/d/Food/fresh/20260407_0010.jpg
-  0%|          | 0.00/12.0M [00:00<?, ?B/s] 57%|█████▋    | 6.82M/12.0M [00:00<00:00, 67.0MB/s]100%|██████████| 12.0M/12.0M [00:00<00:00, 90.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Is_DBXSyafkfQymxSGZ8YvH34EzTNznV
-To: /tmp/d/Food/fresh/20260407_0011.jpg
-  0%|          | 0.00/10.6M [00:00<?, ?B/s]  5%|▍         | 524k/10.6M [00:00<00:02, 4.23MB/s] 35%|███▍      | 3.67M/10.6M [00:00<00:00, 18.0MB/s]100%|██████████| 10.6M/10.6M [00:00<00:00, 35.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1H0nKtG6qoWPBle5K9oacEuEJnn636MsV
-To: /tmp/d/Food/fresh/20260407_0012.jpg
-  0%|          | 0.00/12.5M [00:00<?, ?B/s] 42%|████▏     | 5.24M/12.5M [00:00<00:00, 52.2MB/s]100%|██████████| 12.5M/12.5M [00:00<00:00, 80.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1-OwOMyAyDU11rI5w_HYH08xkI0X9o-wk
-To: /tmp/d/Food/fresh/20260407_0013.jpg
-  0%|          | 0.00/10.5M [00:00<?, ?B/s] 15%|█▍        | 1.57M/10.5M [00:00<00:00, 14.8MB/s] 65%|██████▍   | 6.82M/10.5M [00:00<00:00, 26.8MB/s]100%|██████████| 10.5M/10.5M [00:00<00:00, 36.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1WtFCRtGq2RFqU5NAH-X4kCUNDVA7Pfq_
-To: /tmp/d/Food/fresh/20260407_0014.jpg
-  0%|          | 0.00/10.7M [00:00<?, ?B/s] 44%|████▍     | 4.72M/10.7M [00:00<00:00, 22.9MB/s]100%|██████████| 10.7M/10.7M [00:00<00:00, 37.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1cuL1FeaGSf7qdNPEnhZsSj3aE3PcP-ZV
-To: /tmp/d/Food/fresh/20260407_0015.jpg
-  0%|          | 0.00/11.9M [00:00<?, ?B/s]  4%|▍         | 524k/11.9M [00:00<00:02, 4.24MB/s] 31%|███       | 3.67M/11.9M [00:00<00:00, 18.1MB/s]100%|██████████| 11.9M/11.9M [00:00<00:00, 39.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=10nVqvVQfvhKVrM132txFJ9EcLOXTI_5G
-To: /tmp/d/Food/fresh/20260407_0016.jpg
-  0%|          | 0.00/12.9M [00:00<?, ?B/s] 69%|██████▉   | 8.91M/12.9M [00:00<00:00, 83.8MB/s]100%|██████████| 12.9M/12.9M [00:00<00:00, 98.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1HpwvklkCoDDy91aUDfsXx4kMka9dH0IZ
-To: /tmp/d/Food/fresh/20260407_0017.jpg
-  0%|          | 0.00/11.2M [00:00<?, ?B/s] 42%|████▏     | 4.72M/11.2M [00:00<00:00, 22.8MB/s]100%|██████████| 11.2M/11.2M [00:00<00:00, 41.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1d41ztO5LanjIGOd1RzJuwAyNP1Rd-_0_
-To: /tmp/d/Food/fresh/20260407_0018.jpg
-  0%|          | 0.00/9.79M [00:00<?, ?B/s] 16%|█▌        | 1.57M/9.79M [00:00<00:00, 15.0MB/s] 48%|████▊     | 4.72M/9.79M [00:00<00:00, 23.2MB/s]100%|██████████| 9.79M/9.79M [00:00<00:00, 35.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1l41HAkwsqGtZIn9g9UjG_cce2E_GxRJG
-To: /tmp/d/Food/fresh/20260407_0019.jpg
-  0%|          | 0.00/11.7M [00:00<?, ?B/s] 36%|███▌      | 4.19M/11.7M [00:00<00:00, 40.1MB/s]100%|██████████| 11.7M/11.7M [00:00<00:00, 76.7MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1lpcoPtJghXbYnIkFWul_RhMHAHSK09Tf
-To: /tmp/d/Food/fresh/20260407_0020.jpg
-  0%|          | 0.00/12.2M [00:00<?, ?B/s]  4%|▍         | 524k/12.2M [00:00<00:02, 4.31MB/s] 30%|███       | 3.67M/12.2M [00:00<00:00, 18.2MB/s]100%|██████████| 12.2M/12.2M [00:00<00:00, 40.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1532Vgbe3fUbYAdcHu_BqegiF_UK5THCt
-To: /tmp/d/Food/fresh/20260407_0021.jpg
-  0%|          | 0.00/10.9M [00:00<?, ?B/s]  5%|▍         | 524k/10.9M [00:00<00:02, 4.74MB/s] 34%|███▍      | 3.67M/10.9M [00:00<00:00, 19.3MB/s]100%|██████████| 10.9M/10.9M [00:00<00:00, 39.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1XuGtArn1CCpvOquUzBnFskCk2WX7hh7m
-To: /tmp/d/Food/fresh/20260407_0022.jpg
-  0%|          | 0.00/10.4M [00:00<?, ?B/s]  5%|▌         | 524k/10.4M [00:00<00:02, 4.33MB/s] 30%|███       | 3.15M/10.4M [00:00<00:00, 16.0MB/s]100%|██████████| 10.4M/10.4M [00:00<00:00, 35.7MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1EztFsRKKQxPYhXgButPaNXbnglIUUBVr
-To: /tmp/d/Food/fresh/20260407_0023.jpg
-  0%|          | 0.00/10.9M [00:00<?, ?B/s]  5%|▍         | 524k/10.9M [00:00<00:02, 4.65MB/s] 34%|███▎      | 3.67M/10.9M [00:00<00:00, 17.7MB/s]100%|██████████| 10.9M/10.9M [00:00<00:00, 37.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1j2l4N19YUZ7IsiyvCgete_V4I-ii-Yee
-To: /tmp/d/Food/fresh/20260407_0024.jpg
-  0%|          | 0.00/9.80M [00:00<?, ?B/s]  5%|▌         | 524k/9.80M [00:00<00:02, 4.20MB/s] 37%|███▋      | 3.67M/9.80M [00:00<00:00, 18.1MB/s]100%|██████████| 9.80M/9.80M [00:00<00:00, 33.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1xE195HIt_dP6XVMj0XRHubB-s_66LII7
-To: /tmp/d/Food/fresh/20260407_0025.jpg
-  0%|          | 0.00/9.39M [00:00<?, ?B/s]  6%|▌         | 524k/9.39M [00:00<00:02, 4.29MB/s] 39%|███▉      | 3.67M/9.39M [00:00<00:00, 18.5MB/s]100%|██████████| 9.39M/9.39M [00:00<00:00, 32.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=10Cw-DBQLgp72H9NrDsx8Q5a3lQVCyggU
-To: /tmp/d/Food/fresh/20260407_0026.jpg
-  0%|          | 0.00/9.73M [00:00<?, ?B/s] 32%|███▏      | 3.15M/9.73M [00:00<00:00, 29.8MB/s] 70%|███████   | 6.82M/9.73M [00:00<00:00, 29.9MB/s]100%|██████████| 9.73M/9.73M [00:00<00:00, 35.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Di4v7lU8Kq_CodqR5yyZjzkMNMTIQYSp
-To: /tmp/d/Food/fresh/20260407_0027.jpg
-  0%|          | 0.00/9.80M [00:00<?, ?B/s]  5%|▌         | 524k/9.80M [00:00<00:01, 4.74MB/s] 37%|███▋      | 3.67M/9.80M [00:00<00:00, 19.8MB/s]100%|██████████| 9.80M/9.80M [00:00<00:00, 35.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1tF12nJoquSSApPfH1JinNmRyGOFe53MS
-To: /tmp/d/Food/fresh/20260407_0028.jpg
-  0%|          | 0.00/9.75M [00:00<?, ?B/s] 48%|████▊     | 4.72M/9.75M [00:00<00:00, 26.4MB/s]100%|██████████| 9.75M/9.75M [00:00<00:00, 39.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Dn43XbzVMoTVIRlauM6O9GTqqj-8Z1ns
-To: /tmp/d/Food/fresh/20260407_0029.jpg
-  0%|          | 0.00/9.79M [00:00<?, ?B/s]  5%|▌         | 524k/9.79M [00:00<00:02, 4.25MB/s] 38%|███▊      | 3.67M/9.79M [00:00<00:00, 18.2MB/s]100%|██████████| 9.79M/9.79M [00:00<00:00, 29.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1nzk6Gx8F__uUPrnbFljZmBg6uw74w0Ej
-To: /tmp/d/Food/fresh/20260407_0030.jpg
-  0%|          | 0.00/8.88M [00:00<?, ?B/s]  6%|▌         | 524k/8.88M [00:00<00:01, 4.22MB/s] 41%|████▏     | 3.67M/8.88M [00:00<00:00, 18.0MB/s]100%|██████████| 8.88M/8.88M [00:00<00:00, 30.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Lvd5FMa3oJhKYz0drPtYlSE9VbZ0hJ5Z
-To: /tmp/d/Food/fresh/20260407_0031.jpg
-  0%|          | 0.00/10.0M [00:00<?, ?B/s] 47%|████▋     | 4.72M/10.0M [00:00<00:00, 11.6MB/s]100%|██████████| 10.0M/10.0M [00:00<00:00, 23.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=15ti_E1pfLR0ykWSIbLebSsVW21K9lbSB
-To: /tmp/d/Food/fresh/20260407_0032.jpg
-  0%|          | 0.00/8.88M [00:00<?, ?B/s] 53%|█████▎    | 4.72M/8.88M [00:00<00:00, 26.0MB/s]100%|██████████| 8.88M/8.88M [00:00<00:00, 40.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1kPsmwwCg3R6QkKY1dcqUlQXEhpSzbXVj
-To: /tmp/d/Food/fresh/20260407_0033.jpg
-  0%|          | 0.00/10.5M [00:00<?, ?B/s] 45%|████▌     | 4.72M/10.5M [00:00<00:00, 20.1MB/s]100%|██████████| 10.5M/10.5M [00:00<00:00, 37.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1FvjujxV1yOmG_ff2QTLRQt53x-KkERXd
-To: /tmp/d/Food/fresh/20260407_0034.jpg
-  0%|          | 0.00/10.7M [00:00<?, ?B/s] 44%|████▍     | 4.72M/10.7M [00:00<00:00, 22.8MB/s]100%|██████████| 10.7M/10.7M [00:00<00:00, 44.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1QFG2cZ-FtTpjWbyBSitkh7_Ut_3ZyqrJ
-To: /tmp/d/Food/fresh/20260407_0035.jpg
-  0%|          | 0.00/12.3M [00:00<?, ?B/s] 55%|█████▌    | 6.82M/12.3M [00:00<00:00, 67.9MB/s]100%|██████████| 12.3M/12.3M [00:00<00:00, 90.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1fObqRLedDRZ2yMCKts8VsoIn7gJRDoUz
-To: /tmp/d/Food/fresh/20260407_0036.jpg
-  0%|          | 0.00/12.5M [00:00<?, ?B/s]  4%|▍         | 524k/12.5M [00:00<00:02, 4.25MB/s] 29%|██▉       | 3.67M/12.5M [00:00<00:00, 18.2MB/s]100%|██████████| 12.5M/12.5M [00:00<00:00, 41.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=12LKMCF68uKuIb1HRkmIkM_Ph_leK972D
-To: /tmp/d/Food/fresh/20260407_0037.jpg
-  0%|          | 0.00/13.7M [00:00<?, ?B/s] 61%|██████    | 8.39M/13.7M [00:00<00:00, 77.8MB/s]100%|██████████| 13.7M/13.7M [00:00<00:00, 99.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=175WMXD5kqULyIkHAZUONzYd5lBqoEBkv
-To: /tmp/d/Food/fresh/20260407_0038.jpg
-  0%|          | 0.00/13.5M [00:00<?, ?B/s] 12%|█▏        | 1.57M/13.5M [00:00<00:00, 14.2MB/s] 85%|████████▌ | 11.5M/13.5M [00:00<00:00, 62.1MB/s]100%|██████████| 13.5M/13.5M [00:00<00:00, 56.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1NQjkH0lwb6qD4rrlGkgeQFamOrIhbLxx
-To: /tmp/d/Food/fresh/20260407_0039.jpg
-  0%|          | 0.00/13.8M [00:00<?, ?B/s] 34%|███▍      | 4.72M/13.8M [00:00<00:00, 21.9MB/s] 65%|██████▍   | 8.91M/13.8M [00:00<00:00, 11.4MB/s]100%|██████████| 13.8M/13.8M [00:00<00:00, 17.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1ETOFiwCSvC4r9GP5FElEPrHiHJonbHX7
-To: /tmp/d/Food/fresh/20260407_0040.jpg
-  0%|          | 0.00/12.9M [00:00<?, ?B/s] 37%|███▋      | 4.72M/12.9M [00:00<00:00, 19.3MB/s] 77%|███████▋  | 9.96M/12.9M [00:00<00:00, 31.4MB/s]100%|██████████| 12.9M/12.9M [00:00<00:00, 36.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1DNU29vza1AtcROQOoFLlq5Rou2tffHhi
-To: /tmp/d/Food/fresh/20260407_0041.jpg
-  0%|          | 0.00/12.5M [00:00<?, ?B/s] 38%|███▊      | 4.72M/12.5M [00:00<00:00, 21.9MB/s]100%|██████████| 12.5M/12.5M [00:00<00:00, 43.7MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Qm2esgt4dUCdCYfwR3o5eB5pOpLz11QM
-To: /tmp/d/Food/fresh/20260407_0042.jpg
-  0%|          | 0.00/13.1M [00:00<?, ?B/s] 12%|█▏        | 1.57M/13.1M [00:00<00:00, 15.7MB/s] 36%|███▌      | 4.72M/13.1M [00:00<00:00, 24.4MB/s]100%|██████████| 13.1M/13.1M [00:00<00:00, 43.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1LLEpYKQkQuGza3jxO-Bgyy9oPaxKhuAP
-To: /tmp/d/Food/fresh/20260407_0043.jpg
-  0%|          | 0.00/12.7M [00:00<?, ?B/s] 37%|███▋      | 4.72M/12.7M [00:00<00:00, 42.2MB/s]100%|██████████| 12.7M/12.7M [00:00<00:00, 79.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1BjS0nP_ynOjamkU4ibWdxfqU3BI5pa8o
-To: /tmp/d/Food/fresh/20260407_0044.jpg
-  0%|          | 0.00/12.9M [00:00<?, ?B/s] 37%|███▋      | 4.72M/12.9M [00:00<00:00, 25.9MB/s]100%|██████████| 12.9M/12.9M [00:00<00:00, 51.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1YX2ZVx-KpfWiqBzbY5w0ovTeyhQrQXbt
-To: /tmp/d/Food/fresh/20260407_0045.jpg
-  0%|          | 0.00/12.3M [00:00<?, ?B/s] 38%|███▊      | 4.72M/12.3M [00:00<00:00, 23.1MB/s]100%|██████████| 12.3M/12.3M [00:00<00:00, 44.9MB/s]100%|██████████| 12.3M/12.3M [00:00<00:00, 40.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=19c9V5yYSG15AWCMYUMNRASy5qlq6G1EK
-To: /tmp/d/Food/fresh/20260407_0046.jpg
-  0%|          | 0.00/12.8M [00:00<?, ?B/s] 37%|███▋      | 4.72M/12.8M [00:00<00:00, 25.0MB/s] 65%|██████▌   | 8.39M/12.8M [00:00<00:00, 30.0MB/s]100%|██████████| 12.8M/12.8M [00:00<00:00, 41.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1r48paKKmAh_8hXyozP8Mi-xvivcP9cIW
-To: /tmp/d/Food/fresh/20260407_0047.jpg
-  0%|          | 0.00/12.4M [00:00<?, ?B/s]  4%|▍         | 524k/12.4M [00:00<00:02, 4.23MB/s] 30%|██▉       | 3.67M/12.4M [00:00<00:00, 18.1MB/s]100%|██████████| 12.4M/12.4M [00:00<00:00, 41.3MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1h4du7b38CTTCOC4C9b2uwrxGiREgRHtV
-To: /tmp/d/Food/fresh/20260407_0048.jpg
-  0%|          | 0.00/12.7M [00:00<?, ?B/s] 37%|███▋      | 4.72M/12.7M [00:00<00:00, 21.3MB/s]100%|██████████| 12.7M/12.7M [00:00<00:00, 42.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Sjq7R_kQZjHQKClbKO0vmWCW8hR0E-Wg
-To: /tmp/d/Food/fresh/20260407_0049.jpg
-  0%|          | 0.00/11.8M [00:00<?, ?B/s] 13%|█▎        | 1.57M/11.8M [00:00<00:00, 14.7MB/s] 40%|███▉      | 4.72M/11.8M [00:00<00:00, 15.9MB/s] 97%|█████████▋| 11.5M/11.8M [00:00<00:00, 34.0MB/s]100%|██████████| 11.8M/11.8M [00:00<00:00, 29.6MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1One52voAdnDDmQwwIOCKZK5afjI5C3r5
-To: /tmp/d/Food/fresh/20260407_0050.jpg
-  0%|          | 0.00/7.55M [00:00<?, ?B/s] 28%|██▊       | 2.10M/7.55M [00:00<00:00, 20.1MB/s]100%|██████████| 7.55M/7.55M [00:00<00:00, 55.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=15tg1sQCrsOT6unING_c7hdnMbUhpuAaL
-To: /tmp/d/Food/fresh/20260407_0051.jpg
-  0%|          | 0.00/4.51M [00:00<?, ?B/s]100%|██████████| 4.51M/4.51M [00:00<00:00, 27.3MB/s]100%|██████████| 4.51M/4.51M [00:00<00:00, 27.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1uHsokF-X-3ZtNrlh_CNzVCnfKsyRlumb
-To: /tmp/d/Food/fresh/20260407_0052.jpg
-  0%|          | 0.00/5.88M [00:00<?, ?B/s] 45%|████▍     | 2.62M/5.88M [00:00<00:00, 25.8MB/s] 89%|████████▉ | 5.24M/5.88M [00:00<00:00, 22.0MB/s]100%|██████████| 5.88M/5.88M [00:00<00:00, 22.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1W5EZhC7kmU1GU_pCKbJKhABgXtee52OM
-To: /tmp/d/Food/fresh/20260407_0053.jpg
-  0%|          | 0.00/11.1M [00:00<?, ?B/s]  5%|▍         | 524k/11.1M [00:00<00:02, 4.76MB/s] 62%|██████▏   | 6.82M/11.1M [00:00<00:00, 28.6MB/s]100%|██████████| 11.1M/11.1M [00:00<00:00, 38.1MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1L9R_Ps0Nf1Ntqe4TPjbd2Xu4Qokfm-mV
-To: /tmp/d/Food/fresh/20260407_0054.jpg
-  0%|          | 0.00/8.57M [00:00<?, ?B/s]  6%|▌         | 524k/8.57M [00:00<00:01, 4.22MB/s] 43%|████▎     | 3.67M/8.57M [00:00<00:00, 18.0MB/s]100%|██████████| 8.57M/8.57M [00:00<00:00, 30.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1M4uqMIsGywJHxSkD-n7kMG-3LnCUF67W
-To: /tmp/d/Food/fresh/20260407_0055.jpg
-  0%|          | 0.00/9.88M [00:00<?, ?B/s]  5%|▌         | 524k/9.88M [00:00<00:02, 4.59MB/s] 42%|████▏     | 4.19M/9.88M [00:00<00:00, 21.7MB/s] 69%|██████▉   | 6.82M/9.88M [00:00<00:00, 23.3MB/s]100%|██████████| 9.88M/9.88M [00:00<00:00, 28.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1QLwRJfaLXYU4MsF4szOiDw-8bT9icpL4
-To: /tmp/d/Food/fresh/20260407_0056.jpg
-  0%|          | 0.00/7.29M [00:00<?, ?B/s]  7%|▋         | 524k/7.29M [00:00<00:01, 4.45MB/s] 50%|█████     | 3.67M/7.29M [00:00<00:00, 19.0MB/s]100%|██████████| 7.29M/7.29M [00:00<00:00, 28.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1ufAfeEdRVfUGduXNfpmgr8mXVYtSDVdC
-To: /tmp/d/Food/fresh/20260407_0057.jpg
-  0%|          | 0.00/9.46M [00:00<?, ?B/s] 50%|████▉     | 4.72M/9.46M [00:00<00:00, 21.2MB/s]100%|██████████| 9.46M/9.46M [00:00<00:00, 33.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1FTaCzOR6puy1PISkPSlQKxUa-oHz54Qv
-To: /tmp/d/Food/fresh/20260407_0058.jpg
-  0%|          | 0.00/7.49M [00:00<?, ?B/s]  7%|▋         | 524k/7.49M [00:00<00:01, 4.31MB/s] 49%|████▉     | 3.67M/7.49M [00:00<00:00, 18.3MB/s]100%|██████████| 7.49M/7.49M [00:00<00:00, 27.7MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1jFxQmM-Ys6H7FW_FcGIb545kI30WVMxT
-To: /tmp/d/Food/fresh/20260407_0059.jpg
-  0%|          | 0.00/7.93M [00:00<?, ?B/s]  7%|▋         | 524k/7.93M [00:00<00:01, 4.66MB/s] 53%|█████▎    | 4.19M/7.93M [00:00<00:00, 22.1MB/s]100%|██████████| 7.93M/7.93M [00:00<00:00, 31.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1Rl8xK-ov_-dP4kdoM57GISkD7siMYyxi
-To: /tmp/d/Food/fresh/20260407_0060.jpg
-  0%|          | 0.00/8.25M [00:00<?, ?B/s]  6%|▋         | 524k/8.25M [00:00<00:01, 4.50MB/s] 44%|████▍     | 3.67M/8.25M [00:00<00:00, 19.0MB/s]100%|██████████| 8.25M/8.25M [00:00<00:00, 31.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1HASPde1LuLjx3ASDP64GgSZbZYCIYoF1
-To: /tmp/d/Food/fresh/20260407_0061.jpg
-  0%|          | 0.00/8.57M [00:00<?, ?B/s]  6%|▌         | 524k/8.57M [00:00<00:01, 4.24MB/s] 43%|████▎     | 3.67M/8.57M [00:00<00:00, 17.9MB/s]100%|██████████| 8.57M/8.57M [00:00<00:00, 26.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1aF0f0PBJ58QFnVe2qMfEoR6HMU1AcnDQ
-To: /tmp/d/Food/fresh/20260407_0062.jpg
-  0%|          | 0.00/6.93M [00:00<?, ?B/s] 68%|██████▊   | 4.72M/6.93M [00:00<00:00, 19.4MB/s]100%|██████████| 6.93M/6.93M [00:00<00:00, 27.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1TBhpF73CpGA5agFIQfnoVY5UQac_QG5P
-To: /tmp/d/Food/fresh/20260407_0063.jpg
-  0%|          | 0.00/9.17M [00:00<?, ?B/s] 51%|█████▏    | 4.72M/9.17M [00:00<00:00, 26.2MB/s]100%|██████████| 9.17M/9.17M [00:00<00:00, 41.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1M17meeG1p0Qhg8Mtw9P2JfBwEzR1Wk2Z
-To: /tmp/d/Food/fresh/20260407_0064.jpg
-  0%|          | 0.00/8.51M [00:00<?, ?B/s]  6%|▌         | 524k/8.51M [00:00<00:01, 4.69MB/s] 43%|████▎     | 3.67M/8.51M [00:00<00:00, 19.3MB/s]100%|██████████| 8.51M/8.51M [00:00<00:00, 32.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1-YtTPPHDlnQV_7VGbXeyl4_LxsWtVsxt
-To: /tmp/d/Food/fresh/20260407_0065.jpg
-  0%|          | 0.00/7.82M [00:00<?, ?B/s]  7%|▋         | 524k/7.82M [00:00<00:01, 4.31MB/s] 47%|████▋     | 3.67M/7.82M [00:00<00:00, 18.4MB/s]100%|██████████| 7.82M/7.82M [00:00<00:00, 28.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1PoPZYJTZaTUKf3nDkU-wpdIyO8r883ea
-To: /tmp/d/Food/fresh/20260407_0066.jpg
-  0%|          | 0.00/10.0M [00:00<?, ?B/s]  5%|▌         | 524k/10.0M [00:00<00:02, 4.43MB/s] 37%|███▋      | 3.67M/10.0M [00:00<00:00, 18.8MB/s]100%|██████████| 10.0M/10.0M [00:00<00:00, 35.8MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1OfGBcoIIUib6ks3dE08CcLpCdDS8lG2W
-To: /tmp/d/Food/fresh/20260407_0067.jpg
-  0%|          | 0.00/9.78M [00:00<?, ?B/s]  5%|▌         | 524k/9.78M [00:00<00:02, 4.26MB/s] 38%|███▊      | 3.67M/9.78M [00:00<00:00, 18.0MB/s]100%|██████████| 9.78M/9.78M [00:00<00:00, 33.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1X6aorKE5TNcnY1w5PKCPWQ1cV0mKj1aw
-To: /tmp/d/Food/fresh/20260407_0068.jpg
-  0%|          | 0.00/8.79M [00:00<?, ?B/s]  6%|▌         | 524k/8.79M [00:00<00:01, 4.46MB/s] 42%|████▏     | 3.67M/8.79M [00:00<00:00, 18.4MB/s]100%|██████████| 8.79M/8.79M [00:00<00:00, 32.0MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=17kOnzqpKombvNsD63EfcogRa5LGsMKUe
-To: /tmp/d/Food/fresh/20260407_0069.jpg
-  0%|          | 0.00/10.5M [00:00<?, ?B/s] 45%|████▍     | 4.72M/10.5M [00:00<00:00, 38.0MB/s]100%|██████████| 10.5M/10.5M [00:00<00:00, 61.2MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1iM3g9AQMYIH_G6kHaJrOlSjTFKzk7qa5
-To: /tmp/d/Food/fresh/20260407_0070.jpg
-  0%|          | 0.00/9.81M [00:00<?, ?B/s]  5%|▌         | 524k/9.81M [00:00<00:02, 4.40MB/s] 37%|███▋      | 3.67M/9.81M [00:00<00:00, 18.6MB/s]100%|██████████| 9.81M/9.81M [00:00<00:00, 34.4MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1g-JPjm-0x36HIzWLOibkWbc3eJHxDG-i
-To: /tmp/d/Food/fresh/20260407_0071.jpg
-  0%|          | 0.00/9.83M [00:00<?, ?B/s]  5%|▌         | 524k/9.83M [00:00<00:01, 4.74MB/s] 37%|███▋      | 3.67M/9.83M [00:00<00:00, 19.7MB/s]100%|██████████| 9.83M/9.83M [00:00<00:00, 36.9MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1NPB8ynQksMA5hPmgrro1E4QTohIi77WN
-To: /tmp/d/Food/fresh/20260407_0072.jpg
-  0%|          | 0.00/9.08M [00:00<?, ?B/s] 75%|███████▌  | 6.82M/9.08M [00:00<00:00, 53.2MB/s]100%|██████████| 9.08M/9.08M [00:00<00:00, 63.5MB/s]
-Downloading...
-From: https://drive.google.com/uc?id=1udKm3YdptfgaViLC6KinrdwCSo0IwYxp
-To: /tmp/d/Food/fresh/20260407_0073.jpg
-  0%|          | 0.00/10.2M [00:00<?, ?B/s]  5%|▌         | 524k/10.2M [00:00<00:02, 4.32MB/s] 36%|███▌      | 3.67M/10.2M [00:00<00:00, 18.2MB/s]100%|██████████| 10.2M/10.2M [00:00<00:00, 35.0MB/s]
-Failed to download Food/fresh/20260407_0074.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1UmetLXRNo63rb3i-ZCL7Ka19lNZi5OYx
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0075.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=16c753PbMWx5TZ5NM2Y9Zjfwt1wzevqBk
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0076.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1-ymX91vOVxUDz2379JGUj01FKrNTcMUB
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0077.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1tGb7H_yBU6q8ZP8-ucDJplQoujXVVo5e
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0079.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1FC33HRKvYJr334_wOeSyvuIRGI55ZOXr
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0080.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1BwfA0gvfJ8MJbeu7f5as1SVSlU9lWJ_X
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0081.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1-v8F4cxZAnBitMg6T5W1krkMKR9MjBsi
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0082.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1XGyGlLLU_AJdsnX2SquR3duBsDbM9lc7
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0083.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1gf9dS2FM1Z74AD8Q8x4O80LrE5JwoWWV
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0084.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1GSRcvI7BeNYev4HRFr5jhM1rAejORo4m
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0085.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Dmba4A5xyEvU3nSsnXev9YFGl2Z_FC5n
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0086.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1soJwxt_4cx1dnwkZ4FUgLMBHBa2JQ167
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0087.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1BRkbwB4y7N26JvJpXd-NoiJuJme-KR4P
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0088.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Ss6028D07SAQ-tX8Px70aPgBkfd-VEq6
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0089.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1xGM-r6grwNlxa6HTcrO0g_mdNRLlZix2
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0090.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=16zznAor1M459JsXm5iWOYmUpqp_pHDNp
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0091.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1VyFlFRYjqLyFU0m6l2f5w7qKcUiQCyqy
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0092.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1NU-R252P85LnYCRW4fOTeTTU3_-4QiEh
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0093.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1zVf-MmwzZXo8OimG4A_478xdiVaKNGW6
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0094.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Vb--l-xPg-LlvKi3KNrzU8rLfiOTQrGD
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0095.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1nZjN-qnJ6B_hKWkfHlF6zBDcJ8Xqgn-4
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0096.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=13jKU-0Zy_-hg5q6j4LtcCynHFFlImMjw
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0097.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1eF-2L1JDsH9359GmdD3aYj9HudiucCwN
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0098.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=10YA37FwQAIx5O_ZwmlCnMcqKZRdZRZh1
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0099.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1DgQ8kr2ytA_yZiErk58YuqGNdz90kjdb
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0100.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1i_XHzYrBx8vP7kMPJ2cBCBybjmZesucL
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0101.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1O_qnDnuau_-7G91-WzhQG4Ky0nG5tsIW
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0102.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1OtDZoe3Xn3wrC80qPTsGmECS5fbPBEMo
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0103.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1yrNIWAB3_tEgRrTVoLV810yhEq3irrPP
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0104.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1OB4smqzc2VdnP-t9o9rVVVGQ7Oe8aoQr
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0105.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1GOpgN8lfxLTJMC0Jd-n-ZpMskqsh8a0l
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0106.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=17WBaToVVpabZPbQYjQ_2S_666YjKE7o0
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0107.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Z0m-LV9u3ScqSQ81pPEYHAfIW8l6kOPw
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0108.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1RSawUex3gThMzKprREmNW9cea9IqZPWQ
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0109.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1xR0rtHvq24ibEverMerRnFll32hNeWJS
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0110.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1gT1U7N59gl1B5bU2OguVL27rEtDgf0HG
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0111.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1s9mAaoHoo1H_MnqUUEPEKLEzCxRsYjpx
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0112.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1CPqifTsPgaOFQtTcd9MNYAVbCPboOr4f
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0113.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=18I5u1rYWSkpO7y7h9GwhjY5EYnk5SlOd
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0114.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=14rTce_cOACC-PoTuDrgig-qe_xdFrPVU
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0115.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1lN8Pf1Bj_QUdt19kq-iUXW9LiZjEmVie
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0116.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1t1kAOwmRQdxqvJmKJF4Drcrvvhq3jtqD
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0117.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1qC4cAxOMgzHW9BUJfI3zcvT1qDCwCFbM
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0118.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=14WlO1fynhtnNYN9NyMxZ01nPtRd51sjQ
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0119.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=18MMHjRtXUPNd2Fr62Jce3u6w009ijYu4
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0120.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1wDZo_etTuDmvyjkRb9CztgP8HGIKYhjX
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0121.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1HS9ZuZEnsTc8PFjXvucPSmyTf64iBX6Y
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0122.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1St_-dTeFkthKMqnhDIz8azLVdsf1C8jE
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0123.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=16-tzXxevkysXz1PZf0x7z_kWIGIsx4wX
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0124.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1CLDixI8LLfyT_uUJq9Imy5dDPMqCnbNw
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/fresh/20260407_0125.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1fhPRQZ27CTqk0F6Ka2yyFr5VY4tlRomU
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/starts: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1yqvc1wwmxOjlkIHfhvz4W6OGM7rvI74n
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/starts: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1T5ceRsofazLHbOziE42kAXLtxcN354Xe
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/бананы фостер.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1buEY5GpmSNzjMjFSYvSQcZxrNdt_P-8b
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/батат фри.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1YOhdS2l1KP3mIugDL-RKDw5xzk0kCwuG
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/батат фри.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1ZcICewD2GIMCwMR8m-fRPzenL-aiYlH_
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/буррата с томатами: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1dzVtMobMwG7qMl_bMHQbL3hhCfJTONfG
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/буррата с томатами: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1a8rZtUj6KtXsEJnjZvuQ8oriNDUffvfG
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/запеченные черри с фетой.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1wFVqP6wfIp7znoKBoFQy_YtTRnPSYE9n
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/запеченные черри с фетой.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Gca88-2yYCLXk1CnaarZ9Y-pGdHvKnMt
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/картофель фри.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1zR-eU61Pp0DRmP92p4pjhvuRGsjytKQU
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/картофель фри.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=13NUYV5IEkpZ_Syw2YBpzFzHRqtWiy8i1
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/креветки сальса копченая страчателла: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1Bb2WmQ3cnCXN6gRlmQkMsA9vFoQcZ8Bd
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/креветочные шарики.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1-adTNfJ1lZn4wIvXFFkK7e3MVeVz2ZMk
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/перец рамиро.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1uHzHHfFXnhnK822zOYhGdfwrtU7QzC9u
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/перец рамиро.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1IcjgxxyBlO3I9Y1O6inMJDb4UD-CVwYA
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/салат Табуле: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=15rltj0_TyQIpmDXDT72IM3Juz-a44DKb
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/салат Табуле: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=15xXpM2HfOb_AUgvxqmwfux6_CTYILteF
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/салат Хориатики: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1lzQIwkQ5bIt8j_NvSnHTqeSy6A27lqxE
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/севиче из гребешка.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1lahMEyNaaH667uOV2DTia6nH1K-oswUS
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/севиче из гребешка.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1864ujK2Ge6C0sflYePOwWR3r_zCrvTPI
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/сырный мусс с жженым лимоном.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1cD4O8H8N2hOP3dIamdueArW0zFaZfat7
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/тартар блючиз: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1IWE6O0Dn_SX6fqDAUx_8TBsZgKRGJx2r
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/тартар из говядины.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1itKMYTH8iFqBfrZcIp57KCM4LFRPtha1
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/тартар из говядины.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1-ETQvjKha4DPQQu0HstOTPKiQpmfi7rL
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/томатный суп с гриль-чизом.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1SpB92d0p-m_4LtVC1edn2eSabDIJQNAZ
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/фаршированные яйца.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1eY2ZtXi9yoSNbSmBblmKd81hqFffhN56
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/фаршированные яйца.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1tuV3olGdi1zW5iB_BIhhcgnFi1ENNYmy
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/фаршированные яйца.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1yd1olDta0Fg6WzBHU50e7LwGZLiaWv7E
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/фокачча с прошутто котто..jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=10iV0tTLOMuFjbvRI_dlyce6L46BO-hD0
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/фокачча с прошутто котто.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1dZoOcKMGwi0CFrEVVAt5La-IyOsubmSl
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/чикен сэндвич.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1PFJE1bfRg-JI1B_CiN-Kky_tpsZJca72
-
-but Gdown can't. Please check connections and permissions.
-Failed to download Food/чипсы с красной икрой.jpg: Failed to retrieve file url:
-
-	Cannot retrieve the public link of the file. You may need to change
-	the permission to 'Anyone with the link', or have had many accesses.
-	Check FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.
-
-You may still be able to access the file from the browser:
-
-	https://drive.google.com/uc?id=1mBLt4xUNnJ77uoh_XJN-wND5YWRqJFBG
-
-but Gdown can't. Please check connections and permissions.
-Failed to download the following files:
-- Food/fresh/20260407_0074.jpg
-- Food/fresh/20260407_0075.jpg
-- Food/fresh/20260407_0076.jpg
-- Food/fresh/20260407_0077.jpg
-- Food/fresh/20260407_0079.jpg
-- Food/fresh/20260407_0080.jpg
-- Food/fresh/20260407_0081.jpg
-- Food/fresh/20260407_0082.jpg
-- Food/fresh/20260407_0083.jpg
-- Food/fresh/20260407_0084.jpg
-- Food/fresh/20260407_0085.jpg
-- Food/fresh/20260407_0086.jpg
-- Food/fresh/20260407_0087.jpg
-- Food/fresh/20260407_0088.jpg
-- Food/fresh/20260407_0089.jpg
-- Food/fresh/20260407_0090.jpg
-- Food/fresh/20260407_0091.jpg
-- Food/fresh/20260407_0092.jpg
-- Food/fresh/20260407_0093.jpg
-- Food/fresh/20260407_0094.jpg
-- Food/fresh/20260407_0095.jpg
-- Food/fresh/20260407_0096.jpg
-- Food/fresh/20260407_0097.jpg
-- Food/fresh/20260407_0098.jpg
-- Food/fresh/20260407_0099.jpg
-- Food/fresh/20260407_0100.jpg
-- Food/fresh/20260407_0101.jpg
-- Food/fresh/20260407_0102.jpg
-- Food/fresh/20260407_0103.jpg
-- Food/fresh/20260407_0104.jpg
-- Food/fresh/20260407_0105.jpg
-- Food/fresh/20260407_0106.jpg
-- Food/fresh/20260407_0107.jpg
-- Food/fresh/20260407_0108.jpg
-- Food/fresh/20260407_0109.jpg
-- Food/fresh/20260407_0110.jpg
-- Food/fresh/20260407_0111.jpg
-- Food/fresh/20260407_0112.jpg
-- Food/fresh/20260407_0113.jpg
-- Food/fresh/20260407_0114.jpg
-- Food/fresh/20260407_0115.jpg
-- Food/fresh/20260407_0116.jpg
-- Food/fresh/20260407_0117.jpg
-- Food/fresh/20260407_0118.jpg
-- Food/fresh/20260407_0119.jpg
-- Food/fresh/20260407_0120.jpg
-- Food/fresh/20260407_0121.jpg
-- Food/fresh/20260407_0122.jpg
-- Food/fresh/20260407_0123.jpg
-- Food/fresh/20260407_0124.jpg
-- Food/fresh/20260407_0125.jpg
-- Food/starts
-- Food/starts
-- Food/бананы фостер.jpg
-- Food/батат фри.jpg
-- Food/батат фри.jpg
-- Food/буррата с томатами
-- Food/буррата с томатами
-- Food/запеченные черри с фетой.jpg
-- Food/запеченные черри с фетой.jpg
-- Food/картофель фри.jpg
-- Food/картофель фри.jpg
-- Food/креветки сальса копченая страчателла
-- Food/креветочные шарики.jpg
-- Food/перец рамиро.jpg
-- Food/перец рамиро.jpg
-- Food/салат Табуле
-- Food/салат Табуле
-- Food/салат Хориатики
-- Food/севиче из гребешка.jpg
-- Food/севиче из гребешка.jpg
-- Food/сырный мусс с жженым лимоном.jpg
-- Food/тартар блючиз
-- Food/тартар из говядины.jpg
-- Food/тартар из говядины.jpg
-- Food/томатный суп с гриль-чизом.jpg
-- Food/фаршированные яйца.jpg
-- Food/фаршированные яйца.jpg
-- Food/фаршированные яйца.jpg
-- Food/фокачча с прошутто котто..jpg
-- Food/фокачча с прошутто котто.jpg
-- Food/чикен сэндвич.jpg
-- Food/чипсы с красной икрой.jpg
-FAIL/TIMEOUT 1
