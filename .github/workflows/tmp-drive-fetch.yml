@@ -3,15 +3,18 @@ on:
   push:
     branches: [arena/c014fa3f-catch]
     paths: ['.github/workflows/tmp-drive-fetch.yml']
+permissions:
+  contents: write
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - run: pip install gdown && sudo apt-get install -y imagemagick poppler-utils >/dev/null
       - name: download
         run: |
-          mkdir -p d && cd d
-          dl() { gdown --folder "https://drive.google.com/drive/folders/$2" -O "$1" --remaining-ok || echo "FAIL $1"; }
+          mkdir -p /tmp/d && cd /tmp/d
+          dl() { gdown --folder "https://drive.google.com/drive/folders/$2" -O "$1" --remaining-ok > "/tmp/log-$1.txt" 2>&1 || echo "FAIL $1" >> /tmp/fails.txt; }
           dl Logo 1BU98FcTX7pFfGoWr-ELMJZ_OJrPfvWv4
           dl Menu 1J2p_Wq5YNrIALggJNneRvDDhVrQcVhnM
           dl Classy_cocktails 1UTqJeVQ8FvKqEE2AL32Guv5emnfju-0L
@@ -23,26 +26,26 @@ jobs:
           dl Merch 1IJcrh6_MUU4bXq1LDYTHSDguTjGZy9E8
           dl Team 1-uduGv3Byj5uoA1m25xqgMO2bA7F0PXF
           dl Vibe 10JtQBTA8xXAYIXzTwF0FwEsm6HsCQv3T
-          curl -sL "https://docs.google.com/document/d/1Yg-lLYXK3-7Q3H3E9W33AkyiBGE94b7h819HHUnAz0w/export?format=txt" -o press.txt
-          curl -sL "https://docs.google.com/document/d/1aDrgbGj9n5TSI06CsHy41yc304f27gP6INlXyVMOgF4/export?format=txt" -o chto-gde.txt
-          find . -type f -exec ls -la {} \; > ../listing.txt
-          cat ../listing.txt
-      - name: resize
+      - name: previews
         run: |
-          mkdir -p small
-          cd d
-          find . -type f | while read f; do
-            mkdir -p "../small/$(dirname "$f")"
+          O=$GITHUB_WORKSPACE/_drive_preview
+          mkdir -p $O
+          cp /tmp/log-*.txt $O/ || true
+          cp /tmp/fails.txt $O/ 2>/dev/null || true
+          cd /tmp/d
+          find . -type f -printf '%s\t%p\n' | sort -k2 > $O/listing.tsv
+          find . -type f | sort | while read f; do
+            dir=$(dirname "$f"); mkdir -p "$O/$dir"; base="${f%.*}"
             case "${f,,}" in
-              *.jpg|*.jpeg|*.png|*.heic|*.webp|*.tif|*.tiff) convert "$f[0]" -auto-orient -resize '1800x1800>' -quality 85 "../small/${f%.*}.jpg" || cp "$f" "../small/$f";;
-              *.pdf) cp "$f" "../small/$f"; pdftoppm -png -r 150 "$f" "../small/${f%.*}" || true;;
-              *.txt) cp "$f" "../small/$f";;
-              *) echo "skip $f";;
+              ./menu/*) convert "$f[0]" -auto-orient -resize '1700x2400>' -quality 85 "$O/$base.jpg" || true;;
+              *.jpg|*.jpeg|*.png|*.heic|*.webp|*.tif|*.tiff) convert "$f[0]" -auto-orient -resize '420x420>' -quality 70 "$O/$base.jpg" || echo "conv fail $f" >> $O/fails.txt;;
+              *.pdf) pdftoppm -png -r 60 -singlefile "$f" "$O/$base" || true;;
+              *) echo "skip $f" >> $O/skipped.txt;;
             esac
           done
-          cp ../listing.txt ../small/
-          du -sh ../small
-      - uses: actions/upload-artifact@v4
-        with:
-          name: drive-small
-          path: small
+          du -sh $O
+      - name: commit
+        run: |
+          git config user.name "drive-fetch-bot"; git config user.email "bot@users.noreply.github.com"
+          git add _drive_preview
+          git commit -m "tmp: drive previews" && git push origin HEAD:arena/c014fa3f-catch
