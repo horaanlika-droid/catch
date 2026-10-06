@@ -1,0 +1,48 @@
+name: tmp drive fetch
+on:
+  push:
+    branches: [arena/c014fa3f-catch]
+    paths: ['.github/workflows/tmp-drive-fetch.yml']
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install gdown && sudo apt-get install -y imagemagick poppler-utils >/dev/null
+      - name: download
+        run: |
+          mkdir -p d && cd d
+          dl() { gdown --folder "https://drive.google.com/drive/folders/$2" -O "$1" --remaining-ok || echo "FAIL $1"; }
+          dl Logo 1BU98FcTX7pFfGoWr-ELMJZ_OJrPfvWv4
+          dl Menu 1J2p_Wq5YNrIALggJNneRvDDhVrQcVhnM
+          dl Classy_cocktails 1UTqJeVQ8FvKqEE2AL32Guv5emnfju-0L
+          dl Cocktails 1Zw-61UqS7PSSjRjigcF7cOQKS0n5lSzI
+          dl Espolon 1zj7UFN4XdZuu9wtnID85FUhi7fT9pQuD
+          dl Film 1NOswF0EgSqGjICgF-o06198m8m0r3mwB
+          dl Food 1h5a5u7m9LYUhpbILTQORBVbHkhRyYC6T
+          dl Interior 13yOm7UYjoNt-NLIG5_TtE1FDtSobhqjT
+          dl Merch 1IJcrh6_MUU4bXq1LDYTHSDguTjGZy9E8
+          dl Team 1-uduGv3Byj5uoA1m25xqgMO2bA7F0PXF
+          dl Vibe 10JtQBTA8xXAYIXzTwF0FwEsm6HsCQv3T
+          curl -sL "https://docs.google.com/document/d/1Yg-lLYXK3-7Q3H3E9W33AkyiBGE94b7h819HHUnAz0w/export?format=txt" -o press.txt
+          curl -sL "https://docs.google.com/document/d/1aDrgbGj9n5TSI06CsHy41yc304f27gP6INlXyVMOgF4/export?format=txt" -o chto-gde.txt
+          find . -type f -exec ls -la {} \; > ../listing.txt
+          cat ../listing.txt
+      - name: resize
+        run: |
+          mkdir -p small
+          cd d
+          find . -type f | while read f; do
+            mkdir -p "../small/$(dirname "$f")"
+            case "${f,,}" in
+              *.jpg|*.jpeg|*.png|*.heic|*.webp|*.tif|*.tiff) convert "$f[0]" -auto-orient -resize '1800x1800>' -quality 85 "../small/${f%.*}.jpg" || cp "$f" "../small/$f";;
+              *.pdf) cp "$f" "../small/$f"; pdftoppm -png -r 150 "$f" "../small/${f%.*}" || true;;
+              *.txt) cp "$f" "../small/$f";;
+              *) echo "skip $f";;
+            esac
+          done
+          cp ../listing.txt ../small/
+          du -sh ../small
+      - uses: actions/upload-artifact@v4
+        with:
+          name: drive-small
+          path: small
