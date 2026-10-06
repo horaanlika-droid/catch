@@ -1,6 +1,6 @@
 {
   "name": "catch22-app",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "private": true,
   "type": "module",
   "description": "CATCH 22 — веб-приложение (тёмный стиль 2.0) + админ-бот, zero deps",

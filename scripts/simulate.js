@@ -116,17 +116,19 @@ check(!store.private.blocked, 'стоп-листа гостей в данных 
 /* ── команда: блок-заглушка и участники ── */
 await panel.render(111, 'team');
 check(sent.at(-1).text.includes('Команда'), 'экран «Команда» рендерится');
-check(store.state.team.members.length === 0, 'пока заглушка: участников нет');
+const team0 = store.state.team.members.length;
+check(team0 >= 4 && store.state.team.members.some((m) => m.name === 'Даниил Золотухин' && m.photo), 'команда из пресс-кита: участники с фото');
 check(store.state.team.enabled === true && store.state.team.title === 'КОМАНДА', 'блок включён и озаглавлен');
 await click('a:tm:add');
 await msg(111, { text: 'Глеб' });
 await msg(111, { text: 'за пультом' });
 await msg(111, { text: 'ставит джаз и хаус' });
-check(store.state.team.members.length === 1, 'участник добавлен визардом');
-check(store.state.team.members[0].name === 'Глеб' && store.state.team.members[0].role === 'за пультом', 'имя и роль записаны');
-await click('tm:0'); await click('p:tm:0');
+const tmI = store.state.team.members.length - 1;
+check(store.state.team.members.length === team0 + 1, 'участник добавлен визардом');
+check(store.state.team.members[tmI].name === 'Глеб' && store.state.team.members[tmI].role === 'за пультом', 'имя и роль записаны');
+await click(`tm:${tmI}`); await click(`p:tm:${tmI}`);
 await msg(111, { photo: [{ file_id: 'TEAM1' }] });
-check(/^\/media\//.test(store.state.team.members[0].photo), 'фото участника загружено');
+check(/^\/media\//.test(store.state.team.members[tmI].photo), 'фото участника загружено');
 await click('s:team'); await click('a:team:toggle');
 check(store.state.team.enabled === false, 'блок «Команда» скрывается из бота');
 await click('s:team'); await click('a:team:toggle');
@@ -318,6 +320,35 @@ store3.update('hero', (s) => { s.meta.hero.text = 'Наш текст про ви
 store3.save();
 const store4 = new Store(tmp);
 check(store4.state.meta.hero.text === 'Наш текст про винил', 'текст, который бар поставил сам, миграция не трогает');
+
+/* ── v2.1 → v2.2: данные из пресс-кита (тексты, команда, официальное меню) ── */
+const v21 = structuredClone(store4.state);
+v21._v = 2.1;
+v21.meta.tagline = 'Винил. Коктейли. Comfort food.\nМузыка, которую хочется слушать.\nБар и фонотека Catch 22.';
+delete v21.meta.story;
+v21.meta.hero.image = '/img/interior-vinyl.jpg';
+v21.contacts.phone = '8 (931) 531-22-32';
+v21.contacts.email = 'hello@catch-22-bar.ru';
+v21.team.members = [];
+const bar21 = v21.menu.categories.find((c) => c.id === 'bar');
+bar21.sections[0].items = [
+  { name: 'MINIMOG', desc: 'текила / джин', price: '950' },          // старое распознавание
+  { name: 'ABBA', desc: 'старый состав', price: '950', stop: true }, // в стоп-листе
+  { name: 'НАШ СЕЗОННЫЙ', desc: 'добавили через бота', price: '1000' },
+];
+fs.writeFileSync(path.join(tmp, 'state.json'), JSON.stringify(v21));
+const store5 = new Store(tmp);
+const all5 = store5.state.menu.categories.flatMap((c) => c.sections.flatMap((x) => x.items));
+check(store5.state._v === 2.2, 'состояние перенесено на v2.2');
+check(store5.state.meta.story.includes('Studio Cache') && store5.state.meta.tagline.includes('listening bar'), 'тексты из пресс-релиза');
+check(store5.state.meta.hero.text === 'Наш текст про винил', 'свой текст героя бара сохранён и в 2.2');
+check(store5.state.contacts.phone === '+7 (931) 531-22-32' && store5.state.contacts.email === '', 'телефон из пресс-кита, выдуманная почта убрана');
+check(store5.state.team.members.length >= 10 && store5.state.team.members.some((m) => m.role === 'Шеф-повар' && m.name === 'Илья Борик'), 'команда из пресс-кита появилась');
+check(store5.state.meta.awards.some((a) => /Where2Drink/.test(a.text)), '«Открытие года 2026» Where2Drink в фишках');
+check(all5.some((i) => i.name === 'MINIMOOG' && /мороженое/.test(i.desc)) && !all5.some((i) => i.name === 'MINIMOG'), 'меню заменено на официальную карту');
+check(all5.find((i) => i.name === 'ABBA')?.stop === true && /горечавка/.test(all5.find((i) => i.name === 'ABBA').desc), 'стоп-лист пережил замену меню');
+check(all5.some((i) => i.name === 'НАШ СЕЗОННЫЙ'), 'позиции, заведённые баром, сохранены');
+check(new Store(tmp).state.menu.categories.flatMap((c) => c.sections.flatMap((x) => x.items)).length === all5.length, 'миграция 2.2 идемпотентна');
 
 fs.rmSync(tmp, { recursive: true, force: true });
 console.log(fails ? `\n${fails} FAILURES` : '\nВсе проверки пройдены ✔');

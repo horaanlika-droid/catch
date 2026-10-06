@@ -921,10 +921,11 @@ function vMore(d) {
   root.appendChild(nav);
 
   // о баре
-  if (d.meta.about) {
+  const story = d.meta.story || d.meta.about;
+  if (story) {
     root.appendChild(sectionHead(c.aboutCard));
     const about = el('div', 'card pad');
-    about.appendChild(el('p', 'about', esc(d.meta.about)));
+    about.appendChild(el('p', 'about', esc(story)));
     root.appendChild(about);
   }
 

@@ -4,6 +4,7 @@ import { EventEmitter } from 'node:events';
 import { uid, nowIso, writeAtomic, readJsonSafe, ensureDir, log } from './util.js';
 import { seed } from '../seed/data.js';
 import { COPY_DEFAULT } from '../seed/copy.js';
+import { LEGACY_MENU_NAMES_21 } from '../seed/legacy-2.1.js';
 
 /*
  * Единый стор приложения.
@@ -36,12 +37,20 @@ function normItem(it) {
 /* Версия структуры данных: при загрузке старого state.json применяем миграцию,
    чтобы правки (фонотека + бар, часы, команда, ссылки) появились и там,
    где приложение уже работало. */
-const STATE_VERSION = 2.1;
+const STATE_VERSION = 2.2;
 
 /** Перенос рабочих данных на текущую версию. Трогаем только дефолты — то,
  *  что бар уже переписал через бота, не затираем. */
 export function migrateState(s) {
-  if (Number(s?._v || 2) >= STATE_VERSION) return s;
+  const v = Number(s?._v || 2);
+  if (v >= STATE_VERSION) return s;
+  if (v < 2.1) migrate21(s);
+  if (v < 2.2) migrate22(s);
+  s._v = STATE_VERSION;
+  return s;
+}
+
+function migrate21(s) {
   const d = seed;
   const hasBistro = (x) => /bistro|бистро/i.test(String(x || ''));
 
@@ -86,9 +95,110 @@ export function migrateState(s) {
 
   /* 2.1 — тексты интерфейса без мерча и кошелька */
   if (s.copy) for (const k of ['tabMerch', 'titleMerch', 'ctaMerch', 'merchSub', 'walletNote', 'titleWallet', 'ctaWallet']) delete s.copy[k];
+  s._v = 2.1;
+}
 
-  s._v = STATE_VERSION;
-  return s;
+/* 2.2 — данные из пресс-кита бара: тексты, команда с фото, меню по официальной
+   карте, фото интерьера/коктейлей. Заменяем только дефолты v2.1 — всё, что бар
+   поменял через бота (свои тексты, фото из /media/, свои позиции), остаётся. */
+const OLD_21 = {
+  tagline: 'Винил. Коктейли. Comfort food.\nМузыка, которую хочется слушать.\nБар и фонотека Catch 22.',
+  about: 'Музыкальный бар с коллекцией винила, коктейлями и comfort food. Фонотека Catch 22, наб. Фонтанки 86.',
+  heroText: 'Музыкальный бар\nс коллекцией винила, коктейлями\nи comfort food.',
+  awards: ['Фонотека', 'Бар', 'Кухня'],
+  phone: '8 (931) 531-22-32',
+  email: 'hello@catch-22-bar.ru',
+  note: 'наб. реки Фонтанки, 86 — вход со двора, ищите вывеску 22',
+  brunch: 'Суббота – Воскресенье\nс 16:00 до 18:00',
+  teamText: 'Скоро покажем, кто ставит пластинки, мешает коктейли и готовит на кухне.',
+  teamNote: 'Раздел в работе — добавим фото и имена команды.',
+  images: ['/img/interior-vinyl.jpg', '/img/interior-chair.jpg', '/img/event-sept.jpg', '/img/brunch.jpg', ''],
+};
+const isOldImg = (x) => OLD_21.images.includes(String(x ?? ''));
+const nameKey = (x) => String(x ?? '').toLowerCase().replace(/[’'`«»".,]/g, '').replace(/\s+/g, ' ').trim();
+
+export function migrate22(s) {
+  const d = seed;
+  s.meta ||= {};
+  s.meta.hero ||= {};
+  const m = s.meta;
+  if (!m.tagline || m.tagline === OLD_21.tagline) m.tagline = d.meta.tagline;
+  if (!m.about || m.about === OLD_21.about) m.about = d.meta.about;
+  if (!m.story) m.story = d.meta.story;
+  if (!m.hero.text || m.hero.text === OLD_21.heroText) m.hero.text = d.meta.hero.text;
+  if (isOldImg(m.hero.image)) m.hero.image = d.meta.hero.image;
+  if (isOldImg(m.aboutImage)) m.aboutImage = d.meta.aboutImage;
+  // награды: дефолтные три фишки → факты из пресс-кита; свои — оставляем,
+  // но «Открытие года» Where2Drink добавляем наверх
+  const aw = Array.isArray(m.awards) ? m.awards : [];
+  const titles = aw.map((a) => String(a?.title || ''));
+  if (!aw.length || (titles.length === OLD_21.awards.length && OLD_21.awards.every((t) => titles.includes(t)))) {
+    m.awards = structuredClone(d.meta.awards);
+  } else {
+    // любые черновые формулировки премии (WhereToEat, W2D…) → точная из пресс-релиза
+    const isW2D = (a) => /where\s*(2|to)\s*(eat|drink)|w2d|открытие года/i.test(`${a?.title || ''} ${a?.text || ''}`);
+    m.awards = [structuredClone(d.meta.awards[0]), ...aw.filter((a) => !isW2D(a))];
+  }
+
+  s.contacts ||= {};
+  if (s.contacts.phone === OLD_21.phone) s.contacts.phone = d.contacts.phone;
+  if (s.contacts.email === OLD_21.email) s.contacts.email = d.contacts.email;
+  if (s.contacts.note === OLD_21.note) s.contacts.note = d.contacts.note;
+  if (isOldImg(s.contacts.image)) s.contacts.image = d.contacts.image;
+  s.booking ||= {};
+  if (isOldImg(s.booking.image)) s.booking.image = d.booking.image;
+  s.brunch ||= {};
+  if (s.brunch.text === OLD_21.brunch) s.brunch.text = d.brunch.text;
+  s.jobs ||= {};
+  if (isOldImg(s.jobs.image)) s.jobs.image = d.jobs.image;
+
+  // команда: была заглушкой — ставим команду из пресс-кита
+  s.team ||= {};
+  if (!Array.isArray(s.team.members) || !s.team.members.length) s.team.members = structuredClone(d.team.members);
+  if (!s.team.text || s.team.text === OLD_21.teamText) s.team.text = d.team.text;
+  if (s.team.note === OLD_21.teamNote) s.team.note = d.team.note;
+  if (isOldImg(s.team.image)) s.team.image = d.team.image;
+
+  // галерея: если в ней только старые дефолтные кадры — меняем на фото из пресс-кита
+  if (!Array.isArray(s.gallery) || s.gallery.every((g) => isOldImg(g?.src))) s.gallery = structuredClone(d.gallery);
+
+  s.menu = migrateMenu22(s.menu, d.menu);
+}
+
+/** Меню → официальная карта. Сохраняем: стоп-лист, фото, загруженные ботом,
+ *  позиции/разделы/категории, которые бар завёл сам. */
+function migrateMenu22(old, fresh) {
+  const next = structuredClone(fresh);
+  if (!old || !Array.isArray(old.categories)) return next;
+  const legacy = new Set(LEGACY_MENU_NAMES_21.map(nameKey));
+  const oldItems = new Map();
+  for (const c of old.categories) for (const sec of c.sections || []) for (const it of sec.items || []) oldItems.set(nameKey(it.name), it);
+
+  // перенос состояния позиций (по названию)
+  for (const c of next.categories) for (const sec of c.sections) for (const it of sec.items) {
+    const prev = oldItems.get(nameKey(it.name));
+    if (!prev) continue;
+    if (prev.id) it.id = prev.id;
+    if (prev.stop) it.stop = true;
+    if (/^\/media\//.test(prev.image || '')) it.image = prev.image;
+  }
+  const freshNames = new Set();
+  for (const c of next.categories) for (const sec of c.sections) for (const it of sec.items) freshNames.add(nameKey(it.name));
+
+  for (const oc of old.categories) {
+    const nc = next.categories.find((c) => c.id === oc.id || nameKey(c.title) === nameKey(oc.title));
+    if (!nc) { next.categories.push(oc); continue; } // категория бара — целиком
+    if (/^\/media\//.test(oc.cover || '')) nc.cover = oc.cover;
+    if (oc.id) nc.id = oc.id;
+    for (const os of oc.sections || []) {
+      const own = (os.items || []).filter((it) => !legacy.has(nameKey(it.name)) && !freshNames.has(nameKey(it.name)));
+      if (!own.length) continue;
+      const ns = nc.sections.find((x) => nameKey(x.title) === nameKey(os.title)) || nc.sections.find((x) => nameKey(x.title).split(' ')[0] === nameKey(os.title).split(' ')[0]);
+      if (ns) ns.items.push(...own);
+      else nc.sections.push({ ...os, items: own });
+    }
+  }
+  return next;
 }
 
 export function normalizeState(s) {
@@ -129,6 +239,7 @@ export function normalizeState(s) {
   s.contacts.instagram = String(s.contacts.instagram ?? '');
   s.jobs.image = String(s.jobs.image ?? '');
   s.meta.aboutImage = String(s.meta.aboutImage ?? '');
+  s.meta.story = String(s.meta.story ?? '');
 
   // блок «Команда» (вместо мерча): заглушка + список участников
   const t = (s.team ||= {});
