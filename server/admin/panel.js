@@ -63,8 +63,8 @@ export class Panel {
             [btn('📱 Ссылка на приложение', 's:app'), btn('📊 Статус', 's:status')],
             [btn('🏷 О заведении', 's:meta'), btn('🕐 Часы работы', 's:hours')],
             [btn('🍽 Меню', 's:menu'), btn('📅 Афиша', 's:events')],
-            [btn('⛔ Стоп-лист позиций', 's:stop'), btn('🥂 Бранч', 's:brunch')],
-            [btn('👥 Команда', 's:team'), btn('🖼 Галерея', 's:gallery')],
+            [btn('⛔ Стоп-лист позиций', 's:stop'), btn('🖼 Галерея', 's:gallery')],
+            [btn('👥 Команда', 's:team')],
             [btn('📞 Контакты', 's:contacts'), btn('💼 Работа', 's:jobs')],
             [btn('🧾 Заявки', 's:requests'), btn('📣 Пуши гостям', 's:push')],
             [btn('🅰️ Тексты UI', 's:copy'), btn('✖️ Сбросить ввод', 'a:cancel')],
@@ -205,7 +205,7 @@ export class Panel {
         rows.push([btn('✏️ Название', `f:cat:${screen.i}:title`)]);
         rows.push([btn('✏️ Сноска снизу', `f:cat:${screen.i}:note`)]);
         rows.push([NAV('s:menu')]);
-        return { text: `<b>${esc(c.title)}</b>\nРазделов: ${c.sections.length}\nСноска: ${c.note ? '✅' : '—'}\nФото меню отключены; категории показываются с векторными иконками.`, kb: kb(rows) };
+        return { text: `<b>${esc(c.title)}</b>\nРазделов: ${c.sections.length}\nСноска: ${c.note ? '✅' : '—'}\nКатегории показываются с векторными иконками; фото добавляются к отдельным позициям.`, kb: kb(rows) };
       }
 
       case 'menuSec': {
@@ -218,7 +218,7 @@ export class Panel {
         const page = Math.min(Math.max(screen.page || 0, 0), Math.ceil(N / per) - 1);
         for (let k = page * per; k < Math.min(N, (page + 1) * per); k++) {
           const it = s2.items[k];
-          rows.push([btn(`${it.stop ? '⛔' : '·'} ${esc(it.name)}${it.price ? ' · ' + esc(it.price) : ''}`.slice(0, 60), `item:${screen.i}:${screen.j}:${k}`)]);
+          rows.push([btn(`${it.stop ? '⛔' : it.image ? '📷' : '·'} ${esc(it.name)}${it.price ? ' · ' + esc(it.price) : ''}`.slice(0, 60), `item:${screen.i}:${screen.j}:${k}`)]);
         }
         if (Math.ceil(N / per) > 1) {
           rows.push([btn(`◀️ ${page + 1}/${Math.ceil(N / per)}`, `a:secpg:${screen.i}:${screen.j}:${page - 1}`), btn('▶️', `a:secpg:${screen.i}:${screen.j}:${page + 1}`)]);
@@ -229,7 +229,7 @@ export class Panel {
         return {
           text:
             `<b>${esc(s2.title)}</b>\nПозиций: ${N}${N && s2.items.every((x) => x.stop) ? ' — всё в стоп-листе 🫡' : s2.items.some((x) => x.stop) ? ' · есть ⛔' : ''}\n\n` +
-            `<i>Нажмите на позицию, чтобы изменить название, цену, состав, теги, порядок или стоп-лист. Фото для меню отключены.</i>`,
+            `<i>Нажмите на позицию, чтобы изменить название, цену, состав, фото, теги, порядок или стоп-лист.</i>`,
           kb: kb(rows),
         };
       }
@@ -241,10 +241,11 @@ export class Panel {
           text:
             `<b>${esc(it.name)}</b> · ${esc(it.price || '—')}\n${it.desc ? esc(it.desc) + '\n' : ''}` +
             `${it.tags?.length ? 'Теги: <i>' + it.tags.map(esc).join(' · ') + '</i>\n' : ''}` +
-            `Стоп-лист: ${it.stop ? '<b>⛔ позиция не продаётся</b>' : 'нет'}`,
+            `Фото: ${it.image ? '✅' : 'не добавлено'}\nСтоп-лист: ${it.stop ? '<b>⛔ позиция не продаётся</b>' : 'нет'}`,
           kb: kb([
             [btn('✏️ Название', `f:it:${screen.i}:${screen.j}:${screen.k}:name`), btn('✏️ Цена', `f:it:${screen.i}:${screen.j}:${screen.k}:price`)],
             [btn('✏️ Состав/описание', `f:it:${screen.i}:${screen.j}:${screen.k}:desc`), btn('✏️ Теги', `f:it:${screen.i}:${screen.j}:${screen.k}:tags`)],
+            [btn(it.image ? '🖼 Заменить фото' : '🖼 Добавить фото', `p:it:${screen.i}:${screen.j}:${screen.k}`), btn(it.image ? '🧹 Убрать фото' : '🧹 Фото нет', `a:it:photo:del:${screen.i}:${screen.j}:${screen.k}`)],
             [btn(it.stop ? '✅ Снять со стопа' : '⛔ В стоп-лист', `a:stop:${screen.i}:${screen.j}:${screen.k}`)],
             [btn('⬆️', `a:move:it:${screen.i}:${screen.j}:${screen.k}:-1`), btn('⬇️', `a:move:it:${screen.i}:${screen.j}:${screen.k}:1`), btn('🗑 Удалить', `a:it:del:${screen.i}:${screen.j}:${screen.k}`)],
             [btn('➕ Добавить после', `a:it:addafter:${screen.i}:${screen.j}:${screen.k}`), NAV(`menu:s:${screen.i}:${screen.j}`)],
@@ -273,17 +274,6 @@ export class Panel {
         };
       }
 
-      case 'brunch': {
-        const b = st.brunch;
-        return {
-          text: `<b>🥂 Бранч</b>\n${b.enabled ? '🟢 Показан в приложении' : '⚪️ Скрыт'}\n\n<b>${esc(b.title || '')}</b>\n${esc(b.text || '')}\nПостер: ${b.image ? '✅' : '—'}`,
-          kb: kb([
-            [btn('✏️ Заголовок', 'f:br:title'), btn('✏️ Текст', 'f:br:text')],
-            [btn('🖼 Постер', 'p:br'), btn(b.enabled ? '🙈 Скрыть' : '👁 Показать', 'a:br:toggle')],
-            [NAV('s:home')],
-          ]),
-        };
-      }
 
       case 'team': {
         const t = st.team;
@@ -339,7 +329,11 @@ export class Panel {
         if (!g) return this.view(chatId, { name: 'gallery' });
         return {
           text: `<b>Фото #${screen.i + 1}</b>\n<code>${esc(g.src)}</code>`,
-          kb: kb([[btn('🗑 Удалить', `a:gal:del:${screen.i}`)], [NAV('s:gallery')]]),
+          kb: kb([
+            [btn('🖼 Заменить фото', `p:galreplace:${screen.i}`)],
+            [btn('⬆️ Выше', `a:gal:move:${screen.i}:-1`), btn('⬇️ Ниже', `a:gal:move:${screen.i}:1`)],
+            [btn('🗑 Удалить', `a:gal:del:${screen.i}`), NAV('s:gallery')],
+          ]),
         };
       }
 
@@ -605,9 +599,6 @@ export class Panel {
       case 'a:j:toggle':
         U('j', (s) => { s.jobs.enabled = !s.jobs.enabled; });
         return this.render(chatId, 'jobs');
-      case 'a:br:toggle':
-        U('br', (s) => { s.brunch.enabled = !s.brunch.enabled; });
-        return this.render(chatId, 'brunch');
       case 'a:cat:add':
         U('cat:add', (s) => s.menu.categories.push({ title: 'Новая категория', sections: [] }));
         return this.render(chatId, 'menu');
@@ -773,6 +764,12 @@ export class Panel {
       if (prompt?.message_id) s.pending.prompt = prompt.message_id;
       return;
     }
+    if ((m = data.match(/^a:it:photo:del:(\d+):(\d+):(\d+)$/))) {
+      const [_, i, j, k] = m.map(Number);
+      U('it:photo:del', (s) => { s.menu.categories[i].sections[j].items[k].image = ''; });
+      await ans('🧹');
+      return this.render(chatId, 'item', { i, j, k });
+    }
     if ((m = data.match(/^a:it:del:(\d+):(\d+):(\d+)$/))) {
       const [_, i, j, k] = m.map(Number);
       U('it:del', (s) => s.menu.categories[i].sections[j].items.splice(k, 1));
@@ -869,6 +866,17 @@ export class Panel {
       await this.bot.sendMessage(x.userId, '💬 Сообщение от бара Catch 22 — напишите ответным, если что-то нужно.').catch(() => {});
       await ans('отправили');
       return this.render(chatId, 'sub', { id: x.id });
+    }
+    if ((m = data.match(/^a:gal:move:(\d+):(-?\d+)$/))) {
+      const i = +m[1], d = +m[2];
+      U('gal:move', (s) => {
+        const to = Math.max(0, Math.min(s.gallery.length - 1, i + d));
+        const [photo] = s.gallery.splice(i, 1);
+        s.gallery.splice(to, 0, photo);
+      });
+      await ans('↕️');
+      const ni = Math.max(0, Math.min(this.store.state.gallery.length - 1, i + d));
+      return this.render(chatId, 'galItem', { i: ni });
     }
     if ((m = data.match(/^a:gal:del:(\d+)$/))) {
       U('gal:del', (s) => s.gallery.splice(+m[1], 1));
@@ -1009,7 +1017,7 @@ export class Panel {
       t.desc = isSkip(v) ? '' : v;
       const sec = st.menu.categories[t.i]?.sections[t.j];
       if (!sec) { s.pending = null; return this.bot.sendMessage(chatId, '⚠️ Раздел не найден — откройте меню заново.'); }
-      const item = { name: t.name, price: t.price || '', desc: t.desc || '', tags: [], stop: false };
+      const item = { name: t.name, price: t.price || '', desc: t.desc || '', image: '', tags: [], stop: false };
       const at = t.insertAt == null ? sec.items.length : Math.min(t.insertAt, sec.items.length);
       const res = this.store.update('it:add', (s2) => {
         const arr = s2.menu.categories[t.i].sections[t.j].items;
@@ -1035,7 +1043,7 @@ export class Panel {
       const res = this.store.update('it:bulk', (s2) => {
         const arr = s2.menu.categories[t.i]?.sections[t.j]?.items;
         if (!arr) throw new Error('раздел не найден');
-        for (const x of parsed) arr.push({ name: x.name, price: x.price, desc: x.desc, tags: [], stop: false });
+        for (const x of parsed) arr.push({ name: x.name, price: x.price, desc: x.desc, image: '', tags: [], stop: false });
       });
       if (t.prompt) this.bot.deleteMessage(chatId, t.prompt).catch(() => {});
       s.pending = null;
@@ -1123,7 +1131,7 @@ export class Panel {
       await this.bot.sendMessage(chatId, '📸 Фотку получил, оригинал скачан. Куда её?', {
         reply_markup: kb([
           [btn('🏷 На главную', 'fpick:meta'), btn('🖼 Галерея', 'fpick:gal')],
-          [btn('🥂 Постер бранча', 'fpick:br')],
+          [btn('🍽 Позиция меню…', 'fpick:it')],
           [btn('📅 Событие…', 'fpick:ev'), btn('👥 Участник команды…', 'fpick:tm')],
           [btn('👥 Фото «Команда»', 'fpick:team'), btn('🖼 Фото «О нас»', 'fpick:about')],
           [btn('📞 Фото контактов', 'fpick:c'), btn('🎫 Фото брони', 'fpick:book')],
@@ -1142,7 +1150,7 @@ export class Panel {
     const s = this.sess(chatId);
     const parts = q.data.split(':'); // fpick, t, idx...
     const [_, t, i2, j2, k2] = parts;
-    if (parts.length === 2 && ['ev', 'tm'].includes(t)) return this.pickSubEntity(chatId, s, t);
+    if ((parts.length === 2 && ['ev', 'tm', 'it'].includes(t)) || (t === 'it' && parts.length < 5)) return this.pickSubEntity(chatId, s, t, [i2, j2, k2].filter((x) => x != null));
     const photo = s.pending?.queue?.[0];
     if (!photo) {
       s.pending = null;
@@ -1153,7 +1161,7 @@ export class Panel {
     return this.applyPhoto(chatId, photo, target, s.pending?.caption || '');
   }
 
-  pickSubEntity(chatId, s, kind) {
+  pickSubEntity(chatId, s, kind, path = []) {
     const st = this.store.state;
     const rows = [];
     if (kind === 'ev') st.events.forEach((e, i) => rows.push([btn(`📅 ${e.date} · ${e.title}`.slice(0, 56), `fpick:ev:${i}`)]));
@@ -1164,6 +1172,12 @@ export class Panel {
         });
       }
       st.team.members.forEach((x, i) => rows.push([btn(`👤 ${x.name || 'без имени'}`.slice(0, 56), `fpick:tm:${i}`)]));
+    }
+    if (kind === 'it') {
+      const [i, j] = path.map(Number);
+      if (path.length === 0) st.menu.categories.forEach((x, ci) => rows.push([btn(`🍽 ${x.title}`.slice(0, 56), `fpick:it:${ci}`)]));
+      else if (path.length === 1) st.menu.categories[i]?.sections.forEach((x, sj) => rows.push([btn(`📂 ${x.title}`.slice(0, 56), `fpick:it:${i}:${sj}`)]));
+      else st.menu.categories[i]?.sections[j]?.items.forEach((x, ik) => rows.push([btn(`· ${x.name}`.slice(0, 56), `fpick:it:${i}:${j}:${ik}`)]));
     }
     rows.push([btn('✖️ Отмена', 'a:cancel')]);
     s.pending.queue = s.pending.queue || [];
@@ -1190,7 +1204,8 @@ export class Panel {
       else if (t[0] === 'team') { s.team.image = media.url; label = 'фото блока «Команда»'; }
       else if (t[0] === 'tm') { const x = s.team.members[+t[1]]; if (!x) throw new Error('нет такого участника'); x.photo = media.url; label = `команда · ${x.name}`; }
       else if (t[0] === 'gal') { s.gallery.unshift({ src: media.url }); label = 'галерея (первым кадром)'; }
-      else if (t[0] === 'br') { s.brunch.image = media.url; label = 'постер бранча'; }
+      else if (t[0] === 'galreplace') { const x = s.gallery[+t[1]]; if (!x) throw new Error('нет такого фото'); x.src = media.url; label = `галерея · фото #${+t[1] + 1}`; }
+      else if (t[0] === 'it') { const x = s.menu.categories[+t[1]]?.sections[+t[2]]?.items[+t[3]]; if (!x) throw new Error('нет такой позиции'); x.image = media.url; label = `меню · ${x.name}`; }
       else if (t[0] === 'ev') { const e = s.events[+t[1]]; if (!e) throw new Error('нет такого события'); e.image = media.url; if (caption) e.subtitle = caption; label = `афиша · ${e.title}`; }
       else throw new Error('неизвестная цель для фото');
     });
@@ -1401,7 +1416,6 @@ function resolveTarget(state, target) {
     case 'booktop': return state.booking;
     case 'soc': return state.socials[idxs[0]];
     case 'ev': return state.events[idxs[0]];
-    case 'br': return state.brunch;
     case 'j': return state.jobs;
     case 'gal': return state.gallery[idxs[0]];
     case 'team': return state.team;

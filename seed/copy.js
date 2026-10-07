@@ -30,7 +30,7 @@ export const COPY_DEFAULT = {
   ctaSite: 'Открыть сайт',
   ctaInstagram: 'Мы в Instagram',
   // подписи блоков
-  eventsSub: 'Винил, сессии и гости за пультом',
+  eventsSub: '',
   teamSub: 'Люди, которые делают Catch 22',
   teamNote: 'Раздел в работе — добавим фото и имена команды.',
   aboutCard: 'О нас',

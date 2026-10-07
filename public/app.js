@@ -360,7 +360,7 @@ const COPY_DEFAULT = {
   ctaBooking: 'Забронировать стол', ctaContacts: 'Написать в Telegram',
   ctaJobs: 'Отправить анкету', ctaGallery: 'Смотреть фото',
   ctaSite: 'Открыть сайт', ctaInstagram: 'Мы в Instagram',
-  eventsSub: 'Винил, сессии и гости за пультом',
+  eventsSub: '',
   teamSub: 'Люди, которые делают Catch 22',
   teamNote: 'Раздел в работе — добавим фото и имена команды.',
   aboutCard: 'О нас',
@@ -568,16 +568,6 @@ function vHome(d) {
     root.appendChild(box);
   }
 
-  // бранч — постер
-  if (d.brunch?.enabled) {
-    const p = el('button', 'promo');
-    p.appendChild(imgBox('ph', d.brunch.image));
-    const t = el('div', 'txt');
-    t.innerHTML = `<div class="k">${esc(L(d.brunch.title || 'БРАНЧ'))}</div><p>${esc(L(d.brunch.text || ''))}</p>`;
-    p.appendChild(t);
-    p.onclick = () => (d.brunch.image ? openImageSheet(d.brunch.image, L(d.brunch.title || 'Бранч')) : setTab('events'));
-    root.appendChild(p);
-  }
 
   // что сегодня/завтра
   if (nextEv.length) {
@@ -691,6 +681,7 @@ function vMenu(d) {
     for (const it of items) {
       const row = el('button', 'item');
       row.innerHTML =
+        (it.image ? `<img class="item-photo" src="${esc(mediaUrl(it.image))}" alt="" loading="lazy">` : '') +
         `<span class="tx"><span class="nm">${esc(L(it.name))}${(it.tags || []).map((t) => `<span class="tag">${esc(L(t))}</span>`).join('')}</span>${it.desc ? `<span class="ds">${esc(L(it.desc))}</span>` : ''}</span>` +
         `<span class="pr">${esc(L(it.price || ''))}</span>`;
       if (it.stop) row.classList.add('stopped');
@@ -705,6 +696,7 @@ function vMenu(d) {
 
 function openItemSheet(cat, sec, it) {
   const w = el('div', 'stack');
+  if (it.image) w.appendChild(imgBox('sheet-img', it.image));
   const head = el('div');
   head.innerHTML = `<div class="kicker">${esc(L(cat.title))} · ${esc(L(sec.title))}</div>
     <div class="sheet-name">${esc(L(it.name))}</div>
@@ -876,7 +868,7 @@ function bookingForm(d, c) {
       { name: 'guests', label: 'Гостей', type: 'stepper', value: 2, min: 1, max: 12, suffix: 'чел.' },
       { name: 'name', label: 'Имя', type: 'text', required: true, autocomplete: 'name' },
       { name: 'contact', label: 'Телефон или @telegram', type: 'text', required: true, inputmode: 'tel', autocomplete: 'tel' },
-      { name: 'comment', label: 'Пожелания', type: 'textarea', placeholder: 'столик у фонотеки, детский стул…' },
+      { name: 'comment', label: 'Пожелания', type: 'textarea' },
     ],
     c.ctaBooking,
     (v) => sendRequest('booking', { дата: v.date, время: v.time, гостей: v.guests, имя: v.name, пожелания: v.comment }, v.contact)
@@ -1011,12 +1003,6 @@ function vMore(d) {
     root.appendChild(renderInfographic(d.meta.awards));
   }
 
-  // бранч
-  if (d.brunch?.enabled && d.brunch.image) {
-    const br = el('div', 'card');
-    addRow(br, 'cutlery', d.brunch.title || 'Бранч', (d.brunch.text || '').replace(/\n/g, ' · '), () => openImageSheet(d.brunch.image, L(d.brunch.title)));
-    root.appendChild(br);
-  }
 
   // галерея
   if ((d.gallery || []).length) {

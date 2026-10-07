@@ -296,14 +296,6 @@ button.row:active { background: rgba(255, 240, 226, .03) }
 .feature .t { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--txt) }
 .feature .d { font-size: 12.5px; color: var(--muted); margin-top: 4px; line-height: 1.45 }
 
-/* промо бранча */
-.promo { position: relative; display: flex; min-height: 150px; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line) }
-.promo .ph { flex: 0 0 42%; background-size: cover; background-position: center; background-color: var(--card-2); opacity: 0; transition: opacity .6s var(--ease) }
-.promo.done .ph { opacity: 1 }
-.promo .txt { flex: 1; min-width: 0; padding: 16px; display: flex; flex-direction: column; gap: 7px; justify-content: center; background: linear-gradient(180deg, var(--card), #141110) }
-.promo .k { font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--accent) }
-.promo p { margin: 0; font-size: 13px; color: var(--txt-2); white-space: pre-line; line-height: 1.5 }
-
 /* фото-карточка с подписью (как «О нас» на референсе) */
 .photo-card { position: relative; display: block; width: 100%; text-align: left; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line) }
 .photo-card .ph { height: 148px; background-size: cover; background-position: center; background-color: var(--card-2); opacity: 0; transition: opacity .6s var(--ease), transform .6s var(--ease) }
@@ -343,6 +335,7 @@ button.row:active { background: rgba(255, 240, 226, .03) }
 }
 .item:last-child { border-bottom: 0 }
 button.item:active { background: rgba(255, 240, 226, .03) }
+.item .item-photo { width: 54px; height: 54px; flex: none; object-fit: cover; border-radius: 12px; background: var(--card-2) }
 .item .tx { flex: 1; min-width: 0 }
 .item .nm { display: block; font-weight: 600; font-size: 14.5px; line-height: 1.35; color: var(--txt) }
 .item .ds { display: block; font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.4 }
@@ -519,7 +512,7 @@ button.ev:active { background: rgba(255, 240, 226, .03) }
 .sk { border-radius: var(--r-lg); background: linear-gradient(100deg, var(--card) 40%, var(--card-2) 50%, var(--card) 60%); background-size: 220% 100%; animation: sk 1.35s infinite linear }
 .sk.h40 { height: 40px } .sk.h160 { height: 160px } .sk.h220 { height: 220px } .sk.h90 { height: 90px } .sk.w60p { width: 60% }
 @keyframes sk { to { background-position: -120% 0 } }
-body.live-flash .card, body.live-flash .photo-card, body.live-flash .promo, body.live-flash .hero, body.live-flash .job-hero, body.live-flash .team-hero { animation: flash .9s var(--ease) }
+body.live-flash .card, body.live-flash .photo-card, body.live-flash .hero, body.live-flash .job-hero, body.live-flash .team-hero { animation: flash .9s var(--ease) }
 @keyframes flash { 0% { box-shadow: 0 0 0 0 rgba(217, 126, 91, 0) } 35% { box-shadow: 0 0 0 2px rgba(217, 126, 91, .32) } 100% { box-shadow: none } }
 .fadeimg { opacity: 0; transition: opacity .5s var(--ease) }
 .fadeimg.on { opacity: 1 }
@@ -586,7 +579,7 @@ button.fact:active { transform: scale(.985); border-color: var(--line-2) }
 }
 .lang-btn.hdr-btn:active { transform: scale(.94); background: var(--accent-soft); color: var(--accent-hi) }
 
-/* The menu is deliberately typography-first: no photos, covers or blurred hero art. */
+/* Категории остаются типографическими; фото показываются только у отдельных позиций. */
 body.menu-view::after { opacity: 0 }
 .tabs button { display: inline-flex; align-items: center; gap: 6px }
 .tabs button > svg { width: 15px; height: 15px; color: var(--accent-hi); flex: none }
