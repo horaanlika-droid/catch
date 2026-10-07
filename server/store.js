@@ -28,7 +28,7 @@ function normItem(it) {
   it.price = it.price == null ? '' : String(it.price);
   it.name = String(it.name ?? '').trim();
   it.desc = String(it.desc ?? '').trim();
-  delete it.image;
+  it.image = String(it.image ?? '').trim();
   delete it.cover;
   delete it.icon;
   it.tags = Array.isArray(it.tags) ? it.tags : [];
@@ -39,7 +39,7 @@ function normItem(it) {
 /* Версия структуры данных: при загрузке старого state.json применяем миграцию,
    чтобы правки (фонотека + бар, часы, команда, ссылки) появились и там,
    где приложение уже работало. */
-const STATE_VERSION = 2.3;
+const STATE_VERSION = 2.4;
 const isAvailabilityPrompt = (value) => /уточн(?:яйте|ить).*(?:налич|команд|состав)|(?:налич|состав).*уточн|\b(?:please\s+)?(?:check|ask|confirm).*(?:availability|with\s+(?:the\s+)?team|stock)|(?:availability|stock).*\b(?:check|ask|confirm|team)\b/i.test(String(value ?? ''));
 
 /** Перенос рабочих данных на текущую версию. Трогаем только дефолты — то,
@@ -50,6 +50,7 @@ export function migrateState(s) {
   if (v < 2.1) migrate21(s);
   if (v < 2.2) migrate22(s);
   if (v < 2.3) migrate23(s);
+  if (v < 2.4) migrate24(s);
   s._v = STATE_VERSION;
   return s;
 }
@@ -113,7 +114,6 @@ const OLD_21 = {
   phone: '8 (931) 531-22-32',
   email: 'hello@catch-22-bar.ru',
   note: 'наб. реки Фонтанки, 86 — вход со двора, ищите вывеску 22',
-  brunch: 'Суббота – Воскресенье\nс 16:00 до 18:00',
   teamText: 'Скоро покажем, кто ставит пластинки, мешает коктейли и готовит на кухне.',
   teamNote: 'Раздел в работе — добавим фото и имена команды.',
   images: ['/img/interior-vinyl.jpg', '/img/interior-chair.jpg', '/img/event-sept.jpg', '/img/brunch.jpg', ''],
@@ -151,8 +151,6 @@ export function migrate22(s) {
   if (isOldImg(s.contacts.image)) s.contacts.image = d.contacts.image;
   s.booking ||= {};
   if (isOldImg(s.booking.image)) s.booking.image = d.booking.image;
-  s.brunch ||= {};
-  if (s.brunch.text === OLD_21.brunch) s.brunch.text = d.brunch.text;
   s.jobs ||= {};
   if (isOldImg(s.jobs.image)) s.jobs.image = d.jobs.image;
 
@@ -233,6 +231,22 @@ function migrate23(s) {
   for (const photo of s.gallery || []) delete photo.caption;
 }
 
+
+/* 2.4 — бранчей больше нет; фото возвращены для отдельных позиций меню,
+   Instagram переехал с catch22.catch22.catch22 на catch22.catch22. */
+function migrate24(s) {
+  delete s.brunch;
+  s.copy ||= {};
+  if (s.copy.eventsSub === 'Винил, сессии и гости за пультом') s.copy.eventsSub = '';
+  const oldInstagram = /instagram\.com\/catch22\.catch22\.catch22\/?$/i;
+  const instagram = seed.contacts.instagram;
+  s.contacts ||= {};
+  if (oldInstagram.test(String(s.contacts.instagram || ''))) s.contacts.instagram = instagram;
+  for (const social of s.socials || []) {
+    if (/inst/i.test(String(social.platform || '')) && oldInstagram.test(String(social.url || ''))) social.url = instagram;
+  }
+}
+
 export function normalizeState(s) {
   s.meta ||= {};
   s.meta.awards = ensureIds(s.meta.awards || [], 'aw');
@@ -241,7 +255,6 @@ export function normalizeState(s) {
   s.hours = ensureIds(s.hours || [], 'h');
   s.contacts ||= {};
   s.socials = ensureIds(s.socials || [], 's');
-  s.brunch ||= {};
   s.booking ||= {};
   s.menu ||= { categories: [] };
   delete s.menu.image;
@@ -373,8 +386,8 @@ export class Store extends EventEmitter {
 
   // Публичная выборка — то, что отдаётся сайту
   publicState() {
-    const { meta, hours, contacts, socials, brunch, booking, menu, events, team, jobs, gallery, copy, updatedAt } = this.state;
-    return { rev: this.rev, updatedAt, meta, hours, contacts, socials, brunch, booking, menu, events, team, jobs, gallery, copy };
+    const { meta, hours, contacts, socials, booking, menu, events, team, jobs, gallery, copy, updatedAt } = this.state;
+    return { rev: this.rev, updatedAt, meta, hours, contacts, socials, booking, menu, events, team, jobs, gallery, copy };
   }
 
   update(label, fn) {

@@ -58,14 +58,14 @@ export const seed = {
     phoneHref: 'tel:+79315312232',
     email: '',
     site: 'https://catch-22-bar.ru/',
-    instagram: 'https://www.instagram.com/catch22.catch22.catch22/',
+    instagram: 'https://www.instagram.com/catch22.catch22/',
     bookingUrl: 'https://catch-22-bar.ru/',
     note: 'Listening bar и фонотека на набережной Фонтанки',
     image: `${P}/interior/bar-window.jpg`,
   },
 
   socials: [
-    { platform: 'Instagram', url: 'https://www.instagram.com/catch22.catch22.catch22/' },
+    { platform: 'Instagram', url: 'https://www.instagram.com/catch22.catch22/' },
     { platform: 'Сайт', url: 'https://catch-22-bar.ru/' },
   ],
 
@@ -76,12 +76,6 @@ export const seed = {
     image: `${P}/interior/table-wine.jpg`,
   },
 
-  brunch: {
-    enabled: true,
-    title: 'БРАНЧ',
-    text: 'Суббота и воскресенье, 16:00 – 18:00\nСвечи на барной стойке, тостер, сливочное масло, икра\nи яйца почти десятком разных способов',
-    image: '/img/brunch.jpg',
-  },
 
   // меню вынесено в seed/menu.js — сверено с официальной картой из пресс-кита
   menu,
@@ -171,7 +165,7 @@ export const seed = {
 
   // тексты интерфейса: что не указано — берётся из seed/copy.js
   copy: {
-    eventsSub: 'Винил, сессии и гости за пультом',
+    eventsSub: '',
     teamSub: 'Люди, которые делают Catch 22',
   },
   jobs: {
